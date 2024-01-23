@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>沙盒使用教程</title>
+    <link href="/2024/01/23/%E6%B2%99%E7%9B%92%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <url>/2024/01/23/%E6%B2%99%E7%9B%92%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<h2 id="一、基本介绍"><a href="#一、基本介绍" class="headerlink" title="一、基本介绍"></a>一、基本介绍</h2><p>​即将介绍的是一个比较老的软件<strong>（年龄 &gt; 10年）</strong>,他的用途是创建一个虚拟环境来打开你的软件，浏览器等等等，好处：对上面的所有操作不会直接影响到真实电脑上的数据，比如在当中被注入了病毒，可以在一定程度上防止病毒入侵。</p><p>​这里需要将这个虚拟环境和虚拟机区分开来，前者可以比作在你家的院子里面分割出一块地种土豆、青菜，同时还进行了一定程度的隔离措施；</p><p>​而虚拟机则相当于给你家加了一个院子。<strong>虚拟机是用来装配一个新的操作系统的</strong></p><h2 id="二、下载提供的安装包（5MB-or-so）"><a href="#二、下载提供的安装包（5MB-or-so）" class="headerlink" title="二、下载提供的安装包（5MB or so）"></a>二、下载提供的安装包（5MB or so）</h2><p>链接：<a href="https://pan.baidu.com/s/1lfHP1eaTRRTV0bwdmklFxQ">https://pan.baidu.com/s/1lfHP1eaTRRTV0bwdmklFxQ</a><br>提取码：mogu </p><h2 id="三、基本教程"><a href="#三、基本教程" class="headerlink" title="三、基本教程"></a>三、基本教程</h2><h4 id="如何使用沙盒运行程序？（如果不希望出现出现选择窗口就只需要在点击在沙盒运行前按住Ctrl即可）"><a href="#如何使用沙盒运行程序？（如果不希望出现出现选择窗口就只需要在点击在沙盒运行前按住Ctrl即可）" class="headerlink" title="如何使用沙盒运行程序？（如果不希望出现出现选择窗口就只需要在点击在沙盒运行前按住Ctrl即可）"></a>如何使用沙盒运行程序？（如果不希望出现出现选择窗口就只需要在点击在沙盒运行前按住Ctrl即可）</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401231333211.gif" alt="动画"></p><h4 id="判断软件是否在沙盘中运行"><a href="#判断软件是否在沙盘中运行" class="headerlink" title="判断软件是否在沙盘中运行"></a>判断软件是否在沙盘中运行</h4><ul><li>看打开页面周围是否有黄色框围绕</li></ul><h4 id="创建新的沙盘"><a href="#创建新的沙盘" class="headerlink" title="创建新的沙盘"></a>创建新的沙盘</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401231344423.png" alt="image-20240123134055642"></p><h4 id="删除沙盘"><a href="#删除沙盘" class="headerlink" title="删除沙盘"></a>删除沙盘</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401231344810.png" alt="image-20240123134335845"></p><h4 id="退出沙盘（不清除内容）"><a href="#退出沙盘（不清除内容）" class="headerlink" title="退出沙盘（不清除内容）"></a>退出沙盘（不清除内容）</h4><p>只需直接关闭软件，退出即可。</p><p>这时候如果下次你只想打开之前保存的沙盘信息，不希望继续打开其他的程序，就只需要在对应软件包中打开SbieCtrl.exe即可</p><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401231348633.png" alt="image-20240123134745445"></p><p>但是这时候又会有问题，不知道如何打开之前打开过的虚拟程序：</p><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401231350140.png" alt="image-20240123135015124"></p><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401231350501.png" alt="image-20240123134945665"></p><h4 id="Welcome-to-my-own-Blog，Thanks-to-your-surfing🥳🥳🥳🥳🥳🥳🥳"><a href="#Welcome-to-my-own-Blog，Thanks-to-your-surfing🥳🥳🥳🥳🥳🥳🥳" class="headerlink" title="Welcome to my own Blog，Thanks to your surfing🥳🥳🥳🥳🥳🥳🥳"></a>Welcome to my own Blog，Thanks to your surfing🥳🥳🥳🥳🥳🥳🥳</h4>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>如何实现单点登录功能</title>
+    <link href="/2024/01/23/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/"/>
+    <url>/2024/01/23/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/</url>
+    
+    <content type="html"><![CDATA[<p>修改篇幅：<a href="https://juejin.cn/post/7320166206215340072">如何限制同一账号只能在一处登录？</a></p><h2 id="我们应该如何限制一个账号只能在一处登录？"><a href="#我们应该如何限制一个账号只能在一处登录？" class="headerlink" title="我们应该如何限制一个账号只能在一处登录？"></a>我们应该如何限制一个账号只能在一处登录？</h2><h3 id="一、需求分析"><a href="#一、需求分析" class="headerlink" title="一、需求分析"></a>一、需求分析</h3><p>如何实现一个账号只能在一个设备上登录，如果另一个设备登录则当前设备就会退出登录功能？</p><h3 id="二、单点登录和单设备登录区别"><a href="#二、单点登录和单设备登录区别" class="headerlink" title="二、单点登录和单设备登录区别"></a>二、单点登录和单设备登录区别</h3><p>在介绍基本方法，先来小小介绍一下<code>单点登录</code>和<code>单设备登录</code>两个概念的区别</p><p><font color='red'><strong>单点登录：</strong></font> 在某个时间段内，同一用户只能在一台设备上进行登录，如果其他设备同时登陆的话就会退出注销。</p><p><font color='red'><strong>单设备登（SSO）：</strong></font> 允许用户使用一组凭证（如用户名和密码）登录到一个系统，然后在多个相关系统中，无需重新登陆受保护的资源<strong>（因此二者是两个完全不一样的概念）</strong></p><h3 id="三、单设备登录的实现"><a href="#三、单设备登录的实现" class="headerlink" title="三、单设备登录的实现"></a>三、单设备登录的实现</h3><h4 id="方式一：使用数据库记录登录态（自我感觉这种方法更加底层化，同时成本相比之下应该会更低一点，但是具体的代码我不会实现）"><a href="#方式一：使用数据库记录登录态（自我感觉这种方法更加底层化，同时成本相比之下应该会更低一点，但是具体的代码我不会实现）" class="headerlink" title="方式一：使用数据库记录登录态（自我感觉这种方法更加底层化，同时成本相比之下应该会更低一点，但是具体的代码我不会实现）"></a>方式一：使用数据库记录登录态（自我感觉这种方法更加底层化，同时成本相比之下应该会更低一点，但是具体的代码我不会实现）</h4><ul><li><p>在用户登录的时候除了账号信息外还可以将该设备的<strong>（IP、ID等可以标志该设备的信息）</strong>以及时间提取出来作为一个登录时需要验证的信息。</p></li><li><p>在进行每一步操作的时候都会首先验证登录信息再进行具体操作，同时每次操作的时候除了需要校验账号信息外还需要校验比如当前设备的IP、ID还等信息，只有一致之后才可以登录成功。</p></li><li><p>如果不匹配，如果出现拒绝登录的情况就会提示有其他用户在其他设备登录了该账号。匹配就会更新时间。</p></li><li><p>用户主动退出登录或者超出LimitTime没有操作也会自动弹出登录<strong>（可以想想学校的教务系统的长时间逗留会直接被强制退出账户的操作例子）</strong></p></li></ul><h4 id="方式二：使用令牌验证机制（学习过redis的话就比较好实现）"><a href="#方式二：使用令牌验证机制（学习过redis的话就比较好实现）" class="headerlink" title="方式二：使用令牌验证机制（学习过redis的话就比较好实现）"></a>方式二：使用令牌验证机制（学习过redis的话就比较好实现）</h4><ul><li>用户登录时生成token，将账号作为key，token作为value，设置过期时间存入redis；</li><li>用户访问应用的时候就会被拦截器拦截必须解析token，获得相对应的账号，然后通过账号找到相对应的value，只有value和对应的token是一致的才允许访问；反之则会弹出登录，重新登陆；</li><li>当另一个用户登录的时候token就会注入到redis中，这样就可以刷新token和redis的过期时间了。</li></ul><h4 id="Welcome-to-my-own-Blog，Thanks-to-your-surfing🥳🥳🥳🥳🥳🥳🥳"><a href="#Welcome-to-my-own-Blog，Thanks-to-your-surfing🥳🥳🥳🥳🥳🥳🥳" class="headerlink" title="Welcome to my own Blog，Thanks to your surfing🥳🥳🥳🥳🥳🥳🥳"></a>Welcome to my own Blog，Thanks to your surfing🥳🥳🥳🥳🥳🥳🥳</h4>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2024年1月22日</title>
     <link href="/2024/01/23/2024%E5%B9%B41%E6%9C%8822%E6%97%A5/"/>
     <url>/2024/01/23/2024%E5%B9%B41%E6%9C%8822%E6%97%A5/</url>
