@@ -65,6 +65,12 @@
     <content type="html"><![CDATA[<h2 id="一、创建标签"><a href="#一、创建标签" class="headerlink" title="一、创建标签"></a>一、创建标签</h2><h4 id="第一步：执行以下指令"><a href="#第一步：执行以下指令" class="headerlink" title="第一步：执行以下指令"></a>第一步：执行以下指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new page tags<br></code></pre></td></tr></table></figure><h4 id="第二步：找到文件修改内容"><a href="#第二步：找到文件修改内容" class="headerlink" title="第二步：找到文件修改内容"></a>第二步：找到文件修改内容</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: tags<br>date: 2024-01-21 16:16:54<br><span class="hljs-section">type: &quot;tags&quot;</span><br><span class="hljs-section">---</span><br><br></code></pre></td></tr></table></figure><h4 id="第三步：给文章添加标签"><a href="#第三步：给文章添加标签" class="headerlink" title="第三步：给文章添加标签"></a>第三步：给文章添加标签</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 死神VS火影3.8.2安装包<br>date: 2024-01-22 22:53:49<br>categories: 死神VS火影系列<br>tags:<br><span class="hljs-section">- 游戏</span><br><span class="hljs-section">---</span><br><br>......<br></code></pre></td></tr></table></figure><h4 id="最后的效果如下"><a href="#最后的效果如下" class="headerlink" title="最后的效果如下"></a>最后的效果如下</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401242151017.png" alt="image-20240124215140073"></p>]]></content>
     
     
+    <categories>
+      
+      <category>Hexo-Fluid搭建个人博客</category>
+      
+    </categories>
+    
     
   </entry>
   
