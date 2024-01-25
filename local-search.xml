@@ -4,12 +4,62 @@
   
   
   <entry>
+    <title>2024年1月25日</title>
+    <link href="/2024/01/25/2024%E5%B9%B41%E6%9C%8825%E6%97%A5/"/>
+    <url>/2024/01/25/2024%E5%B9%B41%E6%9C%8825%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="2024年-1月25日-Day-013"><a href="#2024年-1月25日-Day-013" class="headerlink" title="2024年 1月25日 Day 013"></a>2024年 1月25日 Day 013</h1><h2 id="Daily-Reading-Accumlation："><a href="#Daily-Reading-Accumlation：" class="headerlink" title="Daily Reading Accumlation："></a>Daily Reading Accumlation：</h2><ul><li><h4 id="无"><a href="#无" class="headerlink" title="无"></a>无</h4></li></ul><h2 id="【To-Do-List】"><a href="#【To-Do-List】" class="headerlink" title="【To Do List】"></a>【To Do List】</h2><ul><li><input checked="" disabled="" type="checkbox"> 任何形式的阅读</li><li><input checked="" disabled="" type="checkbox"> 每天写日记</li><li><input checked="" disabled="" type="checkbox"> 掘金日签</li><li><input checked="" disabled="" type="checkbox"> 计算机组成原理</li><li><input checked="" disabled="" type="checkbox"> 博客日更第四天</li><li><input checked="" disabled="" type="checkbox"> 阅读书籍</li></ul><hr><ol><li><p>今天天气晴，1~8℃，早上起床时间7点50分，及时到单位上班；</p></li><li><p>今天一天就是完全无所事事的状态，一直在学习，学着学着就是一天，在单位学了计组，掘金日签，每日小积累外带一些美化博客小技巧，此外就是阅读《30天自制操作系统》，现在大概可以确定，该书阅读时间应该在3个月左右的时间，难度系数超出了我的想象；</p></li><li><p>最后晚上还陪妹妹去洗了个头，洗完头10点左右才到家，最后整理今天写的文章，进行博客美化工作，然后写好今天的小日记，记录了现在时间：晚上11点59分…….</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>日记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>日常</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>9、Fluid页眉添加运行时间</title>
+    <link href="/2024/01/25/9%E3%80%81Fluid%E9%A1%B5%E7%9C%89%E6%B7%BB%E5%8A%A0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/"/>
+    <url>/2024/01/25/9%E3%80%81Fluid%E9%A1%B5%E7%9C%89%E6%B7%BB%E5%8A%A0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="一、在Fluid的配置文件中找到footer，内容修改"><a href="#一、在Fluid的配置文件中找到footer，内容修改" class="headerlink" title="一、在Fluid的配置文件中找到footer，内容修改"></a>一、在Fluid的配置文件中找到footer，内容修改</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">content:</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">  &lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener&quot;&gt;&lt;span&gt;Hexo&lt;/span&gt;&lt;/a&gt;</span><br><span class="hljs-string">  &lt;i class=&quot;iconfont icon-love&quot;&gt;&lt;/i&gt;</span><br><span class="hljs-string">  &lt;a href=&quot;https://github.com/fluid-dev/hexo-theme-fluid&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener&quot;&gt;&lt;span&gt;Fluid&lt;/span&gt;&lt;/a&gt;</span><br><span class="hljs-string">  &lt;div style=&quot;font-size: 0.85rem&quot;&gt;</span><br><span class="hljs-string">    &lt;span id=&quot;timeDate&quot;&gt;载入天数...&lt;/span&gt;</span><br><span class="hljs-string">    &lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/span&gt;</span><br><span class="hljs-string">    &lt;script src=&quot;/js/timeDate.js&quot;&gt;&lt;/script&gt;</span><br><span class="hljs-string">  &lt;/div&gt;</span><br><span class="hljs-string">&#x27;</span><br></code></pre></td></tr></table></figure><h4 id="JS内容"><a href="#JS内容" class="headerlink" title="JS内容"></a>JS内容</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs js">!(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">/** 计时起始时间，自行修改 **/</span><br>  <span class="hljs-keyword">var</span> start = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&quot;2024/01/21 16:00:00&quot;</span>);<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br>    now.<span class="hljs-title function_">setTime</span>(now.<span class="hljs-title function_">getTime</span>()+<span class="hljs-number">250</span>);<br>    days = (now - start) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span> / <span class="hljs-number">60</span> / <span class="hljs-number">24</span>;<br>    dnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(days);<br>    hours = (now - start) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span> / <span class="hljs-number">60</span> - (<span class="hljs-number">24</span> * dnum);<br>    hnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(hours);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(hnum).<span class="hljs-property">length</span> === <span class="hljs-number">1</span> )&#123;<br>      hnum = <span class="hljs-string">&quot;0&quot;</span> + hnum;<br>    &#125;<br>    minutes = (now - start) / <span class="hljs-number">1000</span> /<span class="hljs-number">60</span> - (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * dnum) - (<span class="hljs-number">60</span> * hnum);<br>    mnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(minutes);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(mnum).<span class="hljs-property">length</span> === <span class="hljs-number">1</span> )&#123;<br>      mnum = <span class="hljs-string">&quot;0&quot;</span> + mnum;<br>    &#125;<br>    seconds = (now - start) / <span class="hljs-number">1000</span> - (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * dnum) - (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * hnum) - (<span class="hljs-number">60</span> * mnum);<br>    snum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(seconds);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(snum).<span class="hljs-property">length</span> === <span class="hljs-number">1</span> )&#123;<br>      snum = <span class="hljs-string">&quot;0&quot;</span> + snum;<br>    &#125;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;timeDate&quot;</span>).<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;本站安全运行&amp;nbsp&quot;</span>+dnum+<span class="hljs-string">&quot;&amp;nbsp天&quot;</span>;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;times&quot;</span>).<span class="hljs-property">innerHTML</span> = hnum + <span class="hljs-string">&quot;&amp;nbsp小时&amp;nbsp&quot;</span> + mnum + <span class="hljs-string">&quot;&amp;nbsp分&amp;nbsp&quot;</span> + snum + <span class="hljs-string">&quot;&amp;nbsp秒&quot;</span>;<br>  &#125;<br><br>  <span class="hljs-title function_">update</span>();<br>  <span class="hljs-built_in">setInterval</span>(update, <span class="hljs-number">1000</span>);<br>&#125;)();<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo-Fluid搭建个人博客</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>8、Fluid美化</title>
     <link href="/2024/01/25/8%E3%80%81Fluid%E7%BE%8E%E5%8C%96/"/>
     <url>/2024/01/25/8%E3%80%81Fluid%E7%BE%8E%E5%8C%96/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="一、引入CSS-JS-最基本"><a href="#一、引入CSS-JS-最基本" class="headerlink" title="一、引入CSS&#x2F;JS(最基本)"></a>一、引入CSS&#x2F;JS(最基本)</h2><p>在<code>themes\fluid\source\css\</code>文件夹下建一个文本文档，找到一段可用的css美化代码。</p><p>然后打开主题配置文件<code>/themes/fluid/_config.yml</code>找到<code>custom_js</code>和<code>custom_css</code>下面进行引入。</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">custom_js:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/diy/timeDate.js</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js</span>  <span class="hljs-comment">#/APlayer#/APlayer依赖</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js</span>  <span class="hljs-comment">#/APlayer依赖</span><br><span class="hljs-comment"># 指定自定义 .css 文件路径，用法和 custom_js 相同</span><br><span class="hljs-comment"># The usage is the same as custom_js</span><br><span class="hljs-attr">custom_css:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/diy/shubiao.css</span> <span class="hljs-comment">#鼠标指针</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css</span>   <span class="hljs-comment">#/APlayer依赖</span><br></code></pre></td></tr></table></figure><h2 id="二、JS特效"><a href="#二、JS特效" class="headerlink" title="二、JS特效"></a>二、JS特效</h2><h4 id="动态彩带"><a href="#动态彩带" class="headerlink" title="动态彩带"></a>动态彩带</h4><h2 id="一、引入CSS-JS-最基本-1"><a href="#一、引入CSS-JS-最基本-1" class="headerlink" title="一、引入CSS&#x2F;JS(最基本)"></a>一、引入CSS&#x2F;JS(最基本)</h2><p>在<code>themes\fluid\source\css\</code>文件夹下建一个文本文档，找到一段可用的css美化代码。</p><p>然后打开主题配置文件<code>/themes/fluid/_config.yml</code>找到<code>custom_js</code>和<code>custom_css</code>下面进行引入。</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">custom_js:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/diy/timeDate.js</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js</span>  <span class="hljs-comment">#/APlayer#/APlayer依赖</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js</span>  <span class="hljs-comment">#/APlayer依赖</span><br><span class="hljs-comment"># 指定自定义 .css 文件路径，用法和 custom_js 相同</span><br><span class="hljs-comment"># The usage is the same as custom_js</span><br><span class="hljs-attr">custom_css:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/diy/shubiao.css</span> <span class="hljs-comment">#鼠标指针</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css</span>   <span class="hljs-comment">#/APlayer依赖</span><br></code></pre></td></tr></table></figure><h2 id="二、JS特效-1"><a href="#二、JS特效-1" class="headerlink" title="二、JS特效"></a>二、JS特效</h2><h4 id="动态彩带-1"><a href="#动态彩带-1" class="headerlink" title="动态彩带"></a>动态彩带</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">- <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>bynotes<span class="hljs-regexp">/texiao/</span>source<span class="hljs-regexp">/js/</span>caidai.js <span class="hljs-comment"># 动态彩带</span><br></code></pre></td></tr></table></figure><h4 id="黑色线条"><a href="#黑色线条" class="headerlink" title="黑色线条"></a>黑色线条</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">- <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>bynotes<span class="hljs-regexp">/texiao/</span>source<span class="hljs-regexp">/js/</span>xiantiao.js <span class="hljs-comment"># 动态黑色线条</span><br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401252335561.gif" alt="动画"></p><h4 id="静态彩带点击改变形状"><a href="#静态彩带点击改变形状" class="headerlink" title="静态彩带点击改变形状"></a>静态彩带点击改变形状</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">- <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>bynotes<span class="hljs-regexp">/texiao/</span>source<span class="hljs-regexp">/js/</span>jingtaisidai.js <br></code></pre></td></tr></table></figure><p>​<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401252338245.gif" alt="动画1">·</p><h4 id="小雪花效果"><a href="#小雪花效果" class="headerlink" title="小雪花效果"></a>小雪花效果</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">- <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>bynotes<span class="hljs-regexp">/texiao/</span>source<span class="hljs-regexp">/js/</span>xiaoxuehua.js <br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401252339432.gif" alt="动画2"></p><h4 id="大雪花效果"><a href="#大雪花效果" class="headerlink" title="大雪花效果"></a>大雪花效果</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">- <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>bynotes<span class="hljs-regexp">/texiao/</span>source<span class="hljs-regexp">/js/</span>daxuehua.js <br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401252340040.gif" alt="动画3"></p><h4 id="鼠标跟随小星星"><a href="#鼠标跟随小星星" class="headerlink" title="鼠标跟随小星星"></a>鼠标跟随小星星</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">- <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>bynotes<span class="hljs-regexp">/texiao/</span>source<span class="hljs-regexp">/js/</span>xiaoxingxing.js<br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401252343376.gif" alt="动画4"></p><h4 id="滚动条样式"><a href="#滚动条样式" class="headerlink" title="滚动条样式"></a>滚动条样式</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">- <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>bynotes<span class="hljs-regexp">/texiao/</span>source<span class="hljs-regexp">/css/gu</span>ndongtiao.css<br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401252333521.png" alt="image-20240125233235711"></p><h4 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">- <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>bynotes<span class="hljs-regexp">/texiao/</span>source<span class="hljs-regexp">/css/</span>shubiao.css<br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401252333067.png" alt="image-20240125233343214"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401252333969.png" alt="image-20240125233349224"></p><h2 id="三、其他样式效果"><a href="#三、其他样式效果" class="headerlink" title="三、其他样式效果"></a>三、其他样式效果</h2><h3 id="ToDo……"><a href="#ToDo……" class="headerlink" title="ToDo……"></a><font color='red'><strong>ToDo……</strong></font></h3><h2 id="四、添加动态小猫、小狗、动漫人物（待续……）"><a href="#四、添加动态小猫、小狗、动漫人物（待续……）" class="headerlink" title="四、添加动态小猫、小狗、动漫人物（待续……）"></a>四、添加动态小猫、小狗、动漫人物（待续……）</h2><h3 id="ToDo……-1"><a href="#ToDo……-1" class="headerlink" title="ToDo……"></a><font color='red'><strong>ToDo……</strong></font></h3>]]></content>
     
+    
+    <categories>
+      
+      <category>Hexo-Fluid搭建个人博客</category>
+      
+    </categories>
     
     
   </entry>
@@ -76,6 +126,12 @@
       
     </categories>
     
+    
+    <tags>
+      
+      <tag>日常</tag>
+      
+    </tags>
     
   </entry>
   
@@ -221,6 +277,12 @@
     </categories>
     
     
+    <tags>
+      
+      <tag>日常</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -327,6 +389,12 @@
     </categories>
     
     
+    <tags>
+      
+      <tag>日常</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -349,6 +417,8 @@
     <tags>
       
       <tag>游戏</tag>
+      
+      <tag>日常</tag>
       
     </tags>
     
@@ -447,6 +517,12 @@
     </categories>
     
     
+    <tags>
+      
+      <tag>日常</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -505,6 +581,12 @@
     <content type="html"><![CDATA[<ol><li>语雀<font color='red'>（用于记笔记）</font></li><li>Everying；<font color='red'>（搜索电脑文件）</font></li><li>Listary;<font color='red'>（搜索电脑文件）</font></li><li>Visual stdio C++；<font color='red'>（C++编辑器）</font></li><li>TabXExplorer；<font color='red'>(任务管理器，搜索速度快但是要钱）</font></li><li>AxMath；<font color='red'>（建模有关）</font><font color='orange'>（付费）</font></li><li>希沃白板 5；<font color='red'>（网上授课）</font></li><li>百度网盘；</li><li>PicGo；<font color='red'>（上传图片到图床的工具）</font></li><li>爱思远控；<font color='red'>（控屏专用）</font></li><li>Neat Download Manager 1.4；<font color='red'>（加速下载）</font></li><li>QBittorrent v4.5.2；<font color='red'>（加速下载）</font></li><li>Breezip；<font color='red'>（可免费解压）</font></li><li>CNKI CAJViewer 8.1;</li><li>CP Editor；<font color='red'>（进行算法代码编写必备软件）</font></li><li>Git;<font color='red'>（用于管理项目之类的）</font></li><li>MySQL;<font color='red'>（数据库）</font></li><li>uTools；<font color='red'>（超级工具，功能强大，用了就知道）</font></li><li>Geek；<font color='red'>（可以干净删除文件残渣）</font></li><li>Clash for Windows；<font color='red'>（用于翻墙）</font><font color='orange'>（付费购买机场使用）</font></li><li>Spacesniffer；<font color='red'>（可以全局观看文件分布）</font></li><li>Snipate；<font color='red'>（截图神器）</font></li><li>Typora；<font color='red'>（用于做笔记）</font><font color='orange'>（付费，破解）</font></li><li>Quicker；<font color='red'>（进行全局管理）</font></li><li>Image and Video Intensifier；</li><li>XMind；<font color='red'>（画流程图之类的）</font></li><li>Paint Tools SAI Ver.1；<font color='red'>（画图）</font></li><li>PaintTool SAI 2.0；<font color='red'>（画图）</font></li><li>Auto HotKey；<font color='red'>（强大的脚本软件）</font></li><li>ScreenToGif<font color='red'>（录制gif）</font></li><li>FastStone Capture;</li><li>Beyond Compare<font color='red'>（文件文件夹对比工具）</font><font color='orange'>（付费，已提供破解）</font></li><li>Obsidian<font color='red'>（科研笔记&#x2F;知识管理软件）</font><font color='orange'>（付费，已提供破解）</font></li><li>WinMerge<font color='red'>（文件合并软件）</font><font color='orange'>（付费，已提供破解）</font></li><li>DeskPins<font color='red'>（窗口置顶软件）</font></li><li>Sublime Text<font color='red'>（文本编辑器）</font></li><li>TranslucentTB<font color='red'>（调整任务栏透明度）</font></li><li>西窗烛<font color='red'>（感受诗词的美感）</font></li><li>懒饭<font color='red'>（学做饭）</font></li><li>scrcpy<font color='red'>（用于控制手机屏幕）</font></li><li>RevokeMsgPatcher.v1<font color='red'>（用于防QQ、微信等聊天工具对方撤回消息）</font></li></ol>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>日常</tag>
+      
+    </tags>
     
   </entry>
   
