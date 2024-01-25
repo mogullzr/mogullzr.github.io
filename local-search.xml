@@ -4,6 +4,38 @@
   
   
   <entry>
+    <title>8、Fluid美化</title>
+    <link href="/2024/01/25/8%E3%80%81Fluid%E7%BE%8E%E5%8C%96/"/>
+    <url>/2024/01/25/8%E3%80%81Fluid%E7%BE%8E%E5%8C%96/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>7、Fluid如何优雅写文章</title>
+    <link href="/2024/01/25/7%E3%80%81Fluid%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%86%99%E6%96%87%E7%AB%A0/"/>
+    <url>/2024/01/25/7%E3%80%81Fluid%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%86%99%E6%96%87%E7%AB%A0/</url>
+    
+    <content type="html"><![CDATA[<h2 id="一、iframe页面嵌套展示"><a href="#一、iframe页面嵌套展示" class="headerlink" title="一、iframe页面嵌套展示"></a>一、iframe页面嵌套展示</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://mogullzr.github.io/&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;700&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Mogullzr&quot;</span> <span class="hljs-attr">scrolling</span>=<span class="hljs-string">&quot;yes&quot;</span>  <span class="hljs-attr">noresize</span>=<span class="hljs-string">&quot;noresize&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;Mogullzr&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br></code></pre></td></tr></table></figure><iframe src="https://mogullzr.github.io/" width="100%" height="700" name="Mogullzr" scrolling="yes"  noresize="noresize" frameborder="5" id="Mogullzr"></iframe><p><strong>参数说明：</strong> <code>width=&quot;100%&quot;</code> 为宽度自适；<code>scrolling=&quot;yes&quot; </code> 为允许滚动；<code>frameborder</code> 为边框宽度；<code>noresize</code> 规是否允许调整框的大小</p><h2 id="二、details标签的使用"><a href="#二、details标签的使用" class="headerlink" title="二、details标签的使用"></a>二、details标签的使用</h2><p>​可以用于折叠代码量长的内容，<code>&lt;sumamary&gt; &lt;/sumamary&gt;</code> 中间填写名称</p><p>​对应代码如下：</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs txt">&lt;details&gt;<br>    &lt;summary&gt;Test&lt;/summary&gt;<br><br>    &lt;iframe src=&quot;https://mogullzr.github.io/&quot; width=&quot;100%&quot; height=&quot;700&quot; name=&quot;Mogullzr&quot; scrolling=&quot;yes&quot;  noresize=&quot;noresize&quot; frameborder=&quot;5&quot; id=&quot;Mogullzr&quot;&gt;&lt;/iframe&gt;<br><br>&lt;/details&gt;<br></code></pre></td></tr></table></figure><details>    <summary>Test</summary><pre><code class="hljs">&lt;iframe src=&quot;https://mogullzr.github.io/&quot; width=&quot;100%&quot; height=&quot;700&quot; name=&quot;Mogullzr&quot; scrolling=&quot;yes&quot;  noresize=&quot;noresize&quot; frameborder=&quot;5&quot; id=&quot;Mogullzr&quot;&gt;&lt;/iframe&gt;</code></pre></details><h2 id="三、配图"><a href="#三、配图" class="headerlink" title="三、配图"></a>三、配图</h2><p>修改主题的_config.yml的<code>banner_img</code>属性配置背景图片：</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">banner_img:</span> <span class="hljs-keyword">/img/</span>bg/example.jpg<br></code></pre></td></tr></table></figure><p><strong>修改主题的_config.yml的<code>banner_img_height</code>属性：</strong>有效值为 0 - 100，100 即为全屏。</p><p><strong>配置透明度<code>banner_mask_alpha</code>：</strong>有效值为 0 - 1.0， 0 是完全透明（无蒙版），1 是完全不透明</p><h2 id="四、懒加载设置（默认开启）"><a href="#四、懒加载设置（默认开启）" class="headerlink" title="四、懒加载设置（默认开启）"></a>四、懒加载设置（默认开启）</h2><p>​想必大家对于懒加载已经有了一定的了解，开启懒加载之后就可以在一定程度上加快页面的打开速度<strong>（懒加载简述：图片只加载当前页面出现的图片，没有出现的图片暂不加载）</strong></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">lazyload:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">loading_img:</span> <span class="hljs-string">/img/loading.gif</span><br>  <span class="hljs-attr">onlypost:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">offset_factor:</span> <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><h2 id="五、代码块设置"><a href="#五、代码块设置" class="headerlink" title="五、代码块设置"></a>五、代码块设置</h2><p><code>copy_btn</code>: 是否开启复制代码的按钮</p><p><code>line_number</code>: 是否开启行号</p><p><code>highlight</code>: 是否开启代码高亮</p><p><code>lib</code>: 选择生成高亮的库，可选项: highlightjs、prismjs，对应下面两组配置，高亮的配置说明具体见<strong>主题配置</strong>中的注释&#96;</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">code:</span><br>  <span class="hljs-attr">copy_btn:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">highlight:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">line_number:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">lib:</span> <span class="hljs-string">&quot;highlightjs&quot;</span><br>    <span class="hljs-attr">highlightjs:</span><br>      <span class="hljs-attr">style:</span> <span class="hljs-string">&#x27;Github Gist&#x27;</span><br>      <span class="hljs-attr">bg_color:</span> <span class="hljs-literal">false</span><br>    <span class="hljs-attr">prismjs:</span><br>      <span class="hljs-attr">style:</span> <span class="hljs-string">&quot;default&quot;</span><br>      <span class="hljs-attr">preprocess:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo-Fluid搭建个人博客</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>摸鱼日记（一）在一张图片中收藏自己的学习资料</title>
     <link href="/2024/01/25/%E6%91%B8%E9%B1%BC%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%9C%A8%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87%E4%B8%AD%E6%94%B6%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
     <url>/2024/01/25/%E6%91%B8%E9%B1%BC%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%9C%A8%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87%E4%B8%AD%E6%94%B6%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</url>
