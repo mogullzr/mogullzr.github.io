@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>操作系统——操作系统的特征（二）</title>
+    <link href="/2024/01/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <url>/2024/01/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="一、并发"><a href="#一、并发" class="headerlink" title="一、并发"></a>一、并发</h2><p>两个或者多个事件在同一时间间隔内发生。这些事件<font color='red'>宏观上是同时发生的</font>，但是<font color='red'>微观上是交替发生的</font>。</p><p><strong>并行：</strong>两个或者多个事件在同一时刻执行。</p><p><strong>操作系统的并发性：</strong>计算机系统中“同时”运行多个程序，这些程序宏观上来看是同时运行的，而微观上是交替运行的。</p><p>操作系统的出现就是伴随“多道程序技术”而出现的。因此，<font color='red'>操作系统和程序并发是一起诞生的</font>。</p><p><strong>注意：</strong></p><ul><li><strong>单核CPU：</strong>同一时刻只能执行<font color='red'>1个程序</font>，各个程序只能<font color='red'>并发</font>执行。</li><li><strong>多核CPU：</strong>同一时刻可以执行<font color='red'>多个程序</font>，各个程序可以<font color='red'>并行</font>执行。</li><li>即使对于4核CPU来说，只要有4个以上的程序需要“同时”运行，那么并发性依然是必不可少，<font color='red'>因此并发性hi操作系统的一个最基本的特征</font>。</li></ul><h2 id="二、共享"><a href="#二、共享" class="headerlink" title="二、共享"></a>二、共享</h2><p><strong>概念：</strong>即资源共享，是指系统中资源的可供内存中多个并发执行的过程共同使用。</p><p><strong>方式：</strong>互斥共享方式和同时共享方式。</p><p><strong>互斥共享方式：</strong>系统中的某些资源，虽然可以提供多个进程使用，但<font color='red'>一个时间段内只允许访问一个进程访问该资源</font>。</p><p><strong>同时共享方式：</strong>系统中的某些资源，<font color='red'>允许一个时间段内由多个进程“同时”对它们进行访问</font>。</p><p>这里的<strong>“同时”</strong>往往都是在宏观上来看的，从微观来看都是<strong>“交替的”</strong>。</p><h2 id="三、并发和共享的联系"><a href="#三、并发和共享的联系" class="headerlink" title="三、并发和共享的联系"></a>三、并发和共享的联系</h2><p><strong>例子：</strong></p><p>使用QQ发文件A，同时使用微信发送文件。</p><ol><li>QQ、微信两个进程同时运行**<font color='red'>（并发性）如果失去了并发性，则系统只有一个程序运行，共享性就没有了意义</font>**；</li><li>需要共享访问硬盘资源**<font color='red'>（共享性）如果失去了共享性，QQ和微信就不可以同时访问磁盘，就无法实现同时发送文件，也就无法实现并发</font>**。</li><li><strong>由此可见：</strong>并发性和共享性二者互为存在条件。</li></ol><h2 id="四、虚拟"><a href="#四、虚拟" class="headerlink" title="四、虚拟"></a>四、虚拟</h2><p><strong>概念：</strong>把一个物理上的实体变为若干个逻辑上的对应物。物理实体（实体）是实际存在的，而逻辑上是用户感受的。</p><p>许多的程序在我电脑上打开需要的内存远大于我电脑的运行内存，但是还是可以在我电脑上同时运行的原因是？？</p><p><font color='red'><strong>虚拟存储技术，实际只有12GB，在用户看来远远大于12GB</strong></font><strong>(空分复用技术)</strong></p><p>对于单核CPU计算机，用户同时打开多个软件。</p><p>为什么单核CPU电脑中能够同时运行这么多个程序？？</p><p><strong><font color='red'>虚拟处理器技术。</font></strong> <strong>（时分复用技术）微观上处理机在各个微小的时间段内交替着为各个进程服务</strong></p><p><strong>注意：</strong>如果失去了并发性，那么虚拟性也会失去意义。</p><h2 id="五、异步"><a href="#五、异步" class="headerlink" title="五、异步"></a>五、异步</h2><p><strong>概念：</strong>多道程序环境下，允许多个程序并发执行，但是由于资源有限，进程的执行不是一贯到底的，而是走走停停，以不可预知的速度向前推进，这就是进程的异步性。</p><p>由于并发运行的程序会抢夺使用系统资源，而系统中的资源有限，因此进程的执行是断断续续的。</p><p><strong>注意：</strong>如果失去并发性，系统只可以串行运行各个程序，各个程序执行就会一串到底。**<font color='red'>只有系统有了并发性，才会有异步性。</font>**</p><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270008055.png" alt="image-20240127000835808"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>操作系统考研系列（一周三更）</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+      <tag>考研</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>计算机组成原理——计算机的性能指标（二）</title>
+    <link href="/2024/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <url>/2024/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="一、存储器的容量"><a href="#一、存储器的容量" class="headerlink" title="一、存储器的容量"></a>一、存储器的容量</h2><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270003592.png" alt="image-20240115105243812"></p><h2 id="二、CPU的性能指标"><a href="#二、CPU的性能指标" class="headerlink" title="二、CPU的性能指标"></a>二、CPU的性能指标</h2><p><strong>CPU主频：</strong>CPU内数字**脉冲信号（指的是指挥内部所有部件一步一步工作的节奏，可以想一下广播体操里面的12345678，每一个数字相当于1个动作，在CPU里面就相当于一条指令执行的每一个步骤），说白了就是1s时间里的时钟周期数 **振荡的频率。单位赫兹，HZ。</p><p><strong>CPU的时钟周期：</strong>每一个脉冲信号的时间。单位为us、ns。</p><p><strong>CPI：</strong>执行一条指令所需要的指令周期数。</p><p><strong>执行一条指令的时间：</strong>CPI x CPU时钟周期。</p><p><strong>CPU执行时间：</strong>CPU时钟周期数&#x2F;主频 &#x3D; （CUxCPI）&#x2F;主频</p><p><strong>IPS：</strong>每秒钟执行多少条指令。IPS&#x3D;主频<strong>（总的时钟周期数量）</strong>&#x2F;平均CPI<strong>（每条指令的时钟周期数）</strong>。</p><h2 id="三、系统整体性能指标"><a href="#三、系统整体性能指标" class="headerlink" title="三、系统整体性能指标"></a>三、系统整体性能指标</h2><p><strong>数据通路的带宽：</strong>数据总线一次运行传送信息的位数（各硬件部件通过<strong>数据总线</strong>传输数据）。</p><p><strong>吞吐量：</strong>系统单位时间内处理请求的数量。取决于主存的存取周期。</p><p><strong>响应时间：</strong>指从用户向计算机发送请求，到系统对该请求做出响应并获得它所需要的结果的等到时间。通常包括CPU时间<strong>（运行一个程序所花费的时间）</strong>和等待时间<strong>（用于磁盘访问、存储器访问、I&#x2F;O操作、操作系统开销时间）</strong></p><h2 id="四、系统整体性能指标-（动态测试）"><a href="#四、系统整体性能指标-（动态测试）" class="headerlink" title="四、系统整体性能指标 （动态测试）"></a>四、系统整体性能指标 （动态测试）</h2><p><strong>基准程序（跑分软件）：</strong>是用来测试计算机处理速度的一种实用程序，以便于被测的计算机性能可以与运行相同程序的其他计算机性能进行比较。</p><h2 id="五、综合注意"><a href="#五、综合注意" class="headerlink" title="五、综合注意"></a>五、综合注意</h2><ul><li><p>CPU的主频高不一定跑得更快。</p></li><li><p>A、B两个均CPI相同不一定执行更快.这个得看操作系统的。</p><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270003230.png" alt="image-20240115125917404"></p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270005366.png" alt="image-20240127000543203"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270006751.png" alt="image-20240127000552697">  </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机组成原理考研系列（一周三更）</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>底层</tag>
+      
+      <tag>考研</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>图片处理</title>
     <link href="/2024/01/26/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/"/>
     <url>/2024/01/26/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/</url>
@@ -210,7 +264,7 @@
     
     <categories>
       
-      <category>计算机组成原理考研系列（隔日更）</category>
+      <category>计算机组成原理考研系列（一周三更）</category>
       
     </categories>
     
@@ -237,7 +291,7 @@
     
     <categories>
       
-      <category>操作系统考研系列（隔日更）</category>
+      <category>操作系统考研系列（一周三更）</category>
       
     </categories>
     
