@@ -4,35 +4,6 @@
   
   
   <entry>
-    <title>Git——初步认识Git（一）</title>
-    <link href="/2024/01/29/Git%E2%80%94%E2%80%94%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86Git%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <url>/2024/01/29/Git%E2%80%94%E2%80%94%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86Git%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    
-    <content type="html"><![CDATA[<h2 id="一、初步认识Git"><a href="#一、初步认识Git" class="headerlink" title="一、初步认识Git"></a>一、初步认识Git</h2><p>​Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可<strong>以恢复到以前任意时刻的状态</strong>。同时它还<strong>支持跨区域多人协作编辑</strong>，是团队项目开发的必备基础。</p><h2 id="二、Git下载和安装"><a href="#二、Git下载和安装" class="headerlink" title="二、Git下载和安装"></a>二、Git下载和安装</h2><p><a href="https://git-scm.com/download">官网</a></p><p>这里下载速度会有点慢的</p><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401291032736.png" alt="image-20240129103246236"></p><h2 id="三、Git基本概念术语"><a href="#三、Git基本概念术语" class="headerlink" title="三、Git基本概念术语"></a>三、Git基本概念术语</h2><table><thead><tr><th align="center">概念名称</th><th align="center">描述</th></tr></thead><tbody><tr><td align="center">头<strong>（HEAD）</strong></td><td align="center">HEAD类似于一个“指针”，指向的就是<font color='red'><strong>当前分支的最新版本</strong></font></td></tr><tr><td align="center">提交<strong>（Commit）</strong></td><td align="center">将暂缓区变更内容提交到当前仓库的活动分支</td></tr><tr><td align="center">推送<strong>（Push）</strong></td><td align="center">將本地仓库的版本推送到服务端<strong>（远程）</strong>仓库</td></tr><tr><td align="center">拉取<strong>（Pull）</strong></td><td align="center">从服务端（远程）仓库获取更新到本地仓库，获取他人共享的更新。</td></tr><tr><td align="center">获取<strong>（Fetch）</strong></td><td align="center">从服务端（远程）仓库更新，和Pull一个作用，但是不会自动合并</td></tr><tr><td align="center">冲突<strong>（Conflict）</strong></td><td align="center"><font color='red'><strong>多人对同一文件副本进行操作进行修改</strong></font>，并将这些更改合并到仓库时就会出现多个版本的情况，内容修改各不相同，这时候我们就需要将修改的部分<font color='red'><strong>全部融合到一个版本</strong></font>去</td></tr><tr><td align="center">合并<strong>（Merge）</strong></td><td align="center">对冲突的文件进行合并操作，<code>Git</code>会自动合并更改内容，会自动处理冲突内容等待提示信息</td></tr><tr><td align="center">标签<strong>（Tags）</strong></td><td align="center">指的是某个分支某个特定的时间点状态，可以直接理解为<font color='red'><strong>提交记录</strong></font>，标记一个版本号</td></tr><tr><td align="center">分支<strong>（Branch）</strong></td><td align="center">分支是从主线分离出来的“副本”，可以独立操作互不干扰，仓库初始化有一个默认主分支<font color='red'><strong><code>main</code></strong></font>,2020年之前的默认分支为<font color='red'><strong><code>master</code></strong></font></td></tr><tr><td align="center">工作区<strong>（Workspace）</strong></td><td align="center">就是我们电脑看到的代码库目录，我们日常“搬砖”的地方</td></tr><tr><td align="center">暂缓区<strong>（stage）</strong></td><td align="center">用于*<font color='red'><strong>临时存放文件的修改</strong></font>，实际上就是一个<font color='red'><strong><code>.git</code></strong></font>文件，保存列表信息</td></tr><tr><td align="center">版本库&#x2F;仓库<strong>（Repository）</strong></td><td align="center"><font color='red'><strong>Git管理仓库</strong></font>，记录文件&#x2F;目录状态的地方，所有内容的修改记录都在这里</td></tr><tr><td align="center">服务端&#x2F;远程仓库<strong>（origin&#x2F;remote）</strong></td><td align="center"><font color='red'><strong>服务端的版本库</strong></font>，专用的Git服务器，为多人共享 提供服务器，<code>push</code>指令把代码推送到服务器端版本库</td></tr><tr><td align="center">本地仓库</td><td align="center">用户机器上直接使用的版本库</td></tr></tbody></table><h2 id="四、工作区-暂缓区-仓库"><a href="#四、工作区-暂缓区-仓库" class="headerlink" title="四、工作区 &#x2F; 暂缓区 &#x2F; 仓库"></a>四、工作区 &#x2F; 暂缓区 &#x2F; 仓库</h2><h4 id="流程理解"><a href="#流程理解" class="headerlink" title="流程理解"></a>流程理解</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401291130691.png" alt="image-20240129111520386"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Git专栏</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Git</tag>
-      
-      <tag>开发</tag>
-      
-      <tag>管理工具</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>2024年1月28日</title>
     <link href="/2024/01/29/2024%E5%B9%B41%E6%9C%8828%E6%97%A5/"/>
     <url>/2024/01/29/2024%E5%B9%B41%E6%9C%8828%E6%97%A5/</url>
