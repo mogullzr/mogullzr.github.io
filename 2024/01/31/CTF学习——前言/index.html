@@ -16,26 +16,33 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="认识数据结构一、非数值型数据表示出现问题 需要知道各个个体的基本信息 需要了解各个个体之间的关系  二、数据概念 数据是信息的载体，是描述客观事物属性的数、字符以及能输入到计算机中并被计算机程序识别额符号集合。数据是计算机程序加工的原材料  三、数据元素、数据项、组合项概念 数据元素是数据的基本单位，是用来描述一个整体的 一个数据元素可由若干个数据项组成，数据项是构成数据元素的不可分割的最小单位">
+    <meta name="description" content="前言​		从今天起（2024年1月31日）正式开始CTF的学习之旅，但是这套教程还是需要基本的数据库、前端三件套、py基础知识 的，不然你可能看我的教程会比较吃力，这三部分基本的语法知识不会带大家详细说明的。 一、CTF是什么​		中文一般译作夺旗赛（对大部分新手也可以叫签到赛），在网络安全领域中指的是网络安全技术人员之间进行技术竞技的一种比赛形式。​		CTF起源于1996年DEFCON全球黑客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构——认识数据结构（一）">
-<meta property="og:url" content="http://example.com/2024/01/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:title" content="CTF学习——前言">
+<meta property="og:url" content="http://example.com/2024/01/31/CTF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%89%8D%E8%A8%80/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="认识数据结构一、非数值型数据表示出现问题 需要知道各个个体的基本信息 需要了解各个个体之间的关系  二、数据概念 数据是信息的载体，是描述客观事物属性的数、字符以及能输入到计算机中并被计算机程序识别额符号集合。数据是计算机程序加工的原材料  三、数据元素、数据项、组合项概念 数据元素是数据的基本单位，是用来描述一个整体的 一个数据元素可由若干个数据项组成，数据项是构成数据元素的不可分割的最小单位">
+<meta property="og:description" content="前言​		从今天起（2024年1月31日）正式开始CTF的学习之旅，但是这套教程还是需要基本的数据库、前端三件套、py基础知识 的，不然你可能看我的教程会比较吃力，这三部分基本的语法知识不会带大家详细说明的。 一、CTF是什么​		中文一般译作夺旗赛（对大部分新手也可以叫签到赛），在网络安全领域中指的是网络安全技术人员之间进行技术竞技的一种比赛形式。​		CTF起源于1996年DEFCON全球黑客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
-<meta property="article:published_time" content="2024-01-30T14:13:34.000Z">
-<meta property="article:modified_time" content="2024-01-30T14:17:15.790Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401310014172.jpg">
+<meta property="article:published_time" content="2024-01-30T16:08:47.000Z">
+<meta property="article:modified_time" content="2024-01-30T16:29:22.991Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="底层">
-<meta property="article:tag" content="考研">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="竞赛">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="H5、CSS、JAVASCRIPT">
+<meta property="article:tag" content="PHP、apache">
+<meta property="article:tag" content="burpsuite">
+<meta property="article:tag" content="SQL注入">
+<meta property="article:tag" content="病毒、木马">
+<meta property="article:tag" content="漏洞渗透">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401310014172.jpg">
   
   
   
-  <title>数据结构——认识数据结构（一） - 程序书架</title>
+  <title>CTF学习——前言 - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -249,7 +256,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数据结构——认识数据结构（一）"></span>
+            <span id="subtitle" data-typed-text="CTF学习——前言"></span>
           
         </div>
 
@@ -260,8 +267,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-30 22:13" pubdate>
-          2024年1月30日 晚上
+        <time datetime="2024-01-31 00:08" pubdate>
+          2024年1月31日 凌晨
         </time>
       </span>
     
@@ -272,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          298 字
+          300 字
         
       </span>
     
@@ -328,45 +335,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数据结构——认识数据结构（一）</h1>
+            <h1 id="seo-header">CTF学习——前言</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="认识数据结构"><a href="#认识数据结构" class="headerlink" title="认识数据结构"></a>认识数据结构</h1><h2 id="一、非数值型数据表示出现问题"><a href="#一、非数值型数据表示出现问题" class="headerlink" title="一、非数值型数据表示出现问题"></a>一、非数值型数据表示出现问题</h2><ul>
-<li>需要知道各个个体的基本信息</li>
-<li>需要了解各个个体之间的关系</li>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​		从今天起<strong>（2024年1月31日）</strong>正式开始CTF的学习之旅，但是这套教程还是需要基本的<strong>数据库、前端三件套、py基础知识</strong> 的，不然你可能看我的教程会比较吃力，这三部分基本的语法知识不会带大家详细说明的。</p>
+<h2 id="一、CTF是什么"><a href="#一、CTF是什么" class="headerlink" title="一、CTF是什么"></a>一、CTF是什么</h2><p>​		中文一般译作<strong>夺旗赛</strong>（对大部分新手也可以叫<strong>签到赛</strong>），在网络安全领域中指的是网络安全技术人员之间进行技术竞技的一种比赛形式。<br>​		<strong>CTF</strong>起源于1996年<strong>DEFCON全球黑客大会</strong>，以代替之前黑客们通过互相发起真实攻击进行技术比拼的方式。</p>
+<p>​		</p>
+<h2 id="二、学习内容分类"><a href="#二、学习内容分类" class="headerlink" title="二、学习内容分类"></a>二、学习内容分类</h2><h4 id="基本确定分为6类"><a href="#基本确定分为6类" class="headerlink" title="基本确定分为6类"></a>基本确定分为6类</h4><ul>
+<li><h3 id="Web-网络安全"><a href="#Web-网络安全" class="headerlink" title="Web(网络安全)"></a>Web(网络安全)</h3></li>
+<li><h3 id="MISC-安全杂项"><a href="#MISC-安全杂项" class="headerlink" title="MISC(安全杂项)"></a>MISC(安全杂项)</h3></li>
+<li><h3 id="Crypto-密码学"><a href="#Crypto-密码学" class="headerlink" title="Crypto(密码学)"></a>Crypto(密码学)</h3></li>
+<li><h3 id="Reverse-逆向"><a href="#Reverse-逆向" class="headerlink" title="Reverse(逆向)"></a>Reverse(逆向)</h3></li>
+<li><h3 id="PWN-二进制安全"><a href="#PWN-二进制安全" class="headerlink" title="PWN(二进制安全)"></a>PWN(二进制安全)</h3></li>
+<li><h3 id="Mobile-移动安全"><a href="#Mobile-移动安全" class="headerlink" title="Mobile(移动安全)"></a>Mobile(移动安全)</h3></li>
 </ul>
-<h2 id="二、数据"><a href="#二、数据" class="headerlink" title="二、数据"></a>二、数据</h2><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
-<li>数据是信息的载体，是描述客观事物属性的数、字符以及能输入到计算机中并被计算机程序识别额符号集合。数据是计算机程序加工的原材料</li>
-</ul>
-<h2 id="三、数据元素、数据项、组合项"><a href="#三、数据元素、数据项、组合项" class="headerlink" title="三、数据元素、数据项、组合项"></a>三、数据元素、数据项、组合项</h2><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><ul>
-<li>数据元素是数据的基本单位，是用来描述一个整体的 一个数据元素可由若干个数据项组成，数据项是构成数据元素的不可分割的最小单位</li>
-</ul>
-<h4 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302146895.png" srcset="/img/loading.gif" lazyload alt="image-20240130214611329" style="zoom: 50%;" />
-
-
-
-<h2 id="四、数据对象"><a href="#四、数据对象" class="headerlink" title="四、数据对象"></a>四、数据对象</h2><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><ul>
-<li>是具有相同性质的数据元素的集合，是数据的一个子集</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302147245.png" srcset="/img/loading.gif" lazyload alt="image-20240130214658197" style="zoom:50%;" />
-
-
-
-<h2 id="五、数据结构"><a href="#五、数据结构" class="headerlink" title="五、数据结构"></a>五、数据结构</h2><h4 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h4><p>​		是相互之间存在一种多种特定关系的数据元素的集合</p>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
-<li><p>同一个数据对象里的数据元素可以组成不同的数据结构</p>
-</li>
-<li><p>不同的数据对象可以组成相同的数据结构</p>
-</li>
-<li><h4 id="线性关系"><a href="#线性关系" class="headerlink" title="线性关系"></a>线性关系</h4> <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302149618.png" srcset="/img/loading.gif" lazyload alt="image-20240130214907690" style="zoom:50%;" />
-</li>
-<li><h4 id="网状关系"><a href="#网状关系" class="headerlink" title="网状关系"></a>网状关系</h4></li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302213341.png" srcset="/img/loading.gif" lazyload alt="image-20240130214942710" style="zoom:50%;" />
-
-<h3 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a><font color='red'>未完待续……</font></h3>
+<p>但是听说最近几次比赛中开始涉及到<strong>区块链</strong>的知识了！，这个部分学习可就是个大大的问号了！！!</p>
+<h2 id="三、未来规划"><a href="#三、未来规划" class="headerlink" title="三、未来规划"></a>三、未来规划</h2><p>CTF内容我将不会日更，计划会在学习完成之后统一将全部笔记直接发出</p>
+<h4 id="持续……"><a href="#持续……" class="headerlink" title="持续……"></a><font color='red'><strong>持续……</strong></font></h4>
                 
               </div>
             
@@ -384,7 +371,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/" class="category-chain-item">数据结构系列</a>
+  <a href="/categories/CTF%E5%AD%A6%E4%B9%A0/" class="category-chain-item">CTF学习</a>
   
   
 
@@ -399,11 +386,25 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%BA%95%E5%B1%82/" class="print-no-link">#底层</a>
+        <a href="/tags/%E7%BD%91%E7%BB%9C/" class="print-no-link">#网络</a>
       
-        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
+        <a href="/tags/%E7%AB%9E%E8%B5%9B/" class="print-no-link">#竞赛</a>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="print-no-link">#数据库</a>
+      
+        <a href="/tags/Python/" class="print-no-link">#Python</a>
+      
+        <a href="/tags/H5%E3%80%81CSS%E3%80%81JAVASCRIPT/" class="print-no-link">#H5、CSS、JAVASCRIPT</a>
+      
+        <a href="/tags/PHP%E3%80%81apache/" class="print-no-link">#PHP、apache</a>
+      
+        <a href="/tags/burpsuite/" class="print-no-link">#burpsuite</a>
+      
+        <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" class="print-no-link">#SQL注入</a>
+      
+        <a href="/tags/%E7%97%85%E6%AF%92%E3%80%81%E6%9C%A8%E9%A9%AC/" class="print-no-link">#病毒、木马</a>
+      
+        <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%B8%97%E9%80%8F/" class="print-no-link">#漏洞渗透</a>
       
     </div>
   
@@ -415,8 +416,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数据结构——认识数据结构（一）</div>
-      <div>http://example.com/2024/01/30/数据结构——认识数据结构（一）/</div>
+      <div>CTF学习——前言</div>
+      <div>http://example.com/2024/01/31/CTF学习——前言/</div>
     </div>
     <div class="license-meta">
       
@@ -428,7 +429,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月30日</div>
+          <div>2024年1月31日</div>
         </div>
       
       
@@ -460,9 +461,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/31/CTF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%89%8D%E8%A8%80/" title="CTF学习——前言">
+                      <a href="/2024/01/31/2024%E5%B9%B41%E6%9C%8830%E6%97%A5/" title="2024年1月30日">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CTF学习——前言</span>
+                        <span class="hidden-mobile">2024年1月30日</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -470,8 +471,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E5%89%8D%E8%A8%80/" title="数据结构——前言">
-                        <span class="hidden-mobile">数据结构——前言</span>
+                      <a href="/2024/01/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89/" title="数据结构——认识数据结构（一）">
+                        <span class="hidden-mobile">数据结构——认识数据结构（一）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
