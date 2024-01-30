@@ -16,26 +16,26 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了 一、初步认识Git​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可以恢复到以前任意时刻的状态。同时它还支持跨区域多人协作编辑，是团队项目开发的必备基础。 二、Git基本概">
+    <meta name="description" content="JetBrains插件制作——主题（一） - 掘金 (juejin.cn) JetBrains插件制作——主题（二） - 掘金 (juejin.cn) 一、开发平台选择官网 基于 DevKit 的主题项目（一开始从简为主，起步更重要）​		使用 DevKit 开发主题插件是最简单的解决方案，不需要使用 Gradle 或类似构建工具的经验。默认情况下，使用“新建项目向导”创建 IDE 插件主题项目时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git系列（二）——初步认识Git">
-<meta property="og:url" content="http://example.com/2024/01/30/Git%E7%B3%BB%E5%88%97%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86Git/index.html">
+<meta property="og:title" content="如何自己写一个IDEA插件（一）">
+<meta property="og:url" content="http://example.com/2024/01/30/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AAIDEA%E6%8F%92%E4%BB%B6%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="前言​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了 一、初步认识Git​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可以恢复到以前任意时刻的状态。同时它还支持跨区域多人协作编辑，是团队项目开发的必备基础。 二、Git基本概">
+<meta property="og:description" content="JetBrains插件制作——主题（一） - 掘金 (juejin.cn) JetBrains插件制作——主题（二） - 掘金 (juejin.cn) 一、开发平台选择官网 基于 DevKit 的主题项目（一开始从简为主，起步更重要）​		使用 DevKit 开发主题插件是最简单的解决方案，不需要使用 Gradle 或类似构建工具的经验。默认情况下，使用“新建项目向导”创建 IDE 插件主题项目时">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300100488.png">
-<meta property="article:published_time" content="2024-01-30T12:48:01.000Z">
-<meta property="article:modified_time" content="2024-01-30T13:11:06.979Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302120399.png">
+<meta property="article:published_time" content="2024-01-30T13:17:08.000Z">
+<meta property="article:modified_time" content="2024-01-30T13:21:52.782Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="Git">
 <meta property="article:tag" content="开发">
-<meta property="article:tag" content="控制">
+<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300100488.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302120399.png">
   
   
   
-  <title>Git系列（二）——初步认识Git - 程序书架</title>
+  <title>如何自己写一个IDEA插件（一） - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -249,7 +249,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Git系列（二）——初步认识Git"></span>
+            <span id="subtitle" data-typed-text="如何自己写一个IDEA插件（一）"></span>
           
         </div>
 
@@ -260,7 +260,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-30 20:48" pubdate>
+        <time datetime="2024-01-30 21:17" pubdate>
           2024年1月30日 晚上
         </time>
       </span>
@@ -272,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          509 字
         
       </span>
     
@@ -283,7 +283,7 @@
         
         
         
-          13 分钟
+          5 分钟
         
       </span>
     
@@ -328,89 +328,27 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Git系列（二）——初步认识Git</h1>
+            <h1 id="seo-header">如何自己写一个IDEA插件（一）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了</p>
-<h2 id="一、初步认识Git"><a href="#一、初步认识Git" class="headerlink" title="一、初步认识Git"></a>一、初步认识Git</h2><p>​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可<strong>以恢复到以前任意时刻的状态</strong>。同时它还<strong>支持跨区域多人协作编辑</strong>，是团队项目开发的必备基础。</p>
-<h2 id="二、Git基本概念术语"><a href="#二、Git基本概念术语" class="headerlink" title="二、Git基本概念术语"></a>二、Git基本概念术语</h2><table>
-<thead>
-<tr>
-<th align="center">概念名称</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">头<strong>（HEAD）</strong></td>
-<td align="center">HEAD类似于一个“指针”，指向的就是<font color='red'><strong>当前分支的最新版本</strong></font></td>
-</tr>
-<tr>
-<td align="center">提交<strong>（Commit）</strong></td>
-<td align="center">将暂缓区变更内容提交到当前仓库的活动分支</td>
-</tr>
-<tr>
-<td align="center">推送<strong>（Push）</strong></td>
-<td align="center">將本地仓库的版本推送到服务端<strong>（远程）</strong>仓库</td>
-</tr>
-<tr>
-<td align="center">拉取<strong>（Pull）</strong></td>
-<td align="center">从服务端（远程）仓库获取更新到本地仓库，获取他人共享的更新。</td>
-</tr>
-<tr>
-<td align="center">获取<strong>（Fetch）</strong></td>
-<td align="center">从服务端（远程）仓库更新，和Pull一个作用，但是不会自动合并</td>
-</tr>
-<tr>
-<td align="center">冲突<strong>（Conflict）</strong></td>
-<td align="center"><font color='red'><strong>多人对同一文件副本进行操作进行修改</strong></font>，并将这些更改合并到仓库时就会出现多个版本的情况，内容修改各不相同，这时候我们就需要将修改的部分<font color='red'><strong>全部融合到一个版本</strong></font>去</td>
-</tr>
-<tr>
-<td align="center">合并<strong>（Merge）</strong></td>
-<td align="center">对冲突的文件进行合并操作，<code>Git</code>会自动合并更改内容，会自动处理冲突内容等待提示信息</td>
-</tr>
-<tr>
-<td align="center">标签<strong>（Tags）</strong></td>
-<td align="center">指的是某个分支某个特定的时间点状态，可以直接理解为<font color='red'><strong>提交记录</strong></font>，标记一个版本号</td>
-</tr>
-<tr>
-<td align="center">分支<strong>（Branch）</strong></td>
-<td align="center">分支是从主线分离出来的“副本”，可以独立操作互不干扰，仓库初始化有一个默认主分支<font color='red'><strong><code>main</code></strong></font>,2020年之前的默认分支为<font color='red'><strong><code>master</code></strong></font></td>
-</tr>
-<tr>
-<td align="center">工作区<strong>（Workspace）</strong></td>
-<td align="center">就是我们电脑看到的代码库目录，我们日常“搬砖”的地方</td>
-</tr>
-<tr>
-<td align="center">暂缓区<strong>（stage）</strong></td>
-<td align="center">用于*<font color='red'><strong>临时存放文件的修改</strong></font>，实际上就是一个<font color='red'><strong><code>.git</code></strong></font>文件，保存列表信息</td>
-</tr>
-<tr>
-<td align="center">版本库&#x2F;仓库<strong>（Repository）</strong></td>
-<td align="center"><font color='red'><strong>Git管理仓库</strong></font>，记录文件&#x2F;目录状态的地方，所有内容的修改记录都在这里</td>
-</tr>
-<tr>
-<td align="center">服务端&#x2F;远程仓库<strong>（origin&#x2F;remote）</strong></td>
-<td align="center"><font color='red'><strong>服务端的版本库</strong></font>，专用的Git服务器，为多人共享 提供服务器，<code>push</code>指令把代码推送到服务器端版本库</td>
-</tr>
-<tr>
-<td align="center">本地仓库</td>
-<td align="center">用户机器上直接使用的版本库</td>
-</tr>
-</tbody></table>
-<h2 id="三、工作区-暂缓区-仓库"><a href="#三、工作区-暂缓区-仓库" class="headerlink" title="三、工作区 &#x2F; 暂缓区 &#x2F; 仓库"></a>三、工作区 &#x2F; 暂缓区 &#x2F; 仓库</h2><h4 id="流程理解"><a href="#流程理解" class="headerlink" title="流程理解"></a>流程理解</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302051093.png" srcset="/img/loading.gif" lazyload alt="Git2.1"></p>
-<h2 id="四、Git的基本流程"><a href="#四、Git的基本流程" class="headerlink" title="四、Git的基本流程"></a>四、Git的基本流程</h2><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401291245406.webp" srcset="/img/loading.gif" lazyload alt="3810ba37b21e48859a855eda9a61e1bd~tplv-k3u1fbpfcp-jj-mark_3024_0_0_0_q75"></p>
-<p>​		小明是一个刚刚毕业的大学生，被一家知名的互联网企业签下了，由于第一次参与企业级大型项目，所以对于复杂的 Git 工作流十分的不熟悉，于是公司的老员工们纷纷来帮助他。</p>
-<p>​		小明先是打开了公司开源的 Git 仓库地址，并利用 Git 工具 clone 下来了项目的代码，但是一看到上百条分支就头晕了，于是老员工 Jack 拿出了上面那张 Git 基本工作流的图片来一一为他讲解，Jack 说：其实呢，之所以创建这么多的分支的原因就是为了方便基于老代码进行的优化和更新的新代码能够根据不同的变化占有一个分支，将一大个复杂的问题分类成一个个小的问题，从而下派给各个部门进行工作，这样不同的部门各自管理一条各自的分支，工作就井然有序啦！</p>
-<p>​		小明说：哦，原来是这样，那这个图上这些分支的名字都代表什么含义呢？</p>
-<p>​		这时另一名老员工 Smith 说：这张图呢是我们企业最初一张基本的 Git 工作流的图咯，现在已经非常复杂了，不过对于你初步理解整个流程是非常好的，那么这个<strong>Master</strong>分支，顾名思义就是我们的<strong>主分支</strong>啦，是我们所有部门整合起来的一个主分支，代表了我们项目整体的走向，每次一个<strong>子分支</strong>完成测试后就将其 <strong>merge</strong> 到 <strong>Master</strong> 分支然后再进行整体的测试，如果一个版本的功能已经完成全部测试，那么就将其发放到 <strong>Release</strong> 分支啦，也就是正式发行给大众的分支，就像咱们平时使用的某一款软件的一个版本更新一样（类比上图就相当于基于 <strong>Master</strong> 分支创建了一个 <strong>Develop</strong> 分支，然后 Develop 分支开发到一定程度后将其 <strong>merge</strong> 到 <strong>Release</strong> 分支和 <strong>Master</strong> 分支），那么图中的 <strong>HotFix</strong> 分支顾名思义就是处理一些突发 bug 的分支，进行快速修改再重新 <strong>Merge</strong> 到 <strong>Master</strong> 分支，<strong>Feature</strong> 分支就是代表一个个新功能的分支。</p>
-<p>​		小明说：哦，原来如此，明白了，那我就利用手上的 Git 工具进行一下实践试试看咯！</p>
-<p>​		另一名老员工小姐姐 Mary 说：嗯嗯，有什么问题可以继续问我们哦，哦对了，你有没有考虑过这样一种情况呢，如果在 <strong>Master</strong> 分支的某一个节点创建了一个子分支，并在子分支对文件 1 进行了修改，与此同时 <strong>Master</strong> 分支也对文件 1 进行了修改，然后子分支 <strong>Merge</strong> 到了 <strong>Master</strong> 分支，这时候怎么处理呐！</p>
-<p>​		小明说：哦，这不是合并冲突嘛！通常我们就手动的查看冲突的内容，通过一些解决冲突的工具，比如 <strong>mergetool</strong> 或者是 IDE 中的一些插件，然后选择自己想要留下的那个文件的内容就可以啦！解决冲突之后再进行 <strong>Merge</strong></p>
-<p>大家露出了欣慰的表情，都回到了自己的工位。。。。。</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7283315133140729896">https://juejin.cn/post/7283315133140729896</a></p>
-
+                <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7312655375002320931#heading-0">JetBrains插件制作——主题（一） - 掘金 (juejin.cn)</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7313027887884189711">JetBrains插件制作——主题（二） - 掘金 (juejin.cn)</a></p>
+<h2 id="一、开发平台选择"><a href="#一、开发平台选择" class="headerlink" title="一、开发平台选择"></a>一、开发平台选择</h2><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a><a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/docs/intellij/welcome.html">官网</a></h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300917056.png" srcset="/img/loading.gif" lazyload alt="image-20240130091727347"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300919031.png" srcset="/img/loading.gif" lazyload alt="image-20240130091928459"></p>
+<h3 id="基于-DevKit-的主题项目（一开始从简为主，起步更重要）"><a href="#基于-DevKit-的主题项目（一开始从简为主，起步更重要）" class="headerlink" title="基于 DevKit 的主题项目（一开始从简为主，起步更重要）"></a>基于 DevKit 的主题项目（一开始从简为主，起步更重要）</h3><p>​		使用 DevKit 开发主题插件是最简单的解决方案，不需要使用 Gradle 或类似构建工具的经验。默认情况下，使用“新建项目向导”创建 IDE 插件主题项目时，会生成 DevKit 项目结构。</p>
+<h3 id="基于-Gradle-的主题项目"><a href="#基于-Gradle-的主题项目" class="headerlink" title="基于 Gradle 的主题项目"></a>基于 Gradle 的主题项目</h3><p>​		使用 Gradle 开发主题插件需要具备 Gradle 或类似构建工具的经验。它提供了自动化开发过程某些部分的可能性，例如使用主题插件版本和其他数据修补**<a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html">plugin .xml</a>** 文件，以及在 CI 服务器上构建插件发行版并将其发布到 <a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/">JetBrains Marketplace</a>。</p>
+<h2 id="二、正式开始开发"><a href="#二、正式开始开发" class="headerlink" title="二、正式开始开发"></a>二、正式开始开发</h2><h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><ul>
+<li>搭建开发环境</li>
+<li>创建主题项目</li>
+<li>自定义主题</li>
+<li>构建并运行项目</li>
+<li>在IDE内部部署</li>
+<li>上传主题到插件市场</li>
+</ul>
+<h3 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h3><h4 id="第一步：搭建开发环境"><a href="#第一步：搭建开发环境" class="headerlink" title="第一步：搭建开发环境"></a>第一步：搭建开发环境</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300926570.png" srcset="/img/loading.gif" lazyload alt="image-20240130092635578"></p>
+<p>至此，本人使用的是2023.2.5版本的，因此就需要自行安装了，点击<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300926570.png">这里</a>这里即可安装插件。**(注意我这个版本就刚好就和此插件不兼容，2.4都兼容，只能说运气有点好，只能重新下载最新版本的IDEA去)**</p>
+<h4 id="第二步：提高一些JDK版本"><a href="#第二步：提高一些JDK版本" class="headerlink" title="第二步：提高一些JDK版本"></a>第二步：提高一些JDK版本</h4><h4 id="第三步：选择Add-IntelliJ-Platform-Plugin-SDK…"><a href="#第三步：选择Add-IntelliJ-Platform-Plugin-SDK…" class="headerlink" title="第三步：选择Add IntelliJ Platform Plugin SDK…"></a>第三步：选择<strong>Add IntelliJ Platform Plugin SDK…</strong></h4><h4 id="第四步：选择你的IDE安装目录"><a href="#第四步：选择你的IDE安装目录" class="headerlink" title="第四步：选择你的IDE安装目录"></a>第四步：选择你的IDE安装目录</h4><h4 id="第五步：最后指定一下Sandbox-Home的路径-环境配置"><a href="#第五步：最后指定一下Sandbox-Home的路径-环境配置" class="headerlink" title="第五步：最后指定一下Sandbox Home的路径,环境配置"></a>第五步：最后指定一下Sandbox Home的路径,环境配置</h4><h3 id="创建一个主题项目"><a href="#创建一个主题项目" class="headerlink" title="创建一个主题项目"></a>创建一个主题项目</h3><h4 id="第一步：和其他创建流程几乎差不多……"><a href="#第一步：和其他创建流程几乎差不多……" class="headerlink" title="第一步：和其他创建流程几乎差不多……"></a>第一步：和其他创建流程几乎差不多……</h4><h4 id="第二步：初始化完成后"><a href="#第二步：初始化完成后" class="headerlink" title="第二步：初始化完成后"></a>第二步：初始化完成后</h4><h4 id="第三步：目录介绍"><a href="#第三步：目录介绍" class="headerlink" title="第三步：目录介绍"></a>第三步：目录介绍</h4><h4 id="第四步：运行与调试，配置一下，运行之后会出现一个新的IDEA，然后我们直接去设置Settings即可看到想过，开始的效果奇丑无比，下一节我们将会详细说说怎么调整样式"><a href="#第四步：运行与调试，配置一下，运行之后会出现一个新的IDEA，然后我们直接去设置Settings即可看到想过，开始的效果奇丑无比，下一节我们将会详细说说怎么调整样式" class="headerlink" title="第四步：运行与调试，配置一下，运行之后会出现一个新的IDEA，然后我们直接去设置Settings即可看到想过，开始的效果奇丑无比，下一节我们将会详细说说怎么调整样式"></a>第四步：运行与调试，配置一下，运行之后会出现一个新的IDEA，然后我们直接去设置Settings即可看到想过，开始的效果奇丑无比，下一节我们将会详细说说怎么调整样式</h4><h3 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a><font color='red'><strong>未完待续……</strong></font></h3>
                 
               </div>
             
@@ -428,7 +366,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Git%E7%B3%BB%E5%88%97/" class="category-chain-item">Git系列</a>
+  <a href="/categories/%E8%87%AA%E5%B7%B1%E5%86%99IDEA%E6%8F%92%E4%BB%B6/" class="category-chain-item">自己写IDEA插件</a>
   
   
 
@@ -443,11 +381,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Git/" class="print-no-link">#Git</a>
-      
         <a href="/tags/%E5%BC%80%E5%8F%91/" class="print-no-link">#开发</a>
       
-        <a href="/tags/%E6%8E%A7%E5%88%B6/" class="print-no-link">#控制</a>
+        <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
       
     </div>
   
@@ -459,8 +397,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Git系列（二）——初步认识Git</div>
-      <div>http://example.com/2024/01/30/Git系列（二）——初步认识Git/</div>
+      <div>如何自己写一个IDEA插件（一）</div>
+      <div>http://example.com/2024/01/30/如何自己写一个IDEA插件（一）/</div>
     </div>
     <div class="license-meta">
       
@@ -504,18 +442,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/30/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AAIDEA%E6%8F%92%E4%BB%B6%EF%BC%88%E4%B8%80%EF%BC%89/" title="如何自己写一个IDEA插件（一）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">如何自己写一个IDEA插件（一）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/30/Git%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E5%88%9D%E5%AD%A6Github/" title="Git系列（一）——初学github">
-                        <span class="hidden-mobile">Git系列（一）——初学github</span>
+                      <a href="/2024/01/30/Git%E7%B3%BB%E5%88%97%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86Git/" title="Git系列（二）——初步认识Git">
+                        <span class="hidden-mobile">Git系列（二）——初步认识Git</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
