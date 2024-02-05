@@ -16,24 +16,26 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2024年 1月30日 Day 018Daily Reading Accumlation： 要是有人问你：这件衣服好看吗？你就回：这件比你上次的那件还要好看。（一句话夸了两次衣服）  当别人想让你办卡说可以优惠时你就回：不用了，谢谢，我想让你们老板多赚点。  你请吃饭客人说菜点多了你可以说：您好不容易来一次，这饭店我也不熟，也不知道哪些菜符合您的口味，就多点了几道，尝尝看，不合适我们再换。招待不周">
+    <meta name="description" content="一、线性表的基本概念严谨定义​		线性表是具有相同数据类型的n(n≥0)个数据元素的有限序列，其中n为表长，当n&#x3D;0时线性表是一个空表。若用L命名线性表，则其一般表示为$$ L&#x3D;(a1,a2,…,aiai+1…,an)$$   专业概念 ai 是线性表的“第i个” 元素线性表中的位序  a1 是表头元素 ;an 是表尾元素  除了第一个元素之外，每个元素都只有一个直接前驱,比如">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024年1月30日">
-<meta property="og:url" content="http://example.com/2024/01/31/2024%E5%B9%B41%E6%9C%8830%E6%97%A5/index.html">
+<meta property="og:title" content="数据结构——简单的线性表（二）">
+<meta property="og:url" content="http://example.com/2024/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="2024年 1月30日 Day 018Daily Reading Accumlation： 要是有人问你：这件衣服好看吗？你就回：这件比你上次的那件还要好看。（一句话夸了两次衣服）  当别人想让你办卡说可以优惠时你就回：不用了，谢谢，我想让你们老板多赚点。  你请吃饭客人说菜点多了你可以说：您好不容易来一次，这饭店我也不熟，也不知道哪些菜符合您的口味，就多点了几道，尝尝看，不合适我们再换。招待不周">
+<meta property="og:description" content="一、线性表的基本概念严谨定义​		线性表是具有相同数据类型的n(n≥0)个数据元素的有限序列，其中n为表长，当n&#x3D;0时线性表是一个空表。若用L命名线性表，则其一般表示为$$ L&#x3D;(a1,a2,…,aiai+1…,an)$$   专业概念 ai 是线性表的“第i个” 元素线性表中的位序  a1 是表头元素 ;an 是表尾元素  除了第一个元素之外，每个元素都只有一个直接前驱,比如">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270043976.png">
-<meta property="article:published_time" content="2024-01-30T16:29:43.000Z">
-<meta property="article:modified_time" content="2024-01-30T16:33:48.500Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302120399.png">
+<meta property="article:published_time" content="2024-02-05T16:07:53.000Z">
+<meta property="article:modified_time" content="2024-02-05T16:08:40.118Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="日常">
+<meta property="article:tag" content="底层">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270043976.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302120399.png">
   
   
   
-  <title>2024年1月30日 - 程序书架</title>
+  <title>数据结构——简单的线性表（二） - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -247,7 +249,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2024年1月30日"></span>
+            <span id="subtitle" data-typed-text="数据结构——简单的线性表（二）"></span>
           
         </div>
 
@@ -258,8 +260,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-31 00:29" pubdate>
-          2024年1月31日 凌晨
+        <time datetime="2024-02-06 00:07" pubdate>
+          2024年2月6日 凌晨
         </time>
       </span>
     
@@ -270,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          362 字
+          1.1k 字
         
       </span>
     
@@ -281,7 +283,7 @@
         
         
         
-          4 分钟
+          9 分钟
         
       </span>
     
@@ -326,55 +328,58 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2024年1月30日</h1>
+            <h1 id="seo-header">数据结构——简单的线性表（二）</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="2024年-1月30日-Day-018"><a href="#2024年-1月30日-Day-018" class="headerlink" title="2024年 1月30日 Day 018"></a>2024年 1月30日 Day 018</h1><h2 id="Daily-Reading-Accumlation："><a href="#Daily-Reading-Accumlation：" class="headerlink" title="Daily Reading Accumlation："></a>Daily Reading Accumlation：</h2><ul>
-<li><h4 id="要是有人问你：这件衣服好看吗？"><a href="#要是有人问你：这件衣服好看吗？" class="headerlink" title="要是有人问你：这件衣服好看吗？"></a><strong>要是有人问你：这件衣服好看吗？</strong></h4><p>你就回：这件比你上次的那件还要好看。<strong>（一句话夸了两次衣服）</strong></p>
-</li>
-<li><h4 id="当别人想让你办卡说可以优惠时"><a href="#当别人想让你办卡说可以优惠时" class="headerlink" title="当别人想让你办卡说可以优惠时"></a><strong>当别人想让你办卡说可以优惠时</strong></h4><p>你就回：不用了，谢谢，我想让你们老板多赚点。</p>
-</li>
-<li><h4 id="你请吃饭客人说菜点多了"><a href="#你请吃饭客人说菜点多了" class="headerlink" title="你请吃饭客人说菜点多了"></a><strong>你请吃饭客人说菜点多了</strong></h4><p>你可以说：您好不容易来一次，这饭店我也不熟，也不知道哪些菜符合您的口味，就多点了几道，尝尝看，不合适我们再换。招待不周，请您多包涵。</p>
-</li>
-<li><h4 id="当领导问你：会喝酒吗？"><a href="#当领导问你：会喝酒吗？" class="headerlink" title="当领导问你：会喝酒吗？"></a><strong>当领导问你：会喝酒吗？</strong></h4><p>你可以回：我比较擅长倒酒。</p>
-</li>
-<li><h4 id="推荐网站：CPU-Monkey"><a href="#推荐网站：CPU-Monkey" class="headerlink" title="推荐网站：CPU-Monkey"></a>推荐网站：<strong>CPU-Monkey</strong></h4><p><a target="_blank" rel="noopener" href="https://www.cpu-monkey.com/zh-cn/">CPU比较&#x2F;处理器比较 (cpu-monkey.com)</a></p>
-</li>
-<li><h4 id="推荐网站：第一试卷网"><a href="#推荐网站：第一试卷网" class="headerlink" title="推荐网站：第一试卷网"></a>推荐网站：第一试卷网</h4><p><a target="_blank" rel="noopener" href="https://www.shijuan1.com/">第一试卷网 (shijuan1.com)</a></p>
-</li>
-<li><h4 id="地图生成器"><a href="#地图生成器" class="headerlink" title="地图生成器"></a>地图生成器</h4><p><a target="_blank" rel="noopener" href="https://datav.aliyun.com/portal/school/atlas/area_selector">DataV.GeoAtlas地理小工具系列 (aliyun.com)</a></p>
-</li>
-<li><h4 id="SeaTable"><a href="#SeaTable" class="headerlink" title="SeaTable"></a>SeaTable</h4><p><a target="_blank" rel="noopener" href="https://seatable.cn/">SeaTable - 新一代在线协同表格和数字化平台</a></p>
-<p>大概模式</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301132579.png" srcset="/img/loading.gif" lazyload alt="image-20240130113159013"></p>
-</li>
-<li><h4 id="熊猫搜书"><a href="#熊猫搜书" class="headerlink" title="熊猫搜书"></a>熊猫搜书</h4><p><a target="_blank" rel="noopener" href="https://xmsoushu.com/?hao.su#/">熊猫搜书</a></p>
-</li>
-<li><h4 id="懒人Excel"><a href="#懒人Excel" class="headerlink" title="懒人Excel"></a>懒人Excel</h4><p><a target="_blank" rel="noopener" href="https://www.lanrenexcel.com/">懒人Excel</a></p>
-</li>
-<li><h4 id="寻找系统镜像网站"><a href="#寻找系统镜像网站" class="headerlink" title="寻找系统镜像网站"></a>寻找系统镜像网站</h4><p><a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/">MSDN, 我告诉你 - 做一个安静的工具站 (itellyou.cn)</a></p>
-</li>
-<li><h4 id="加水印"><a href="#加水印" class="headerlink" title="加水印"></a>加水印</h4><p><a target="_blank" rel="noopener" href="https://www.lddgo.net/image/watermark">在线图片加水印 (lddgo.net)</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301628017.png" srcset="/img/loading.gif" lazyload alt="image-20240130162846768"></p>
-</li>
-</ul>
-<h2 id="【To-Do-List】"><a href="#【To-Do-List】" class="headerlink" title="【To Do List】"></a>【To Do List】</h2><ul>
-<li><input checked="" disabled="" type="checkbox"> 数据结构</li>
-<li><input checked="" disabled="" type="checkbox"> 掘金日签</li>
-<li><input checked="" disabled="" type="checkbox"> 博客日更第九天</li>
-<li><input checked="" disabled="" type="checkbox"> 每天写日记</li>
-<li><input disabled="" type="checkbox"> 单词</li>
-<li><input checked="" disabled="" type="checkbox"> 任何形式的阅读</li>
-<li><input disabled="" type="checkbox"> 项目重新开始启航</li>
-</ul>
-<hr>
-<ol>
-<li>今天也是平平平常常的一天，无特别之处就不记录了……</li>
-<li>明天开始大幅度缩减阅读时间，正式开始CTF的学习之旅……</li>
-</ol>
+                <h2 id="一、线性表的基本概念"><a href="#一、线性表的基本概念" class="headerlink" title="一、线性表的基本概念"></a>一、线性表的基本概念</h2><h4 id="严谨定义"><a href="#严谨定义" class="headerlink" title="严谨定义"></a>严谨定义</h4><p>​		线性表是具有<strong>相同</strong>数据类型的n(n≥0)个<strong>数据元素</strong>的<strong>有限序列</strong>，其中n为<strong>表长</strong>，当n&#x3D;0时线性表是一个空表。若用L命名线性表，则其一般表示为<br>$$<br> L&#x3D;(a<del>1</del>,a<del>2</del>,…,a<del>i</del>a<del>i+1</del>…,a<del>n</del>)<br>$$</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060004304.png" srcset="/img/loading.gif" lazyload alt="image-20240205205027913" style="zoom:50%;" />
 
+<h4 id="专业概念"><a href="#专业概念" class="headerlink" title="专业概念"></a>专业概念</h4><ul>
+<li><p><strong>a<del>i</del></strong> 是线性表的<strong>“第i个”</strong> 元素线性表中的<font color='red'><strong>位序</strong></font></p>
+</li>
+<li><p><strong>a<del>1</del></strong> 是<font color='red'><strong>表头元素</strong></font> ;<strong>a<del>n</del></strong> 是<font color='red'><strong>表尾元素</strong></font></p>
+</li>
+<li><p>除了第一个元素之外，每个元素都只有一个<font color='red'><strong>直接前驱</strong></font>,比如，**a<del>2</del>**是 <strong>a<del>1</del><strong>的</strong>直接前驱</strong>；除了最后一个元素之外，每个元素都只有一个<font color='red'><strong>直接后继</strong></font>例子和前面是同理的</p>
+</li>
+</ul>
+<h2 id="二、理解到底什么是线性表"><a href="#二、理解到底什么是线性表" class="headerlink" title="二、理解到底什么是线性表"></a>二、理解到底什么是线性表</h2><p>​		实际上线性表使用大白话来讲，可以理解为：<strong>将一组一组数据按照一定的关系联系起来的结构</strong>。例子</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060004535.png" srcset="/img/loading.gif" lazyload alt="image-20240205210833561" style="zoom:50%;" />
+
+
+
+<h2 id="三、线性表的基本操作（实际上之后我们介绍的每一种结构都是按照这种思路进行分析学习的）"><a href="#三、线性表的基本操作（实际上之后我们介绍的每一种结构都是按照这种思路进行分析学习的）" class="headerlink" title="三、线性表的基本操作（实际上之后我们介绍的每一种结构都是按照这种思路进行分析学习的）"></a>三、线性表的基本操作（实际上之后我们介绍的每一种结构都是按照这种思路进行分析学习的）</h2><ul>
+<li><h4 id="初始化操作（InitList-L-）"><a href="#初始化操作（InitList-L-）" class="headerlink" title="初始化操作（InitList(&amp;L)）"></a>初始化操作（InitList(&amp;L)）</h4></li>
+<li><h4 id="销毁操作（DestoryList-L-）"><a href="#销毁操作（DestoryList-L-）" class="headerlink" title="销毁操作（DestoryList(&amp;L)）"></a>销毁操作（DestoryList(&amp;L)）</h4></li>
+<li><h4 id="插入操作（ListInsert（-L，i，e））"><a href="#插入操作（ListInsert（-L，i，e））" class="headerlink" title="插入操作（ListInsert（&amp;L，i，e））"></a>插入操作（ListInsert（&amp;L，i，e））</h4></li>
+<li><h4 id="删除操作（ListDelete（-L，i，-e））"><a href="#删除操作（ListDelete（-L，i，-e））" class="headerlink" title="删除操作（ListDelete（&amp;L，i，&amp;e））"></a>删除操作（ListDelete（&amp;L，i，&amp;e））</h4></li>
+<li><h4 id="按值查找（LocateElem-L-e-）"><a href="#按值查找（LocateElem-L-e-）" class="headerlink" title="按值查找（LocateElem(L,.e)）"></a>按值查找（LocateElem(L,.e)）</h4></li>
+<li><h4 id="按位置查找（GetElem-L-i-）"><a href="#按位置查找（GetElem-L-i-）" class="headerlink" title="按位置查找（GetElem(L,i)）"></a>按位置查找（GetElem(L,i)）</h4></li>
+<li><h4 id="求线性表长-Length-L"><a href="#求线性表长-Length-L" class="headerlink" title="求线性表长(Length(L))"></a>求线性表长(Length(L))</h4></li>
+<li><h4 id="输出线性表所有元素"><a href="#输出线性表所有元素" class="headerlink" title="输出线性表所有元素"></a>输出线性表所有元素</h4></li>
+<li><h4 id="判断表是否为空"><a href="#判断表是否为空" class="headerlink" title="判断表是否为空"></a>判断表是否为空</h4></li>
+</ul>
+<h5 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h5><blockquote>
+<p><strong>&amp;这个符号的含义:</strong> 就是将参数修改的结果带回来。换句话说就是你给函数传了一个X，函数内部对X的处理会真正影响到函数外的X的数值，比如你调用一个函数实现X+1操作，那么你的原本数据也会随之加1.</p>
+</blockquote>
+<p>​		接下来我们就会讲解线性表的具体类型已经如何结合结构体来实现这种关系……</p>
+<h2 id="四、顺序表"><a href="#四、顺序表" class="headerlink" title="四、顺序表"></a>四、顺序表</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>​		用<strong>顺序存储</strong>的方式实现线性表顺序存储。把逻辑上相邻的元素存储在物理位置上也相邻的存储单元中，元素之间的关系由存储单元的<strong>邻接关系</strong>来体现。线性表是具有相同数据类型的所占空间大小也相同的n**(n≥0)**个数据元素的有限序列。</p>
+<h4 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Elemtype; <span class="hljs-comment">// 写Elemtype就相当于写int，好处是：之后你需要修改数据类型只需要修改此处的类型即可，不用全局修改</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MaxSize 10</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span>&#123;<br>    ElemType data[MaxSize]; <span class="hljs-comment">// 用静态的“数组”存放数据元素</span><br>    <span class="hljs-type">int</span> length; <span class="hljs-comment">// 顺序表长度</span><br>&#125;SqList;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="实现功能：初始化一个顺序表-完整代码"><a href="#实现功能：初始化一个顺序表-完整代码" class="headerlink" title="实现功能：初始化一个顺序表(完整代码)"></a>实现功能：初始化一个顺序表(完整代码)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 1、静态存储方式</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Elemtype; <br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MaxSize 10; <span class="hljs-comment">// 这里最好不要无限大，否则会存在浪费空间的情况</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>    ElemType data[MaxSize]; <br>    <span class="hljs-type">int</span> length;<br>&#125;SqList; <span class="hljs-comment">// 静态存储方式，就是说你事先已经规定好了存取的数组大小MaxSize</span><br><br><br><span class="hljs-comment">// 1、初始化功能</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">InitList</span><span class="hljs-params">(SqList &amp;L)</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; MaxSize; i ++) &#123;<br>        L.data[i] = <span class="hljs-number">0</span>; <span class="hljs-comment">// 一般的情况来说，全局变量的初始值均为0，但是肯呢个会存在脏数据，所以建议进行一下赋值为0的初始化操作</span><br>    &#125;<br>    L.length=o; <br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    SqList L;<br>    InitList(L); <span class="hljs-comment">// 初始化</span><br>    <span class="hljs-comment">// 待续......</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br><br><span class="hljs-comment">// 2、动态存储方式</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdilb.h&gt;</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Elemtype; <br><span class="hljs-meta">#<span class="hljs-keyword">define</span> InitSize 10; <span class="hljs-comment">// 这里最好不要无限大，否则会存在浪费空间的情况</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>    <span class="hljs-type">int</span> *data;<br>	<span class="hljs-type">int</span> MaxSize;<br>    <span class="hljs-type">int</span> length;<br>&#125;SqList; <span class="hljs-comment">// 动态存储</span><br><br><br><span class="hljs-comment">// 1、初始化功能</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">InitList</span><span class="hljs-params">(SqList &amp;L)</span> &#123;<br>	L.data=(<span class="hljs-type">int</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>) * InitSize);<br>    L.length=<span class="hljs-number">0</span>; <br>    L.MaxSize=InitSize;<br>&#125;<br><br><span class="hljs-comment">// 2、增长动态数组长度功能（注意：实际是给数组分配更多的空间）</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">InsertSqlist</span><span class="hljs-params">(Sqlist &amp;L,<span class="hljs-type">int</span> len)</span> &#123;<br>    <span class="hljs-type">int</span> *p = L.data;<br>    L.data=(<span class="hljs-type">int</span> *)<span class="hljs-built_in">malloc</span>((L.MaxSize + len)*<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; L.length; i++) &#123;<br>        L.data[i] = p[i];<br>    &#125;<br>    L.MaxSize = L,MaxSize + len;<br>    <span class="hljs-built_in">free</span>(p);<br>&#125;<br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    SqList L;<br>    InitList(L); <span class="hljs-comment">// 初始化</span><br>	InsertSqlist(L,<span class="hljs-number">5</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="顺序表特点"><a href="#顺序表特点" class="headerlink" title="顺序表特点"></a>顺序表特点</h4><ul>
+<li>随意访问，即可以在O(1)时间找到第i个元素</li>
+<li>存储密度高，每个节点只存储数据元素</li>
+<li>拓展容量不方便(即便使用动态分配的方式实现，时间复杂度也是很高的)</li>
+<li>插入删除操作不方便，需要移动大量元素</li>
+</ul>
+<h4 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a><font color='red'><strong>未完待续……</strong></font></h4>
                 
               </div>
             
@@ -392,7 +397,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%97%A5%E8%AE%B0/" class="category-chain-item">日记</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/" class="category-chain-item">数据结构系列</a>
   
   
 
@@ -407,7 +412,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%97%A5%E5%B8%B8/" class="print-no-link">#日常</a>
+        <a href="/tags/%E5%BA%95%E5%B1%82/" class="print-no-link">#底层</a>
+      
+        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
       
     </div>
   
@@ -419,8 +428,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2024年1月30日</div>
-      <div>http://example.com/2024/01/31/2024年1月30日/</div>
+      <div>数据结构——简单的线性表（二）</div>
+      <div>http://example.com/2024/02/06/数据结构——简单的线性表（二）/</div>
     </div>
     <div class="license-meta">
       
@@ -432,7 +441,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月31日</div>
+          <div>2024年2月6日</div>
         </div>
       
       
@@ -464,9 +473,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%88%E4%BA%8C%EF%BC%89/" title="数据结构——简单的线性表（二）">
+                      <a href="/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%89%8D%E8%A8%80/" title="PHP学习——前言">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数据结构——简单的线性表（二）</span>
+                        <span class="hidden-mobile">PHP学习——前言</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -474,8 +483,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/31/CTF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%89%8D%E8%A8%80/" title="CTF学习——前言">
-                        <span class="hidden-mobile">CTF学习——前言</span>
+                      <a href="/2024/01/31/2024%E5%B9%B41%E6%9C%8830%E6%97%A5/" title="2024年1月30日">
+                        <span class="hidden-mobile">2024年1月30日</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
