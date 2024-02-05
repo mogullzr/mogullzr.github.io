@@ -16,54 +16,25 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="title: PHP学习——文件和函数基础知识（四）index_img: https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;mogullzr&#x2F;Typora_img@main&#x2F;202402060012313.jpgdate: 2024-02-06 00:10:52categories: PHP学习(基础)tags:  学校课程 退役语言—  一、常用的系统函数1）有关输出的函数print()">
+    <meta name="description" content="一、常用的系统函数1）有关输出的函数print()：类似于 echo 输出提供的内容，本质是一个结构（不是函数），echo print(任何数值) 都是输出1 print_r(): 类似于var_dump,但是更简单，不会输出数据的类型，只会输出具体的数值   2）有关时间的函数date():  按照指定格式对对应的时间戳（从1970年格林威治时间开始计算的秒数），没有指定时间戳，就是默认当前的时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="程序书架">
+<meta property="og:title" content="PHP学习——文件和函数基础知识（四）">
 <meta property="og:url" content="http://example.com/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E5%9B%9B%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="title: PHP学习——文件和函数基础知识（四）index_img: https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;mogullzr&#x2F;Typora_img@main&#x2F;202402060012313.jpgdate: 2024-02-06 00:10:52categories: PHP学习(基础)tags:  学校课程 退役语言—  一、常用的系统函数1）有关输出的函数print()">
+<meta property="og:description" content="一、常用的系统函数1）有关输出的函数print()：类似于 echo 输出提供的内容，本质是一个结构（不是函数），echo print(任何数值) 都是输出1 print_r(): 类似于var_dump,但是更简单，不会输出数据的类型，只会输出具体的数值   2）有关时间的函数date():  按照指定格式对对应的时间戳（从1970年格林威治时间开始计算的秒数），没有指定时间戳，就是默认当前的时">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018348.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019802.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018508.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020436.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020821.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019593.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020807.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019305.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019078.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019636.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019298.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019741.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019891.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019706.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019314.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019037.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019516.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019257.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019843.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019612.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020445.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019020.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019239.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019059.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020551.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019662.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020350.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019028.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019315.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019211.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020965.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019920.png">
-<meta property="article:published_time" content="2024-02-05T16:10:52.060Z">
-<meta property="article:modified_time" content="2024-02-05T16:20:34.965Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060012313.jpg">
+<meta property="article:published_time" content="2024-02-05T16:10:52.000Z">
+<meta property="article:modified_time" content="2024-02-05T16:31:57.934Z">
 <meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="学校课程">
+<meta property="article:tag" content="退役语言">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018348.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060012313.jpg">
   
   
   
-  <title>程序书架</title>
+  <title>PHP学习——文件和函数基础知识（四） - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -277,7 +248,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="PHP学习——文件和函数基础知识（四）"></span>
           
         </div>
 
@@ -300,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.3k 字
         
       </span>
     
@@ -356,18 +327,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">PHP学习——文件和函数基础知识（四）</h1>
             
             
               <div class="markdown-body">
                 
-                <hr>
-<p>title: PHP学习——文件和函数基础知识（四）<br>index_img: <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060012313.jpg">https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060012313.jpg</a><br>date: 2024-02-06 00:10:52<br>categories: PHP学习(基础)<br>tags:</p>
-<ul>
-<li>学校课程</li>
-<li>退役语言—</li>
-</ul>
-<h2 id="一、常用的系统函数"><a href="#一、常用的系统函数" class="headerlink" title="一、常用的系统函数"></a>一、常用的系统函数</h2><h3 id="1）有关输出的函数"><a href="#1）有关输出的函数" class="headerlink" title="1）有关输出的函数"></a>1）有关输出的函数</h3><p><code>print()：</code>类似于 <code>echo</code> 输出提供的内容，本质是一个结构<strong>（不是函数）</strong>，<code>echo print(任何数值)</code> 都是输出1</p>
+                <h2 id="一、常用的系统函数"><a href="#一、常用的系统函数" class="headerlink" title="一、常用的系统函数"></a>一、常用的系统函数</h2><h3 id="1）有关输出的函数"><a href="#1）有关输出的函数" class="headerlink" title="1）有关输出的函数"></a>1）有关输出的函数</h3><p><code>print()：</code>类似于 <code>echo</code> 输出提供的内容，本质是一个结构<strong>（不是函数）</strong>，<code>echo print(任何数值)</code> 都是输出1</p>
 <p><code>print_r():</code> 类似于var_dump,但是更简单，不会输出数据的类型，只会输出具体的数值</p>
 <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018348.png" srcset="/img/loading.gif" lazyload alt="image-20240204165320284" style="zoom:50%;" />
 
@@ -501,6 +466,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/PHP%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E7%A1%80/" class="category-chain-item">PHP学习(基础)</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B/" class="print-no-link">#学校课程</a>
+      
+        <a href="/tags/%E9%80%80%E5%BD%B9%E8%AF%AD%E8%A8%80/" class="print-no-link">#退役语言</a>
+      
+    </div>
   
 </div>
 
@@ -510,7 +505,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
+      <div>PHP学习——文件和函数基础知识（四）</div>
       <div>http://example.com/2024/02/06/PHP学习——文件和函数基础知识（四）/</div>
     </div>
     <div class="license-meta">
@@ -565,8 +560,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E4%B9%8BHTML%E4%B8%8EPHP%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8%EF%BC%88%E4%B8%89%EF%BC%89/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E4%B9%8BHTML%E4%B8%8EPHP%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8%EF%BC%88%E4%B8%89%EF%BC%89/" title="PHP学习——语法基础之HTML与PHP的结合使用（三）">
+                        <span class="hidden-mobile">PHP学习——语法基础之HTML与PHP的结合使用（三）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
