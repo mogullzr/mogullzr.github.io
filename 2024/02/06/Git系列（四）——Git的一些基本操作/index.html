@@ -16,25 +16,26 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、定义包含符号[]、()都可以   $变量[] &#x3D; 值1;	&#x2F;&#x2F;如果不提供下标也可以，系统自动生成（数字：从0开始） $变量[下标] &#x3D; 值;	&#x2F;&#x2F;中括号里面的内容称之为下标key，该下标可以是字母（单词）或者数字，与变量命名的规则相似   二、特点 如果数组下标都为整数：索引数组  如果数组下标都为字符串：关联数组  数组元素的顺序以">
+    <meta name="description" content="一、Git 状态Git管理的文件有5种状态： 未跟踪： 新添加的文件，或者移除跟踪的文件，通过git add 添加 状态 未修改： 默认状态，从仓库出来的默认状态，无修改的状态 **已修改： ** 修改或者新增文件的状态 已暂存： 修改、新增文件加入暂缓区的状态 已修改： 从暂缓区提交到版本库  二、Git的配置文件的有关命令三种配置文件 系統全局配置：所有用戶、仓库的配置信息 用户全局配置：当前">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP学习——数组（七）">
-<meta property="og:url" content="http://example.com/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%EF%BC%88%E4%B8%83%EF%BC%89/index.html">
+<meta property="og:title" content="Git系列（四）——Git的一些基本操作">
+<meta property="og:url" content="http://example.com/2024/02/06/Git%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94Git%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="一、定义包含符号[]、()都可以   $变量[] &#x3D; 值1;	&#x2F;&#x2F;如果不提供下标也可以，系统自动生成（数字：从0开始） $变量[下标] &#x3D; 值;	&#x2F;&#x2F;中括号里面的内容称之为下标key，该下标可以是字母（单词）或者数字，与变量命名的规则相似   二、特点 如果数组下标都为整数：索引数组  如果数组下标都为字符串：关联数组  数组元素的顺序以">
+<meta property="og:description" content="一、Git 状态Git管理的文件有5种状态： 未跟踪： 新添加的文件，或者移除跟踪的文件，通过git add 添加 状态 未修改： 默认状态，从仓库出来的默认状态，无修改的状态 **已修改： ** 修改或者新增文件的状态 已暂存： 修改、新增文件加入暂缓区的状态 已修改： 从暂缓区提交到版本库  二、Git的配置文件的有关命令三种配置文件 系統全局配置：所有用戶、仓库的配置信息 用户全局配置：当前">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060012313.jpg">
-<meta property="article:published_time" content="2024-02-05T16:11:16.000Z">
-<meta property="article:modified_time" content="2024-02-05T16:31:51.704Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300100488.png">
+<meta property="article:published_time" content="2024-02-06T14:23:17.000Z">
+<meta property="article:modified_time" content="2024-02-06T14:24:35.558Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="学校课程">
-<meta property="article:tag" content="退役语言">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="开发">
+<meta property="article:tag" content="控制">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060012313.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300100488.png">
   
   
   
-  <title>PHP学习——数组（七） - 程序书架</title>
+  <title>Git系列（四）——Git的一些基本操作 - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,7 +249,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PHP学习——数组（七）"></span>
+            <span id="subtitle" data-typed-text="Git系列（四）——Git的一些基本操作"></span>
           
         </div>
 
@@ -259,8 +260,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-06 00:11" pubdate>
-          2024年2月6日 凌晨
+        <time datetime="2024-02-06 22:23" pubdate>
+          2024年2月6日 晚上
         </time>
       </span>
     
@@ -271,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          329 字
+          993 字
         
       </span>
     
@@ -282,7 +283,7 @@
         
         
         
-          3 分钟
+          9 分钟
         
       </span>
     
@@ -327,55 +328,90 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">PHP学习——数组（七）</h1>
+            <h1 id="seo-header">Git系列（四）——Git的一些基本操作</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h2><p>包含符号<code>[]</code>、<code>()</code>都可以</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022712.png" srcset="/img/loading.gif" lazyload alt="image-20240205170941322" style="zoom:50%;" />
-
-<p><strong>$变量[] &#x3D; 值1;</strong>	&#x2F;&#x2F;如果不提供下标也可以，系统自动生成（数字：从0开始）</p>
-<p><strong>$变量[下标] &#x3D; 值;</strong>	&#x2F;&#x2F;中括号里面的内容称之为下标key，该下标可以是字母（单词）或者数字，与变量命名的规则相似</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022095.png" srcset="/img/loading.gif" lazyload alt="image-20240205171145374" style="zoom:50%;" />
-
-<h2 id="二、特点"><a href="#二、特点" class="headerlink" title="二、特点"></a>二、特点</h2><ul>
-<li><p><strong>如果数组下标都为整数：</strong>索引数组</p>
-</li>
-<li><p><strong>如果数组下标都为字符串：</strong>关联数组</p>
-</li>
-<li><p>数组元素的顺序以放入顺序为准，跟下标无关</p>
-</li>
-<li><p><strong>数字下标的自增长特性：</strong>从0开始自动增长，如果中间手动出现较大的，那么后面的自增长元素从最大的值+1开始</p>
-</li>
-<li><p>PHP中数组元素没有类型限制</p>
-</li>
-<li><p>PHP中数组元素没有长度限制</p>
-</li>
-<li><p>特殊值下标的自动转换</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022380.png" srcset="/img/loading.gif" lazyload alt="image-20240205172206016" style="zoom:50%;" /></li>
+                <h2 id="一、Git-状态"><a href="#一、Git-状态" class="headerlink" title="一、Git 状态"></a>一、Git 状态</h2><h4 id="Git管理的文件有5种状态："><a href="#Git管理的文件有5种状态：" class="headerlink" title="Git管理的文件有5种状态："></a><code>Git</code>管理的文件有5种状态：</h4><ul>
+<li><font color='skeBlue'><strong>未跟踪：</strong></font> 新添加的文件，或者移除跟踪的文件，通过<font color='red'><strong><code>git add</code></strong></font> 添加 状态</li>
+<li><font color='keyblue'><strong>未修改：</strong></font> 默认状态，从仓库出来的默认状态，无修改的状态</li>
+<li><font color='keyblue'>**已修改： **</font> 修改或者新增文件的状态</li>
+<li><font color='keyblue'><strong>已暂存：</strong></font> 修改、新增文件加入暂缓区的状态</li>
+<li><font color='keyblue'><strong>已修改：</strong></font> 从暂缓区提交到版本库</li>
 </ul>
-<h2 id="三、多维数组"><a href="#三、多维数组" class="headerlink" title="三、多维数组"></a>三、多维数组</h2><h4 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h4><p>数组中所有的元素都是一维数组	</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022727.png" srcset="/img/loading.gif" lazyload alt="image-20240205171534496" style="zoom:50%;" />
-
-<h4 id="异型数组"><a href="#异型数组" class="headerlink" title="异型数组"></a>异型数组</h4><p>数组中的元素不规则，有普通基本变量也有数组。</p>
-<h2 id="四、数组遍历"><a href="#四、数组遍历" class="headerlink" title="四、数组遍历"></a>四、数组遍历</h2><h4 id="简化写法"><a href="#简化写法" class="headerlink" title="简化写法"></a>简化写法</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022151.png" srcset="/img/loading.gif" lazyload alt="image-20240205172358856" style="zoom:50%;" />
-
-<h4 id="Foreach-遍历语句（一维数组）"><a href="#Foreach-遍历语句（一维数组）" class="headerlink" title="Foreach 遍历语句（一维数组）"></a>Foreach 遍历语句（一维数组）</h4><h5 id="无下标"><a href="#无下标" class="headerlink" title="无下标"></a>无下标</h5><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022607.png" srcset="/img/loading.gif" lazyload alt="image-20240205172629922" style="zoom:50%;" />
-
-<h5 id="有下标"><a href="#有下标" class="headerlink" title="有下标"></a>有下标</h5><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022903.png" srcset="/img/loading.gif" lazyload alt="image-20240205172755036" style="zoom:67%;" />
-
-<h4 id="Foreach-遍历语句（二维数组）"><a href="#Foreach-遍历语句（二维数组）" class="headerlink" title="Foreach 遍历语句（二维数组）"></a>Foreach 遍历语句（二维数组）</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022071.png" srcset="/img/loading.gif" lazyload alt="image-20240205173031104"></p>
-<h4 id="FOR循环遍历数组"><a href="#FOR循环遍历数组" class="headerlink" title="FOR循环遍历数组"></a>FOR循环遍历数组</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022366.png" srcset="/img/loading.gif" lazyload alt="image-20240205173158213" style="zoom:50%;" />
-
-<h2 id="五、数组排序函数"><a href="#五、数组排序函数" class="headerlink" title="五、数组排序函数"></a>五、数组排序函数</h2><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022944.png" srcset="/img/loading.gif" lazyload alt="image-20240205184756972" style="zoom:50%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022551.png" srcset="/img/loading.gif" lazyload alt="image-20240205184809364" style="zoom:50%;" /></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022879.png" srcset="/img/loading.gif" lazyload alt="image-20240205184851077" style="zoom:50%;" />
-
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060022991.png" srcset="/img/loading.gif" lazyload alt="image-20240205184950005" style="zoom:50%;" />
+<h2 id="二、Git的配置文件的有关命令"><a href="#二、Git的配置文件的有关命令" class="headerlink" title="二、Git的配置文件的有关命令"></a>二、Git的配置文件的有关命令</h2><h4 id="三种配置文件"><a href="#三种配置文件" class="headerlink" title="三种配置文件"></a>三种配置文件</h4><ul>
+<li><font color='keyblue'><strong>系統全局配置：</strong></font>所有用戶、仓库的配置信息</li>
+<li><font color='keyblue'><strong>用户全局配置：</strong></font>当前系统用户的全局配置</li>
+<li><font color='keyblue'><strong>仓库&#x2F;项目配置：</strong></font></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看git配置</span><br>$ git config --list<br>$ git config -l<br><br><span class="hljs-comment"># 查看系统配置</span><br>$ git config --system --list <br><br><span class="hljs-comment"># 查看当前用户的全局配置</span><br>$ git conifg --list --global<br><br><span class="hljs-comment"># 查看当前仓库配置信息</span><br>$ git config --<span class="hljs-built_in">local</span> --list <br><br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="六、数组指针函数（用了再学）"><a href="#六、数组指针函数（用了再学）" class="headerlink" title="六、数组指针函数（用了再学）"></a>六、数组指针函数（用了再学）</h2><h4 id="……"><a href="#……" class="headerlink" title="……."></a><font color='red'><strong>…….</strong></font></h4><h2 id=""><a href="#" class="headerlink" title="&lt;&#x2F;七、数组相关函数"></a>&lt;&#x2F;七、数组相关函数</h2><h4 id="……-1"><a href="#……-1" class="headerlink" title="……."></a><font color='red'><strong>…….</strong></font></h4>
+<h4 id="配置-忽略文件-gitgnore"><a href="#配置-忽略文件-gitgnore" class="headerlink" title="配置 - 忽略文件.gitgnore"></a>配置 - 忽略文件.gitgnore</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302051489.jpg" srcset="/img/loading.gif" lazyload alt="Git图片2.3"></p>
+<p>这个文件里面配置的就是你在山传文件的时候忽略哪些类型的文件，这里面的<strong>主要语法就是Linux的通配符</strong>，常用通配符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 表示注释</span><br>*.md <span class="hljs-comment">#表示忽略所有后缀为md的文件</span><br>!1.md <span class="hljs-comment">#表示忽略除了1.md外的文件</span><br>/bin <span class="hljs-comment">#仅忽略项目根目录下bin文件，不包括其他目录下的</span><br>bin/ <span class="hljs-comment">#忽略bin/目录下的所有文件</span><br>bin/*.md <span class="hljs-comment">#举个例子：忽略bin/1.md但是不忽略bin/a/1.md</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="三、Git的GUI工具（选学）"><a href="#三、Git的GUI工具（选学）" class="headerlink" title="三、Git的GUI工具（选学）"></a>三、Git的GUI工具（选学）</h2><p>​		GUI界面：直白就是<font color='red'><strong>使用鼠标操作的git</strong></font>，前面我们所学的可以称之为 <font color='red'><strong>使用键盘输入的git</strong></font></p>
+<h2 id="GUI管理工具：SourceTree"><a href="#GUI管理工具：SourceTree" class="headerlink" title="GUI管理工具：SourceTree"></a>GUI管理工具：SourceTree</h2><p>SourceTree<a target="_blank" rel="noopener" href="https://www.sourcetreeapp.com/">官网</a> 下载</p>
+<ul>
+<li>基本就是通过按钮的方式支持管理多个仓库，通过+按钮，可选择多种方式添加仓库</li>
+</ul>
+<h2 id="四、创建本地工作取仓库"><a href="#四、创建本地工作取仓库" class="headerlink" title="四、创建本地工作取仓库"></a>四、创建本地工作取仓库</h2><p>一般就是两个办法：</p>
+<ul>
+<li>一种是创建完全新的仓库：<font color='red'><strong><code>git init</code></strong></font>，会出现一个**<code>.git</code>**文件夹</li>
+<li>另一种是克隆远程仓库,<font color='red'><strong><code>git clone 复制仓库对应的HTTPS</code></strong></font></li>
+</ul>
+<h2 id="五、暂存区add"><a href="#五、暂存区add" class="headerlink" title="五、暂存区add"></a>五、暂存区add</h2><p><font color='red'><strong><code>git add</code></strong></font>命令就是把需要提交的所有修改放到暂存区<strong>（Stage）</strong>里去，然后，执行<font color='red'><strong><code>git commit</code></strong></font>就可以将所有暂存区的内容添加到版本库离去。</p>
+<table>
+<thead>
+<tr>
+<th><strong>指令</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git add 多个文件或者目录</td>
+<td>添加文件到暂存区，包括修改的文件和新增的文件和文件夹（包括子目录）</td>
+</tr>
+<tr>
+<td>git add .</td>
+<td>同上，添加<font color='red'><strong>所有</strong></font>修改、新增文件<strong>（未跟踪）</strong>到暂存区</td>
+</tr>
+<tr>
+<td>git rm 文件</td>
+<td>删除工作区文件，并且将这次删除放入暂存区</td>
+</tr>
+<tr>
+<td>git mv 文件名1 文件名2</td>
+<td>将文件名字修改后同时加入暂缓区内</td>
+</tr>
+</tbody></table>
+<h2 id="六、提交记录commit"><a href="#六、提交记录commit" class="headerlink" title="六、提交记录commit"></a>六、提交记录commit</h2><p>每次<font color='red'><strong><code>git commit</code></strong></font>之后就会生成一个快照记录<font color='red'><strong><code>id + 描述 +快照内容</code></strong></font>按照时间顺序存储在数据库里面，如下图</p>
+<ul>
+<li><p><font color='keyblue'><strong>git commit id:</strong></font>这个id我们一般不需要将所有的位数都写出来，只需要取其中几个即可，这个就是git的核心强大功能之一</p>
+</li>
+<li><p><font color='keyblue'><strong>git commit -m “描述信息：</strong></font>提交变更，参数<code>-m</code>设置提交的描述信息，应该正确提交，不带该参数会进入说明编辑模式。这个描述信息最好精确填写，方便后续寻找记录</p>
+</li>
+<li><p><font color='keyblue'><strong>快照：</strong></font>记录在<font color='red'><strong><code>\.git\objects</code></strong></font>里面</p>
+</li>
+<li><p><font color='keyblue'><strong>多个提交形成的时间线（图解）</strong></font></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401311318823.png" srcset="/img/loading.gif" lazyload alt="git5.1"></p>
+</li>
+<li><p><font color='keyblue'><strong>git commit -a：</strong></font> 参数<font color='red'><strong><code>-a</code></strong></font> 作用就是可以将工作区提交到版本库，跳过了<font color='red'><strong><code>git add</code></strong></font>，但是不会添加新增文件</p>
+</li>
+<li><p><font color='keyblue'><strong>git log [-n数字] [–oneline] [-] [–follow 文件]：</strong></font> 参数<font color='red'><strong><code>-n数字</code></strong></font>作用是显示指定次数的日志信息，本人目前只提交过两次信息。参数<font color='red'><strong><code>--oneline</code></strong></font>可以将每次提交信息一行输出，<font color='red'><strong><code>--graph</code></strong></font>  可视化显示分支关系，<font color='red'><strong><code>--follow 文件</code></strong></font> 显示某个文集拿的版本历史</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401311301336.png" srcset="/img/loading.gif" lazyload alt="Git5.2"></p>
+</li>
+<li><p><font color='keyblue'><strong>git reflog：</strong></font> 查看所有历史记录<strong>（上面中图片中的HEAD，就是你目前指向版本库的位置）</strong> </p>
+</li>
+<li><p><font color='keyblue'><strong>git status：</strong></font>查看本地仓库状态，比较常用的指令，加参数<font color='red'><strong><code>-s</code></strong></font>为简洁模式</p>
+</li>
+</ul>
+
                 
               </div>
             
@@ -393,7 +429,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/PHP%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E7%A1%80/" class="category-chain-item">PHP学习(基础)</a>
+  <a href="/categories/Git%E7%B3%BB%E5%88%97/" class="category-chain-item">Git系列</a>
   
   
 
@@ -408,9 +444,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B/" class="print-no-link">#学校课程</a>
+        <a href="/tags/Git/" class="print-no-link">#Git</a>
       
-        <a href="/tags/%E9%80%80%E5%BD%B9%E8%AF%AD%E8%A8%80/" class="print-no-link">#退役语言</a>
+        <a href="/tags/%E5%BC%80%E5%8F%91/" class="print-no-link">#开发</a>
+      
+        <a href="/tags/%E6%8E%A7%E5%88%B6/" class="print-no-link">#控制</a>
       
     </div>
   
@@ -422,8 +460,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PHP学习——数组（七）</div>
-      <div>http://example.com/2024/02/06/PHP学习——数组（七）/</div>
+      <div>Git系列（四）——Git的一些基本操作</div>
+      <div>http://example.com/2024/02/06/Git系列（四）——Git的一些基本操作/</div>
     </div>
     <div class="license-meta">
       
@@ -467,18 +505,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/06/Git%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Git/" title="Git系列（三）——第一次使用Git">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Git系列（三）——第一次使用Git</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88%E5%85%AD%EF%BC%89/" title="PHP学习——字符串（六）">
-                        <span class="hidden-mobile">PHP学习——字符串（六）</span>
+                      <a href="/2024/02/06/Git%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8Git/" title="Git系列（三）——第一次使用Git">
+                        <span class="hidden-mobile">Git系列（三）——第一次使用Git</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
