@@ -16,16 +16,16 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、数的进制转换（—）（简单-）大家好，我是小刘，现在我正在学习计算机的基础知识：进制转换，但是现在有个问题，我发现学校交给我们进制转换仅仅是2、8、10、16进制之间的转换，现在我想设计一段代码，可以实现任何进制数对任何进制数之间的转换。 注意：字母这里可能为大小写字母，不需要考虑大小写问题，比如Ab23。 输入格式输入一个字符串 X，X的进制为Y，需要转化为的进制为Z。 输出格式输出转换为Z进">
+    <meta name="description" content="前言​	先照顾一下基础薄弱的同学，介绍一下什么是栈。 ​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈   进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进  出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1  空栈：栈内没有小球（元素）  一、模拟栈（简单-）实现一个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3、天梯赛——进制转换类型题目（2月12日）">
-<meta property="og:url" content="http://example.com/2024/02/11/3%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%882%E6%9C%8812%E6%97%A5%EF%BC%89/index.html">
+<meta property="og:title" content="4、天梯赛——栈（一）（2月13日）">
+<meta property="og:url" content="http://example.com/2024/02/11/4%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%882%E6%9C%8813%E6%97%A5%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="一、数的进制转换（—）（简单-）大家好，我是小刘，现在我正在学习计算机的基础知识：进制转换，但是现在有个问题，我发现学校交给我们进制转换仅仅是2、8、10、16进制之间的转换，现在我想设计一段代码，可以实现任何进制数对任何进制数之间的转换。 注意：字母这里可能为大小写字母，不需要考虑大小写问题，比如Ab23。 输入格式输入一个字符串 X，X的进制为Y，需要转化为的进制为Z。 输出格式输出转换为Z进">
+<meta property="og:description" content="前言​	先照顾一下基础薄弱的同学，介绍一下什么是栈。 ​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈   进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进  出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1  空栈：栈内没有小球（元素）  一、模拟栈（简单-）实现一个">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
-<meta property="article:published_time" content="2024-02-11T06:04:04.000Z">
-<meta property="article:modified_time" content="2024-02-11T06:40:58.005Z">
+<meta property="article:published_time" content="2024-02-11T15:09:48.000Z">
+<meta property="article:modified_time" content="2024-02-11T15:12:49.186Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="天梯赛">
@@ -34,7 +34,7 @@
   
   
   
-  <title>3、天梯赛——进制转换类型题目（2月12日） - 程序书架</title>
+  <title>4、天梯赛——栈（一）（2月13日） - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,7 +248,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="3、天梯赛——进制转换类型题目（2月12日）"></span>
+            <span id="subtitle" data-typed-text="4、天梯赛——栈（一）（2月13日）"></span>
           
         </div>
 
@@ -259,8 +259,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-11 14:04" pubdate>
-          2024年2月11日 下午
+        <time datetime="2024-02-11 23:09" pubdate>
+          2024年2月11日 晚上
         </time>
       </span>
     
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          376 字
+          536 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -327,147 +327,86 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">3、天梯赛——进制转换类型题目（2月12日）</h1>
+            <h1 id="seo-header">4、天梯赛——栈（一）（2月13日）</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="一、数的进制转换（—）（简单-）"><a href="#一、数的进制转换（—）（简单-）" class="headerlink" title="一、数的进制转换（—）（简单-）"></a>一、数的进制转换（—）<font color='green'>（简单-）</font></h1><p>大家好，我是小刘，现在我正在学习计算机的基础知识：进制转换，但是现在有个问题，我发现学校交给我们进制转换仅仅是2、8、10、16进制之间的转换，现在我想设计一段代码，可以实现任何进制数对任何进制数之间的转换。</p>
-<p>注意：字母这里可能为大小写字母，不需要考虑大小写问题，比如Ab23。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一个字符串 X，X的进制为Y，需要转化为的进制为Z。</p>
-<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出转换为Z进制的数X的格式。</p>
-<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1 &lt;&#x3D; X.length() &lt;&#x3D; 5\<br>2&lt;&#x3D;Y&lt;&#x3D;36\<br>2&lt;&#x3D;Z&lt;&#x3D;36<br>$$</p>
-<h4 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">10<br>2<br>7<br></code></pre></td></tr></table></figure>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	先照顾一下基础薄弱的同学，介绍一下什么是栈。</p>
+<p>​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112052380.png" srcset="/img/loading.gif" lazyload alt="image-20240211205239864" style="zoom:50%;" />
 
-<h4 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">2<br></code></pre></td></tr></table></figure>
+<h4 id="进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进"><a href="#进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进" class="headerlink" title="进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进"></a>进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112054922.png" srcset="/img/loading.gif" lazyload alt="image-20240211205345226" style="zoom:50%;" />
+
+<h4 id="出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1"><a href="#出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1" class="headerlink" title="出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1"></a>出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112055341.png" srcset="/img/loading.gif" lazyload alt="image-20240211205537544" style="zoom:50%;" />
+
+<h4 id="空栈：栈内没有小球（元素）"><a href="#空栈：栈内没有小球（元素）" class="headerlink" title="空栈：栈内没有小球（元素）"></a>空栈：栈内没有小球（元素）</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112058912.png" srcset="/img/loading.gif" lazyload alt="image-20240211205803296" style="zoom:50%;" />
+
+<h2 id="一、模拟栈（简单-）"><a href="#一、模拟栈（简单-）" class="headerlink" title="一、模拟栈（简单-）"></a>一、模拟栈<font color='green'>（简单-）</font></h2><p>实现一个栈，栈初始为空，支持四种操作：</p>
+<ol>
+<li><code>push x</code> – 向栈顶插入一个数 x；</li>
+<li><code>pop</code> – 从栈顶弹出一个数；</li>
+<li><code>empty</code> – 判断栈是否为空；</li>
+<li><code>query</code> – 查询栈顶元素。</li>
+</ol>
+<p>现在要对栈进行 M 个操作，其中的每个操作 33 和操作 44 都要输出相应的结果。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 M，表示操作次数。</p>
+<p>接下来 M 行，每行包含一个操作命令，操作命令为 <code>push x</code>，<code>pop</code>，<code>empty</code>，<code>query</code> 中的一种。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>对于每个 <code>empty</code> 和 <code>query</code> 操作都要输出一个查询结果，每个结果占一行。</p>
+<p>其中，<code>empty</code> 操作的查询结果为 <code>YES</code> 或 <code>NO</code>，<code>query</code> 操作的查询结果为一个整数，表示栈顶元素的值。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤M≤100000\<br>1≤x≤109<br>$$</p>
+<p>所有操作保证合法。</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-number">10</span><br><span class="hljs-built_in">push</span> <span class="hljs-number">5</span><br>query<br><span class="hljs-built_in">push</span> <span class="hljs-number">6</span><br><span class="hljs-built_in">pop</span><br>query<br><span class="hljs-built_in">pop</span><br>empty<br><span class="hljs-built_in">push</span> <span class="hljs-number">4</span><br>query<br>empty<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-number">5</span><br><span class="hljs-number">5</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-number">4</span><br><span class="hljs-keyword">NO</span><br></code></pre></td></tr></table></figure>
 
 
 
-<h4 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">A123</span><br><span class="hljs-number">11</span><br><span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">54142<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><details>
-    <summary>思路</summary>
-    <pre>
-    可以选择先将这个数转换为10进制，再将其转换为对应进制，这个思路是最常见最简单的一套思路
-    </pre>
-</details>
-
-
-
-
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>​	<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112130123.png" srcset="/img/loading.gif" lazyload alt="image-20240211213008658" style="zoom:50%;" /></p>
+<p>​	此时的top&#x3D;3，指向的是元素st[3] &#x3D; 4。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
 #include < iostream>
-#include < algorithm>
-#include < vector>
 using namespace std;
-string x;
-int y,z;
-int k = 1;
-long long ans;
-vector< int> C;
-int main() 
+const int N = 1e5 + 10;
+int st[N],top;
+int n;
+// 初始化栈
+void Init()
 {
-    cin >> x >> y >> z;        
-    for (int i = x.size() - 1; i >= 0; i--) 
-    {
-        if (x[i] >= 'A' && x[i] <= 'Z') ans += (x[i] - 'A' + 10) * k;
-        if (x[i] >= 'a' && x[i] <= 'z') ans += (x[i] - 'a' + 10) * k;
-        else ans += (x[i] - '0') * k;
-        k *= y;
-    }
-    // 下面这种写法也可以
-    //for (int i = x.size() - 1; i >= 0; i--) 
-    //{
-    //    x[i] = tolower(x[i]); // 这个函数的作用是将字母转换为小写字母，比如'A'变为'a',
-    //    if (x[i] >= 'a' && x[i] <= 'z') ans += (x[i] - 'a' + 10) * k;
-    //    else ans += (x[i] - '0') * k;
-    //    k *= y;
-    //}
-    while (ans){
-        C.push_back(ans % z);
-        ans /= z;
-    } 
-    for (int i = C.size() - 1; i >= 0; i--) cout << C[i];
-    return 0;
-}
-        </blockcode>
-    </pre>
-</details>
-
-
-
-
-<h2 id="二、数的进制转换（二）（简单）"><a href="#二、数的进制转换（二）（简单）" class="headerlink" title="二、数的进制转换（二）（简单）"></a>二、数的进制转换（二）<font color='green'>（简单）</font></h2><p>编写一个程序，可以实现将一个数字由一个进制转换为另一个进制。</p>
-<p>这里有 62 个不同数位 **{0−9,A−Z,a−z}{0−9}**。</p>
-<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行输入一个整数，代表接下来的行数。</p>
-<p>接下来每一行都包含三个数字，首先是输入进制（十进制表示），然后是输出进制（十进制表示），最后是用输入进制表示的输入数字，数字之间用空格隔开。</p>
-<p>输入进制和输出进制都在 22 到 6262 的范围之内。</p>
-<p>（在十进制下）A&#x3D;10，B&#x3D;11，…，Z&#x3D;35，a&#x3D;36，b&#x3D;37，…，z&#x3D;61 (0−9 仍然表示 0−9)。</p>
-<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>对于每一组进制转换，程序的输出都由三行构成。</p>
-<p>第一行包含两个数字，首先是输入进制（十进制表示），然后是用输入进制表示的输入数字。</p>
-<p>第二行包含两个数字，首先是输出进制（十进制表示），然后是用输出进制表示的输入数字。</p>
-<p>第三行为空白行。</p>
-<p>同一行内数字用空格隔开。</p>
-<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">8</span><br><span class="hljs-symbol">62 </span><span class="hljs-number">2</span> abcdefghiz<br><span class="hljs-symbol">10 </span><span class="hljs-number">16</span> <span class="hljs-number">1234567890123456789012345678901234567890</span><br><span class="hljs-symbol">16 </span><span class="hljs-number">35</span> <span class="hljs-number">3</span>A0C92075C0DBF3B8ACBC5F96CE3F0AD2<br><span class="hljs-symbol">35 </span><span class="hljs-number">23</span> <span class="hljs-number">333</span>YMHOUE8JPLT7OX6K9FYCQ8A<br><span class="hljs-symbol">23 </span><span class="hljs-number">49</span> <span class="hljs-number">946</span>B9AA02MI37E3D3MMJ4G7BL2F05<br><span class="hljs-symbol">49 </span><span class="hljs-number">61</span> <span class="hljs-number">1</span>VbDkSIMJL3JjRgAdlUfcaWj<br><span class="hljs-symbol">61 </span><span class="hljs-number">5</span> dl9MDSWqwHjDnToKcsWE1S<br><span class="hljs-symbol">5 </span><span class="hljs-number">10</span> <span class="hljs-number">42104444441001414401221302402201233340311104212022133030</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">62 </span>abcdefghiz<br><span class="hljs-symbol">2 </span><span class="hljs-number">11011100000100010111110010010110011111001001100011010010001</span><br><br><span class="hljs-symbol">10 </span><span class="hljs-number">1234567890123456789012345678901234567890</span><br><span class="hljs-symbol">16 </span><span class="hljs-number">3</span>A0C92075C0DBF3B8ACBC5F96CE3F0AD2<br><br><span class="hljs-symbol">16 </span><span class="hljs-number">3</span>A0C92075C0DBF3B8ACBC5F96CE3F0AD2<br><span class="hljs-symbol">35 </span><span class="hljs-number">333</span>YMHOUE8JPLT7OX6K9FYCQ8A<br><br><span class="hljs-symbol">35 </span><span class="hljs-number">333</span>YMHOUE8JPLT7OX6K9FYCQ8A<br><span class="hljs-symbol">23 </span><span class="hljs-number">946</span>B9AA02MI37E3D3MMJ4G7BL2F05<br><br><span class="hljs-symbol">23 </span><span class="hljs-number">946</span>B9AA02MI37E3D3MMJ4G7BL2F05<br><span class="hljs-symbol">49 </span><span class="hljs-number">1</span>VbDkSIMJL3JjRgAdlUfcaWj<br><br><span class="hljs-symbol">49 </span><span class="hljs-number">1</span>VbDkSIMJL3JjRgAdlUfcaWj<br><span class="hljs-symbol">61 </span>dl9MDSWqwHjDnToKcsWE1S<br><br><span class="hljs-symbol">61 </span>dl9MDSWqwHjDnToKcsWE1S<br><span class="hljs-symbol">5 </span><span class="hljs-number">42104444441001414401221302402201233340311104212022133030</span><br><br><span class="hljs-symbol">5 </span><span class="hljs-number">42104444441001414401221302402201233340311104212022133030</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">1234567890123456789012345678901234567890</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>​	和上一道题目思路几乎一致</p>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
-    <summary>答案（请自己先思考一下再参考）</summary>
-    <pre>
-        <blockcode>#include <iostream>
-#include < algorithm>
-#include < cstring>
-using namespace std;
-const int Max = 1100;
-#define fir(a,b,c) for (int a = b;a <= c;a++)
-int t[Max],A[Max],n,m,i,len,k;
-char str1[Max], str2[Max];
-void solve()
-{
-    k=0;
-    len = strlen(str1);
-    for(i=len; i >= 0; i--) 
-        t[len - i - 1] = str1[i] -(str1[i]<58 ? 48: str1[i]<97 ? 55: 61);//开始转换成为十进制
-    while(len)
-    {
-    //这个写法大家
-        for(i = len; i >= 1; i--) 
-        {
-            t[i - 1] +=t[i] % m * n;//开始计算,首先*n,为n进制,然后转移到m进制
-            t[i] /= m;//当前数已经处理完了
-        }
-        A[k++] = t[0] % m;//直接加到答案数组中
-        t[0] /= m;//当前数已经处理完了
-        while(len > 0&& !t[len - 1])  //处理0的情况
-            len--;
-    }
-    str2[k] =NULL;//第k位,我们不需要,直接抛去,利用NULL这个特殊的字符串结束符,具体可以自行百度.
-    fir(i,0,k - 1)//这里使用这个写法就是让大家熟悉一下，之后使用这个方法可以简化代码
-        str2[k - 1 - i] = A[i]+(A[i] < 10 ? 48: A[i] < 36 ? 55:61);//三目运算符,这段代码的意思是,
-        // 找这个数字对应的字母
+    top = -1; // top是栈顶，一开始没有元素，初始化为-1,top指向的就是栈顶部元素的下标，请看上图理解top
 }
 int main()
 {
-    int t;
-    scanf("%d\n",&t);
-    while(t--) 
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >> n;
+    Init();//1、初始化栈
+    while (n--)
     {
-        scanf("%d %d %s\n",&n,&m,str1);
-        solve();
-        printf("%d %s\n%d %s\n\n",n,str1,m,str2);
+        string s;
+        cin >> s;
+        if (s == "push") // 入栈
+        {
+            int x;
+            cin >> x;
+            st[++top] = x;
+        }
+        else if (s == "pop") // 出栈
+        {
+            top--;
+        }
+        else if (s == "empty") // 判断栈是否为空
+        {
+            if(top == -1) cout << "YES\n"; 
+            else cout << "NO\n";
+        }
+        else // 查询栈的顶部元素
+        {
+            cout << st[top] << '\n';            
+        }
     }
-    return 0;
 }
         </blockcode>
     </pre>
@@ -477,60 +416,151 @@ int main()
 
 
 
-<h2 id="三、数列（简单）"><a href="#三、数列（简单）" class="headerlink" title="三、数列（简单）"></a>三、数列<font color='green'>（简单）</font></h2><p>给定一个正整数 k，把所有 k 的方幂及所有有限个互不相等的 k 的方幂之和构成一个递增的序列，例如，当 k&#x3D;3 时，这个序列是：</p>
-<p>1，3，4，9，10，12，13，…</p>
-<p>该序列实际上就是：3^0^，3^1^，3^0^+3^1^，3^2^，3^0^+3^2^，3^1^+3^2^，3^0^+3^1^+3^2^……</p>
-<p>请你求出这个序列的第 N 项的值（N 用 10 进制数表示，从 1 开始）。 </p>
-<p>例如，对于 k&#x3D;3，N&#x3D;100正确答案应该是 981。</p>
-<h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入文件只有 11 行，为 22 个正整数，用一个空格隔开：k,N,。</p>
-<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出文件为计算结果，是一个正整数（在所有的测试数据中，结果均不超过 2.1×1092.1×109）。（整数前不要有空格和其他符号）。</p>
-<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>3≤k≤15\<br>10≤N≤1000<br>$$</p>
-<h4 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">3 </span><span class="hljs-number">100</span><br></code></pre></td></tr></table></figure>
+<h2 id="二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）"><a href="#二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）" class="headerlink" title="二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）"></a>二、火车进栈<font color='green'>（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）</font></h2><p>这里有 n 列火车将要进站再出站，但是，每列火车只有 11 节，那就是车头。</p>
+<p>这 n 列火车按 1 到 n 的顺序从东方左转进站，这个车站是南北方向的，它虽然无限长，只可惜是一个死胡同，而且站台只有一条股道，火车只能倒着从西方出去，而且每列火车必须进站，先进后出。</p>
+<p>也就是说这个火车站其实就相当于一个栈，每次可以让右侧头火车进栈，或者让栈顶火车出站。</p>
+<p>下面是火车进站的一种方式的动态图：</p>
+<p>​						<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112112783.gif" srcset="/img/loading.gif" lazyload alt="动画" style="zoom:30%;" /></p>
+<p>现在请你按字典序输出前 20 种可能的出栈方案。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一个整数 n，代表火车数量。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>按照《字典序》输出前 2020 种答案，每行一种，不要空格。</p>
+<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>1≤n≤20</p>
+<h4 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">3<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs">123<br>132<br>213<br>231<br>321<br></code></pre></td></tr></table></figure>
 
 
 
-<h4 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">981<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><details>
-    <summary>思路</summary>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>​	使用最基础的dfs的思想</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
-这道题目实质上就是一个扩展思维类型题目，大家可以仔细观察一下题目给出的一串数列，然后再结合二进制来看一下就不难看出就是一个从1~n的二进制数的排列罢了，比如说：对于数字9而言对应二进制位1001,那么我们对应数列的项就是3^0 + 3^3。
+        <blockcode>
+#include< iostream>
+#include< vector>
+using namespace std;
+const int N = 2e1 + 5;
+int n, remain = 0;
+int tt, stk[N];
+vector< int> path;
+void dfs(int u) {
+    if (u == n + 1) { // edge：边界
+        if (++remain > 20) {
+            exit(0);
+        }
+        for (auto x:path) { //输出路径中的
+            cout << x;
+        }
+        // 如果没有数字可用了, 那么输出一下path+栈中的数字
+        for (int i = tt - 1; i >= 0; i--) { //输出栈中剩下的(后进先出
+            cout << stk[i];
+        }
+        cout << endl;
+        return;
+    }
+    if (tt) {
+        path.push_back(stk[--tt]);
+        dfs(u);
+        stk[tt++] = path.back();
+        path.pop_back();
+    }
+    stk[tt++] = u;
+    dfs(u + 1);
+    tt--;
+}
+int main() {
+    cin >> n;
+    dfs(1);
+    return 0;
+}
+        </blockcode>
     </pre>
 </details>
 
 
 
 
+<h2 id="三、有效括号（简单-）"><a href="#三、有效括号（简单-）" class="headerlink" title="三、有效括号（简单+）"></a>三、有效括号<font color='green'>（简单+）</font></h2><p>小刘在大一下学期学习到了数据结构栈操作中的经典例题，但是他不会写，请帮助他编写C++代码解决下列例题。</p>
+<p>给定一个只包括 ‘(’，‘)’，‘{’，‘}’，‘[’，‘]’ 的字符串 s ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<p>左括号必须用相同类型的右括号闭合。</p>
+<p>左括号必须以正确的顺序闭合。</p>
+<p>每个右括号都有一个对应的相同类型的左括号。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “()”<br>输出：<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 
+<p>示例 2：</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “()[]&#123;&#125;”<br>输出：<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “(]”<br>输出：<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>&lt;= s.length &lt;= <span class="hljs-number">104</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>s 仅由括号 <code>‘()[]&#123;&#125;’</code> 组成</p>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>​	代码中有解释</p>
 <h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
 #include < iostream>
-#include < cmath>
+#include < algorithm>
+#include < stack>
 using namespace std;
-typedef long long LL;
-int k, n;
-LL ans;
 int main()
 {
-    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
-    cin >> k >> n;
-    for (int i = 0; i < 15;i ++) {
-        if ((n >> i) & 1) {
-            ans += pow(k, i);
+    string s;
+    cin >> s;
+    if(s.size()== 0)
+    {
+        cout << "false"; 
+        return 0;
+    }
+    if(s.size()%2 == 1)
+    {
+        cout << "false";
+        return 0;
+    }
+    if(s[0] &&(s[0]== ']' || s[0]== '}'||s[0] == ')'  )) {
+        cout <<  "false";
+        return 0;
+    }
+    int length = s.size() ; 
+    stack< char> charst ; 
+    char current_deal_char; // 当前处理的字符
+    for(int i = 0 ;i < length ; i++) {
+        if(charst.size() == 0 && (s[i]== ']' || s[i]== '}'||s[i] == ')'  )){
+            cout << "false";
+            return 0;
+        }
+        // 如果遇到左括号，入栈
+        if(s[i] == '(' || s[i] == '{' || s[i] == '['){ 
+            charst.push(s[i]) ; 
+        } 
+        else if(s[i]== ']' || s[i]== '}'||s[i] == ')'){
+            // 如果遇到右括号
+            char tmp = charst.top() ; 
+            //cout<< tmp << endl; 
+            if(s[i] ==']' && tmp =='[') {
+                // 如果相等，则抵消
+                charst.pop() ; 
+            }else if(s[i] == ')' && tmp == '(') {
+                charst.pop() ; 
+            }else if(s[i] == '}' && tmp == '{') {     
+                charst.pop() ; 
+            }else {
+                cout << "false";
+                return 0;
+            }
         }
     }
-    cout << ans;
-    return 0;
+    // cout<< charst.size()<< endl;
+    cout << (charst.empty() == 1 ? "true" : "false");
 }
         </blockcode>
     </pre>
 </details>
-
-
                 
               </div>
             
@@ -577,8 +607,8 @@ int main()
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>3、天梯赛——进制转换类型题目（2月12日）</div>
-      <div>http://example.com/2024/02/11/3、天梯赛——进制转换类型题目（2月12日）/</div>
+      <div>4、天梯赛——栈（一）（2月13日）</div>
+      <div>http://example.com/2024/02/11/4、天梯赛——栈（一）（2月13日）/</div>
     </div>
     <div class="license-meta">
       
@@ -622,18 +652,12 @@ int main()
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/11/4%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%882%E6%9C%8813%E6%97%A5%EF%BC%89/" title="4、天梯赛——栈（一）（2月13日）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">4、天梯赛——栈（一）（2月13日）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/09/2%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94C-%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BE%8B%E9%A2%98%EF%BC%882%E6%9C%889%E6%97%A5%EF%BC%89/" title="2、天梯赛——C++需要知道的一些基础知识例题（2月9日）">
-                        <span class="hidden-mobile">2、天梯赛——C++需要知道的一些基础知识例题（2月9日）</span>
+                      <a href="/2024/02/11/3%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%882%E6%9C%8812%E6%97%A5%EF%BC%89/" title="3、天梯赛——进制转换类型题目（2月12日）">
+                        <span class="hidden-mobile">3、天梯赛——进制转换类型题目（2月12日）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
