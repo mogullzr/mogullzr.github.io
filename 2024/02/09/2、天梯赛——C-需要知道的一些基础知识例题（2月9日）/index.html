@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
 <meta property="article:published_time" content="2024-02-09T08:55:56.000Z">
-<meta property="article:modified_time" content="2024-02-09T08:58:25.552Z">
+<meta property="article:modified_time" content="2024-02-11T06:33:38.377Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="天梯赛">
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          402 字
+          410 字
         
       </span>
     
@@ -348,9 +348,9 @@
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <cstdio>
-#include <cstring>
+#include < iostream>
+#include < cstdio>
+#include < cstring>
 using namespace std;
 int main()
 {
@@ -391,7 +391,7 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-include<bits/stdc++.h>
+include< bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -430,8 +430,8 @@ int main()
     <summary>答案1.0（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <cmath>
+#include < iostream>
+#include < cmath>
 #define INF 0x3f3f3f3f
 using namespace std;
 int main()
@@ -468,24 +468,8 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-include<bits/stdc++.h>
-using namespace std;
-int main()
-{
-   int a,b,c,d,e,f;
-   cin >> a >> b >> c;
-   d = min(a,min(b,c));
-   e = max(a,max(b,c));
-   f = a + b + c - d - e;
-   cout << d << endl;
-   cout << f << endl;
-   cout << e << endl;
-   cout << endl;
-   cout << a << endl;
-   cout << b << endl;
-   cout << c << endl;
-}#include <iostream>
-#include <cstdio>
+#include < iostream>
+#include < cstdio>
 #define INF 0x3f3f3f3f
 using namespace std;
 int main()
@@ -520,7 +504,7 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
+#include < iostream>
 using namespace std;
 int n,m;
 int main()
@@ -567,8 +551,8 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <cmath>
+#include < iostream>
+#include < cmath>
 using namespace std;
 int main () {
     int n;
@@ -608,7 +592,7 @@ int main () {
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <bits/stdc++.h>
+#include < bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -647,8 +631,8 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <cstdio>
+#include < iostream>
+#include < cstdio>
 using namespace std;
 int res[105][105];
 int main()
@@ -713,9 +697,9 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <cstdio>
-#include <cstring>
+#include < iostream>
+#include < cstdio>
+#include < cstring>
 using namespace std;
 int main()
 {
@@ -758,8 +742,8 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <cstdio>
+#include < iostream>
+#include < cstdio>
 using namespace std;
 int main()
 {
@@ -793,7 +777,7 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
+#include < iostream>
 using namespace std;
 int main()
 {
@@ -840,8 +824,8 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <sstream>
+#include < iostream>
+#include < sstream>
 using namespace std;
 int main() {
     int len = 0;
@@ -851,16 +835,16 @@ int main() {
     getline(cin, s);
     stringstream ssin;
     ssin << s;
-    
-<pre><code class="hljs">while (ssin &gt;&gt; ss) &#123;
-    a[len++] = ss;
-&#125;
-for (int i = len - 1;i &gt;= 0; i--) &#123;
-    cout &lt;&lt; a[i] &lt;&lt; &#39; &#39;;
-&#125; 
-return 0;
-</code></pre>
-<p>}<br>        </blockcode><br>    </pre></p>
+    while (ssin >> ss) {
+        a[len++] = ss;
+    }
+    for (int i = len - 1;i >= 0; i--) {
+        cout << a[i] << ' ';
+    } 
+    return 0;
+}
+        </blockcode>
+    </pre>
 </details>
 
 
@@ -882,7 +866,7 @@ return 0;
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
+#include < iostream>
 using namespace std;
 const int N = 200;
 string s[N];
@@ -924,8 +908,9 @@ int main()
     }
     return 0;
 }
-
- 
+        </blockcode>
+    </pre>
+</details>
 
 <h2 id="十四、最大公约数（简单）"><a href="#十四、最大公约数（简单）" class="headerlink" title="十四、最大公约数（简单）"></a>十四、最大公约数<font color='green'>（简单）</font></h2><p>输入两个整数 a 和 b，请你编写一个函数，<code>int gcd(int a, int b)</code>, 计算并输出 a 和 b 的最大公约数。</p>
 <h4 id="输入格式-13"><a href="#输入格式-13" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含两个整数 a 和 b。</p>
@@ -945,7 +930,7 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
+#include < iostream>
 using namespace std;
 int gcd(int a,int b) {
     if (b != 0) {
@@ -961,8 +946,13 @@ int main()
     cout << gcd(a, b);
     return 0;
 }
+        </blockcode>
+    </pre>
+</details>
+​    
 
-<p>​    </p>
+
+
 <h2 id="十五、递归求阶乘（简单）"><a href="#十五、递归求阶乘（简单）" class="headerlink" title="十五、递归求阶乘（简单）"></a>十五、递归求阶乘<font color='green'>（简单）</font></h2><p>请使用递归的方式求 n 的阶乘。</p>
 <h4 id="输入格式-14"><a href="#输入格式-14" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含一个整数 n。</p>
 <h4 id="输出格式-14"><a href="#输出格式-14" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数，表示 n 的阶乘的值。</p>
@@ -978,7 +968,7 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
+#include < iostream>
 using namespace std;
 const int N = 11;
 int n;
@@ -1015,9 +1005,9 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <cstring>
-#include <algorithm>
+#include < iostream>
+#include < cstring>
+#include < algorithm>
 using namespace std;
 int fib(int x)
 {
@@ -1064,9 +1054,9 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <cstring>
-#include <algorithm>
+#include < iostream>
+#include < cstring>
+#include < algorithm>
 using namespace std;
 int get_unique_count(int arr[],int n)
 {
@@ -1110,14 +1100,14 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <algorithm>
-#include <vector>
+#include < iostream>
+#include < algorithm>
+#include < vector>
 using namespace std;
-typedef pair<double, string> PDS;
+typedef pair< double, string> PDS;
 const int N = 1e4 + 10;
 int n;
-vector<pair<int, PDS>> ans;
+vector< pair< int, PDS>> ans;
 int a;
 double b;
 string c;
@@ -1232,6 +1222,12 @@ int main()
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/02/11/3%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%882%E6%9C%8812%E6%97%A5%EF%BC%89/" title="3、天梯赛——进制转换类型题目（2月12日）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">3、天梯赛——进制转换类型题目（2月12日）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
