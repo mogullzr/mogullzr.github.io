@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
 <meta property="article:published_time" content="2024-02-11T06:04:04.000Z">
-<meta property="article:modified_time" content="2024-02-11T06:19:46.742Z">
+<meta property="article:modified_time" content="2024-02-11T06:40:58.005Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="天梯赛">
@@ -425,8 +425,7 @@ int main()
 <h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
-        <blockcode>
-#include < iostream>
+        <blockcode>#include <iostream>
 #include < algorithm>
 #include < cstring>
 using namespace std;
@@ -439,9 +438,10 @@ void solve()
     k=0;
     len = strlen(str1);
     for(i=len; i >= 0; i--) 
-        t[len - i - 1] = str1[i] -(str1[i]< 58 ? 48: str1[i]< 97 ? 55: 61);//开始转换成为十进制
+        t[len - i - 1] = str1[i] -(str1[i]<58 ? 48: str1[i]<97 ? 55: 61);//开始转换成为十进制
     while(len)
     {
+    //这个写法大家
         for(i = len; i >= 1; i--) 
         {
             t[i - 1] +=t[i] % m * n;//开始计算,首先*n,为n进制,然后转移到m进制
@@ -454,7 +454,7 @@ void solve()
     }
     str2[k] =NULL;//第k位,我们不需要,直接抛去,利用NULL这个特殊的字符串结束符,具体可以自行百度.
     fir(i,0,k - 1)//这里使用这个写法就是让大家熟悉一下，之后使用这个方法可以简化代码
-        str2[k - 1 - i] = A[i]+(A[i] < 10 ? 48: A[i] < 36 ? 55:61);//三目运算符,具体可以百度,这段代码的意思是,
+        str2[k - 1 - i] = A[i]+(A[i] < 10 ? 48: A[i] < 36 ? 55:61);//三目运算符,这段代码的意思是,
         // 找这个数字对应的字母
 }
 int main()
@@ -472,6 +472,7 @@ int main()
         </blockcode>
     </pre>
 </details>
+
 
 
 
@@ -502,6 +503,7 @@ int main()
 
 
 
+
 <h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
@@ -527,8 +529,6 @@ int main()
         </blockcode>
     </pre>
 </details>
-
-
 
 
                 
