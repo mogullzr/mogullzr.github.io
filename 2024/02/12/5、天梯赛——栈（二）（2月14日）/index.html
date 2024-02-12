@@ -16,16 +16,16 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言​	先照顾一下基础薄弱的同学，介绍一下什么是栈。 ​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈   进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进  出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1  空栈：栈内没有小球（元素）  一、模拟栈（简单-）实现一个">
+    <meta name="description" content="前言​	今天的笔记主要就是扩展一下昨天笔记的内容，让我们对于栈的操作的理解加深。同时还需要学会灵活应用栈来解决一些实际问题。最后还需要学习一个难度比较高的算法题目：单调栈，使用文字讲解有点难度，现在我会尝试使用属于我自己的方式把这个算法尽可能可以以动画的形式展现出来，如实在有困难，就直接联系本人吧。 一、后缀表达式（简单+）前言​	大家可以通过下面这道题目大概了解一下后缀表达式是什么 后缀表达式的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4、天梯赛——栈（一）（2月13日）">
-<meta property="og:url" content="http://example.com/2024/02/11/4%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%882%E6%9C%8813%E6%97%A5%EF%BC%89/index.html">
+<meta property="og:title" content="5、天梯赛——栈（二）（2月14日）">
+<meta property="og:url" content="http://example.com/2024/02/12/5%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%882%E6%9C%8814%E6%97%A5%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="前言​	先照顾一下基础薄弱的同学，介绍一下什么是栈。 ​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈   进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进  出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1  空栈：栈内没有小球（元素）  一、模拟栈（简单-）实现一个">
+<meta property="og:description" content="前言​	今天的笔记主要就是扩展一下昨天笔记的内容，让我们对于栈的操作的理解加深。同时还需要学会灵活应用栈来解决一些实际问题。最后还需要学习一个难度比较高的算法题目：单调栈，使用文字讲解有点难度，现在我会尝试使用属于我自己的方式把这个算法尽可能可以以动画的形式展现出来，如实在有困难，就直接联系本人吧。 一、后缀表达式（简单+）前言​	大家可以通过下面这道题目大概了解一下后缀表达式是什么 后缀表达式的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
-<meta property="article:published_time" content="2024-02-11T15:09:48.000Z">
-<meta property="article:modified_time" content="2024-02-11T15:31:29.384Z">
+<meta property="article:published_time" content="2024-02-12T05:48:59.000Z">
+<meta property="article:modified_time" content="2024-02-12T05:51:35.179Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="天梯赛">
@@ -34,7 +34,7 @@
   
   
   
-  <title>4、天梯赛——栈（一）（2月13日） - 程序书架</title>
+  <title>5、天梯赛——栈（二）（2月14日） - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,7 +248,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="4、天梯赛——栈（一）（2月13日）"></span>
+            <span id="subtitle" data-typed-text="5、天梯赛——栈（二）（2月14日）"></span>
           
         </div>
 
@@ -259,8 +259,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-11 23:09" pubdate>
-          2024年2月11日 晚上
+        <time datetime="2024-02-12 13:48" pubdate>
+          2024年2月12日 下午
         </time>
       </span>
     
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          536 字
+          692 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          5 分钟
+          6 分钟
         
       </span>
     
@@ -327,150 +327,107 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">4、天梯赛——栈（一）（2月13日）</h1>
+            <h1 id="seo-header">5、天梯赛——栈（二）（2月14日）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	先照顾一下基础薄弱的同学，介绍一下什么是栈。</p>
-<p>​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112052380.png" srcset="/img/loading.gif" lazyload alt="image-20240211205239864" style="zoom:50%;" />
-
-<h4 id="进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进"><a href="#进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进" class="headerlink" title="进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进"></a>进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112054922.png" srcset="/img/loading.gif" lazyload alt="image-20240211205345226" style="zoom:50%;" />
-
-<h4 id="出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1"><a href="#出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1" class="headerlink" title="出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1"></a>出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112055341.png" srcset="/img/loading.gif" lazyload alt="image-20240211205537544" style="zoom:50%;" />
-
-<h4 id="空栈：栈内没有小球（元素）"><a href="#空栈：栈内没有小球（元素）" class="headerlink" title="空栈：栈内没有小球（元素）"></a>空栈：栈内没有小球（元素）</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112058912.png" srcset="/img/loading.gif" lazyload alt="image-20240211205803296" style="zoom:50%;" />
-
-<h2 id="一、模拟栈（简单-）"><a href="#一、模拟栈（简单-）" class="headerlink" title="一、模拟栈（简单-）"></a>一、模拟栈<font color='green'>（简单-）</font></h2><p>实现一个栈，栈初始为空，支持四种操作：</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	今天的笔记主要就是扩展一下昨天笔记的内容，让我们对于栈的操作的理解加深。同时还需要学会灵活应用栈来解决一些实际问题。最后还需要学习一个难度比较高的算法题目：<strong>单调栈</strong>，使用文字讲解有点难度，现在我会尝试使用属于我自己的方式把这个算法尽可能可以以动画的形式展现出来，如实在有困难，就直接联系本人吧。</p>
+<h2 id="一、后缀表达式（简单-）"><a href="#一、后缀表达式（简单-）" class="headerlink" title="一、后缀表达式（简单+）"></a>一、后缀表达式<font color='green'>（简单+）</font></h2><h3 id="前言-1"><a href="#前言-1" class="headerlink" title="前言"></a>前言</h3><p>​	大家可以通过下面这道题目大概了解一下后缀表达式是什么</p>
+<h4 id="后缀表达式的计算原理规则："><a href="#后缀表达式的计算原理规则：" class="headerlink" title="后缀表达式的计算原理规则："></a>后缀表达式的计算原理规则：</h4><p>​	从左到右遍历表达式的每个数字和符号，遇到的是数字就进栈，遇到的是符号，就将栈顶的两个数字依次出栈，进行运算（运算规则：后出栈的数字1    符号    后出栈的数字2  ），再将运算结果进栈，知道获得最终结果。</p>
+<h4 id="样例："><a href="#样例：" class="headerlink" title="样例："></a>样例：</h4><p>后缀表达式例子：9  3  1  -  3  *  +  10  2  &#x2F;  +</p>
+<p>计算过程：</p>
 <ol>
-<li><code>push x</code> – 向栈顶插入一个数 x；</li>
-<li><code>pop</code> – 从栈顶弹出一个数；</li>
-<li><code>empty</code> – 判断栈是否为空；</li>
-<li><code>query</code> – 查询栈顶元素。</li>
+<li>数字9入栈</li>
+<li>数字3入栈</li>
+<li>数字1入栈</li>
+<li>遇到了  -  运算符，，这时候计算 3 - 1 &#x3D; 2（注意数字的顺序，谁是减数，谁是被减数），数字2入栈</li>
+<li>数字3入栈</li>
+<li>遇到了运算符 * 。计算 2 * 3 &#x3D; 6 ，数字6入栈</li>
+<li>遇到了运算符 + 。9 + 6 &#x3D; 15 .数字15入栈</li>
+<li>数字10入栈</li>
+<li>数字2入栈</li>
+<li>遇到了运算符 &#x2F; 。计算10 &#x2F; 2 &#x3D; 5，数字5入栈</li>
+<li>遇到了运算符 + 。计算15 + 5 &#x3D; 20.入栈。到这时遍历结束。最后栈中剩余一个数字20.</li>
 </ol>
-<p>现在要对栈进行 M 个操作，其中的每个操作 33 和操作 44 都要输出相应的结果。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 M，表示操作次数。</p>
-<p>接下来 M 行，每行包含一个操作命令，操作命令为 <code>push x</code>，<code>pop</code>，<code>empty</code>，<code>query</code> 中的一种。</p>
-<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>对于每个 <code>empty</code> 和 <code>query</code> 操作都要输出一个查询结果，每个结果占一行。</p>
-<p>其中，<code>empty</code> 操作的查询结果为 <code>YES</code> 或 <code>NO</code>，<code>query</code> 操作的查询结果为一个整数，表示栈顶元素的值。</p>
-<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤M≤100000\<br>1≤x≤109<br>$$</p>
-<p>所有操作保证合法。</p>
-<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-number">10</span><br><span class="hljs-built_in">push</span> <span class="hljs-number">5</span><br>query<br><span class="hljs-built_in">push</span> <span class="hljs-number">6</span><br><span class="hljs-built_in">pop</span><br>query<br><span class="hljs-built_in">pop</span><br>empty<br><span class="hljs-built_in">push</span> <span class="hljs-number">4</span><br>query<br>empty<br></code></pre></td></tr></table></figure>
-
-<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-number">5</span><br><span class="hljs-number">5</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-number">4</span><br><span class="hljs-keyword">NO</span><br></code></pre></td></tr></table></figure>
+<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">9 </span> <span class="hljs-number">3</span>  <span class="hljs-number">1</span>  -  <span class="hljs-number">3</span>  *  +  <span class="hljs-number">10</span>  <span class="hljs-number">2</span>  /  +<br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>​	<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112130123.png" srcset="/img/loading.gif" lazyload alt="image-20240211213008658" style="zoom:50%;" /></p>
-<p>​	此时的top&#x3D;3，指向的是元素st[3] &#x3D; 4。</p>
+<h4 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">20<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>无</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include < iostream>
+#include< iostream>
+#include< string>
+#include< stack>
 using namespace std;
-const int N = 1e5 + 10;
-int st[N],top;
-int n;
-// 初始化栈
-void Init()
+//后缀表达式计算函数
+double calculate(const string str)
 {
-    top = -1; // top是栈顶，一开始没有元素，初始化为-1,top指向的就是栈顶部元素的下标，请看上图理解top
+    stack< double> mystack;//用来存数据
+    string Empty = " ";
+    string ch = "+-*/";
+    string numbers = "0123456789";
+    string s = "0123456789+-*/";
+    int start, end;
+    double num, secnodnum, firstnum;
+    for (int i = 0; i < str.length(); )
+    {
+        start = str.find_first_of(s, i);//查找第一个数字或者运算符
+        end = str.find_first_of(Empty, i);//查找第一空格
+        if (end == -1)//处理最后一个符号后没有空格的问题
+        {
+            end = str.length();
+        }
+        string tempstr = str.substr(start, end - start);//取出这一个元素
+        if ((tempstr == "+") || (tempstr == "-") || (tempstr == "*") || (tempstr == "/"))
+        {
+            secnodnum = mystack.top();//取出栈顶元素
+            mystack.pop();//出栈
+            firstnum = mystack.top();//取出栈顶元素
+            mystack.pop();//出栈
+            if (tempstr == "+")
+            {
+                num = firstnum + secnodnum;
+                mystack.push(num);
+            }
+            if (tempstr == "-")
+            {
+                num = firstnum - secnodnum;
+                mystack.push(num);
+            }
+            if (tempstr == "*")
+            {
+                num = firstnum * secnodnum;
+                mystack.push(num);
+            }
+            if (tempstr == "/")
+            {
+                num = firstnum / secnodnum;
+                mystack.push(num);
+            }
+        }
+        else
+        {
+            double temp = stod(tempstr);
+            mystack.push(temp);
+        }
+        i = end + 1;//控制下标的移动
+    }
+    return mystack.top();
 }
 int main()
 {
-    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
-    cin >> n;
-    Init();//1、初始化栈
-    while (n--)
-    {
-        string s;
-        cin >> s;
-        if (s == "push") // 入栈
-        {
-            int x;
-            cin >> x;
-            st[++top] = x;
-        }
-        else if (s == "pop") // 出栈
-        {
-            top--;
-        }
-        else if (s == "empty") // 判断栈是否为空
-        {
-            if(top == -1) cout << "YES\n"; 
-            else cout << "NO\n";
-        }
-        else // 查询栈的顶部元素
-        {
-            cout << st[top] << '\n';            
-        }
-    }
-}
-        </blockcode>
-    </pre>
-</details>
-
-
-
-
-
-<h2 id="二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）"><a href="#二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）" class="headerlink" title="二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）"></a>二、火车进栈<font color='green'>（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）</font></h2><p>这里有 n 列火车将要进站再出站，但是，每列火车只有 11 节，那就是车头。</p>
-<p>这 n 列火车按 1 到 n 的顺序从东方左转进站，这个车站是南北方向的，它虽然无限长，只可惜是一个死胡同，而且站台只有一条股道，火车只能倒着从西方出去，而且每列火车必须进站，先进后出。</p>
-<p>也就是说这个火车站其实就相当于一个栈，每次可以让右侧头火车进栈，或者让栈顶火车出站。</p>
-<p>下面是火车进站的一种方式的动态图：</p>
-<p>​						<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112112783.gif" srcset="/img/loading.gif" lazyload alt="动画" style="zoom:30%;" /></p>
-<p>现在请你按字典序输出前 20 种可能的出栈方案。</p>
-<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一个整数 n，代表火车数量。</p>
-<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>按照《字典序》输出前 2020 种答案，每行一种，不要空格。</p>
-<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>1≤n≤20</p>
-<h4 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">3<br></code></pre></td></tr></table></figure>
-
-<h4 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs">123<br>132<br>213<br>231<br>321<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>​	使用最基础的dfs的思想</p>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
-    <summary>答案（请自己先思考一下再参考）</summary>
-    <pre>
-        <blockcode>
-#include< iostream>
-#include< vector>
-using namespace std;
-const int N = 2e1 + 5;
-int n, remain = 0;
-int tt, stk[N];
-vector< int> path;
-void dfs(int u) {
-    if (u == n + 1) { // edge：边界
-        if (++remain > 20) {
-            exit(0);
-        }
-        for (auto x:path) { //输出路径中的
-            cout << x;
-        }
-        // 如果没有数字可用了, 那么输出一下path+栈中的数字
-        for (int i = tt - 1; i >= 0; i--) { //输出栈中剩下的(后进先出
-            cout << stk[i];
-        }
-        cout << endl;
-        return;
-    }
-    if (tt) {
-        path.push_back(stk[--tt]);
-        dfs(u);
-        stk[tt++] = path.back();
-        path.pop_back();
-    }
-    stk[tt++] = u;
-    dfs(u + 1);
-    tt--;
-}
-int main() {
-    cin >> n;
-    dfs(1);
+    string str;
+    getline(cin, str);
+    double ans = calculate(str);//记录后缀表达式运算的结果
+    cout << ans << endl;
     return 0;
 }
         </blockcode>
@@ -480,83 +437,54 @@ int main() {
 
 
 
-<h2 id="三、有效括号（简单-）"><a href="#三、有效括号（简单-）" class="headerlink" title="三、有效括号（简单+）"></a>三、有效括号<font color='green'>（简单+）</font></h2><p>小刘在大一下学期学习到了数据结构栈操作中的经典例题，但是他不会写，请帮助他编写C++代码解决下列例题。</p>
-<p>给定一个只包括 ‘(’，‘)’，‘{’，‘}’，‘[’，‘]’ 的字符串 s ，判断字符串是否有效。</p>
-<p>有效字符串需满足：</p>
-<p>左括号必须用相同类型的右括号闭合。</p>
-<p>左括号必须以正确的顺序闭合。</p>
-<p>每个右括号都有一个对应的相同类型的左括号。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “()”<br>输出：<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h2 id="二、单调栈（中等-）"><a href="#二、单调栈（中等-）" class="headerlink" title="二、单调栈（中等-）"></a>二、单调栈<font color='orange'>（中等-）</font></h2><p>给定一个长度为 N的整数数列，输出每个数左边第一个比它小的数，如果不存在则输出 −1。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 N，表示数列长度。</p>
+<p>第二行包含 N个整数，表示整数数列。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含 N个整数，其中第 i个数表示第 i个数的左边第一个比它小的数，如果不存在则输出 −1。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤N≤10^5\<br>1≤数列中元素≤10^9<br>$$</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
 
-<p>示例 2：</p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “()[]&#123;&#125;”<br>输出：<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-string">-1</span> 3 <span class="hljs-string">-1</span> 2 2<br></code></pre></td></tr></table></figure>
 
-<p><strong>示例 3：</strong></p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “(]”<br>输出：<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>提示：</strong></p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>&lt;= s.length &lt;= <span class="hljs-number">104</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>注意：</strong>s 仅由括号 <code>‘()[]&#123;&#125;’</code> 组成</p>
-<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>​	代码中有解释，基本就是按照栈的基本操作思路实现的。</p>
-<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><details>
+<h2 id="思路（！！！）"><a href="#思路（！！！）" class="headerlink" title="思路（！！！）"></a>思路<font color='red'>（！！！）</font></h2><details>
+    <summary>思路（请自己先思考一下再参考）</summary>
+    <pre>
+                                        知道一个原理
+        从左往右寻找每个数的左边第一个比它自己小的数，是不是就意味着当前比遍历到的这个数左边一个数的左边的数
+        （这里有点拗口，比如5 4 3，这里就是指4左边的数）要大的数，就绝对不可能找到，比如5 4 3,3前面为4,4前面为5，4<5，
+        那么你在寻找比3第一个小的数的时候就不可能去找5了对不对,因为4都不可以了，比4大的就更不可能是了，
+        我们代码中的数组st[] 存储的就是对当前遍历的数而言，对前面遍历过的数可能为比它小的数的集合，同时这个集合
+        还是从0往tt优先级越来越高的，下标越大，越先被遍历到 。下面的图像就是对于样例的折线图的动画。
+    </pre>
+</details>
+
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402121327831.gif" srcset="/img/loading.gif" lazyload alt="动画1"></p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
 #include < iostream>
 #include < algorithm>
-#include < stack>
 using namespace std;
+const int N = 1e5 + 10;
+int st[N];
+int n;
 int main()
 {
-    string s;
-    cin >> s;
-    if(s.size()== 0)
-    {
-        cout << "false"; 
-        return 0;
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >> n;
+    int tt = 0;
+    for (int i = 1; i <= n; i++) {
+        int x;
+        cin >> x;
+        while (tt && st[tt] >= x) tt--;
+        if (tt) cout << st[tt] << " ";
+        else cout << "-1 ";
+        st[++tt] = x;
     }
-    if(s.size()%2 == 1)
-    {
-        cout << "false";
-        return 0;
-    }
-    if(s[0] &&(s[0]== ']' || s[0]== '}'||s[0] == ')'  )) {
-        cout <<  "false";
-        return 0;
-    }
-    int length = s.size() ; 
-    stack< char> charst ; 
-    char current_deal_char; // 当前处理的字符
-    for(int i = 0 ;i < length ; i++) {
-        if(charst.size() == 0 && (s[i]== ']' || s[i]== '}'||s[i] == ')'  )){
-            cout << "false";
-            return 0;
-        }
-        // 如果遇到左括号，入栈
-        if(s[i] == '(' || s[i] == '{' || s[i] == '['){ 
-            charst.push(s[i]) ; 
-        } 
-        else if(s[i]== ']' || s[i]== '}'||s[i] == ')'){
-            // 如果遇到右括号
-            char tmp = charst.top() ; 
-            //cout<< tmp << endl; 
-            if(s[i] ==']' && tmp =='[') {
-                // 如果相等，则抵消
-                charst.pop() ; 
-            }else if(s[i] == ')' && tmp == '(') {
-                charst.pop() ; 
-            }else if(s[i] == '}' && tmp == '{') {     
-                charst.pop() ; 
-            }else {
-                cout << "false";
-                return 0;
-            }
-        }
-    }
-    // cout<< charst.size()<< endl;
-    cout << (charst.empty() == 1 ? "true" : "false");
+    return 0;
 }
         </blockcode>
     </pre>
@@ -607,8 +535,8 @@ int main()
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>4、天梯赛——栈（一）（2月13日）</div>
-      <div>http://example.com/2024/02/11/4、天梯赛——栈（一）（2月13日）/</div>
+      <div>5、天梯赛——栈（二）（2月14日）</div>
+      <div>http://example.com/2024/02/12/5、天梯赛——栈（二）（2月14日）/</div>
     </div>
     <div class="license-meta">
       
@@ -620,7 +548,7 @@ int main()
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月11日</div>
+          <div>2024年2月12日</div>
         </div>
       
       
@@ -652,18 +580,12 @@ int main()
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/12/5%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%882%E6%9C%8814%E6%97%A5%EF%BC%89/" title="5、天梯赛——栈（二）（2月14日）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">5、天梯赛——栈（二）（2月14日）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/11/3%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%882%E6%9C%8812%E6%97%A5%EF%BC%89/" title="3、天梯赛——进制转换类型题目（2月12日）">
-                        <span class="hidden-mobile">3、天梯赛——进制转换类型题目（2月12日）</span>
+                      <a href="/2024/02/11/4%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%882%E6%9C%8813%E6%97%A5%EF%BC%89/" title="4、天梯赛——栈（一）（2月13日）">
+                        <span class="hidden-mobile">4、天梯赛——栈（一）（2月13日）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
