@@ -16,16 +16,16 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言​	今天的笔记主要就是扩展一下昨天笔记的内容，让我们对于栈的操作的理解加深。同时还需要学会灵活应用栈来解决一些实际问题。最后还需要学习一个难度比较高的算法题目：单调栈，使用文字讲解有点难度，现在我会尝试使用属于我自己的方式把这个算法尽可能可以以动画的形式展现出来，如实在有困难，就直接联系本人吧。 一、后缀表达式（简单+）前言​	大家可以通过下面这道题目大概了解一下后缀表达式是什么 后缀表达式的">
+    <meta name="description" content="一、归并排序（简单+）给定你一个长度为 n 的整数数列。 请你使用归并排序对这个数列按照从小到大进行排序。 并将排好序的数列按顺序输出。 输入格式输入共两行，第一行包含整数 n。 第二行包含 n 个整数（所有整数均在 1∼10^9^范围内），表示整个数列。 输出格式输出共一行，包含 n 个整数，表示排好序的数列。 数据范围1≤n≤100000 输入样例：1253 1 2 4 5  输出样例：11">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5、天梯赛——栈（二）（2月14日）">
-<meta property="og:url" content="http://example.com/2024/02/12/5%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%882%E6%9C%8814%E6%97%A5%EF%BC%89/index.html">
+<meta property="og:title" content="10、天梯赛——排序算法（二）（2月18日）">
+<meta property="og:url" content="http://example.com/2024/02/13/10%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%882%E6%9C%8818%E6%97%A5%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="前言​	今天的笔记主要就是扩展一下昨天笔记的内容，让我们对于栈的操作的理解加深。同时还需要学会灵活应用栈来解决一些实际问题。最后还需要学习一个难度比较高的算法题目：单调栈，使用文字讲解有点难度，现在我会尝试使用属于我自己的方式把这个算法尽可能可以以动画的形式展现出来，如实在有困难，就直接联系本人吧。 一、后缀表达式（简单+）前言​	大家可以通过下面这道题目大概了解一下后缀表达式是什么 后缀表达式的">
+<meta property="og:description" content="一、归并排序（简单+）给定你一个长度为 n 的整数数列。 请你使用归并排序对这个数列按照从小到大进行排序。 并将排好序的数列按顺序输出。 输入格式输入共两行，第一行包含整数 n。 第二行包含 n 个整数（所有整数均在 1∼10^9^范围内），表示整个数列。 输出格式输出共一行，包含 n 个整数，表示排好序的数列。 数据范围1≤n≤100000 输入样例：1253 1 2 4 5  输出样例：11">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
-<meta property="article:published_time" content="2024-02-12T05:48:59.000Z">
-<meta property="article:modified_time" content="2024-02-12T05:51:35.179Z">
+<meta property="article:published_time" content="2024-02-13T11:48:36.000Z">
+<meta property="article:modified_time" content="2024-02-13T11:49:17.315Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="天梯赛">
@@ -34,7 +34,7 @@
   
   
   
-  <title>5、天梯赛——栈（二）（2月14日） - 程序书架</title>
+  <title>10、天梯赛——排序算法（二）（2月18日） - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,7 +248,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="5、天梯赛——栈（二）（2月14日）"></span>
+            <span id="subtitle" data-typed-text="10、天梯赛——排序算法（二）（2月18日）"></span>
           
         </div>
 
@@ -259,8 +259,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-12 13:48" pubdate>
-          2024年2月12日 下午
+        <time datetime="2024-02-13 19:48" pubdate>
+          2024年2月13日 晚上
         </time>
       </span>
     
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          692 字
+          204 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          6 分钟
+          2 分钟
         
       </span>
     
@@ -327,141 +327,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">5、天梯赛——栈（二）（2月14日）</h1>
+            <h1 id="seo-header">10、天梯赛——排序算法（二）（2月18日）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	今天的笔记主要就是扩展一下昨天笔记的内容，让我们对于栈的操作的理解加深。同时还需要学会灵活应用栈来解决一些实际问题。最后还需要学习一个难度比较高的算法题目：<strong>单调栈</strong>，使用文字讲解有点难度，现在我会尝试使用属于我自己的方式把这个算法尽可能可以以动画的形式展现出来，如实在有困难，就直接联系本人吧。</p>
-<h2 id="一、后缀表达式（简单-）"><a href="#一、后缀表达式（简单-）" class="headerlink" title="一、后缀表达式（简单+）"></a>一、后缀表达式<font color='green'>（简单+）</font></h2><h3 id="前言-1"><a href="#前言-1" class="headerlink" title="前言"></a>前言</h3><p>​	大家可以通过下面这道题目大概了解一下后缀表达式是什么</p>
-<h4 id="后缀表达式的计算原理规则："><a href="#后缀表达式的计算原理规则：" class="headerlink" title="后缀表达式的计算原理规则："></a>后缀表达式的计算原理规则：</h4><p>​	从左到右遍历表达式的每个数字和符号，遇到的是数字就进栈，遇到的是符号，就将栈顶的两个数字依次出栈，进行运算（运算规则：后出栈的数字1    符号    后出栈的数字2  ），再将运算结果进栈，知道获得最终结果。</p>
-<h4 id="样例："><a href="#样例：" class="headerlink" title="样例："></a>样例：</h4><p>后缀表达式例子：9  3  1  -  3  *  +  10  2  &#x2F;  +</p>
-<p>计算过程：</p>
-<ol>
-<li>数字9入栈</li>
-<li>数字3入栈</li>
-<li>数字1入栈</li>
-<li>遇到了  -  运算符，，这时候计算 3 - 1 &#x3D; 2（注意数字的顺序，谁是减数，谁是被减数），数字2入栈</li>
-<li>数字3入栈</li>
-<li>遇到了运算符 * 。计算 2 * 3 &#x3D; 6 ，数字6入栈</li>
-<li>遇到了运算符 + 。9 + 6 &#x3D; 15 .数字15入栈</li>
-<li>数字10入栈</li>
-<li>数字2入栈</li>
-<li>遇到了运算符 &#x2F; 。计算10 &#x2F; 2 &#x3D; 5，数字5入栈</li>
-<li>遇到了运算符 + 。计算15 + 5 &#x3D; 20.入栈。到这时遍历结束。最后栈中剩余一个数字20.</li>
-</ol>
-<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">9 </span> <span class="hljs-number">3</span>  <span class="hljs-number">1</span>  -  <span class="hljs-number">3</span>  *  +  <span class="hljs-number">10</span>  <span class="hljs-number">2</span>  /  +<br></code></pre></td></tr></table></figure>
+                <h2 id="一、归并排序（简单-）"><a href="#一、归并排序（简单-）" class="headerlink" title="一、归并排序（简单+）"></a>一、归并排序<font color='green'>（简单+）</font></h2><p>给定你一个长度为 n 的整数数列。</p>
+<p>请你使用归并排序对这个数列按照从小到大进行排序。</p>
+<p>并将排好序的数列按顺序输出。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入共两行，第一行包含整数 n。</p>
+<p>第二行包含 n 个整数（所有整数均在 1∼10^9^范围内），表示整个数列。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出共一行，包含 n 个整数，表示排好序的数列。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>1≤n≤100000</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
 
 
 
-<h4 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">20<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>无</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>​	直播讲解<strong>（录播）</strong></p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><details>
-    <summary>答案（请自己先思考一下再参考）</summary>
-    <pre>
-        <blockcode>
-#include< iostream>
-#include< string>
-#include< stack>
-using namespace std;
-//后缀表达式计算函数
-double calculate(const string str)
-{
-    stack< double> mystack;//用来存数据
-    string Empty = " ";
-    string ch = "+-*/";
-    string numbers = "0123456789";
-    string s = "0123456789+-*/";
-    int start, end;
-    double num, secnodnum, firstnum;
-    for (int i = 0; i < str.length(); )
-    {
-        start = str.find_first_of(s, i);//查找第一个数字或者运算符
-        end = str.find_first_of(Empty, i);//查找第一空格
-        if (end == -1)//处理最后一个符号后没有空格的问题
-        {
-            end = str.length();
-        }
-        string tempstr = str.substr(start, end - start);//取出这一个元素
-        if ((tempstr == "+") || (tempstr == "-") || (tempstr == "*") || (tempstr == "/"))
-        {
-            secnodnum = mystack.top();//取出栈顶元素
-            mystack.pop();//出栈
-            firstnum = mystack.top();//取出栈顶元素
-            mystack.pop();//出栈
-            if (tempstr == "+")
-            {
-                num = firstnum + secnodnum;
-                mystack.push(num);
-            }
-            if (tempstr == "-")
-            {
-                num = firstnum - secnodnum;
-                mystack.push(num);
-            }
-            if (tempstr == "*")
-            {
-                num = firstnum * secnodnum;
-                mystack.push(num);
-            }
-            if (tempstr == "/")
-            {
-                num = firstnum / secnodnum;
-                mystack.push(num);
-            }
-        }
-        else
-        {
-            double temp = stod(tempstr);
-            mystack.push(temp);
-        }
-        i = end + 1;//控制下标的移动
-    }
-    return mystack.top();
-}
-int main()
-{
-    string str;
-    getline(cin, str);
-    double ans = calculate(str);//记录后缀表达式运算的结果
-    cout << ans << endl;
-    return 0;
-}
-        </blockcode>
-    </pre>
-</details>
-
-
-
-
-<h2 id="二、单调栈（中等-）"><a href="#二、单调栈（中等-）" class="headerlink" title="二、单调栈（中等-）"></a>二、单调栈<font color='orange'>（中等-）</font></h2><p>给定一个长度为 N的整数数列，输出每个数左边第一个比它小的数，如果不存在则输出 −1。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 N，表示数列长度。</p>
-<p>第二行包含 N个整数，表示整数数列。</p>
-<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含 N个整数，其中第 i个数表示第 i个数的左边第一个比它小的数，如果不存在则输出 −1。</p>
-<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤N≤10^5\<br>1≤数列中元素≤10^9<br>$$</p>
-<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-string">-1</span> 3 <span class="hljs-string">-1</span> 2 2<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="思路（！！！）"><a href="#思路（！！！）" class="headerlink" title="思路（！！！）"></a>思路<font color='red'>（！！！）</font></h2><details>
-    <summary>思路（请自己先思考一下再参考）</summary>
-    <pre>
-                                        知道一个原理
-        从左往右寻找每个数的左边第一个比它自己小的数，是不是就意味着当前比遍历到的这个数左边一个数的左边的数
-        （这里有点拗口，比如5 4 3，这里就是指4左边的数）要大的数，就绝对不可能找到，比如5 4 3,3前面为4,4前面为5，4<5，
-        那么你在寻找比3第一个小的数的时候就不可能去找5了对不对,因为4都不可以了，比4大的就更不可能是了，
-        我们代码中的数组st[] 存储的就是对当前遍历的数而言，对前面遍历过的数可能为比它小的数的集合，同时这个集合
-        还是从0往tt优先级越来越高的，下标越大，越先被遍历到 。下面的图像就是对于样例的折线图的动画。
-    </pre>
-</details>
-
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402121327831.gif" srcset="/img/loading.gif" lazyload alt="动画1"></p>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
@@ -469,26 +354,207 @@ int main()
 #include < algorithm>
 using namespace std;
 const int N = 1e5 + 10;
-int st[N];
 int n;
+int a[N],q[N];
+void merge_sort(int l,int r) {
+    if (l == r) return;
+    int mid = l + r >> 1;
+    merge_sort(l,mid);
+    merge_sort(mid + 1, r);
+    int i = l, j = mid + 1, k = 0;
+    while (i <= mid && j <= r) {
+        if (a[i] > a[j]) q[k++] = a[j++];
+        else q[k++] = a[i++];
+    }
+    while (i <= mid) q[k++] = a[i++];
+    while (j <= mid) q[k++] = a[j++];
+    for (int i = 0,j = l; i < k; j++,i++) a[j] = q[i]; 
+}
 int main()
 {
     ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
     cin >> n;
-    int tt = 0;
-    for (int i = 1; i <= n; i++) {
-        int x;
-        cin >> x;
-        while (tt && st[tt] >= x) tt--;
-        if (tt) cout << st[tt] << " ";
-        else cout << "-1 ";
-        st[++tt] = x;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
+    merge_sort(0, n - 1);
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+}
+return 0;
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+
+<h2 id="二、堆排序（简单-）"><a href="#二、堆排序（简单-）" class="headerlink" title="二、堆排序（简单++）"></a>二、堆排序<font color='green'>（简单++）</font></h2><p>输入一个长度为 n 的整数数列，从小到大输出前 m 小的数。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n 和 m。</p>
+<p>第二行包含 n 个整数，表示整数数列。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含 m 个整数，表示整数数列中前 m 小的数。</p>
+<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>1≤m≤n≤10^5^<br>1≤数列中元素≤10^9^</p>
+<h4 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+using namespace std;
+const int N = 1e5 + 10;
+int n, k, sz;
+int h[N];
+void down(int x)
+{
+    int t = x;
+    if (2 * t <= sz && h[2 * t] <= h[x]) x = 2 * t;
+    if (2 * t + 1 <= sz && h[2 * t + 1] <= h[x]) x = 2 * t + 1;
+    if (t != x)
+    {
+        swap(h[t],h[x]);
+        down(x);
+    }
+}
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >>n >> k;
+    for (int i = 1; i <= n; i++) cin >> h[i];    
+    sz = n;    
+    for (int i = n / 2; i ; i--) down(i);    
+    while (k--)
+    {
+        cout << h[1] << " ";        
+        h[1] = h[sz];        
+        sz--;        
+        down(1);
+    }    
     return 0;
 }
         </blockcode>
     </pre>
 </details>
+
+
+
+
+
+
+
+<h2 id="三、模拟堆（中等–）"><a href="#三、模拟堆（中等–）" class="headerlink" title="三、模拟堆（中等–）"></a>三、模拟堆<font color='orange'>（中等–）</font></h2><p>维护一个集合，初始时集合为空，支持如下几种操作：</p>
+<ol>
+<li><code>I x</code>，插入一个数 x；</li>
+<li><code>PM</code>，输出当前集合中的最小值；</li>
+<li><code>DM</code>，删除当前集合中的最小值（数据保证此时的最小值唯一）；</li>
+<li><code>D k</code>，删除第 k 个插入的数；</li>
+<li><code>C k x</code>，修改第 k 个插入的数，将其变为 x；</li>
+</ol>
+<p>现在要进行 N 次操作，对于所有第 2 个操作，输出当前集合的最小值。</p>
+<h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 N。</p>
+<p>接下来 N 行，每行包含一个操作指令，操作指令为 <code>I x</code>，<code>PM</code>，<code>DM</code>，<code>D k</code> 或 <code>C k x</code> 中的一种。</p>
+<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>对于每个输出指令 <code>PM</code>，输出一个结果，表示当前集合中的最小值。</p>
+<p>每个结果占一行。</p>
+<h4 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a>数据范围</h4><p>1≤N≤10^5^<br>−10^9^≤x≤10^9^<br>数据保证合法。</p>
+<h4 id="输入样例：-2"><a href="#输入样例：-2" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">8</span><br><span class="hljs-attribute">I</span> -<span class="hljs-number">10</span><br><span class="hljs-attribute">PM</span><br><span class="hljs-attribute">I</span> -<span class="hljs-number">10</span><br><span class="hljs-attribute">D</span> <span class="hljs-number">1</span><br><span class="hljs-attribute">C</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span><br><span class="hljs-attribute">I</span> <span class="hljs-number">6</span><br><span class="hljs-attribute">PM</span><br><span class="hljs-attribute">DM</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-2"><a href="#输出样例：-2" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-10</span><br>6<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>​	</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cstring>
+using namespace std;
+const int N = 1e5 + 10;
+int n, k;
+int h[N],ph[N],hp[N],sz;
+void heap_swap(int a,int b)
+{
+    swap(ph[hp[a]],ph[hp[b]]);
+    swap(hp[a],hp[b]);
+    swap(h[a],h[b]);
+}
+void down(int x)
+{
+    int t = x;
+    if (2 * t <= sz && h[2 * t] < h[x]) x = 2 * t;
+    if (2 * t + 1 <= sz && h[2 * t + 1] < h[x]) x = 2 * t + 1;
+    if (t != x)
+    {
+        heap_swap(t,x);
+        down(x);
+    }
+}
+void up(int x)
+{
+    while (x / 2 && h[x / 2] > h[x])
+    {
+        heap_swap(x / 2,x);
+        x /= 2;
+    }
+}
+int main()
+{
+    cin >> n;
+    while (n--)
+    {
+        char op[3];
+        scanf("%s",op);
+        if (!strcmp(op,"I"))
+        {
+            int x;
+            scanf("%d",&x);
+            k++;
+            sz++;
+            ph[k] = sz;
+            hp[sz] = k;
+            h[sz] = x;
+            up(sz);
+        }
+        else if (!strcmp(op,"PM")) printf("%d\n",h[1]);
+        else if (!strcmp(op,"DM"))
+        {
+            heap_swap(1, sz);
+            sz--;
+            down(1);
+        }
+        else if (!strcmp(op,"D"))
+        {
+            int k;
+            scanf("%d",&k);
+            k = ph[k];
+            heap_swap(k, sz);
+            sz --;
+            up(k);
+            down(k);
+        }
+        else 
+        {
+            int k, x;
+            scanf("%d %d",&k,&x);
+            k = ph[k];
+            h[k] = x;
+            down(k);
+            up(k);
+        }
+    }   
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
                 
               </div>
             
@@ -535,8 +601,8 @@ int main()
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>5、天梯赛——栈（二）（2月14日）</div>
-      <div>http://example.com/2024/02/12/5、天梯赛——栈（二）（2月14日）/</div>
+      <div>10、天梯赛——排序算法（二）（2月18日）</div>
+      <div>http://example.com/2024/02/13/10、天梯赛——排序算法（二）（2月18日）/</div>
     </div>
     <div class="license-meta">
       
@@ -548,7 +614,7 @@ int main()
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月12日</div>
+          <div>2024年2月13日</div>
         </div>
       
       
@@ -580,18 +646,12 @@ int main()
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/13/6%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E9%98%9F%E5%88%97-%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%EF%BC%882%E6%9C%8815%E6%97%A5%EF%BC%89/" title="6、天梯赛——队列+单调队列（2月15日）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">6、天梯赛——队列+单调队列（2月15日）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/11/4%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%882%E6%9C%8813%E6%97%A5%EF%BC%89/" title="4、天梯赛——栈（一）（2月13日）">
-                        <span class="hidden-mobile">4、天梯赛——栈（一）（2月13日）</span>
+                      <a href="/2024/02/13/9%E3%80%81%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%882%E6%9C%8817%E6%97%A5%EF%BC%89/" title="9、天梯赛——排序算法（一）（2月17日）">
+                        <span class="hidden-mobile">9、天梯赛——排序算法（一）（2月17日）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
