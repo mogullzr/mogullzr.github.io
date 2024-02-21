@@ -16,26 +16,25 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="静态链表定义​	分配一整片连续的内存空间，各个结点集中安置。 ​	每个数据元素4B，每个游标4B（每个结点共8B），现在假设初始存放地址为addr，e1的存放地址为addr + 8 * 2   结构体定义 + 基本操作概述12345678910111213141516#define MaxSize 10;typedef struct Node &#123;    ElemType data;">
+    <meta name="description" content="一、数的范围（简单）给定一个按照升序排列的长度为 n 的整数数组，以及 q 个查询。 对于每个查询，返回一个元素 k 的起始位置和终止位置（位置从 00 开始计数）。 如果数组中不存在该元素，则返回 -1 -1。 输入格式第一行包含整数 n 和 q，表示数组长度和询问个数。 第二行包含 n 个整数（均在 1∼10000 范围内），表示完整数组。 接下来 q 行，每行包含一个整数 k，表示一个询问元">
 <meta property="og:type" content="article">
-<meta property="og:title" content="6、数据结构——简单的线性表——静态链表（五）">
-<meta property="og:url" content="http://example.com/2024/02/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%EF%BC%88%E4%BA%94%EF%BC%89/index.html">
+<meta property="og:title" content="11、天梯赛——二分法（2月21日）">
+<meta property="og:url" content="http://example.com/2024/02/13/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E4%BA%8C%E5%88%86%E6%B3%95%EF%BC%882%E6%9C%8821%E6%97%A5%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="静态链表定义​	分配一整片连续的内存空间，各个结点集中安置。 ​	每个数据元素4B，每个游标4B（每个结点共8B），现在假设初始存放地址为addr，e1的存放地址为addr + 8 * 2   结构体定义 + 基本操作概述12345678910111213141516#define MaxSize 10;typedef struct Node &#123;    ElemType data;">
+<meta property="og:description" content="一、数的范围（简单）给定一个按照升序排列的长度为 n 的整数数组，以及 q 个查询。 对于每个查询，返回一个元素 k 的起始位置和终止位置（位置从 00 开始计数）。 如果数组中不存在该元素，则返回 -1 -1。 输入格式第一行包含整数 n 和 q，表示数组长度和询问个数。 第二行包含 n 个整数（均在 1∼10000 范围内），表示完整数组。 接下来 q 行，每行包含一个整数 k，表示一个询问元">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
-<meta property="article:published_time" content="2024-02-17T13:18:12.000Z">
-<meta property="article:modified_time" content="2024-02-17T13:26:29.024Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
+<meta property="article:published_time" content="2024-02-13T11:48:37.000Z">
+<meta property="article:modified_time" content="2024-02-21T01:13:54.566Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="底层">
-<meta property="article:tag" content="考研">
+<meta property="article:tag" content="天梯赛">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
   
   
   
-  <title>6、数据结构——简单的线性表——静态链表（五） - 程序书架</title>
+  <title>11、天梯赛——二分法（2月21日） - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -249,7 +248,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="6、数据结构——简单的线性表——静态链表（五）"></span>
+            <span id="subtitle" data-typed-text="11、天梯赛——二分法（2月21日）"></span>
           
         </div>
 
@@ -260,8 +259,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-17 21:18" pubdate>
-          2024年2月17日 晚上
+        <time datetime="2024-02-13 19:48" pubdate>
+          2024年2月13日 晚上
         </time>
       </span>
     
@@ -272,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          229 字
+          300 字
         
       </span>
     
@@ -283,7 +282,7 @@
         
         
         
-          2 分钟
+          3 分钟
         
       </span>
     
@@ -328,20 +327,146 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">6、数据结构——简单的线性表——静态链表（五）</h1>
+            <h1 id="seo-header">11、天梯赛——二分法（2月21日）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="静态链表定义"><a href="#静态链表定义" class="headerlink" title="静态链表定义"></a>静态链表定义</h2><p>​	分配一整片连续的内存空间，各个结点集中安置。</p>
-<p>​	每个数据元素4B，每个游标4B<strong>（每个结点共8B）</strong>，现在假设初始存放地址为<strong>addr</strong>，e<del>1</del><strong>的存放地址为addr + 8 * 2</strong></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402151736321.png" srcset="/img/loading.gif" lazyload alt="image-20240215173626402" style="zoom:50%;" />
+                <h2 id="一、数的范围（简单）"><a href="#一、数的范围（简单）" class="headerlink" title="一、数的范围（简单）"></a>一、数的范围<font color='green'>（简单）</font></h2><p>给定一个按照升序排列的长度为 n 的整数数组，以及 q 个查询。</p>
+<p>对于每个查询，返回一个元素 k 的起始位置和终止位置（位置从 00 开始计数）。</p>
+<p>如果数组中不存在该元素，则返回 <code>-1 -1</code>。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n 和 q，表示数组长度和询问个数。</p>
+<p>第二行包含 n 个整数（均在 1∼10000 范围内），表示完整数组。</p>
+<p>接下来 q 行，每行包含一个整数 k，表示一个询问元素。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>共 q 行，每行包含两个整数，表示所求元素的起始位置和终止位置。</p>
+<p>如果数组中不存在该元素，则返回 <code>-1 -1</code>。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>1≤n≤100000<br>1≤q≤10000<br>1≤k≤10000</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span><br><span class="hljs-number">3</span><br><span class="hljs-number">4</span><br><span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="结构体定义-基本操作概述"><a href="#结构体定义-基本操作概述" class="headerlink" title="结构体定义 + 基本操作概述"></a><font color='red'>结构体定义 + 基本操作概述</font></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">define</span> MaxSize 10;</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> &#123;</span><br>    ElemType data;<br>    <span class="hljs-type">int</span> next;<br>&#125;SLinkList[MaxSize];<br><br><span class="hljs-comment">// 等价于</span><br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> &#123;</span><br>    ElemType data;<br>    <span class="hljs-type">int</span> next;<br>&#125;SLinkList[MaxSize];<br><br><span class="hljs-comment">// 其他基本操作：插入、查找......</span><br><span class="hljs-comment">// 静态链表的初始化：把 a[0] 的 next 设置为 -1，同时可以将其所有空间各个元素赋值为-2（这是个特殊的数，其他值也可以）</span><br><span class="hljs-comment">// 删除的时候，需要记得，给删除结点位置设置为 -2</span><br></code></pre></td></tr></table></figure>
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs subunit">3 4<br>5 5<br><span class="hljs-string">-1</span> <span class="hljs-string">-1</span><br></code></pre></td></tr></table></figure>
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402151746476.png" srcset="/img/loading.gif" lazyload alt="image-20240215174637510" style="zoom: 33%;" />
 
-<h3 id="回头看看对于各种链表的初始化、插入、删除等操作是否可以自己马上手动将代码写出来实现，如果可以，恭喜你，你可以看下一节内容了……-▽-▽"><a href="#回头看看对于各种链表的初始化、插入、删除等操作是否可以自己马上手动将代码写出来实现，如果可以，恭喜你，你可以看下一节内容了……-▽-▽" class="headerlink" title="回头看看对于各种链表的初始化、插入、删除等操作是否可以自己马上手动将代码写出来实现，如果可以，恭喜你，你可以看下一节内容了……( * ^ ▽ ^ * )( * ^ ▽ ^ * )"></a>回头看看对于各种链表的初始化、插入、删除等操作是否可以自己马上手动将代码写出来实现，如果可以，恭喜你，你可以看下一节内容了……( * ^ ▽ ^ * )( * ^ ▽ ^ * )</h3>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>​	直播<strong>（录播）</strong></p>
+<h4 id="方法一（铁对）"><a href="#方法一（铁对）" class="headerlink" title="方法一（铁对）"></a>方法一（铁对）</h4><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+using namespace std;
+const int N = 1e5 + 10;
+int arr[N];
+int main()
+{
+    int n ,m;
+    cin >> n >> m;
+    for (int i = 0; i < n; i++) scanf("%d ",&arr[i]);    
+    while (m--)
+    {
+        int x;
+        scanf("%d",&x);
+        int l = 0,r = n - 1;
+        while (l < r)
+        {
+            int mid = l + r >> 1;
+            if (arr[mid] >= x) r = mid;
+            else l = mid + 1;
+        }
+        if (arr[l] != x) cout << "-1 -1" <<endl;
+        else 
+        {
+            cout << l << " ";
+            int l = 0, r = n - 1;
+            while (l < r)
+            {
+                int mid = l + r + 1>> 1;
+                if (arr[mid] <= x) l = mid;
+                else r = mid - 1;
+            }
+            cout << r << endl;
+        }
+    }  
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+<h4 id="方法二（目前没有发现特殊情况）"><a href="#方法二（目前没有发现特殊情况）" class="headerlink" title="方法二（目前没有发现特殊情况）"></a>方法二（目前没有发现特殊情况）</h4><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+const int N = 1e5 + 10;
+int n;
+int a[N];
+int main() 
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    int n, m;
+    cin >> n >> m;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    while (m--){
+        int x;
+        cin >> x;
+        int l = -1, r = n;
+        while (l + 1!= r) {
+            int mid = l + r >> 1;
+            if (x > a[mid]) l = mid;
+            else r = mid;
+        }
+        if (r == n || a[r] != x)
+        {
+            cout << "-1 -1\n";
+            continue;
+        } 
+        cout << r << " ";
+        l = -1, r = n;
+        while (l + 1!= r) {
+            int mid = l + r >> 1;
+            if (x < a[mid]) r = mid;
+            else l = mid;
+        }
+        cout << l << '\n';
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+<h2 id="二、冶炼金属（简单-）"><a href="#二、冶炼金属（简单-）" class="headerlink" title="二、冶炼金属（简单++）"></a>二、冶炼金属<font color='green'>（简单++）</font></h2><p>小蓝有一个神奇的炉子用于将普通金属 O 冶炼成为一种特殊金属 X。</p>
+<p>这个炉子有一个称作转换率的属性 V，V 是一个正整数，这意味着消耗 V 个普通金属 O 恰好可以冶炼出一个特殊金属 X，当普通金属 O 的数目不足 V 时，无法继续冶炼。</p>
+<p>现在给出了 N 条冶炼记录，每条记录中包含两个整数 A 和 B，这表示本次投入了 A 个普通金属 O，最终冶炼出了 B 个特殊金属 X。</p>
+<p>每条记录都是独立的，这意味着上一次没消耗完的普通金属 O 不会累加到下一次的冶炼当中。</p>
+<p>根据这 N 条冶炼记录，请你推测出转换率 V 的最小值和最大值分别可能是多少，<strong>题目保证评测数据不存在无解的情况</strong>。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行一个整数 N，表示冶炼记录的数目。</p>
+<p>接下来输入 N 行，每行两个整数 A、B、，含义如题目所述。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出两个整数，分别表示 V 可能的最小值和最大值，中间用空格分开。</p>
+<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>对于 30% 的评测用例，1≤N≤10^2^<br>对于 60% 的评测用例，1≤N≤10^3^<br>对于 100% 的评测用例，1≤N≤10^4^，1≤B≤A≤10^9^</p>
+<h4 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">3</span><br><span class="hljs-symbol">75 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">53 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">59 </span><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">20 </span><span class="hljs-number">25</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h4><p>当 V&#x3D;20&#x3D;20 时，有：⌊75&#x2F;20⌋&#x3D;3，⌊53&#x2F;20⌋&#x3D;2，⌊59&#x2F;20⌋&#x3D;2，可以看到符合所有冶炼记录。</p>
+<p>当 V&#x3D;25&#x3D;25 时，有：⌊75&#x2F;25⌋&#x3D;3，⌊53&#x2F;25⌋&#x3D;2，⌊59&#x2F;25⌋&#x3D;2，可以看到符合所有冶炼记录。</p>
+<p>且再也找不到比 20 更小或者比 25 更大的符合条件的 V 值了。</p>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>​	</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt; iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">int</span> N,x,y,Max = <span class="hljs-number">1e9</span>;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> n = <span class="hljs-number">10010</span>;<br><span class="hljs-type">int</span> arr[n],ans[n];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i ++ ) <br>    &#123;<br>        <span class="hljs-keyword">if</span>(ans[i] &lt; arr[i] / x) <br>            <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (ans[i] &gt; arr[i] / x)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; N;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) cin &gt;&gt; arr[i] &gt;&gt; ans[i];<br>    <span class="hljs-type">int</span> left = <span class="hljs-number">1</span>,right = Max;<br>    <span class="hljs-keyword">while</span>(left &lt; right)<br>    &#123;<br>        <span class="hljs-type">int</span>  mid = (left + right) &gt;&gt; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid) == <span class="hljs-number">1</span> || <span class="hljs-built_in">check</span>(mid) == <span class="hljs-number">3</span>) right = mid;<br>        <span class="hljs-keyword">else</span> left = mid + <span class="hljs-number">1</span>;<br>    &#125;<br>    cout &lt;&lt; left &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    left = <span class="hljs-number">1</span>;<br>    right = Max;<br>    <span class="hljs-keyword">while</span>(left &lt; right)<br>    &#123;<br>        <span class="hljs-type">int</span>  mid = (left + right + <span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid) == <span class="hljs-number">2</span> || <span class="hljs-built_in">check</span>(mid) == <span class="hljs-number">1</span>) left = mid;<br>        <span class="hljs-keyword">else</span> right = mid - <span class="hljs-number">1</span>;<br>    &#125;<br>    cout &lt;&lt; left;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt; iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> n = <span class="hljs-number">0</span>,a,b,c=<span class="hljs-number">0x3f3f3f3f</span>,d=<span class="hljs-number">0</span>;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n -- )<br>    &#123;<br>        cin &gt;&gt; a &gt;&gt; b;<br>        c = <span class="hljs-built_in">min</span>(c,a/b);<br>        d = <span class="hljs-built_in">max</span>(d,a/(b+<span class="hljs-number">1</span>) + <span class="hljs-number">1</span>);<br>    &#125;<br>    cout &lt;&lt; d &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; c;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             
@@ -359,7 +484,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
+  <a href="/categories/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E5%A4%87%E8%B5%9B%EF%BC%882%E4%B8%AA%E6%9C%88%EF%BC%8C%E5%A4%A9%E6%A2%AF%E8%B5%9B%E5%A4%87%E8%80%83%E4%B8%93%E5%B1%9E%EF%BC%89/" class="category-chain-item">天梯赛备赛（2个月，天梯赛备考专属）</a>
   
   
 
@@ -376,9 +501,7 @@
       
         <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
       
-        <a href="/tags/%E5%BA%95%E5%B1%82/" class="print-no-link">#底层</a>
-      
-        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
+        <a href="/tags/%E5%A4%A9%E6%A2%AF%E8%B5%9B/" class="print-no-link">#天梯赛</a>
       
     </div>
   
@@ -390,8 +513,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>6、数据结构——简单的线性表——静态链表（五）</div>
-      <div>http://example.com/2024/02/17/数据结构——简单的线性表——静态链表（五）/</div>
+      <div>11、天梯赛——二分法（2月21日）</div>
+      <div>http://example.com/2024/02/13/天梯赛——二分法（2月21日）/</div>
     </div>
     <div class="license-meta">
       
@@ -403,7 +526,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月17日</div>
+          <div>2024年2月13日</div>
         </div>
       
       
@@ -435,12 +558,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/02/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E9%A1%BA%E5%BA%8F%E8%A1%A8%EF%BC%88%E4%B8%80%EF%BC%89/" title="2、数据结构——简单的线性表——顺序表（一）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2、数据结构——简单的线性表——顺序表（一）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%EF%BC%88%E5%9B%9B%EF%BC%89/" title="5、数据结构——简单的线性表——循环链表（四）">
-                        <span class="hidden-mobile">5、数据结构——简单的线性表——循环链表（四）</span>
+                      <a href="/2024/02/13/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%882%E6%9C%8818%E6%97%A5%EF%BC%89/" title="10、天梯赛——排序算法（二）（2月18日）">
+                        <span class="hidden-mobile">10、天梯赛——排序算法（二）（2月18日）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
