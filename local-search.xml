@@ -4,6 +4,122 @@
   
   
   <entry>
+    <title>10、数据结构——栈与队列——队列（一）</title>
+    <link href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <url>/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>​<font color='red'><strong>队列(Queue)</strong></font>是只允许在一端进行插入，在另一端删除的<font color='red'><strong>线性表</strong></font></p><p>​看看下面的狗排队吃饭，前面的狗走了，后面的狗跟上，后来的狗走入队尾排队，我们下面需要学习的就是如何模拟出这样一个结构。</p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171736291.png" alt="image-20240217173559856" style="zoom:50%;" /><p>​<strong>重要术语：</strong> 队头、队尾、空队列</p><p>​<strong>空队列：</strong></p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171739333.png" alt="image-20240217173927953" style="zoom:50%;" /> <p>​<strong>入队（相对的从左边出去就是出队）：</strong></p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171745411.gif" alt="动画3" style="zoom:50%;" /><p>​<strong>队尾：</strong></p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171746506.png" alt="image-20240217174623303" style="zoom:50%;" /><p>​<strong>特点：</strong> 先进先出</p><h2 id="队列的基本操作"><a href="#队列的基本操作" class="headerlink" title="队列的基本操作"></a>队列的基本操作</h2><p><strong>InitQueue(&amp;Q)：</strong> 初始化队列。</p><p><strong>DestoryQueue(&amp; Q)：</strong> 销毁队列。</p><p><strong>EnQueue(&amp;Q,x)：</strong> 入队。</p><p><strong>DeQueue(&amp;Q,&amp;x)：</strong> 出队。</p><p><strong>GetHead(Q,&amp;x)：</strong> 读队头元素。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+      <tag>底层</tag>
+      
+      <tag>考研</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>9、数据结构——栈与队列——链栈（三）</title>
+    <link href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%93%BE%E6%A0%88%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <url>/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%93%BE%E6%A0%88%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LinkNode</span>&#123;</span><br>    ElemType data;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LinkNode</span> *<span class="hljs-title">next</span>;</span><br>&#125; *LiStack;<br></code></pre></td></tr></table></figure><h2 id="其他的所以比如说插入、删除等操作都是单链表部分衍生过来的，几乎一致，大家必须自己动手搞定它！！！如果你可以搞定请继续阅读下一节……-▽-▽-▽"><a href="#其他的所以比如说插入、删除等操作都是单链表部分衍生过来的，几乎一致，大家必须自己动手搞定它！！！如果你可以搞定请继续阅读下一节……-▽-▽-▽" class="headerlink" title="其他的所以比如说插入、删除等操作都是单链表部分衍生过来的，几乎一致，大家必须自己动手搞定它！！！如果你可以搞定请继续阅读下一节……( * ^ ▽ ^ * )( * ^ ▽ ^ * )( * ^ ▽ ^ * )"></a>其他的所以比如说插入、删除等操作都是单链表部分衍生过来的，几乎一致，大家必须自己动手搞定它！！！如果你可以搞定请继续阅读下一节……( * ^ ▽ ^ * )( * ^ ▽ ^ * )( * ^ ▽ ^ * )</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+      <tag>底层</tag>
+      
+      <tag>考研</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>8、数据结构——栈与队列——顺序栈（二）</title>
+    <link href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%A1%BA%E5%BA%8F%E6%A0%88%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <url>/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%A1%BA%E5%BA%8F%E6%A0%88%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">define</span> MaxSize 10 <span class="hljs-comment">// 定义栈元素的最大值</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span><br>    ElemType data[MaxSize]; <span class="hljs-comment">// 静态数组存放栈中元素</span><br>    <span class="hljs-type">int</span> top; <span class="hljs-comment">// 栈顶指针</span><br>&#125;SqStack;<br></code></pre></td></tr></table></figure><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 方式一（与后面的对应着的）</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">InitStack</span><span class="hljs-params">(SqStack &amp;S)</span> &#123;<br>    S.top = <span class="hljs-number">-1</span>;<br>&#125;<br><br><span class="hljs-comment">// 方式二（与后面的对应着的）</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">InitStack</span><span class="hljs-params">(SqStack &amp;S)</span> &#123;<br>    S.top = <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">testStack</span><span class="hljs-params">()</span> &#123;<br>    SqStack S;<br>    InitStack(S);<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="判栈空"><a href="#判栈空" class="headerlink" title="判栈空"></a>判栈空</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 方式一（与后面的对应着的）</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Empty</span><span class="hljs-params">(SqStack &amp;S)</span> &#123;<br>    <span class="hljs-keyword">return</span> S.top == <span class="hljs-number">-1</span>;<br>&#125;<br><br><span class="hljs-comment">// 方式二（与后面的对应着的）</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Empty</span><span class="hljs-params">(SqStack &amp;S)</span> &#123;<br>    <span class="hljs-keyword">return</span> S.top == <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure><h2 id="进栈"><a href="#进栈" class="headerlink" title="进栈"></a>进栈</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 方式一（与后面的对应着的）</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Push</span><span class="hljs-params">(SqStack &amp;S, ElemType x)</span> &#123;<br>    <span class="hljs-keyword">if</span> (S.top == MaxSize - <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// 判断是否栈满</span><br>    <br>    S.top = S.top + <span class="hljs-number">1</span>; <br>    S.data[S.top] = x;<br>    <span class="hljs-comment">// 上面两条语句可以合并为：x = S.data[++S.top];</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-comment">// 方式二（与后面的对应着的）</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">Push</span><span class="hljs-params">(SqStack &amp;S, ElemType x)</span> &#123;<br>    <span class="hljs-keyword">if</span> (S.top == MaxSize) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// 判断是否栈满</span><br>    <br>    S.top = S.top + <span class="hljs-number">1</span>; <br>    S.data[S.top] = x;<br>    <span class="hljs-comment">// 上面两条语句可以合并为：x = S.data[++S.top];</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure><h4 id="方式一："><a href="#方式一：" class="headerlink" title="方式一："></a>方式一：</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171654689.png" alt="image-20240217165450907" style="zoom:50%;" /><h4 id="方式二："><a href="#方式二：" class="headerlink" title="方式二："></a>方式二：</h4><p>​   <img src="./assets/image-20240217170911051.png" alt="image-20240217170911051" style="zoom:50%;" /></p><h2 id="出栈"><a href="#出栈" class="headerlink" title="出栈"></a>出栈</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">bool</span> <span class="hljs-title function_">Pop</span><span class="hljs-params">(SqStack &amp;S, ElemType &amp;x)</span> &#123;<br>    <span class="hljs-keyword">if</span> (S.top == <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// 判断栈是否为空</span><br>    <br>    x = S.data[S.top]; <span class="hljs-comment">// x就是记录一下马上要弹出的栈顶元素</span><br>    S.top = S.top - <span class="hljs-number">1</span>; <span class="hljs-comment">// 栈底元素弹出S.top = S.top - 1</span><br>    <span class="hljs-comment">// 上面两条语句可以合并为：x = S.data[S.top--];</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// 出栈成功，而且仅仅是逻辑删除</span><br>&#125;<br></code></pre></td></tr></table></figure><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171701049.png" alt="image-20240217170152898" style="zoom:50%;" /><h2 id="拓展：-共享栈（小小了解即可）"><a href="#拓展：-共享栈（小小了解即可）" class="headerlink" title="拓展： 共享栈（小小了解即可）"></a>拓展： 共享栈（小小了解即可）</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171712764.png" alt="image-20240217171235473" style="zoom:33%;" /><p>说白了就是两个栈放到内存中同一块连续空间中存储，一个栈从底往上添加元素，另一个从顶往下添加元素。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+      <tag>底层</tag>
+      
+      <tag>考研</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>7、数据结构——栈与队列——栈（一）</title>
+    <link href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <url>/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>​<strong>线性表</strong>是具有相同数据类型的n(n ≥ 0)个数据元素的有限序列，其中<strong>n为表长</strong>，当n&#x3D;0时线性表是一个空表。若用命名线性表，则其一般表示为 </p><p>$$<br>L&#x3D;(a_1,a_2…,a_i~…,a_n)<br>$$<br>​<strong>栈(Stack)<strong>是只允许在一端进行插入或删除操作的</strong>线性表</strong></p><p>​<strong>重要术语：</strong> 栈底、栈顶、空栈</p><p>​<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171504055.png" alt="image-20240217150449837" style="zoom:33%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171503181.png" style="zoom:33%;" /></p><p>​<strong>特点：</strong> 后进现出，比如这个图的进栈顺序是<br>$$<br>a_1-&gt;a_2-&gt;a_3-&gt;a_4-&gt;a_5<br>$$<br>​出栈顺序是<br>$$<br>a_5-&gt;a_4-&gt;a_3-&gt;a_2-&gt;a_1<br>$$</p><h2 id="栈的基本操作"><a href="#栈的基本操作" class="headerlink" title="栈的基本操作"></a>栈的基本操作</h2><p><strong>InitStack(&amp; S)：</strong><font color='red'>初始化栈</font>。构造一个空栈S，分配内存空间。</p><p><strong>DestotyStack(&amp; L)：</strong> <font color='red'>销毁栈</font>。销毁并释放栈S所占的内存空间。</p><p><strong>Push(&amp;S,x)：</strong> <font color='red'>进栈</font>。若S未满，将x插入成为新栈。</p><p><strong>Pop(&amp;S)：</strong> <font color='red'>出栈</font>。若S非空，将栈顶x弹出成为新栈。</p><p><strong>GetTop(&amp;S)：</strong><font color='red'>读栈顶元素</font>。若栈S非空，则用 x 返回栈顶元素。</p><p><strong>StackEmpty(&amp; S)：</strong> 判断一个栈 S 是否为空。若S为空，则返回true，反之返回false。</p><h2 id="一个公式"><a href="#一个公式" class="headerlink" title="一个公式"></a>一个公式</h2><p>​n个不同元素进栈，出栈元素不同排列的个数为<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171610064.png" alt="image-20240217161028431" style="zoom:33%;" />上述公式称为卡特兰(Catalan)数，可采用数学归纳法证明（不要求掌握)。</p><p>​<img src="./assets/image-20240217163522336.png" alt="image-20240217163522336" style="zoom:50%;" /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+      <tag>底层</tag>
+      
+      <tag>考研</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>6、数据结构——简单的线性表——静态链表（五）</title>
     <link href="/2024/02/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%EF%BC%88%E4%BA%94%EF%BC%89/"/>
     <url>/2024/02/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%EF%BC%88%E4%BA%94%EF%BC%89/</url>
