@@ -16,16 +16,16 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、Tire字符串统计（简单+）维护一个字符串集合，支持两种操作：  I x 向集合中插入一个字符串 x； Q x 询问一个字符串在集合中出现了多少次。  共有 N 个操作，所有输入的字符串总长度不超过 10^5^，字符串仅包含小写英文字母。 输入格式第一行包含整数 N，表示操作数。 接下来 N 行，每行包含一个操作指令，指令为 I x 或 Q x 中的一种。 输出格式对于每个询问指令 Q x，都">
+    <meta name="description" content="前言：字典树（Tire）定义​	Tire是一种能够快速插入和查询字符串的多叉树结构 根结点编号为0，初始位置，不存任何东西。 其他节点： 1.标记路径 2.记录单词插入次数 边： 表示字符 Tire维护字符串集合，支持两种操作*void insert(char s): 向集合插入一个字符串 *void query(char s): 在集合中查询一个字符串 建字典树  下面我们就可以准备代码编写需要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8、天梯赛——Tire算法（直播录屏，2月17日）">
 <meta property="og:url" content="http://example.com/2024/02/13/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94Tire%E7%AE%97%E6%B3%95%EF%BC%88%E7%9B%B4%E6%92%AD%E5%BD%95%E5%B1%8F%EF%BC%8C2%E6%9C%8817%E6%97%A5%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="一、Tire字符串统计（简单+）维护一个字符串集合，支持两种操作：  I x 向集合中插入一个字符串 x； Q x 询问一个字符串在集合中出现了多少次。  共有 N 个操作，所有输入的字符串总长度不超过 10^5^，字符串仅包含小写英文字母。 输入格式第一行包含整数 N，表示操作数。 接下来 N 行，每行包含一个操作指令，指令为 I x 或 Q x 中的一种。 输出格式对于每个询问指令 Q x，都">
+<meta property="og:description" content="前言：字典树（Tire）定义​	Tire是一种能够快速插入和查询字符串的多叉树结构 根结点编号为0，初始位置，不存任何东西。 其他节点： 1.标记路径 2.记录单词插入次数 边： 表示字符 Tire维护字符串集合，支持两种操作*void insert(char s): 向集合插入一个字符串 *void query(char s): 在集合中查询一个字符串 建字典树  下面我们就可以准备代码编写需要">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
 <meta property="article:published_time" content="2024-02-13T11:45:16.000Z">
-<meta property="article:modified_time" content="2024-02-13T11:46:25.449Z">
+<meta property="article:modified_time" content="2024-02-21T14:51:10.320Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="天梯赛">
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          412 字
+          826 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          4 分钟
+          7 分钟
         
       </span>
     
@@ -332,7 +332,46 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、Tire字符串统计（简单-）"><a href="#一、Tire字符串统计（简单-）" class="headerlink" title="一、Tire字符串统计（简单+）"></a>一、Tire字符串统计<font color='green'>（简单+）</font></h2><p>维护一个字符串集合，支持两种操作：</p>
+                <h2 id="前言：字典树（Tire）"><a href="#前言：字典树（Tire）" class="headerlink" title="前言：字典树（Tire）"></a>前言：字典树（Tire）</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>​	Tire是一种能够快速插入和查询字符串的多叉树结构</p>
+<p>根结点编号为0，初始位置，不存任何东西。</p>
+<p><strong>其他节点：</strong></p>
+<p>1.标记路径</p>
+<p>2.记录单词插入次数</p>
+<p><strong>边：</strong> 表示字符</p>
+<h3 id="Tire维护字符串集合，支持两种操作"><a href="#Tire维护字符串集合，支持两种操作" class="headerlink" title="Tire维护字符串集合，支持两种操作"></a>Tire维护字符串集合，支持两种操作</h3><p>*<em>void insert(char <em>s):</em></em> 向集合插入一个字符串</p>
+<p>*<em>void query(char <em>s):</em></em> 在集合中查询一个字符串</p>
+<h3 id="建字典树"><a href="#建字典树" class="headerlink" title="建字典树"></a>建字典树</h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402212108251.png" srcset="/img/loading.gif" lazyload alt="image-20240221210726660" style="zoom:50%;" />
+
+<p><strong>下面我们就可以准备代码编写需要的数组了：</strong></p>
+<ul>
+<li><p><strong>节点编号idx:</strong> </p>
+<p>用来记录节点</p>
+</li>
+<li><p><strong>儿子数组 son[p] [i]:</strong></p>
+<p>存储从节点<strong>p</strong>沿着这条边走到的子节点编号，比如上图的节点<strong>1</strong>，对应表示的就是从<strong>1</strong>节点沿着<strong>d</strong>边可以走到节点<strong>4</strong>。</p>
+<p>而这里的<strong>边(i)<strong>为</strong>26</strong>个字符**(a<del>z)<strong>对应的映射值</strong>0</del>25<strong>，每个节点最多可以有</strong>26<strong>个分支，例如上面图中的：</strong>son[0] [3] &#x3D; 1;son[1] [14] &#x3D; 2;son[1] [3] &#x3D; 4……**</p>
+</li>
+<li><p><strong>记录数组:</strong> </p>
+<p>存储的是以当前节点<strong>p</strong>为结尾的插入字符串个数</p>
+</li>
+</ul>
+<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>1.空 <strong>Tire</strong> 仅有1个根结点，编号为0 ；</p>
+<p>2.<strong>从根开始插</strong>，枚举字符串的每个字符，如果有儿子<strong>（也就是子节点）</strong>，则p指针走到儿子如果没有儿子，则先创建儿子，p指针再走到儿子；反之则直接走向儿子</p>
+<p> 3.在单词结束点记录插入次数，也就是<strong>cnt[p]++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> son[N][<span class="hljs-number">26</span>];<br><span class="hljs-type">char</span> s[N];<br><span class="hljs-type">int</span> cnt[N];<br><span class="hljs-type">int</span> n, idx;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-type">char</span> s[])</span> </span>&#123;<br>    <span class="hljs-type">int</span> p = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; s[i]; i++) &#123;<br>        <span class="hljs-type">int</span> u = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span> (!son[p][u]) son[p][u] = ++idx;<br>        p = son[p][u];<br>    &#125;<br>    cnt[p] ++;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>1.从根开始查，扫描字符串 </p>
+<p>2.有字母**s[i]**，则走下去，能走到词尾，则返回插入次数 </p>
+<p>3.无字母<strong>s[i]</strong>,则返回<strong>0</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-type">char</span> s[])</span> </span>&#123;<br>    <span class="hljs-type">int</span> p = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; s[i]; i++) &#123;<br>        <span class="hljs-type">int</span> u = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span> (!son[p][u]) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        p = son[p][u];<br>    &#125;<br>    <span class="hljs-keyword">return</span> cnt[p];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="一、Tire字符串统计（简单-）"><a href="#一、Tire字符串统计（简单-）" class="headerlink" title="一、Tire字符串统计（简单+）"></a>一、Tire字符串统计<font color='green'>（简单+）</font></h2><p>维护一个字符串集合，支持两种操作：</p>
 <ol>
 <li><code>I x</code> 向集合中插入一个字符串 x；</li>
 <li><code>Q x</code> 询问一个字符串在集合中出现了多少次。</li>
@@ -415,57 +454,9 @@ int main()
 
 
 <h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>​	直播讲解<strong>（录屏）</strong></p>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
-    <summary>答案（请自己先思考一下再参考）</summary>
-    <pre>
-        <blockcode>
-#include < iostream>
-#include < algorithm>
-using namespace std;
-const int N = 1e5 + 10, M = N * 31;
-int a[M][2], b[N];
-int n,idx;
-long long ans;
-void insert(int x) {
-    int p = 0;
-    for (int i = 30; i >= 0; i--) {
-        int u = x >> i & 1;
-        if (!a[p][u]) a[p][u] = ++idx;
-        p = a[p][u];
-    }
-}
-long long query(int x){
-    long long p = 0, res = 0;
-    for (int i = 30; i >= 0; i--) {
-        int u = x >> i & 1;
-        if (a[p][!u]) {
-            p = a[p][!u];
-            res = res * 2 + 1;
-        } else {
-            p = a[p][u];
-            res = res * 2;
-        }
-    }    
-    return res;
-}
-int main()
-{
-    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-        cin >> b[i];
-        insert(b[i]);
-    }
-    for (int i = 0; i < n;i++) {
-        long long k = query(b[i]);
-        ans = max(ans, k);        
-    }    
-    cout << ans;
-    return 0; 
-}
-        </blockcode>
-    </pre>
-</details>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt; iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt; algorithm&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>, M = N * <span class="hljs-number">31</span>;<br><span class="hljs-type">int</span> a[M][<span class="hljs-number">2</span>], b[N];<br><span class="hljs-type">int</span> n,idx;<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> ans;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<br>    <span class="hljs-type">int</span> p = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">30</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>        <span class="hljs-type">int</span> u = x &gt;&gt; i &amp; <span class="hljs-number">1</span>; <span class="hljs-comment">// 取出二进制的第i个数，这里需要从高位开始，因为我们找的数越大肯定要找高位优先为1的数</span><br>        <span class="hljs-keyword">if</span> (!a[p][u]) a[p][u] = ++idx;<br>        p = a[p][u];<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> p = <span class="hljs-number">0</span>, res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">30</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>        <span class="hljs-type">int</span> u = x &gt;&gt; i &amp; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (a[p][!u]) &#123; <span class="hljs-comment">// p结点一共就两个儿子</span><br>            p = a[p][!u];<span class="hljs-comment">//因为从高到低枚举，~高位的值一定是大的</span><br>            res = res * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>; <span class="hljs-comment">// 累加</span><br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            p = a[p][u];<br>            res = res * <span class="hljs-number">2</span>;<br>        &#125;<br>    &#125;    <br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>),cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>),cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        cin &gt;&gt; b[i];<br>        <span class="hljs-built_in">insert</span>(b[i]);<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n;i++) &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> k = <span class="hljs-built_in">query</span>(b[i]);<br>        ans = <span class="hljs-built_in">max</span>(ans, k);        <br>    &#125;    <br>    cout &lt;&lt; ans;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             

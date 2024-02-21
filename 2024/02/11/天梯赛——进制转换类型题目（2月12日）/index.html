@@ -16,16 +16,16 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、数的进制转换（—）（简单-）大家好，我是小刘，现在我正在学习计算机的基础知识：进制转换，但是现在有个问题，我发现学校交给我们进制转换仅仅是2、8、10、16进制之间的转换，现在我想设计一段代码，可以实现任何进制数对任何进制数之间的转换。 注意：字母这里可能为大小写字母，不需要考虑大小写问题，比如Ab23。 输入格式输入一个字符串 X，X的进制为Y，需要转化为的进制为Z。 输出格式输出转换为Z进">
+    <meta name="description" content="位运算按位与（&amp;）计算方式： 有0出0，全1出1 例如： 4&amp;5改为二进制 4 –&gt; 0000 0100 5 –&gt; 0000 0101 ​	 0000 0100 &lt;–4 因此4&amp;5&#x3D;4 按位或（|）计算方式： 有1出1，全0出0 例如： 4&amp;5改为二进制 4 –&gt; 0000 0100 5 –&gt; 0000 0101 ​	 000">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3、天梯赛——进制转换类型题目（2月12日）">
 <meta property="og:url" content="http://example.com/2024/02/11/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%EF%BC%882%E6%9C%8812%E6%97%A5%EF%BC%89/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="一、数的进制转换（—）（简单-）大家好，我是小刘，现在我正在学习计算机的基础知识：进制转换，但是现在有个问题，我发现学校交给我们进制转换仅仅是2、8、10、16进制之间的转换，现在我想设计一段代码，可以实现任何进制数对任何进制数之间的转换。 注意：字母这里可能为大小写字母，不需要考虑大小写问题，比如Ab23。 输入格式输入一个字符串 X，X的进制为Y，需要转化为的进制为Z。 输出格式输出转换为Z进">
+<meta property="og:description" content="位运算按位与（&amp;）计算方式： 有0出0，全1出1 例如： 4&amp;5改为二进制 4 –&gt; 0000 0100 5 –&gt; 0000 0101 ​	 0000 0100 &lt;–4 因此4&amp;5&#x3D;4 按位或（|）计算方式： 有1出1，全0出0 例如： 4&amp;5改为二进制 4 –&gt; 0000 0100 5 –&gt; 0000 0101 ​	 000">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
 <meta property="article:published_time" content="2024-02-11T06:04:04.000Z">
-<meta property="article:modified_time" content="2024-02-12T08:47:14.962Z">
+<meta property="article:modified_time" content="2024-02-21T14:50:49.335Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="天梯赛">
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          376 字
+          628 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          4 分钟
+          6 分钟
         
       </span>
     
@@ -332,7 +332,46 @@
             
               <div class="markdown-body">
                 
-                <h1 id="一、数的进制转换（—）（简单-）"><a href="#一、数的进制转换（—）（简单-）" class="headerlink" title="一、数的进制转换（—）（简单-）"></a>一、数的进制转换（—）<font color='green'>（简单-）</font></h1><p>大家好，我是小刘，现在我正在学习计算机的基础知识：进制转换，但是现在有个问题，我发现学校交给我们进制转换仅仅是2、8、10、16进制之间的转换，现在我想设计一段代码，可以实现任何进制数对任何进制数之间的转换。</p>
+                <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="按位与（-）"><a href="#按位与（-）" class="headerlink" title="按位与（&amp;）"></a>按位与（&amp;）</h2><p><strong>计算方式：</strong></p>
+<p>有0出0，全1出1</p>
+<p><strong>例如</strong>：</p>
+<p>4&amp;5改为二进制</p>
+<p>4 –&gt; 0000 0100</p>
+<p>5 –&gt; <u>0000 0101</u></p>
+<p>​	 0000 0100 &lt;–4</p>
+<p>因此4&amp;5&#x3D;4</p>
+<h2 id="按位或（-）"><a href="#按位或（-）" class="headerlink" title="按位或（|）"></a>按位或（|）</h2><p><strong>计算方式：</strong></p>
+<p>有1出1，全0出0</p>
+<p><strong>例如</strong>：</p>
+<p>4&amp;5改为二进制</p>
+<p>4 –&gt; 0000 0100</p>
+<p>5 –&gt; <u>0000 0101</u></p>
+<p>​	 0000 0101 &lt;–5</p>
+<p>因此4|5&#x3D;5</p>
+<h2 id="按位异或（-）"><a href="#按位异或（-）" class="headerlink" title="按位异或（^）"></a>按位异或（^）</h2><p><strong>计算方式:</strong></p>
+<p>相同为0，不同为1</p>
+<p><strong>例如</strong>：</p>
+<p>4&amp;5改为二进制</p>
+<p>4 –&gt; 0000 0100</p>
+<p>5 –&gt; <u>0000 0101</u></p>
+<p>​	 0000 0001 &lt;–1</p>
+<p>因此4^5&#x3D;1</p>
+<p><strong>用途：交换变量</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-type">int</span> a = <span class="hljs-number">1</span>, b = <span class="hljs-number">2</span>;<br>a = a ^ b;<br>b = a ^ b; <span class="hljs-comment">// b = a ^ b ^ b = a;</span><br>a = a ^ b; <span class="hljs-comment">// a = a ^ b ^ a;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="取反（-）"><a href="#取反（-）" class="headerlink" title="取反（~）"></a>取反（~）</h2><p><strong>计算方式:</strong></p>
+<p>二进制中的1变0，0变1</p>
+<h2 id="位运算符（-和"><a href="#位运算符（-和" class="headerlink" title="位运算符（&gt;&gt; 和 &lt;&lt;）"></a>位运算符（&gt;&gt; 和 &lt;&lt;）</h2><p><strong>计算方式：</strong></p>
+<p>将一个数的二进制位全部左移（右移）若干位</p>
+<p><strong>左移：</strong>高位溢出不用，低位补0</p>
+<p><strong>右移：</strong>低位溢出不用，高位正数补0，负数补1</p>
+<p>左移一位相当于乘<em>2，</em>2^n^相当于左移n位，右移同理</p>
+<p><strong>例子：</strong></p>
+<p>a &#x3D; 10 &#x3D; （1010）<del>2</del></p>
+<p>a &#x3D; a &lt;&lt; 2 &#x3D;（1000）<del>2</del></p>
+<h1 id="一、数的进制转换（—）（简单-）"><a href="#一、数的进制转换（—）（简单-）" class="headerlink" title="一、数的进制转换（—）（简单-）"></a>一、数的进制转换（—）<font color='green'>（简单-）</font></h1><p>大家好，我是小刘，现在我正在学习计算机的基础知识：进制转换，但是现在有个问题，我发现学校交给我们进制转换仅仅是2、8、10、16进制之间的转换，现在我想设计一段代码，可以实现任何进制数对任何进制数之间的转换。</p>
 <p>注意：字母这里可能为大小写字母，不需要考虑大小写问题，比如Ab23。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一个字符串 X，X的进制为Y，需要转化为的进制为Z。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出转换为Z进制的数X的格式。</p>
@@ -371,7 +410,7 @@ string x;
 int y,z;
 int k = 1;
 long long ans;
-vector< int> C;
+vector<int> C;
 int main() 
 {
     cin >> x >> y >> z;        
@@ -400,6 +439,7 @@ int main()
         </blockcode>
     </pre>
 </details>
+
 
 
 
@@ -477,6 +517,8 @@ int main()
 
 
 
+
+
 <h2 id="三、数列（简单）"><a href="#三、数列（简单）" class="headerlink" title="三、数列（简单）"></a>三、数列<font color='green'>（简单）</font></h2><p>给定一个正整数 k，把所有 k 的方幂及所有有限个互不相等的 k 的方幂之和构成一个递增的序列，例如，当 k&#x3D;3 时，这个序列是：</p>
 <p>1，3，4，9，10，12，13，…</p>
 <p>该序列实际上就是：3^0^，3^1^，3^0^+3^1^，3^2^，3^0^+3^2^，3^1^+3^2^，3^0^+3^1^+3^2^……</p>
@@ -500,6 +542,10 @@ int main()
     </pre>
     <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402121644161.png" srcset="/img/loading.gif" lazyload alt="image-20240212164415749" style="zoom:50%;" />
 </details>
+
+
+
+
 
 
 <h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><details>
