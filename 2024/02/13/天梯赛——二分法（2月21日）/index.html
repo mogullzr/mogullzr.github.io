@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402082325025.jpg">
 <meta property="article:published_time" content="2024-02-13T11:48:37.000Z">
-<meta property="article:modified_time" content="2024-02-21T02:01:30.512Z">
+<meta property="article:modified_time" content="2024-02-21T12:44:02.167Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="天梯赛">
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          300 字
+          500 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          3 分钟
+          5 分钟
         
       </span>
     
@@ -354,38 +354,38 @@
         <blockcode>
 #include < iostream>
 using namespace std;
-const int N = 1e5 + 10;
+const int N = 1e6 + 10;
 int arr[N];
 int main()
 {
-    int n ,m;
+    int n,m;
     cin >> n >> m;
-    for (int i = 0; i < n; i++) scanf("%d ",&arr[i]);    
+    for (int i = 0; i < n; i++) scanf("%d ",&arr[i]);
     while (m--)
     {
         int x;
         scanf("%d",&x);
-        int l = 0,r = n - 1;
+        int l = 0, r = n - 1;
         while (l < r)
         {
-            int mid = l + r >> 1;
+            int mid = (l + r) / 2;
             if (arr[mid] >= x) r = mid;
             else l = mid + 1;
         }
-        if (arr[l] != x) cout << "-1 -1" <<endl;
-        else 
+        if (arr[l] != x) cout << "-1 -1" << endl;
+        else
         {
-            cout << l << " ";
-            int l = 0, r = n - 1;
+            printf("%d ",l);
+            int l = 0,r = n - 1;
             while (l < r)
             {
-                int mid = l + r + 1>> 1;
+                int mid =(l + r + 1) / 2;
                 if (arr[mid] <= x) l = mid;
                 else r = mid - 1;
             }
-            cout << r << endl;
+            printf("%d\n",l);
         }
-    }  
+    }   
     return 0;
 }
         </blockcode>
@@ -397,8 +397,8 @@ int main()
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
-#include <iostream>
-#include <algorithm>
+#include < iostream>
+#include < algorithm>
 using namespace std;
 const int N = 1e5 + 10;
 int n;
@@ -514,6 +514,7 @@ int main()
 
 
 
+
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
@@ -538,6 +539,74 @@ int main()
 </details>
 
 
+
+
+
+<h2 id="三、牛可乐和魔法封印-扩充"><a href="#三、牛可乐和魔法封印-扩充" class="headerlink" title="三、牛可乐和魔法封印(扩充)"></a>三、牛可乐和魔法封印(扩充)</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/235558">链接</a></p>
+<p>牛可乐得到了一个长度为 nnn 且非严格单调递增的序列 aaa，然而这个序列被 qqq 层魔法封印了，其中第 iii 层封印的问题包含两个整数 xi,yi(xi≤yi)x_i,y_i(x_i\leq y_i)xi,yi(xi≤yi)，牛可乐必须正确回答序列中大于等于 xix_ixi且小于等于 yiy_iyi 的数字个数才能够解开该层封印。</p>
+<p> 牛可乐觉得这个问题太难了，于是他想请你帮助他解开序列的 qqq 层封印。</p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h2><p>$$<br>第一行包含一个整数 n(1≤n≤10^5)，表示序列的长度。\</p>
+<p>第二行包含 n 个整数，其中 −10^9≤a_i≤10^9\</p>
+<p>第三行包含一个整数 q(1≤q≤10^5)，代表封印层数。\</p>
+<p>之后 q 行，每行两个整数 x_i,y_i(-10^9\leq x_i\leq y_i\leq 10^9)，代表该层封印的询问。<br>$$</p>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h2><p>​	<br>$$<br>对于每层封印，输出一行一个整数，代表在范围内的数字个数。<br>$$</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p><a href="javascript:void(0);">复制</a></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">6</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p><a href="javascript:void(0);">复制</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">4<br>5<br>1<br></code></pre></td></tr></table></figure>
+
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dns">对于第一层封印，<span class="hljs-number">2,3,4,52</span>,<span class="hljs-number">3,4,52,3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>在范围内，答案为 <span class="hljs-number">444</span>。<br><br>对于第二层封印，<span class="hljs-number">1,2,3,4</span>,<span class="hljs-number">51,2,3,4</span>,<span class="hljs-number">51,2,3,4</span>,<span class="hljs-number">5</span>在范围内，答案为 <span class="hljs-number">555</span>。<br><br>对于第三层封印，<span class="hljs-number">333</span>在范围内，答案为 <span class="hljs-number">111</span>。<br></code></pre></td></tr></table></figure>
+
+<p>​                            示例2                        </p>
+<h2 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h2><p><a href="javascript:void(0);">复制</a></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span><br><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h2><p><a href="javascript:void(0);">复制</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">2<br>3<br>5<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < algorithm>
+using namespace std;
+const int N = 1e5 + 10;
+int n, q;
+int a[N];
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+    }
+    cin >> q;
+    while (q--) {
+        int x, y;
+        cin >> x >> y;
+        int l = 1, r = n + 1;
+        while (l < r) {
+            int mid = l + r >> 1;
+            if (a[mid] >= x) r = mid;
+            else l = mid + 1;
+        }
+        int ll = 0, rr = n;
+        while (ll < rr) {
+            int mid = (ll + rr + 1) >> 1;
+            if (a[mid] <= y) ll = mid;
+            else rr = mid - 1;
+        }      
+        cout << rr - l + 1 << '\n';
+    }  
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
 
 
                 
