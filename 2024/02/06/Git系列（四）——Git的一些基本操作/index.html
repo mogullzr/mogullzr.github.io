@@ -16,12 +16,12 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、Git 状态Git管理的文件有5种状态： 未跟踪： 新添加的文件，或者移除跟踪的文件，通过git add 添加 状态 未修改： 默认状态，从仓库出来的默认状态，无修改的状态 **已修改： ** 修改或者新增文件的状态 已暂存： 修改、新增文件加入暂缓区的状态 已修改： 从暂缓区提交到版本库  二、Git的配置文件的有关命令三种配置文件 系統全局配置：所有用戶、仓库的配置信息 用户全局配置：当前">
+    <meta name="description" content="一、Git 状态Git管理的文件有5种状态： 未跟踪： 新添加的文件，或者移除跟踪的文件，通过git add 添加 状态 未修改： 默认状态，从仓库出来的默认状态，无修改的状态 已修改：  修改或者新增文件的状态 已暂存： 修改、新增文件加入暂缓区的状态 已修改： 从暂缓区提交到版本库  二、Git的配置文件的有关命令三种配置文件 系統全局配置：所有用戶、仓库的配置信息 用户全局配置：当前系统用户">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git系列（四）——Git的一些基本操作">
 <meta property="og:url" content="http://example.com/2024/02/06/Git%E7%B3%BB%E5%88%97%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E2%80%94Git%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="一、Git 状态Git管理的文件有5种状态： 未跟踪： 新添加的文件，或者移除跟踪的文件，通过git add 添加 状态 未修改： 默认状态，从仓库出来的默认状态，无修改的状态 **已修改： ** 修改或者新增文件的状态 已暂存： 修改、新增文件加入暂缓区的状态 已修改： 从暂缓区提交到版本库  二、Git的配置文件的有关命令三种配置文件 系統全局配置：所有用戶、仓库的配置信息 用户全局配置：当前">
+<meta property="og:description" content="一、Git 状态Git管理的文件有5种状态： 未跟踪： 新添加的文件，或者移除跟踪的文件，通过git add 添加 状态 未修改： 默认状态，从仓库出来的默认状态，无修改的状态 已修改：  修改或者新增文件的状态 已暂存： 修改、新增文件加入暂缓区的状态 已修改： 从暂缓区提交到版本库  二、Git的配置文件的有关命令三种配置文件 系統全局配置：所有用戶、仓库的配置信息 用户全局配置：当前系统用户">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300100488.png">
 <meta property="article:published_time" content="2024-02-06T14:23:17.000Z">
@@ -272,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          993 字
+          996 字
         
       </span>
     
@@ -336,74 +336,59 @@
                 <h2 id="一、Git-状态"><a href="#一、Git-状态" class="headerlink" title="一、Git 状态"></a>一、Git 状态</h2><h4 id="Git管理的文件有5种状态："><a href="#Git管理的文件有5种状态：" class="headerlink" title="Git管理的文件有5种状态："></a><code>Git</code>管理的文件有5种状态：</h4><ul>
 <li><font color='skeBlue'><strong>未跟踪：</strong></font> 新添加的文件，或者移除跟踪的文件，通过<font color='red'><strong><code>git add</code></strong></font> 添加 状态</li>
 <li><font color='keyblue'><strong>未修改：</strong></font> 默认状态，从仓库出来的默认状态，无修改的状态</li>
-<li><font color='keyblue'>**已修改： **</font> 修改或者新增文件的状态</li>
+<li><font color='keyblue'><strong>已修改： </strong></font> 修改或者新增文件的状态</li>
 <li><font color='keyblue'><strong>已暂存：</strong></font> 修改、新增文件加入暂缓区的状态</li>
 <li><font color='keyblue'><strong>已修改：</strong></font> 从暂缓区提交到版本库</li>
 </ul>
 <h2 id="二、Git的配置文件的有关命令"><a href="#二、Git的配置文件的有关命令" class="headerlink" title="二、Git的配置文件的有关命令"></a>二、Git的配置文件的有关命令</h2><h4 id="三种配置文件"><a href="#三种配置文件" class="headerlink" title="三种配置文件"></a>三种配置文件</h4><ul>
 <li><font color='keyblue'><strong>系統全局配置：</strong></font>所有用戶、仓库的配置信息</li>
 <li><font color='keyblue'><strong>用户全局配置：</strong></font>当前系统用户的全局配置</li>
-<li><font color='keyblue'><strong>仓库&#x2F;项目配置：</strong></font></li>
+<li><font color='keyblue'>**仓库/项目配置：**</font> 
+
+</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看git配置</span><br>$ git config --list<br>$ git config -l<br><br><span class="hljs-comment"># 查看系统配置</span><br>$ git config --system --list <br><br><span class="hljs-comment"># 查看当前用户的全局配置</span><br>$ git conifg --list --global<br><br><span class="hljs-comment"># 查看当前仓库配置信息</span><br>$ git config --<span class="hljs-built_in">local</span> --list <br><br></code></pre></td></tr></table></figure>
-
-
-
 <h4 id="配置-忽略文件-gitgnore"><a href="#配置-忽略文件-gitgnore" class="headerlink" title="配置 - 忽略文件.gitgnore"></a>配置 - 忽略文件.gitgnore</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302051489.jpg" srcset="/img/loading.gif" lazyload alt="Git图片2.3"></p>
 <p>这个文件里面配置的就是你在山传文件的时候忽略哪些类型的文件，这里面的<strong>主要语法就是Linux的通配符</strong>，常用通配符</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 表示注释</span><br>*.md <span class="hljs-comment">#表示忽略所有后缀为md的文件</span><br>!1.md <span class="hljs-comment">#表示忽略除了1.md外的文件</span><br>/bin <span class="hljs-comment">#仅忽略项目根目录下bin文件，不包括其他目录下的</span><br>bin/ <span class="hljs-comment">#忽略bin/目录下的所有文件</span><br>bin/*.md <span class="hljs-comment">#举个例子：忽略bin/1.md但是不忽略bin/a/1.md</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="三、Git的GUI工具（选学）"><a href="#三、Git的GUI工具（选学）" class="headerlink" title="三、Git的GUI工具（选学）"></a>三、Git的GUI工具（选学）</h2><p>​		GUI界面：直白就是<font color='red'><strong>使用鼠标操作的git</strong></font>，前面我们所学的可以称之为 <font color='red'><strong>使用键盘输入的git</strong></font></p>
+<h2 id="三、Git的GUI工具（选学）"><a href="#三、Git的GUI工具（选学）" class="headerlink" title="三、Git的GUI工具（选学）"></a>三、Git的GUI工具（选学）</h2><p>​        GUI界面：直白就是<font color='red'><strong>使用鼠标操作的git</strong></font>，前面我们所学的可以称之为 <font color='red'><strong>使用键盘输入的git</strong></font></p>
 <h2 id="GUI管理工具：SourceTree"><a href="#GUI管理工具：SourceTree" class="headerlink" title="GUI管理工具：SourceTree"></a>GUI管理工具：SourceTree</h2><p>SourceTree<a target="_blank" rel="noopener" href="https://www.sourcetreeapp.com/">官网</a> 下载</p>
 <ul>
 <li>基本就是通过按钮的方式支持管理多个仓库，通过+按钮，可选择多种方式添加仓库</li>
 </ul>
 <h2 id="四、创建本地工作取仓库"><a href="#四、创建本地工作取仓库" class="headerlink" title="四、创建本地工作取仓库"></a>四、创建本地工作取仓库</h2><p>一般就是两个办法：</p>
 <ul>
-<li>一种是创建完全新的仓库：<font color='red'><strong><code>git init</code></strong></font>，会出现一个**<code>.git</code>**文件夹</li>
+<li>一种是创建完全新的仓库：<font color='red'><strong><code>git init</code></strong></font>，会出现一个<strong><code>.git</code></strong>文件夹</li>
 <li>另一种是克隆远程仓库,<font color='red'><strong><code>git clone 复制仓库对应的HTTPS</code></strong></font></li>
 </ul>
-<h2 id="五、暂存区add"><a href="#五、暂存区add" class="headerlink" title="五、暂存区add"></a>五、暂存区add</h2><p><font color='red'><strong><code>git add</code></strong></font>命令就是把需要提交的所有修改放到暂存区<strong>（Stage）</strong>里去，然后，执行<font color='red'><strong><code>git commit</code></strong></font>就可以将所有暂存区的内容添加到版本库离去。</p>
-<table>
-<thead>
-<tr>
-<th><strong>指令</strong></th>
-<th><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>git add 多个文件或者目录</td>
-<td>添加文件到暂存区，包括修改的文件和新增的文件和文件夹（包括子目录）</td>
-</tr>
-<tr>
-<td>git add .</td>
-<td>同上，添加<font color='red'><strong>所有</strong></font>修改、新增文件<strong>（未跟踪）</strong>到暂存区</td>
-</tr>
-<tr>
-<td>git rm 文件</td>
-<td>删除工作区文件，并且将这次删除放入暂存区</td>
-</tr>
-<tr>
-<td>git mv 文件名1 文件名2</td>
-<td>将文件名字修改后同时加入暂缓区内</td>
-</tr>
-</tbody></table>
-<h2 id="六、提交记录commit"><a href="#六、提交记录commit" class="headerlink" title="六、提交记录commit"></a>六、提交记录commit</h2><p>每次<font color='red'><strong><code>git commit</code></strong></font>之后就会生成一个快照记录<font color='red'><strong><code>id + 描述 +快照内容</code></strong></font>按照时间顺序存储在数据库里面，如下图</p>
+<h2 id="五、暂存区add"><a href="#五、暂存区add" class="headerlink" title="五、暂存区add"></a>五、暂存区add</h2><font color='red'>**`git add`**</font>命令就是把需要提交的所有修改放到暂存区**（Stage）**里去，然后，执行<font color='red'>**`git commit`**</font>就可以将所有暂存区的内容添加到版本库离去。
+
+| **指令**                 | **描述**                                                     |
+| ------------------------ | ------------------------------------------------------------ |
+| git add 多个文件或者目录 | 添加文件到暂存区，包括修改的文件和新增的文件和文件夹（包括子目录） |
+| git add .                | 同上，添加<font color='red'>**所有**</font>修改、新增文件**（未跟踪）**到暂存区 |
+| git rm 文件              | 删除工作区文件，并且将这次删除放入暂存区                     |
+| git mv 文件名1 文件名2   | 将文件名字修改后同时加入暂缓区内                             |
+
+
+
+## 六、提交记录commit
+
+每次<font color='red'>**`git commit`**</font>之后就会生成一个快照记录<font color='red'>**`id + 描述 +快照内容`**</font>按照时间顺序存储在数据库里面，如下图
+
+- <font color='keyblue'>**git commit id:**</font>这个id我们一般不需要将所有的位数都写出来，只需要取其中几个即可，这个就是git的核心强大功能之一
+
+- <font color='keyblue'>**git commit -m "描述信息：**</font>提交变更，参数`-m`设置提交的描述信息，应该正确提交，不带该参数会进入说明编辑模式。这个描述信息最好精确填写，方便后续寻找记录
+
+- <font color='keyblue'>**快照：**</font>记录在<font color='red'>**`\.git\objects`**</font>里面
+
+- <font color='keyblue'>**多个提交形成的时间线（图解）**</font>
+
+<p>  <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401311318823.png" srcset="/img/loading.gif" lazyload alt="git5.1"></p>
 <ul>
-<li><p><font color='keyblue'><strong>git commit id:</strong></font>这个id我们一般不需要将所有的位数都写出来，只需要取其中几个即可，这个就是git的核心强大功能之一</p>
-</li>
-<li><p><font color='keyblue'><strong>git commit -m “描述信息：</strong></font>提交变更，参数<code>-m</code>设置提交的描述信息，应该正确提交，不带该参数会进入说明编辑模式。这个描述信息最好精确填写，方便后续寻找记录</p>
-</li>
-<li><p><font color='keyblue'><strong>快照：</strong></font>记录在<font color='red'><strong><code>\.git\objects</code></strong></font>里面</p>
-</li>
-<li><p><font color='keyblue'><strong>多个提交形成的时间线（图解）</strong></font></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401311318823.png" srcset="/img/loading.gif" lazyload alt="git5.1"></p>
-</li>
 <li><p><font color='keyblue'><strong>git commit -a：</strong></font> 参数<font color='red'><strong><code>-a</code></strong></font> 作用就是可以将工作区提交到版本库，跳过了<font color='red'><strong><code>git add</code></strong></font>，但是不会添加新增文件</p>
 </li>
-<li><p><font color='keyblue'><strong>git log [-n数字] [–oneline] [-] [–follow 文件]：</strong></font> 参数<font color='red'><strong><code>-n数字</code></strong></font>作用是显示指定次数的日志信息，本人目前只提交过两次信息。参数<font color='red'><strong><code>--oneline</code></strong></font>可以将每次提交信息一行输出，<font color='red'><strong><code>--graph</code></strong></font>  可视化显示分支关系，<font color='red'><strong><code>--follow 文件</code></strong></font> 显示某个文集拿的版本历史</p>
+<li><p><font color='keyblue'><strong>git log [-n数字] [—oneline] [-] [—follow 文件]：</strong></font> 参数<font color='red'><strong><code>-n数字</code></strong></font>作用是显示指定次数的日志信息，本人目前只提交过两次信息。参数<font color='red'><strong><code>--oneline</code></strong></font>可以将每次提交信息一行输出，<font color='red'><strong><code>--graph</code></strong></font>  可视化显示分支关系，<font color='red'><strong><code>--follow 文件</code></strong></font> 显示某个文集拿的版本历史</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401311301336.png" srcset="/img/loading.gif" lazyload alt="Git5.2"></p>
 </li>
 <li><p><font color='keyblue'><strong>git reflog：</strong></font> 查看所有历史记录<strong>（上面中图片中的HEAD，就是你目前指向版本库的位置）</strong> </p>
