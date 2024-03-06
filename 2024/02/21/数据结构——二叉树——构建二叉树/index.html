@@ -16,21 +16,36 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="标签 - 算法">
-<meta property="og:url" content="http://example.com/tags/%E7%AE%97%E6%B3%95/page/2/index.html">
+    <meta name="description" content="持续更新中…….">
+<meta property="og:type" content="article">
+<meta property="og:title" content="25、数据结构——二叉树——构建二叉树">
+<meta property="og:url" content="http://example.com/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%94%E2%80%94%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="持续更新中…….">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+<meta property="article:published_time" content="2024-02-21T15:04:20.000Z">
+<meta property="article:modified_time" content="2024-03-06T10:18:47.669Z">
 <meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="底层">
+<meta property="article:tag" content="考研">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
   
   
   
-  <title>标签 - 算法 - 程序书架</title>
+  <title>25、数据结构——二叉树——构建二叉树 - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -116,7 +131,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 80vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -234,17 +249,61 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="标签 - 算法"></span>
+            <span id="subtitle" data-typed-text="25、数据结构——二叉树——构建二叉树"></span>
           
         </div>
 
         
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-21 23:04" pubdate>
+          2024年2月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          1 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
       </div>
 
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
       
     </div>
   </div>
@@ -256,100 +315,210 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 59 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2024</p>
-    
-    <a href="/2024/02/26/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E4%B8%80%E3%80%81%E4%BA%8C%E7%BB%B4%E5%B7%AE%E5%88%86%EF%BC%882%E6%9C%8826%E6%97%A5%EF%BC%89/" class="list-group-item list-group-item-action">
-      <time>02-26</time>
-      <div class="list-group-item-title">15、天梯赛——一、二维差分（2月26日）</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">25、数据结构——二叉树——构建二叉树</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="持续更新中……."></a>持续更新中…….</h2>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
   
     
-    <a href="/2024/02/25/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E2%80%94-%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9BRound35/" class="list-group-item list-group-item-action">
-      <time>02-25</time>
-      <div class="list-group-item-title">7、天梯赛——牛客练习—-牛客周赛Round35</div>
-    </a>
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
   
-    
-    <a href="/2024/02/25/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94Acwing%E5%91%A8%E8%B5%9B%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E7%AC%AC145%E5%9C%BA%E5%91%A8%E8%B5%9B/" class="list-group-item list-group-item-action">
-      <time>02-25</time>
-      <div class="list-group-item-title">6、Acwing第145场周赛</div>
-    </a>
   
+
+      </span>
     
-    <a href="/2024/02/25/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E5%A4%A9%E6%A2%AF%E5%A4%87%E8%B5%9B04/" class="list-group-item list-group-item-action">
-      <time>02-25</time>
-      <div class="list-group-item-title">5、天梯赛——牛客练习——天梯备赛04</div>
-    </a>
   
-    
-    <a href="/2024/02/25/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9BRound34/" class="list-group-item list-group-item-action">
-      <time>02-25</time>
-      <div class="list-group-item-title">4、天梯赛——牛客练习——牛客周赛Round34</div>
-    </a>
+</span>
+
+    </div>
   
-    
-    <a href="/2024/02/25/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E5%A4%A9%E6%A2%AF%E5%A4%87%E8%B5%9B%E7%BB%83%E4%B9%A001/" class="list-group-item list-group-item-action">
-      <time>02-25</time>
-      <div class="list-group-item-title">3、天梯赛——牛客练习——天梯备赛练习01</div>
-    </a>
   
-    
-    <a href="/2024/02/25/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E5%A4%A9%E6%A2%AF%E5%A4%87%E8%B5%9B03/" class="list-group-item list-group-item-action">
-      <time>02-25</time>
-      <div class="list-group-item-title">2、天梯赛——牛客练习——天梯备赛03</div>
-    </a>
-  
-    
-    <a href="/2024/02/25/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E5%A4%A9%E6%A2%AF%E5%A4%87%E8%B5%9B02/" class="list-group-item list-group-item-action">
-      <time>02-25</time>
-      <div class="list-group-item-title">1、天梯赛——牛客练习——天梯备赛02</div>
-    </a>
-  
-    
-    <a href="/2024/02/24/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E4%B8%80%E3%80%81%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C%EF%BC%882%E6%9C%8825%E6%97%A5%EF%BC%89/" class="list-group-item list-group-item-action">
-      <time>02-24</time>
-      <div class="list-group-item-title">14、天梯赛——一、二维前缀和（2月25日）</div>
-    </a>
-  
-    
-    <a href="/2024/02/23/%E5%A4%A9%E6%A2%AF%E8%B5%9B%E2%80%94%E2%80%94%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95%E3%80%81%E5%87%8F%E6%B3%95%E3%80%81%E4%B9%98%E6%B3%95%E3%80%81%E9%99%A4%E6%B3%95%EF%BC%882%E6%9C%8821%E6%97%A5%EF%BC%89%EF%BC%882%E6%9C%8823%E3%80%8124%E6%97%A5%EF%BC%89/" class="list-group-item list-group-item-action">
-      <time>02-23</time>
-      <div class="list-group-item-title">13、天梯赛——高精度加法、减法、乘法、除法（2月21日）（2月23、24日）</div>
-    </a>
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+      
+        <a href="/tags/%E5%BA%95%E5%B1%82/" class="print-no-link">#底层</a>
+      
+        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
+      
+    </div>
   
 </div>
 
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/tags/%E7%AE%97%E6%B3%95/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/tags/%E7%AE%97%E6%B3%95/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/%E7%AE%97%E6%B3%95/page/3/#board">3</a><a class="page-number" href="/tags/%E7%AE%97%E6%B3%95/page/4/#board">4</a><span class="space">&hellip;</span><a class="page-number" href="/tags/%E7%AE%97%E6%B3%95/page/6/#board">6</a><a class="extend next" rel="next" href="/tags/%E7%AE%97%E6%B3%95/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
+              
+  
 
-
-
-
-              </div>
-            </div>
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>25、数据结构——二叉树——构建二叉树</div>
+      <div>http://example.com/2024/02/21/数据结构——二叉树——构建二叉树/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Mogullzr</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年2月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
           </div>
         </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%94%E2%80%94%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/" title="26、数据结构——二叉树——线索二叉树">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">26、数据结构——二叉树——线索二叉树</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%94%E2%80%94%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" title="24、数据结构——二叉树——前中后序遍历">
+                        <span class="hidden-mobile">24、数据结构——二叉树——前中后序遍历</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
       </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
     
 
     
@@ -470,6 +639,99 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script defer src="/js/leancloud.js" ></script>
 
