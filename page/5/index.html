@@ -110,7 +110,7 @@
 <meta name="generator" content="Hexo 7.1.0"></head>
 
 
-<body>
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
   
 
   <header>
@@ -286,7 +286,7 @@
       
       <a class="index-excerpt " href="/2024/02/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8%EF%BC%88%E4%BA%94%EF%BC%89/" target="_self">
         <div>
-          静态链表定义​    分配一整片连续的内存空间，各个结点集中安置。 ​    每个数据元素4B，每个游标4B（每个结点共8B），现在假设初始存放地址为addr，e~1~的存放地址为addr + 8 * 2  结构体定义 + 基本操作概述12345678910111213141516#define MaxSize 10;typedef struct Node &#123;    ElemType d
+          静态链表定义​	分配一整片连续的内存空间，各个结点集中安置。 ​	每个数据元素4B，每个游标4B（每个结点共8B），现在假设初始存放地址为addr，e1的存放地址为addr + 8 * 2   结构体定义 + 基本操作概述12345678910111213141516#define MaxSize 10;typedef struct Node &#123;    ElemType data;
         </div>
       </a>
 
@@ -1128,5 +1128,7 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
 </html>
