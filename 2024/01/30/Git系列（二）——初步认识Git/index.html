@@ -16,12 +16,12 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言​        如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了 一、初步认识Git​        Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可以恢复到以前任意时刻的状态。同时它还支持跨区域多人协作编辑，是团队项目开发的必备">
+    <meta name="description" content="前言​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了 一、初步认识Git​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可以恢复到以前任意时刻的状态。同时它还支持跨区域多人协作编辑，是团队项目开发的必备基础。 二、Git基本概">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git系列（二）——初步认识Git">
 <meta property="og:url" content="http://example.com/2024/01/30/Git%E7%B3%BB%E5%88%97%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86Git/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="前言​        如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了 一、初步认识Git​        Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可以恢复到以前任意时刻的状态。同时它还支持跨区域多人协作编辑，是团队项目开发的必备">
+<meta property="og:description" content="前言​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了 一、初步认识Git​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可以恢复到以前任意时刻的状态。同时它还支持跨区域多人协作编辑，是团队项目开发的必备基础。 二、Git基本概">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300100488.png">
 <meta property="article:published_time" content="2024-01-30T12:48:01.000Z">
@@ -333,85 +333,81 @@
             
               <div class="markdown-body">
                 
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​        如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了</p>
-<h2 id="一、初步认识Git"><a href="#一、初步认识Git" class="headerlink" title="一、初步认识Git"></a>一、初步认识Git</h2><p>​        Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可<strong>以恢复到以前任意时刻的状态</strong>。同时它还<strong>支持跨区域多人协作编辑</strong>，是团队项目开发的必备基础。</p>
-<h2 id="二、Git基本概念术语"><a href="#二、Git基本概念术语" class="headerlink" title="二、Git基本概念术语"></a>二、Git基本概念术语</h2><div class="table-container">
-<table>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了</p>
+<h2 id="一、初步认识Git"><a href="#一、初步认识Git" class="headerlink" title="一、初步认识Git"></a>一、初步认识Git</h2><p>​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可<strong>以恢复到以前任意时刻的状态</strong>。同时它还<strong>支持跨区域多人协作编辑</strong>，是团队项目开发的必备基础。</p>
+<h2 id="二、Git基本概念术语"><a href="#二、Git基本概念术语" class="headerlink" title="二、Git基本概念术语"></a>二、Git基本概念术语</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">概念名称</th>
-<th style="text-align:center">描述</th>
+<th align="center">概念名称</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">头<strong>（HEAD）</strong></td>
-<td style="text-align:center">HEAD类似于一个“指针”，指向的就是<font color='red'><strong>当前分支的最新版本</strong></font></td>
+<tbody><tr>
+<td align="center">头<strong>（HEAD）</strong></td>
+<td align="center">HEAD类似于一个“指针”，指向的就是<font color='red'><strong>当前分支的最新版本</strong></font></td>
 </tr>
 <tr>
-<td style="text-align:center">提交<strong>（Commit）</strong></td>
-<td style="text-align:center">将暂缓区变更内容提交到当前仓库的活动分支</td>
+<td align="center">提交<strong>（Commit）</strong></td>
+<td align="center">将暂缓区变更内容提交到当前仓库的活动分支</td>
 </tr>
 <tr>
-<td style="text-align:center">推送<strong>（Push）</strong></td>
-<td style="text-align:center">將本地仓库的版本推送到服务端<strong>（远程）</strong>仓库</td>
+<td align="center">推送<strong>（Push）</strong></td>
+<td align="center">將本地仓库的版本推送到服务端<strong>（远程）</strong>仓库</td>
 </tr>
 <tr>
-<td style="text-align:center">拉取<strong>（Pull）</strong></td>
-<td style="text-align:center">从服务端（远程）仓库获取更新到本地仓库，获取他人共享的更新。</td>
+<td align="center">拉取<strong>（Pull）</strong></td>
+<td align="center">从服务端（远程）仓库获取更新到本地仓库，获取他人共享的更新。</td>
 </tr>
 <tr>
-<td style="text-align:center">获取<strong>（Fetch）</strong></td>
-<td style="text-align:center">从服务端（远程）仓库更新，和Pull一个作用，但是不会自动合并</td>
+<td align="center">获取<strong>（Fetch）</strong></td>
+<td align="center">从服务端（远程）仓库更新，和Pull一个作用，但是不会自动合并</td>
 </tr>
 <tr>
-<td style="text-align:center">冲突<strong>（Conflict）</strong></td>
-<td style="text-align:center"><font color='red'><strong>多人对同一文件副本进行操作进行修改</strong></font>，并将这些更改合并到仓库时就会出现多个版本的情况，内容修改各不相同，这时候我们就需要将修改的部分<font color='red'><strong>全部融合到一个版本</strong></font>去</td>
+<td align="center">冲突<strong>（Conflict）</strong></td>
+<td align="center"><font color='red'><strong>多人对同一文件副本进行操作进行修改</strong></font>，并将这些更改合并到仓库时就会出现多个版本的情况，内容修改各不相同，这时候我们就需要将修改的部分<font color='red'><strong>全部融合到一个版本</strong></font>去</td>
 </tr>
 <tr>
-<td style="text-align:center">合并<strong>（Merge）</strong></td>
-<td style="text-align:center">对冲突的文件进行合并操作，<code>Git</code>会自动合并更改内容，会自动处理冲突内容等待提示信息</td>
+<td align="center">合并<strong>（Merge）</strong></td>
+<td align="center">对冲突的文件进行合并操作，<code>Git</code>会自动合并更改内容，会自动处理冲突内容等待提示信息</td>
 </tr>
 <tr>
-<td style="text-align:center">标签<strong>（Tags）</strong></td>
-<td style="text-align:center">指的是某个分支某个特定的时间点状态，可以直接理解为<font color='red'><strong>提交记录</strong></font>，标记一个版本号</td>
+<td align="center">标签<strong>（Tags）</strong></td>
+<td align="center">指的是某个分支某个特定的时间点状态，可以直接理解为<font color='red'><strong>提交记录</strong></font>，标记一个版本号</td>
 </tr>
 <tr>
-<td style="text-align:center">分支<strong>（Branch）</strong></td>
-<td style="text-align:center">分支是从主线分离出来的“副本”，可以独立操作互不干扰，仓库初始化有一个默认主分支<font color='red'><strong><code>main</code></strong></font>,2020年之前的默认分支为<font color='red'><strong><code>master</code></strong></font></td>
+<td align="center">分支<strong>（Branch）</strong></td>
+<td align="center">分支是从主线分离出来的“副本”，可以独立操作互不干扰，仓库初始化有一个默认主分支<font color='red'><strong><code>main</code></strong></font>,2020年之前的默认分支为<font color='red'><strong><code>master</code></strong></font></td>
 </tr>
 <tr>
-<td style="text-align:center">工作区<strong>（Workspace）</strong></td>
-<td style="text-align:center">就是我们电脑看到的代码库目录，我们日常“搬砖”的地方</td>
+<td align="center">工作区<strong>（Workspace）</strong></td>
+<td align="center">就是我们电脑看到的代码库目录，我们日常“搬砖”的地方</td>
 </tr>
 <tr>
-<td style="text-align:center">暂缓区<strong>（stage）</strong></td>
-<td style="text-align:center">用于<em><font color='red'><strong>临时存放文件的修改</strong></font>，实际上就是一个<font color='red'><em>*<code>.git</code></em></em>&lt;/font&gt;文件，保存列表信息</td>
+<td align="center">暂缓区<strong>（stage）</strong></td>
+<td align="center">用于*<font color='red'><strong>临时存放文件的修改</strong></font>，实际上就是一个<font color='red'><strong><code>.git</code></strong></font>文件，保存列表信息</td>
 </tr>
 <tr>
-<td style="text-align:center">版本库/仓库<strong>（Repository）</strong></td>
-<td style="text-align:center"><font color='red'><strong>Git管理仓库</strong></font>，记录文件/目录状态的地方，所有内容的修改记录都在这里</td>
+<td align="center">版本库&#x2F;仓库<strong>（Repository）</strong></td>
+<td align="center"><font color='red'><strong>Git管理仓库</strong></font>，记录文件&#x2F;目录状态的地方，所有内容的修改记录都在这里</td>
 </tr>
 <tr>
-<td style="text-align:center">服务端/远程仓库<strong>（origin/remote）</strong></td>
-<td style="text-align:center"><font color='red'><strong>服务端的版本库</strong></font>，专用的Git服务器，为多人共享 提供服务器，<code>push</code>指令把代码推送到服务器端版本库</td>
+<td align="center">服务端&#x2F;远程仓库<strong>（origin&#x2F;remote）</strong></td>
+<td align="center"><font color='red'><strong>服务端的版本库</strong></font>，专用的Git服务器，为多人共享 提供服务器，<code>push</code>指令把代码推送到服务器端版本库</td>
 </tr>
 <tr>
-<td style="text-align:center">本地仓库</td>
-<td style="text-align:center">用户机器上直接使用的版本库</td>
+<td align="center">本地仓库</td>
+<td align="center">用户机器上直接使用的版本库</td>
 </tr>
-</tbody>
-</table>
-</div>
-<h2 id="三、工作区-暂缓区-仓库"><a href="#三、工作区-暂缓区-仓库" class="headerlink" title="三、工作区 / 暂缓区 / 仓库"></a>三、工作区 / 暂缓区 / 仓库</h2><h4 id="流程理解"><a href="#流程理解" class="headerlink" title="流程理解"></a>流程理解</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302051093.png" srcset="/img/loading.gif" lazyload alt="Git2.1"></p>
+</tbody></table>
+<h2 id="三、工作区-暂缓区-仓库"><a href="#三、工作区-暂缓区-仓库" class="headerlink" title="三、工作区 &#x2F; 暂缓区 &#x2F; 仓库"></a>三、工作区 &#x2F; 暂缓区 &#x2F; 仓库</h2><h4 id="流程理解"><a href="#流程理解" class="headerlink" title="流程理解"></a>流程理解</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302051093.png" srcset="/img/loading.gif" lazyload alt="Git2.1"></p>
 <h2 id="四、Git的基本流程"><a href="#四、Git的基本流程" class="headerlink" title="四、Git的基本流程"></a>四、Git的基本流程</h2><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401291245406.webp" srcset="/img/loading.gif" lazyload alt="3810ba37b21e48859a855eda9a61e1bd~tplv-k3u1fbpfcp-jj-mark_3024_0_0_0_q75"></p>
-<p>​        小明是一个刚刚毕业的大学生，被一家知名的互联网企业签下了，由于第一次参与企业级大型项目，所以对于复杂的 Git 工作流十分的不熟悉，于是公司的老员工们纷纷来帮助他。</p>
-<p>​        小明先是打开了公司开源的 Git 仓库地址，并利用 Git 工具 clone 下来了项目的代码，但是一看到上百条分支就头晕了，于是老员工 Jack 拿出了上面那张 Git 基本工作流的图片来一一为他讲解，Jack 说：其实呢，之所以创建这么多的分支的原因就是为了方便基于老代码进行的优化和更新的新代码能够根据不同的变化占有一个分支，将一大个复杂的问题分类成一个个小的问题，从而下派给各个部门进行工作，这样不同的部门各自管理一条各自的分支，工作就井然有序啦！</p>
-<p>​        小明说：哦，原来是这样，那这个图上这些分支的名字都代表什么含义呢？</p>
-<p>​        这时另一名老员工 Smith 说：这张图呢是我们企业最初一张基本的 Git 工作流的图咯，现在已经非常复杂了，不过对于你初步理解整个流程是非常好的，那么这个<strong>Master</strong>分支，顾名思义就是我们的<strong>主分支</strong>啦，是我们所有部门整合起来的一个主分支，代表了我们项目整体的走向，每次一个<strong>子分支</strong>完成测试后就将其 <strong>merge</strong> 到 <strong>Master</strong> 分支然后再进行整体的测试，如果一个版本的功能已经完成全部测试，那么就将其发放到 <strong>Release</strong> 分支啦，也就是正式发行给大众的分支，就像咱们平时使用的某一款软件的一个版本更新一样（类比上图就相当于基于 <strong>Master</strong> 分支创建了一个 <strong>Develop</strong> 分支，然后 Develop 分支开发到一定程度后将其 <strong>merge</strong> 到 <strong>Release</strong> 分支和 <strong>Master</strong> 分支），那么图中的 <strong>HotFix</strong> 分支顾名思义就是处理一些突发 bug 的分支，进行快速修改再重新 <strong>Merge</strong> 到 <strong>Master</strong> 分支，<strong>Feature</strong> 分支就是代表一个个新功能的分支。</p>
-<p>​        小明说：哦，原来如此，明白了，那我就利用手上的 Git 工具进行一下实践试试看咯！</p>
-<p>​        另一名老员工小姐姐 Mary 说：嗯嗯，有什么问题可以继续问我们哦，哦对了，你有没有考虑过这样一种情况呢，如果在 <strong>Master</strong> 分支的某一个节点创建了一个子分支，并在子分支对文件 1 进行了修改，与此同时 <strong>Master</strong> 分支也对文件 1 进行了修改，然后子分支 <strong>Merge</strong> 到了 <strong>Master</strong> 分支，这时候怎么处理呐！</p>
-<p>​        小明说：哦，这不是合并冲突嘛！通常我们就手动的查看冲突的内容，通过一些解决冲突的工具，比如 <strong>mergetool</strong> 或者是 IDE 中的一些插件，然后选择自己想要留下的那个文件的内容就可以啦！解决冲突之后再进行 <strong>Merge</strong></p>
+<p>​		小明是一个刚刚毕业的大学生，被一家知名的互联网企业签下了，由于第一次参与企业级大型项目，所以对于复杂的 Git 工作流十分的不熟悉，于是公司的老员工们纷纷来帮助他。</p>
+<p>​		小明先是打开了公司开源的 Git 仓库地址，并利用 Git 工具 clone 下来了项目的代码，但是一看到上百条分支就头晕了，于是老员工 Jack 拿出了上面那张 Git 基本工作流的图片来一一为他讲解，Jack 说：其实呢，之所以创建这么多的分支的原因就是为了方便基于老代码进行的优化和更新的新代码能够根据不同的变化占有一个分支，将一大个复杂的问题分类成一个个小的问题，从而下派给各个部门进行工作，这样不同的部门各自管理一条各自的分支，工作就井然有序啦！</p>
+<p>​		小明说：哦，原来是这样，那这个图上这些分支的名字都代表什么含义呢？</p>
+<p>​		这时另一名老员工 Smith 说：这张图呢是我们企业最初一张基本的 Git 工作流的图咯，现在已经非常复杂了，不过对于你初步理解整个流程是非常好的，那么这个<strong>Master</strong>分支，顾名思义就是我们的<strong>主分支</strong>啦，是我们所有部门整合起来的一个主分支，代表了我们项目整体的走向，每次一个<strong>子分支</strong>完成测试后就将其 <strong>merge</strong> 到 <strong>Master</strong> 分支然后再进行整体的测试，如果一个版本的功能已经完成全部测试，那么就将其发放到 <strong>Release</strong> 分支啦，也就是正式发行给大众的分支，就像咱们平时使用的某一款软件的一个版本更新一样（类比上图就相当于基于 <strong>Master</strong> 分支创建了一个 <strong>Develop</strong> 分支，然后 Develop 分支开发到一定程度后将其 <strong>merge</strong> 到 <strong>Release</strong> 分支和 <strong>Master</strong> 分支），那么图中的 <strong>HotFix</strong> 分支顾名思义就是处理一些突发 bug 的分支，进行快速修改再重新 <strong>Merge</strong> 到 <strong>Master</strong> 分支，<strong>Feature</strong> 分支就是代表一个个新功能的分支。</p>
+<p>​		小明说：哦，原来如此，明白了，那我就利用手上的 Git 工具进行一下实践试试看咯！</p>
+<p>​		另一名老员工小姐姐 Mary 说：嗯嗯，有什么问题可以继续问我们哦，哦对了，你有没有考虑过这样一种情况呢，如果在 <strong>Master</strong> 分支的某一个节点创建了一个子分支，并在子分支对文件 1 进行了修改，与此同时 <strong>Master</strong> 分支也对文件 1 进行了修改，然后子分支 <strong>Merge</strong> 到了 <strong>Master</strong> 分支，这时候怎么处理呐！</p>
+<p>​		小明说：哦，这不是合并冲突嘛！通常我们就手动的查看冲突的内容，通过一些解决冲突的工具，比如 <strong>mergetool</strong> 或者是 IDE 中的一些插件，然后选择自己想要留下的那个文件的内容就可以啦！解决冲突之后再进行 <strong>Merge</strong></p>
 <p>大家露出了欣慰的表情，都回到了自己的工位。。。。。</p>
 <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7283315133140729896">https://juejin.cn/post/7283315133140729896</a></p>
 
