@@ -16,25 +16,26 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="频率$$\begin{flalign}&amp;n次实验，A发生了m次，\frac{m}{n}：频率 \\&amp;w_n(A),随着n、m的变化，它也会不断地变化，但是也会更加稳定&amp; \\\end{flalign}$$ 性质 非负$$0 \le w_n(A) \le 1$$  规范$$w_n(\Omega)&#x3D;1\\w_n(\phi)&#x3D;0$$  可加性   $$\beg">
+    <meta name="description" content="一、树的遍历1）树的先根遍历（和二叉树前序遍历是异曲同工的）若树非空，先访问根节点，再依次对每棵树进行先根遍历  对于上面树的先根遍历序列应该为：A——&gt;B——&gt;E——&gt;H——&gt;F——&gt;C——&gt;G——&gt;D——&gt;H——&gt;I——&gt;J 123456789&#x2F;&#x2F; 树的先根遍历void PreOrder(TreeNode *R)&#123;    i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5、概率论——频率和概率">
-<meta property="og:url" content="http://example.com/2024/03/10/%E6%A6%82%E7%8E%87%E8%AE%BA%E2%80%94%E2%80%94%E9%A2%91%E7%8E%87%E5%92%8C%E6%A6%82%E7%8E%87/index.html">
+<meta property="og:title" content="28、数据结构——树——树和森林的遍历">
+<meta property="og:url" content="http://example.com/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%91%E2%80%94%E2%80%94%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97%E7%9A%84%E9%81%8D%E5%8E%86/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="频率$$\begin{flalign}&amp;n次实验，A发生了m次，\frac{m}{n}：频率 \\&amp;w_n(A),随着n、m的变化，它也会不断地变化，但是也会更加稳定&amp; \\\end{flalign}$$ 性质 非负$$0 \le w_n(A) \le 1$$  规范$$w_n(\Omega)&#x3D;1\\w_n(\phi)&#x3D;0$$  可加性   $$\beg">
+<meta property="og:description" content="一、树的遍历1）树的先根遍历（和二叉树前序遍历是异曲同工的）若树非空，先访问根节点，再依次对每棵树进行先根遍历  对于上面树的先根遍历序列应该为：A——&gt;B——&gt;E——&gt;H——&gt;F——&gt;C——&gt;G——&gt;D——&gt;H——&gt;I——&gt;J 123456789&#x2F;&#x2F; 树的先根遍历void PreOrder(TreeNode *R)&#123;    i">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101456944.jpg">
-<meta property="article:published_time" content="2024-03-10T06:53:59.000Z">
-<meta property="article:modified_time" content="2024-03-13T05:34:25.948Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+<meta property="article:published_time" content="2024-02-21T15:04:25.000Z">
+<meta property="article:modified_time" content="2024-02-21T15:04:25.000Z">
 <meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="底层">
 <meta property="article:tag" content="考研">
-<meta property="article:tag" content="数理统计">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101456944.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
   
   
   
-  <title>5、概率论——频率和概率 - 程序书架</title>
+  <title>28、数据结构——树——树和森林的遍历 - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -242,13 +243,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101457462.webp') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403091115002.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="5、概率论——频率和概率"></span>
+            <span id="subtitle" data-typed-text="28、数据结构——树——树和森林的遍历"></span>
           
         </div>
 
@@ -259,8 +260,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-10 14:53" pubdate>
-          2024年3月10日 下午
+        <time datetime="2024-02-21 23:04" pubdate>
+          2024年2月21日 晚上
         </time>
       </span>
     
@@ -271,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          149 字
+          732 字
         
       </span>
     
@@ -282,7 +283,7 @@
         
         
         
-          2 分钟
+          7 分钟
         
       </span>
     
@@ -327,25 +328,44 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">5、概率论——频率和概率</h1>
+            <h1 id="seo-header">28、数据结构——树——树和森林的遍历</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="频率"><a href="#频率" class="headerlink" title="频率"></a>频率</h2><p>$$<br>\begin{flalign}<br>&amp;n次实验，A发生了m次，\frac{m}{n}：频率 \\<br>&amp;w_n(A),随着n、m的变化，它也会不断地变化，但是也会更加稳定&amp; \\<br>\end{flalign}<br>$$</p>
-<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><ul>
-<li><p><strong>非负</strong><br>$$<br>0 \le w_n(A) \le 1<br>$$</p>
-</li>
-<li><p><strong>规范</strong><br>$$<br>w_n(\Omega)&#x3D;1\\<br>w_n(\phi)&#x3D;0<br>$$</p>
-</li>
-<li><p><strong>可加性</strong></p>
-</li>
-</ul>
-<p>$$<br>\begin{flalign}<br>&amp;A_1……A_m两两互不相容 \\<br>&amp;w_n(A_1+…+A_m)&#x3D;w_n(A_1)+…+w_n(A_m) \\<br>&amp;注意啊，m和n是两个不同的数嘞，n是指试验次数，m是事件种类的个数&amp;<br>\end{flalign}<br>$$</p>
-<ul>
-<li><strong>频率会随着概率的增大无限接近于概率，概率是事件的一个属性</strong></li>
-</ul>
+                <h2 id="一、树的遍历"><a href="#一、树的遍历" class="headerlink" title="一、树的遍历"></a>一、树的遍历</h2><h4 id="1）树的先根遍历（和二叉树前序遍历是异曲同工的）"><a href="#1）树的先根遍历（和二叉树前序遍历是异曲同工的）" class="headerlink" title="1）树的先根遍历（和二叉树前序遍历是异曲同工的）"></a>1）树的先根遍历<font color='red'>（和二叉树前序遍历是异曲同工的）</font></h4><p>若树非空，先访问根节点，再依次对每棵树进行先根遍历</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111252324.png" srcset="/img/loading.gif" lazyload alt="image-20240311125141377"></p>
+<p>对于上面树的先根遍历序列应该为：<code>A——&gt;B——&gt;E——&gt;H——&gt;F——&gt;C——&gt;G——&gt;D——&gt;H——&gt;I——&gt;J</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 树的先根遍历</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">PreOrder</span><span class="hljs-params">(TreeNode *R)</span></span>&#123;<br>    <span class="hljs-keyword">if</span> (R!=<span class="hljs-literal">NULL</span>)&#123;<br>        <span class="hljs-built_in">visit</span>(R);<br>        <span class="hljs-keyword">while</span> (R有子树T)&#123;<br>            <span class="hljs-built_in">PreOrder</span>(T); <span class="hljs-comment">// 先根遍历子树</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<p><strong>注意：</strong> 将树转换为二叉树，数的<strong>先根遍历序列</strong>与这课树相应的二叉树的<strong>先序遍历</strong>相同。下面的图就是上述图转换为的二叉树，前面已经说过转换方式，这里就不详细介绍了。</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111257688.png" srcset="/img/loading.gif" lazyload alt="image-20240311125742419" style="zoom:50%;" />
+
+<h4 id="2）数的后根遍历（和二叉树后序遍历是异曲同工的）"><a href="#2）数的后根遍历（和二叉树后序遍历是异曲同工的）" class="headerlink" title="2）数的后根遍历（和二叉树后序遍历是异曲同工的）"></a>2）数的后根遍历<font color='red'>（和二叉树后序遍历是异曲同工的）</font></h4><p>若树非空，先依次对每颗子树进行后根遍历，最后访问根结点。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111252324.png" srcset="/img/loading.gif" lazyload alt="C"></p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111303136.png" srcset="/img/loading.gif" lazyload alt="image-20240311130318757" style="zoom:33%;" />
+
+<p>对于上面树的后根遍历序列应该为：<code>H——&gt;E——&gt;F——&gt;B——&gt;G——&gt;C——&gt;H——&gt;I——&gt;J——&gt;D——&gt;A</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 树的后根遍历</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">PostOrder</span><span class="hljs-params">(TreeNode *R)</span></span>&#123;<br>    <span class="hljs-keyword">if</span> (R!=<span class="hljs-literal">NULL</span>)&#123;<br>        <span class="hljs-keyword">while</span> (R还有下一个子树T)&#123;<br>            <span class="hljs-built_in">PostOrder</span>(T); <span class="hljs-comment">// 后根遍历子树</span><br>        &#125;<br>        <span class="hljs-built_in">visit</span>(R); <span class="hljs-comment">// 访问根结点</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong> 将树转换为二叉树，数的<strong>后根遍历序列</strong>与这课树相应的二叉树的<strong>后序遍历</strong>相同。下面的图就是上述图转换为的二叉树，前面已经说过转换方式，这里就不详细介绍了。</p>
+<h4 id="3）层次遍历（这个应该就不需要那么详细介绍了吧，就是按照之前介绍过的方式遍历）"><a href="#3）层次遍历（这个应该就不需要那么详细介绍了吧，就是按照之前介绍过的方式遍历）" class="headerlink" title="3）层次遍历（这个应该就不需要那么详细介绍了吧，就是按照之前介绍过的方式遍历）"></a>3）层次遍历<font color='red'>（这个应该就不需要那么详细介绍了吧，就是按照之前介绍过的方式遍历）</font></h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111252324.png" srcset="/img/loading.gif" lazyload alt="C"></p>
+<p>这棵树的<strong>层次遍历序列</strong>为：<code>A——&gt;B——&gt;C——&gt;D——&gt;E——&gt;F——&gt;G——&gt;H——&gt;I——&gt;J——&gt;H</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 這部分代码和之前的层次遍历都是同样的思路，如果大家忘记了就返回到24、数据结构——二叉树——前中后序、层次遍历去看看吧</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、森林的遍历"><a href="#二、森林的遍历" class="headerlink" title="二、森林的遍历"></a>二、森林的遍历</h2><h4 id="森林定义"><a href="#森林定义" class="headerlink" title="森林定义"></a>森林定义</h4><blockquote>
+<p>森林是m(m≥0)棵互不相交的树的集合。每棵树去掉根节点后，其各个子树又组成森林。</p>
+</blockquote>
+<h4 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h4><p>就是每棵树都进行一次先根遍历然后串在一起：</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111310474.png" srcset="/img/loading.gif" lazyload alt="image-20240311131023640" style="zoom:33%;" />
+
+<p><strong>先根遍历为：</strong> <code>B-&gt;E-&gt;K-&gt;L-&gt;F-&gt;C-&gt;G-&gt;D-&gt;H-&gt;M-&gt;I-&gt;J</code></p>
+<p><strong>注意：</strong> 森林的<strong>先序遍历序列</strong>和转换为的二叉树的<strong>先根遍历序列</strong>是相同的。</p>
+<h4 id="中序遍历（考得不多，但是必须了解一下！！！）"><a href="#中序遍历（考得不多，但是必须了解一下！！！）" class="headerlink" title="中序遍历（考得不多，但是必须了解一下！！！）"></a>中序遍历<font color='red'>（考得不多，但是必须了解一下！！！）</font></h4><p>​	效果等效于依次对各个树进行<strong>后根遍历</strong>。</p>
+<p>​	而转换成二叉树之后，二叉树的<strong>中序遍历</strong>就相当于森林的<strong>中序遍历</strong></p>
+<h4 id="一节内容是29、树——哈夫曼树和哈夫曼编码……"><a href="#一节内容是29、树——哈夫曼树和哈夫曼编码……" class="headerlink" title="一节内容是29、树——哈夫曼树和哈夫曼编码……."></a>一节内容是29、树——哈夫曼树和哈夫曼编码…….</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4>
                 
               </div>
             
@@ -363,7 +383,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA%E8%80%83%E7%A0%94%E7%B3%BB%E5%88%97/" class="category-chain-item">概率论考研系列</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
   
   
 
@@ -378,9 +398,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
       
-        <a href="/tags/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="print-no-link">#数理统计</a>
+        <a href="/tags/%E5%BA%95%E5%B1%82/" class="print-no-link">#底层</a>
+      
+        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
       
     </div>
   
@@ -394,12 +416,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%91%E2%80%94%E2%80%94%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%92%8C%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" title="29、数据结构——树——哈夫曼树和哈夫曼编码">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">29、数据结构——树——哈夫曼树和哈夫曼编码</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/10/%E6%A6%82%E7%8E%87%E8%AE%BA%E2%80%94%E2%80%94%E5%87%A0%E4%BD%95%E6%A6%82%E5%9E%8B/" title="4、概率论——几何概型">
-                        <span class="hidden-mobile">4、概率论——几何概型</span>
+                      <a href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%91%E2%80%94%E2%80%94%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" title="27、数据结构——树——存储结构">
+                        <span class="hidden-mobile">27、数据结构——树——存储结构</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -474,12 +502,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -699,49 +721,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
