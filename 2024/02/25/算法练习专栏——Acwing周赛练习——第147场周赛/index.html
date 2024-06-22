@@ -1,0 +1,768 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="算法练习专栏Acwing周赛练习第147场周赛A：平衡数组（简单）5555. 平衡数组 - AcWing题库 给定一个长度为 n 的整数数组 a1,a2,…,an。 如果一个整数数组恰好包含相同数量的奇数元素和偶数元素，就称该数组为一个平衡数组。 请你判断数组 a 是否是一个平衡数组。 保证 n 是偶数。 输入格式第一行包含整数 n。 第二行包含 n 个整数 a1,a2,…,an。 输出格式如果数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法练习专栏Acwing周赛练习第147场周赛">
+<meta property="og:url" content="http://example.com/2024/02/25/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94Acwing%E5%91%A8%E8%B5%9B%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E7%AC%AC147%E5%9C%BA%E5%91%A8%E8%B5%9B/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="算法练习专栏Acwing周赛练习第147场周赛A：平衡数组（简单）5555. 平衡数组 - AcWing题库 给定一个长度为 n 的整数数组 a1,a2,…,an。 如果一个整数数组恰好包含相同数量的奇数元素和偶数元素，就称该数组为一个平衡数组。 请你判断数组 a 是否是一个平衡数组。 保证 n 是偶数。 输入格式第一行包含整数 n。 第二行包含 n 个整数 a1,a2,…,an。 输出格式如果数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403022333362.png">
+<meta property="article:published_time" content="2024-02-25T14:56:16.000Z">
+<meta property="article:modified_time" content="2024-02-25T14:56:16.000Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="练习">
+<meta property="article:tag" content="Acwing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403022333362.png">
+  
+  
+  
+  <title>算法练习专栏Acwing周赛练习第147场周赛 - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="算法练习专栏Acwing周赛练习第147场周赛"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-25 22:56" pubdate>
+          2024年2月25日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">算法练习专栏Acwing周赛练习第147场周赛</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="算法练习专栏Acwing周赛练习第147场周赛"><a href="#算法练习专栏Acwing周赛练习第147场周赛" class="headerlink" title="算法练习专栏Acwing周赛练习第147场周赛"></a>算法练习专栏Acwing周赛练习第147场周赛</h1><h2 id="A：平衡数组（简单）"><a href="#A：平衡数组（简单）" class="headerlink" title="A：平衡数组（简单）"></a>A：平衡数组<font color='green'>（简单）</font></h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/5558/">5555. 平衡数组 - AcWing题库</a></p>
+<p>给定一个长度为 n 的整数数组 a<del>1</del>,a<del>2</del>,…,a<del>n</del>。</p>
+<p>如果一个整数数组恰好包含相同数量的奇数元素和偶数元素，就称该数组为一个平衡数组。</p>
+<p>请你判断数组 a 是否是一个平衡数组。</p>
+<p>保证 n 是偶数。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n。</p>
+<p>第二行包含 n 个整数 a<del>1</del>,a<del>2</del>,…,a<del>n</del>。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>如果数组 a 是平衡数组，则输出 <code>Yes</code>，否则，输出 <code>No</code>。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>前 3 个测试点满足 2≤n≤10。<br>所有测试点满足 2≤n≤100，1≤a<del>i</del>≤100。</p>
+<h4 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">6</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Yes</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">6</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">No</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">110</span>;<br><span class="hljs-type">int</span> n;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>),cin .<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>),cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    cin &gt;&gt; n;<br>    <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n ;i++) &#123;<br>        <span class="hljs-type">int</span> x;<br>        cin &gt;&gt; x;<br>        <span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) res++;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (res == n - res) cout &lt;&lt; <span class="hljs-string">&quot;Yes&quot;</span>;<br>    <span class="hljs-keyword">else</span> cout &lt;&lt; <span class="hljs-string">&quot;No&quot;</span>;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="B：牛的语言学（困难）"><a href="#B：牛的语言学（困难）" class="headerlink" title="B：牛的语言学（困难）"></a>B：牛的语言学<font color='red'>（困难）</font></h2><p>牛语单词通过以下规则构造：</p>
+<ul>
+<li>牛语单词仅由小写字母构成。</li>
+<li>牛语单词的具体结构为：词根+若干个（个或更多）后缀，其中：<ul>
+<li>词根为长度大于 4 的字符串。</li>
+<li>后缀为长度 2 或 3 的字符串。</li>
+</ul>
+</li>
+<li>在构成单词时，不允许<strong>连续</strong>两次（或更多次）添加同一后缀。</li>
+</ul>
+<p>给定一个已经构造好的牛语单词 s，请你根据牛语单词的构造规则，找到该单词的所有可能后缀。</p>
+<p>例如，如果给定单词为 cbcaabaca，则它可能的构造方式为 cbcaabaca、cbcaaba+ca、cbcaab+aca、cbcaa+ba+ca，因此，它的所有可能后缀为 aca,ba,ca。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>一个由小写字母构成的字符串 s。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>第一行输出整数 k，表示单词 s 的所有可能后缀的数量。</p>
+<p>接下来 k 行，按照字典序每行输出一个可能后缀。</p>
+<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>前 3 个测试点满足 5≤|s|≤10^5^。<br>所有测试点满足 5≤|s|≤10^4^。</p>
+<h4 id="输入样例1：-1"><a href="#输入样例1：-1" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">cbcaabaca</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例1：-1"><a href="#输出样例1：-1" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-number">3</span><br>aca<br><span class="hljs-keyword">ba</span><br><span class="hljs-keyword">ca</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输入样例2：-1"><a href="#输入样例2：-1" class="headerlink" title="输入样例2："></a>输入样例2：</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">abaca</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例2：-1"><a href="#输出样例2：-1" class="headerlink" title="输出样例2："></a>输出样例2：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">0<br></code></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403171133982.png" srcset="/img/loading.gif" lazyload alt="image-20240317113350827"></p>
+<blockquote>
+<p>可以通过链接看看 y 总的讲解</p>
+</blockquote>
+<h2 id="代码-DP"><a href="#代码-DP" class="headerlink" title="代码(DP)"></a>代码(DP)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;set&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">10010</span>;<br><br><span class="hljs-type">int</span> n;<br>string s;<br><span class="hljs-type">bool</span> f[N];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; s;<br>    n = s.<span class="hljs-built_in">size</span>();<br><br>    f[n - <span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>    set&lt;string&gt; res;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = n - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">4</span>; i -- )<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">2</span>; j &lt;= <span class="hljs-number">3</span>; j ++ )<br>            <span class="hljs-keyword">if</span> (f[i + j])<br>            &#123;<br>                string a = s.<span class="hljs-built_in">substr</span>(i + <span class="hljs-number">1</span>, j);<br>                string b = s.<span class="hljs-built_in">substr</span>(i + <span class="hljs-number">1</span> + j, j);<br>                <span class="hljs-keyword">if</span> (a != b || f[i + <span class="hljs-number">5</span>])<br>                &#123;<br>                    f[i] = <span class="hljs-literal">true</span>;<br>                    res.<span class="hljs-built_in">insert</span>(a);<br>                &#125;<br>            &#125;<br><br>    cout &lt;&lt; res.<span class="hljs-built_in">size</span>() &lt;&lt; endl;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span>&amp; t: res) cout &lt;&lt; t &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​	</p>
+<h2 id="C：孤立点数量（中等）"><a href="#C：孤立点数量（中等）" class="headerlink" title="C：孤立点数量（中等）"></a>C：孤立点数量<font color='orange'>（中等）</font></h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/5560/">5557. 孤立点数量 - AcWing题库</a></p>
+<p>给定一个 n 个点 m 条边的无向图。</p>
+<p>图中没有重边和自环。</p>
+<p><strong>不保证</strong>给定图是连通图。</p>
+<p>现在，你需要给图中的每一条边定向，使得给定图变为一个有向图。</p>
+<p>我们规定，如果一个点的入度为 0，则称其为孤立点。</p>
+<p>我们希望改造后的有向图中孤立点的数量尽可能少。</p>
+<p>输出孤立点的最少可能数量。</p>
+<h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含两个整数 n,m,。</p>
+<p>接下来 m 行，每行包含两个整数 x<del>i</del>,y<del>i</del>,，表示点 x<del>i</del> 和点 y<del>i</del> 之间存在一条边。</p>
+<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>一个整数，表示孤立点的最少可能数量。</p>
+<h4 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a>数据范围</h4><p>前 4 个测试点满足 2≤n≤10，1≤m≤10。<br>所有测试点满足 2≤n≤10^5^，1≤m≤10^5^，1≤x<del>i</del>,y<del>i</del>≤n，x<del>i</del>≠y<del>i</del>。</p>
+<h4 id="输入样例1：-2"><a href="#输入样例1：-2" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">4 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例1：-2"><a href="#输出样例1：-2" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">1<br></code></pre></td></tr></table></figure>
+
+<h4 id="输入样例2：-2"><a href="#输入样例2：-2" class="headerlink" title="输入样例2："></a>输入样例2：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例2：-2"><a href="#输出样例2：-2" class="headerlink" title="输出样例2："></a>输出样例2：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">0<br></code></pre></td></tr></table></figure>
+
+<h4 id="输入样例3："><a href="#输入样例3：" class="headerlink" title="输入样例3："></a>输入样例3：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">6</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例3："><a href="#输出样例3：" class="headerlink" title="输出样例3："></a>输出样例3：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">1<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>可以看看y总的视频，可知结论：如果一个集合中出现环，这个集合点的孤立点的数量就为0</p>
+<p>一个集合没有环孤立点就为1</p>
+<p>如何判断连通块内有没有环呢？<br>第一步：分连通块，用并查集<br>第二步：判断环，由于这题没有重边，所以 点数 &#x3D; 边数 + 1 则没有环，反之有环</p>
+</blockquote>
+<h2 id="代码-并查集"><a href="#代码-并查集" class="headerlink" title="代码(并查集)"></a>代码(并查集)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">100010</span>;<br><br><span class="hljs-type">int</span> n, m;<br><span class="hljs-type">int</span> p[N];<br><span class="hljs-type">bool</span> st[N];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (p[x] != x) p[x] = <span class="hljs-built_in">find</span>(p[x]);<br>    <span class="hljs-keyword">return</span> p[x];<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++ ) p[i] = i;<br><br>    <span class="hljs-keyword">while</span> (m -- )<br>    &#123;<br>        <span class="hljs-type">int</span> a, b;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);<br>        a = <span class="hljs-built_in">find</span>(a), b = <span class="hljs-built_in">find</span>(b);<br>        <span class="hljs-keyword">if</span> (a == b) st[a] = <span class="hljs-literal">true</span>; <span class="hljs-comment">// 如果两个点在一个集合里的话，那么意味着是会成环的</span><br>        <span class="hljs-keyword">else</span> p[a] = b, st[b] |= st[a]; <span class="hljs-comment">// 如果不同就加到一个集合里去呗</span><br>    &#125;<br><br>    <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++ )<br>        <span class="hljs-keyword">if</span> (p[i] == i &amp;&amp; !st[i])<br>            res ++ ;<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, res);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/25/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E2%80%94-%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B88/" title="8、算法练习专栏——牛客练习—-牛客小白月赛88">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">8、算法练习专栏——牛客练习—-牛客小白月赛88</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/25/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94Acwing%E5%91%A8%E8%B5%9B%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E7%AC%AC146%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="算法练习专栏——Acwing周赛练习——第146场周赛">
+                        <span class="hidden-mobile">算法练习专栏——Acwing周赛练习——第146场周赛</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

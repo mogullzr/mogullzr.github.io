@@ -1,0 +1,1530 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、天数转换（简单–）读取对应于一个人的年龄（以天为单位）的整数值，并转化为年，月和日表示方式输出，年、月、日分别对应 ano(s), mes(es), dia(s)。 注意：为了方便计算，假设全年 365天，每月 30 天。 数据保证，不会出现 12个月和几天的情况，例如 360,363 或 364。 输入格式输入一个整数 N。 输出格式参照输出样例，输出转换后的天数表达。 数据范围$$1≤ N">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法学习专栏——C++需要知道的一些基础知识例题">
+<meta property="og:url" content="http://example.com/2024/02/09/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94C++%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BE%8B%E9%A2%98/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="一、天数转换（简单–）读取对应于一个人的年龄（以天为单位）的整数值，并转化为年，月和日表示方式输出，年、月、日分别对应 ano(s), mes(es), dia(s)。 注意：为了方便计算，假设全年 365天，每月 30 天。 数据保证，不会出现 12个月和几天的情况，例如 360,363 或 364。 输入格式输入一个整数 N。 输出格式参照输出样例，输出转换后的天数表达。 数据范围$$1≤ N">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404292224130.webp">
+<meta property="article:published_time" content="2024-02-09T08:55:56.000Z">
+<meta property="article:modified_time" content="2024-05-30T11:54:34.659Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="C++基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404292224130.webp">
+  
+  
+  
+  <title>算法学习专栏——C++需要知道的一些基础知识例题 - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="算法学习专栏——C++需要知道的一些基础知识例题"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-09 16:55" pubdate>
+          2024年2月9日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          410 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          4 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">算法学习专栏——C++需要知道的一些基础知识例题</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="一、天数转换（简单–）"><a href="#一、天数转换（简单–）" class="headerlink" title="一、天数转换（简单–）"></a>一、天数转换<font color='green'>（简单–）</font></h2><p>读取对应于一个人的年龄（以天为单位）的整数值，并转化为年，月和日表示方式输出，年、月、日分别对应 <code>ano(s)</code>, <code>mes(es)</code>, <code>dia(s)</code>。</p>
+<p>注意：为了方便计算，假设全年 365天，每月 30 天。 数据保证，不会出现 12个月和几天的情况，例如 360,363 或 364。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一个整数 N。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>参照输出样例，输出转换后的天数表达。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤ N ≤1000000<br>$$</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">400<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>ano(s)<br><span class="hljs-symbol">1 </span>mes(es)<br><span class="hljs-symbol">5 </span>dia(s)<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>​	略</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cstdio>
+#include < cstring>
+using namespace std;
+int main()
+{
+    int N;
+    cin >> N;
+    int arr[3] = {365,30,1};
+    string ans[3] = {" ano(s)"," mes(es)"," dia(s)"};
+    for (int i = 0; i < 3; i++)
+    {
+        int n;
+        n = N / arr[i];
+        N -= n*arr[i];
+        printf("%d%s\n",n,ans[i].c_str());
+    }
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+<h2 id="二、简单排序（简单–）"><a href="#二、简单排序（简单–）" class="headerlink" title="二、简单排序（简单–）"></a>二、简单排序<font color='green'>（简单–）</font></h2><p>读取三个整数并按升序对它们进行排序。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含三个整数。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>首先，将三个整数按升序顺序输出，每行输出一个整数。</p>
+<p>然后，输出一个空行。</p>
+<p>紧接着，将三个整数按原输入顺序输出，每行输出一个整数。</p>
+<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>−100≤输入整数≤100<br>$$</p>
+<p>输入整数各不相同。</p>
+<h4 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">7 </span><span class="hljs-number">21</span> -<span class="hljs-number">14</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-14</span><br>7<br>21<br><br>7<br>21<br><span class="hljs-deletion">-14</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>​	略</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+include< bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int a,b,c,d,e,f;
+   cin >> a >> b >> c;
+   d = min(a,min(b,c));
+   e = max(a,max(b,c));
+   f = a + b + c - d - e;
+   cout << d << endl;
+   cout << f << endl;
+   cout << e << endl;
+   cout << endl;
+   cout << a << endl;
+   cout << b << endl;
+   cout << c << endl;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+<h2 id="三、约数（简单–）"><a href="#三、约数（简单–）" class="headerlink" title="三、约数（简单–）"></a>三、约数<font color='green'>（简单–）</font></h2><p>输入一个整数 N，按照从小到大的顺序输出它的全部约数。</p>
+<h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>一个整数 N。</p>
+<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出全部约数，每个约数占一行。</p>
+<h4 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤N≤1000<br>$$</p>
+<h4 id="输入样例：-2"><a href="#输入样例：-2" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">6<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-2"><a href="#输出样例：-2" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">1<br>2<br>3<br>6<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>​	略</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><details>
+    <summary>答案1.0（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cmath>
+#define INF 0x3f3f3f3f
+using namespace std;
+int main()
+{
+    int N;
+    cin >> N;
+    for (int i = 1; i <= N; i++)
+    {
+        if (N % i == 0) cout << i << endl;
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+<h2 id="四、乘法表（简单–）"><a href="#四、乘法表（简单–）" class="headerlink" title="四、乘法表（简单–）"></a>四、乘法表<font color='green'>（简单–）</font></h2><p>输入一个整数 N，输出 N 的乘法表，如下：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs excel"><span class="hljs-number">1</span> x <span class="hljs-built_in">N</span> = <span class="hljs-built_in">N</span>      <br><span class="hljs-number">2</span> x <span class="hljs-built_in">N</span> = <span class="hljs-number">2</span><span class="hljs-built_in">N</span>        <br>...       <br><span class="hljs-number">10</span> x <span class="hljs-built_in">N</span> = <span class="hljs-number">10</span><span class="hljs-built_in">N</span> <br></code></pre></td></tr></table></figure>
+
+<h4 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a>输入格式</h4><p>一个整数 N。</p>
+<h4 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出 N的乘法表，具体形式参照输出样例。</p>
+<h4 id="数据范围-3"><a href="#数据范围-3" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1&lt;N&lt;1000<br>$$</p>
+<h4 id="输入样例：-3"><a href="#输入样例：-3" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">140<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-3"><a href="#输出样例：-3" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">140</span><br><span class="hljs-symbol">2 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">280</span><br><span class="hljs-symbol">3 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">420</span><br><span class="hljs-symbol">4 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">560</span><br><span class="hljs-symbol">5 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">700</span><br><span class="hljs-symbol">6 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">840</span><br><span class="hljs-symbol">7 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">980</span><br><span class="hljs-symbol">8 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">1120</span><br><span class="hljs-symbol">9 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">1260</span><br><span class="hljs-symbol">10 </span>x <span class="hljs-number">140</span> = <span class="hljs-number">1400</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>​	略</p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cstdio>
+#define INF 0x3f3f3f3f
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    for (int i = 1; i <= 10; i++) printf("%d x %d = %d\n",i,n,i*n);
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+<h2 id="五、完全数（简单-）"><a href="#五、完全数（简单-）" class="headerlink" title="五、完全数（简单+）"></a>五、完全数<font color='green'>（简单+）</font></h2><p>一个整数，除了本身以外的其他所有约数的和如果等于该数，那么我们就称这个整数为完全数。</p>
+<p>例如，6 就是一个完全数，因为它的除了本身以外的其他约数的和为 1+2+3&#x3D;6。</p>
+<p>现在，给定你 N 个整数，请你依次判断这些数是否是完全数。</p>
+<h4 id="输入格式-4"><a href="#输入格式-4" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 N，表示共有 N 个测试用例。</p>
+<p>接下来 N行，每行包含一个需要你进行判断的整数 X。</p>
+<h4 id="输出格式-4"><a href="#输出格式-4" class="headerlink" title="输出格式"></a>输出格式</h4><p>每个测试用例输出一个结果，每个结果占一行。</p>
+<p>如果测试数据是完全数，则输出 <code>X is perfect</code>，其中 X 是测试数据。</p>
+<p>如果测试数据不是完全数，则输出 <code>X is not perfect</code>，其中 X 是测试数据。</p>
+<h4 id="数据范围-4"><a href="#数据范围-4" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>\begin{flalign}<br>&amp;1≤N≤100\<br>&amp;1≤X≤10^8&amp;<br>\end{flalign}<br>$$</p>
+<h4 id="输入样例：-4"><a href="#输入样例：-4" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">3<br>6<br>5<br>28<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-4"><a href="#输出样例：-4" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">6 </span>is perfect<br><span class="hljs-symbol">5 </span>is <span class="hljs-keyword">not</span> perfect<br><span class="hljs-symbol">28 </span>is perfect<br></code></pre></td></tr></table></figure>
+
+<h2 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h2><p>​	</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+using namespace std;
+int n,m;
+int main()
+{
+    int n,x;
+    cin >> n;
+    while (n -- )
+    {
+        int sum = 0;
+        cin >> x;
+        for (int i = 1; i * i < x; i++) 
+        // 注意这里的i * i < x理解，比如给你一个数16,约数有1,2,4，8,16,你会发现这些约数都是两两组合的，那么我们在判断出2为约数的时候，我们也就可以判断8为约数，如此以来我们就不需要循环到16了，那我们思考一下，是不是很容易就知道我们只需要循环到一个数的平方根的位置就可以了呀，比如16这个数就只需要循环到4就可以将所有的约数求出来了。
+            if (x % i == 0) 
+            {
+                sum += i;
+                if (x / i != i && x / i < x) sum += x / i;
+            }
+        if (sum == x) cout << x << " is perfect" << endl;
+        else cout << x << " is not perfect" << endl;
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+<h2 id="六、平方矩阵-II（简单–）"><a href="#六、平方矩阵-II（简单–）" class="headerlink" title="六、平方矩阵 II（简单–）"></a>六、平方矩阵 II<font color='green'>（简单–）</font></h2><p>输入整数 N，输出一个 N 阶的二维数组。</p>
+<p>数组的形式参照样例。</p>
+<h4 id="输入格式-5"><a href="#输入格式-5" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含多行，每行包含一个整数 N。</p>
+<p>当输入行为 N&#x3D;0 时，表示输入结束，且该行无需作任何处理。</p>
+<h4 id="输出格式-5"><a href="#输出格式-5" class="headerlink" title="输出格式"></a>输出格式</h4><p>对于每个输入整数 N，输出一个满足要求的 N 阶二维数组。</p>
+<p>每个数组占 N 行，每行包含 N 个用空格隔开的整数。</p>
+<p>每个数组输出完毕后，输出一个空行。</p>
+<h4 id="数据范围-5"><a href="#数据范围-5" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>0≤N≤1000<br>$$</p>
+<h4 id="输入样例：-5"><a href="#输入样例：-5" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs">1<br>2<br>3<br>4<br>5<br>0<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-5"><a href="#输出样例：-5" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">1</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">2</span> <span class="hljs-number">1</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h2><p>​	略</p>
+<h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cmath>
+using namespace std;
+int main () {
+    int n;
+    while (cin >> n,n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                cout << abs(i - j) + 1 << ' ';
+            }
+            cout << '\n';
+        }
+        cout << '\n';
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+<h2 id="七、平方矩阵（简单-）"><a href="#七、平方矩阵（简单-）" class="headerlink" title="七、平方矩阵（简单+）"></a>七、平方矩阵<font color='green'>（简单+）</font></h2><p>输入整数 N，输出一个 N 阶的二维数组 M。</p>
+<p>这个 N 阶二维数组满足 M[i] [j]&#x3D;2^i+j^</p>
+<p>具体形式可参考样例。</p>
+<h4 id="输入格式-6"><a href="#输入格式-6" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含多行，每行包含一个整数 N。</p>
+<p>当输入行为 N&#x3D;0时，表示输入结束，且该行无需作任何处理。</p>
+<h4 id="输出格式-6"><a href="#输出格式-6" class="headerlink" title="输出格式"></a>输出格式</h4><p>对于每个输入整数 N，输出一个满足要求的 N 阶二维数组。</p>
+<p>每个数组占 N 行，每行包含 N 个用空格隔开的整数。</p>
+<p>每个数组输出完毕后，输出一个空行。</p>
+<h4 id="数据范围-6"><a href="#数据范围-6" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>0≤N≤15<br>$$</p>
+<h4 id="输入样例：-6"><a href="#输入样例：-6" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs">1<br>2<br>3<br>4<br>5<br>0<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-6"><a href="#输出样例：-6" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">1</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span> <span class="hljs-number">8</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">8</span> <span class="hljs-number">16</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">16</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">8</span> <span class="hljs-number">16</span> <span class="hljs-number">32</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">16</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">16</span> <span class="hljs-number">32</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">8</span> <span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span> <span class="hljs-number">128</span><br><span class="hljs-symbol">16 </span><span class="hljs-number">32</span> <span class="hljs-number">64</span> <span class="hljs-number">128</span> <span class="hljs-number">256</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h2><p>​	略</p>
+<h2 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,x=0;
+    while (cin >> x,x)
+    {
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < x; j++) cout << int(pow(2,i + j)) << " ";
+            cout << endl;
+        }
+        cout << endl;
+    }
+    
+<pre><code class="hljs">return 0;
+</code></pre>
+<p>}<br>        </blockcode><br>    </pre></p>
+</details>
+
+
+
+<h2 id="八、-蛇形矩阵（中等–）"><a href="#八、-蛇形矩阵（中等–）" class="headerlink" title="八、 蛇形矩阵（中等–）"></a>八、 蛇形矩阵<font color='orange'>（中等–）</font></h2><p>输入两个整数 n和 m，输出一个 n行 m列的矩阵，将数字 1 到 n×m 按照回字蛇形填充至矩阵中。</p>
+<p>具体矩阵形式可参考样例。</p>
+<h4 id="输入格式-7"><a href="#输入格式-7" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入共一行，包含两个整数 n和 m。</p>
+<h4 id="输出格式-7"><a href="#输出格式-7" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出满足要求的矩阵。</p>
+<p>矩阵占 n行，每行包含 m个空格隔开的整数。</p>
+<h4 id="数据范围-7"><a href="#数据范围-7" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤n,m≤100<br>$$</p>
+<h4 id="输入样例：-7"><a href="#输入样例：-7" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">3 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-7"><a href="#输出样例：-7" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">9</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">6</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h2><p>​	<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402091516985.gif" srcset="/img/loading.gif" lazyload alt="动画3" style="zoom:50%;" /></p>
+<h2 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cstdio>
+using namespace std;
+int res[105][105];
+int main()
+{
+    int n,m;
+    cin >> n >> m;
+    int d1[4] = {0,1,0,-1}; 
+    // +1表示向右走一格，-1表示向左走一格，0表示左右方向上不动
+    int d2[4] = {1,0,-1,0}; 
+    // +1表示向下走一格，-1表示向上走一格，0表示上下方向上不动
+    for(int i = 0, j = 0, d = 0,k = 1; k <= n * m; k ++)
+    {
+        res[i][j] = k;
+        int a = i + d1[d],b = j + d2[d];
+        if (a < 0 || a >= n || b < 0 || b >= m || res[a][b]) 
+        // 当下一个格子查出界限 || 下个格子已经填充过数字：我们就更改方向
+        {
+            d = (d + 1) % 4;
+            a = i + d1[d];
+            b = j + d2[d];
+        }
+        i = a;
+        j = b;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0;j < m; j++) cout << res[i][j] << " ";
+        cout << endl;
+    }
+    return 0;
+}
+    </blockcode>
+</pre>
+</details>
+
+
+
+
+
+<h2 id="九、忽略大小写比较字符串大小（简单-）"><a href="#九、忽略大小写比较字符串大小（简单-）" class="headerlink" title="九、忽略大小写比较字符串大小（简单+）"></a>九、忽略大小写比较字符串大小<font color='green'>（简单+）</font></h2><p>一般我们用 strcmp 可比较两个字符串的大小，比较方法为对两个字符串从前往后逐个字符相比较（按 ASCII 码值大小比较），直到出现不同的字符或遇到 <code>\0</code> 为止。</p>
+<p>如果全部字符都相同，则认为相同；如果出现不相同的字符，则以第一个不相同的字符的比较结果为准；如果两字符串长度不同，但所有相同位置的字符均相同，则认为较长字符串更大。</p>
+<p>在有些时候，我们比较字符串的大小时，希望忽略字母的大小，例如 <code>Hello</code> 和 <code>hello</code> 在忽略字母大小写时是相等的。</p>
+<p>请写一个程序，实现对两个字符串进行忽略字母大小写的大小比较。</p>
+<h4 id="输入格式-8"><a href="#输入格式-8" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入为两行，每行一个字符串，共两个字符串。</p>
+<p>注意字符串中仅可能包含大小写字母和空格。</p>
+<h4 id="输出格式-8"><a href="#输出格式-8" class="headerlink" title="输出格式"></a>输出格式</h4><p>如果第一个字符串比第二个字符串小，输出一个字符 <code>&lt;</code>。</p>
+<p>如果第一个字符串比第二个字符串大，输出一个字符 <code>&gt;</code>。</p>
+<p>如果两个字符串相等，输出一个字符 <code>=</code>。</p>
+<h4 id="数据范围-8"><a href="#数据范围-8" class="headerlink" title="数据范围"></a>数据范围</h4><p>每个字符串的长度范围 [1,80][1,80]。</p>
+<h4 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Hello</span><br><span class="hljs-attribute">hello</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-operator">=</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">How <span class="hljs-keyword">are</span> you<br>How <span class="hljs-keyword">old</span> <span class="hljs-keyword">are</span> you<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">&lt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h2><p>略</p>
+<h2 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cstdio>
+#include < cstring>
+using namespace std;
+int main()
+{
+    char a[100],b[100];
+    fgets(a,100,stdin); 
+    // 你只用记住有这种写法就可以了，它是gets()函数的替代品
+    fgets(b,100,stdin);
+    if (a[strlen(a) - 1] == '\n') a[strlen(a) - 1] = 0;
+    if (b[strlen(b) - 1] == '\n') b[strlen(b) - 1] = 0;
+    for (int i = 0; a[i]; i++)
+    {
+        if (a[i] >= 'A' && a[i] <= 'Z') a[i] += 32;
+    }
+    for (int i = 0; b[i]; i++)
+    {
+        if (b[i] >= 'A' && b[i] <= 'Z') b[i] += 32;
+    }
+    if (strcmp(a,b) == 0) cout << "=";
+    else if (strcmp(a,b) > 0) cout << ">";
+    else cout << "<";
+    return 0;
+}
+    </blockcode>
+</pre>
+</details>
+
+
+
+<h2 id="十、最长单词（简单）"><a href="#十、最长单词（简单）" class="headerlink" title="十、最长单词（简单）"></a>十、最长单词<font color='green'>（简单）</font></h2><p>一个以 <code>.</code> 结尾的简单英文句子，单词之间用<strong>单个空格</strong>分隔，没有缩写形式和其它特殊形式，求句子中的最长单词。</p>
+<h4 id="输入格式-9"><a href="#输入格式-9" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一行字符串，表示这个简单英文句子，长度不超过 500500。</p>
+<h4 id="输出格式-9"><a href="#输出格式-9" class="headerlink" title="输出格式"></a>输出格式</h4><p>该句子中最长的单词。如果多于一个，则输出第一个。</p>
+<h4 id="输入样例：-8"><a href="#输入样例：-8" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">I</span> am <span class="hljs-selector-tag">a</span> student of Peking University.<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-8"><a href="#输出样例：-8" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">University</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h2><p>略</p>
+<h2 id="代码-9"><a href="#代码-9" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cstdio>
+using namespace std;
+int main()
+{
+    string s,str;
+    while (cin >> s)
+    {
+        if (s.back() == '.') s.pop_back();
+        if (s.size() > str.size()) str = s;
+    }
+    cout << str;
+    return 0;
+}
+    </blockcode>
+    </pre>
+</details>
+
+
+
+<h2 id="十一、字符串中最长的连续出现的字符（简单）"><a href="#十一、字符串中最长的连续出现的字符（简单）" class="headerlink" title="十一、字符串中最长的连续出现的字符（简单）"></a>十一、字符串中最长的连续出现的字符<font color='green'>（简单）</font></h2><p>求一个字符串中最长的连续出现的字符，输出该字符及其出现次数，字符串中无空白字符（空格、回车和 tab），如果这样的字符不止一个，则输出第一个。</p>
+<h4 id="输入格式-10"><a href="#输入格式-10" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行输入整数 N，表示测试数据的组数。</p>
+<p>每组数据占一行，包含一个不含空白字符的字符串，字符串长度不超过 200200。</p>
+<h4 id="输出格式-10"><a href="#输出格式-10" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，输出最长的连续出现的字符及其出现次数，中间用空格隔开。</p>
+<h4 id="输入样例：-9"><a href="#输入样例：-9" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">2<br>aaaaabbbbbcccccccdddddddddd<br>abcdefghigk<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-9"><a href="#输出样例：-9" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">d</span> <span class="hljs-number">10</span><br><span class="hljs-attribute">a</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h2><p>​	方法千千万，大家可以尝试使用&lt; map &gt; 、max函数或者min函数或者思路实现。下面只介绍一种写法，空间复杂度较低。</p>
+<h2 id="代码-10"><a href="#代码-10" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+using namespace std;
+int main()
+{
+    int n,c = 0;
+    char b;
+    string a;
+    cin >> n;
+    while(n--)
+    {
+        int c = 0;
+        cin >> a;
+        for (int i = 0; i < a.size() - 1;)
+        {
+            int j = 0;
+            while(a[i] == a[i + j]) j++;
+            if (c < j)
+            {
+                c = j;
+                b = a[i];
+            }
+            i += j;
+        }
+        cout << b << ' ' << c << endl;
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+<h2 id="十二、倒排单词（简单）"><a href="#十二、倒排单词（简单）" class="headerlink" title="十二、倒排单词（简单）"></a>十二、倒排单词<font color='green'>（简单）</font></h2><p>编写程序，读入一行英文(只包含字母和空格，单词间以单个空格分隔)，将所有单词的顺序倒排并输出，依然以单个空格分隔。</p>
+<h4 id="输入格式-11"><a href="#输入格式-11" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入为一个字符串（字符串长度至多为 100）。</p>
+<h4 id="输出格式-11"><a href="#输出格式-11" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出为按要求排序后的字符串。</p>
+<h4 id="输入样例：-10"><a href="#输入样例：-10" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">I</span> am <span class="hljs-selector-tag">a</span> student<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-10"><a href="#输出样例：-10" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">student <span class="hljs-selector-tag">a</span> am <span class="hljs-selector-tag">I</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h2><p>略</p>
+<h2 id="代码-11"><a href="#代码-11" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < sstream>
+using namespace std;
+int main() {
+    int len = 0;
+    string a[110];
+    string s;
+    string ss;
+    getline(cin, s);
+    stringstream ssin;
+    ssin << s;
+    while (ssin >> ss) {
+        a[len++] = ss;
+    }
+    for (int i = len - 1;i >= 0; i--) {
+        cout << a[i] << ' ';
+    } 
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+<h2 id="十三、最长公共字符串后缀（简单-）"><a href="#十三、最长公共字符串后缀（简单-）" class="headerlink" title="十三、最长公共字符串后缀（简单+）"></a>十三、最长公共字符串后缀<font color='green'>（简单+）</font></h2><p>给出若干个字符串，输出这些字符串的最长公共后缀。</p>
+<h4 id="输入格式-12"><a href="#输入格式-12" class="headerlink" title="输入格式"></a>输入格式</h4><p>由不超过 5 组输入组成。</p>
+<p>每组输入的第一行是一个整数 N。</p>
+<p>N 为 0 时表示输入结束，否则后面会继续有 N 行输入，每行是一个字符串（字符串内不含空白符）。</p>
+<p>每个字符串的长度不超过 200。</p>
+<h4 id="输出格式-12"><a href="#输出格式-12" class="headerlink" title="输出格式"></a>输出格式</h4><p>每组数据输出一行结果，为 N 个字符串的最长公共后缀（可能为空）。</p>
+<h4 id="数据范围-9"><a href="#数据范围-9" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤N≤200<br>$$</p>
+<h4 id="输入样例：-11"><a href="#输入样例：-11" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-number">3</span><br>baba<br>aba<br>cba<br><span class="hljs-number">2</span><br>aa<br>cc<br><span class="hljs-number">2</span><br>aa<br><span class="hljs-selector-tag">a</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-11"><a href="#输出样例：-11" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">ba<br><br><span class="hljs-selector-tag">a</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h2><h2 id="代码-12"><a href="#代码-12" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+using namespace std;
+const int N = 200;
+string s[N];
+int main()
+{
+    int n;
+    while(cin >> n, n)
+    {
+        int len = 300;
+        for (int i = 0; i < n; i++) 
+        {
+            cin >> s[i];
+            if (len > s[i].size()) len = s[i].size();
+        }
+        while(len)
+        {
+            bool success = true;
+            for (int i = 1; i < n; i++)
+            {
+                bool same = true;
+                for (int j = 1; j <= len; j++)
+                {
+                    if (s[0][s[0].size() - j] != s[i][s[i].size() - j])
+                    {
+                        same = false;
+                        break;
+                    }
+                }
+                if (!same) 
+                {
+                    success = false;
+                    break;
+                }
+            }
+            if (success) break;
+            len --;
+        }
+        cout << s[0].substr(s[0].size() - len) << endl;
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+<h2 id="十四、最大公约数（简单）"><a href="#十四、最大公约数（简单）" class="headerlink" title="十四、最大公约数（简单）"></a>十四、最大公约数<font color='green'>（简单）</font></h2><p>输入两个整数 a 和 b，请你编写一个函数，<code>int gcd(int a, int b)</code>, 计算并输出 a 和 b 的最大公约数。</p>
+<h4 id="输入格式-13"><a href="#输入格式-13" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含两个整数 a 和 b。</p>
+<h4 id="输出格式-13"><a href="#输出格式-13" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数，表示 a 和 b 的最大公约数。</p>
+<h4 id="数据范围-10"><a href="#数据范围-10" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤a,b≤1000<br>$$</p>
+<h4 id="输入样例：-12"><a href="#输入样例：-12" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">12 </span><span class="hljs-number">16</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-12"><a href="#输出样例：-12" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">4<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h2><p>​	这道题目基本属于一种求公约数的数学思路，你必须知道如何最为官方化地求两个数的最大公约数才可以，比如16 12：</p>
+<p>​	16 12 &#x3D;&gt; 12 16 % 12 &#x3D;&gt; 12 4 &#x3D;&gt; 4 12 % 4 &#x3D;&gt; 4 0这个时候我们就知道4就是这两个数的最大公约数；</p>
+<p>​	16 24 &#x3D;&gt; 24 16 % 24 &#x3D;&gt; 24 16 &#x3D;&gt; 16 24 % 16 &#x3D;&gt; 16 8 &#x3D;&gt; 8 16 % 8 &#x3D;&gt; 8 0这个时候就知道8是这两个数的最大公约数；</p>
+<p>​	这就显而易见这里面的原理了吧。我们现在的任务就是要将这种思路通过代码的方式写出来。</p>
+<h2 id="代码-13"><a href="#代码-13" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+using namespace std;
+int gcd(int a,int b) {
+    if (b != 0) {
+        return gcd(b, a % b);
+    } else {
+        return a;    
+    }
+}
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+    cout << gcd(a, b);
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+​    
+
+
+
+<h2 id="十五、递归求阶乘（简单）"><a href="#十五、递归求阶乘（简单）" class="headerlink" title="十五、递归求阶乘（简单）"></a>十五、递归求阶乘<font color='green'>（简单）</font></h2><p>请使用递归的方式求 n 的阶乘。</p>
+<h4 id="输入格式-14"><a href="#输入格式-14" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含一个整数 n。</p>
+<h4 id="输出格式-14"><a href="#输出格式-14" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数，表示 n 的阶乘的值。</p>
+<h4 id="数据范围-11"><a href="#数据范围-11" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤n≤10<br>$$</p>
+<h4 id="输入样例：-13"><a href="#输入样例：-13" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">3<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-13"><a href="#输出样例：-13" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">6<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h2><p>​	不太好说，如果实在不懂就直接问本人吧。</p>
+<h2 id="代码-14"><a href="#代码-14" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+using namespace std;
+const int N = 11;
+int n;
+int fac(int n) {
+    if (n >= 1) return n  * fac(n - 1);
+    else return 1;
+}
+int main() 
+{
+    int n;
+    cin >> n;
+    cout << fac(n);
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+<h2 id="十五、递归求斐波那契数列（简单）"><a href="#十五、递归求斐波那契数列（简单）" class="headerlink" title="十五、递归求斐波那契数列（简单）"></a>十五、递归求斐波那契数列<font color='green'>（简单）</font></h2><p>请使用递归的方式求斐波那契数列的第 n 项，下标从1开始。</p>
+<p>斐波那契数列：1,1,2,3,5… 这个数列从第 3 项开始，每一项都等于前两项之和</p>
+<h4 id="输入格式-15"><a href="#输入格式-15" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含整数 n。</p>
+<h4 id="输出格式-15"><a href="#输出格式-15" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数，表示斐波那契数列的第 n 项。</p>
+<h4 id="数据范围-12"><a href="#数据范围-12" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤n≤30<br>$$</p>
+<h4 id="输入样例：-14"><a href="#输入样例：-14" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">4<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-14"><a href="#输出样例：-14" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">3<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h2><p>​	和十四题几乎是一个套路，本题作为练习题</p>
+<h2 id="代码-15"><a href="#代码-15" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cstring>
+#include < algorithm>
+using namespace std;
+int fib(int x)
+{
+    int a = 1,b = 1,c;
+    if (x == 1) return a;
+    else if (x == 2) return b;
+    x -= 2;
+    while (x --)
+    {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return c;
+}
+int main()
+{
+    int x;
+    cin >> x;
+    cout << fib(x);
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+<h2 id="十六、数组去重（简单-）"><a href="#十六、数组去重（简单-）" class="headerlink" title="十六、数组去重（简单-）"></a>十六、数组去重<font color='green'>（简单-）</font></h2><p>给定一个长度为 n 的数组 a，请你编写一个函数：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">get_unique_count</span><span class="hljs-params">(<span class="hljs-type">int</span> a[], <span class="hljs-type">int</span> n)</span></span>;  <span class="hljs-comment">// 返回数组前n个数中的不同数的个数</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输入格式-16"><a href="#输入格式-16" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含一个整数 n。</p>
+<p>第二行包含 n 个整数，表示数组 a。</p>
+<h4 id="输出格式-16"><a href="#输出格式-16" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数表示数组中不同数的个数。</p>
+<h4 id="数据范围-13"><a href="#数据范围-13" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>\begin{flalign}<br>&amp;1≤n≤1000\<br>&amp;1≤ai≤1000&amp;<br>\end{flalign}<br>$$</p>
+<h4 id="输入样例：-15"><a href="#输入样例：-15" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-15"><a href="#输出样例：-15" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">4<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h2><p>​	思路说少有4种，这道题目大家请以思考多方法解题为主。</p>
+<h2 id="代码-16"><a href="#代码-16" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cstring>
+#include < algorithm>
+using namespace std;
+int get_unique_count(int arr[],int n)
+{
+    int ans = 0;
+    sort(arr,arr + n);
+    for (int i = 0; i < n - 1; i ++ ) if (arr[i] < arr[i + 1]) ans += 1;
+    return ans; 
+}
+int main()
+{
+    int n;
+    cin >> n;
+    int arr[1010];
+    for (int i = 0; i < n; i ++ ) cin >> arr[i];
+    cout << get_unique_count(arr,n) + 1; 
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+<h2 id="十七、三元组排序（简单-）"><a href="#十七、三元组排序（简单-）" class="headerlink" title="十七、三元组排序（简单+）"></a>十七、三元组排序<font color='green'>（简单+）</font></h2><p>给定 N 个三元组 (x,y,z)，其中 x 是整数，y 是浮点数，z 是字符串。</p>
+<p>请你按照 x 从小到大的顺序将这些三元组打印出来。</p>
+<p>数据保证不同三元组的 x 值互不相同。</p>
+<h4 id="输入格式-17"><a href="#输入格式-17" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 N。</p>
+<p>接下来 N 行，每行包含一个整数 x，一个浮点数 y，一个字符串 z，表示一个三元组，三者之间用空格隔开。</p>
+<h4 id="输出格式-17"><a href="#输出格式-17" class="headerlink" title="输出格式"></a>输出格式</h4><p>共 N 行，按照 x 从小到大的顺序，每行输出一个三元组。</p>
+<p>注意，所有输入和输出的浮点数 y 均保留两位小数。</p>
+<h4 id="数据范围-14"><a href="#数据范围-14" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>\begin{flalign}<br>&amp;1≤N≤10000\<br>&amp;1≤x,y≤10^5&amp;<br>\end{flalign}<br>$$</p>
+<p>字符串总长度不超过 105。</p>
+<h4 id="输入样例：-16"><a href="#输入样例：-16" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-symbol">32 </span><span class="hljs-number">1.36</span> nsyiupnnhc<br><span class="hljs-symbol">18 </span><span class="hljs-number">4.53</span> fmofzwrah<br><span class="hljs-symbol">33 </span><span class="hljs-number">4.86</span> wzuymbm<br><span class="hljs-symbol">1 </span><span class="hljs-number">3.93</span> gtnrwcebt<br><span class="hljs-symbol">31 </span><span class="hljs-number">4.53</span> gcllxioc<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-16"><a href="#输出样例：-16" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">3.93</span> gtnrwcebt<br><span class="hljs-symbol">18 </span><span class="hljs-number">4.53</span> fmofzwrah<br><span class="hljs-symbol">31 </span><span class="hljs-number">4.53</span> gcllxioc<br><span class="hljs-symbol">32 </span><span class="hljs-number">1.36</span> nsyiupnnhc<br><span class="hljs-symbol">33 </span><span class="hljs-number">4.86</span> wzuymbm<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h2><p>​	用pair实现，想尝试其他办法也行，但是基本都是pair最为方便，如果你不会使用pair，我就建议直接看代码吧，看代码如何使用pair</p>
+<h2 id="代码-17"><a href="#代码-17" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < algorithm>
+#include < vector>
+using namespace std;
+typedef pair< double, string> PDS;
+const int N = 1e4 + 10;
+int n;
+vector< pair< int, PDS>> ans;
+int a;
+double b;
+string c;
+int main() 
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> a >> b >> c;
+        ans.push_back({a,{b,c}});
+    }
+    sort(ans.begin(), ans.end()); // 默认是比较第一个数的大小来排序，且按照从小到大的顺序，更多细节之后遇到再进行讲解    
+    for (auto i:ans) {
+        cout << i.first << " " << i.second.first << " " << i.second.second.c_str()<< '\n';
+    }    
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/11/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE/" title="算法学习专栏——进制转换类型题目">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法学习专栏——进制转换类型题目</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/09/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94C++%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="算法学习专栏——C++需要知道的一些基础知识">
+                        <span class="hidden-mobile">算法学习专栏——C++需要知道的一些基础知识</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

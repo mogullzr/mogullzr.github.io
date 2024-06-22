@@ -1,0 +1,760 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、线性表的基本概念严谨定义​		线性表是具有相同数据类型的n(n≥0)个数据元素的有限序列，其中n为表长，当n&#x3D;0时线性表是一个空表。若用L命名线性表，则其一般表示为$$L&#x3D;(a1,a2,…,aiai+1…,an)$$   专业概念 ai 是线性表的“第i个” 元素线性表中的位序  a1 是表头元素 ;an 是表尾元素  除了第一个元素之外，每个元素都只有一个直接前驱,比如，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2、数据结构——简单的线性表——顺序表（一）">
+<meta property="og:url" content="http://example.com/2024/02/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E9%A1%BA%E5%BA%8F%E8%A1%A8%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="一、线性表的基本概念严谨定义​		线性表是具有相同数据类型的n(n≥0)个数据元素的有限序列，其中n为表长，当n&#x3D;0时线性表是一个空表。若用L命名线性表，则其一般表示为$$L&#x3D;(a1,a2,…,aiai+1…,an)$$   专业概念 ai 是线性表的“第i个” 元素线性表中的位序  a1 是表头元素 ;an 是表尾元素  除了第一个元素之外，每个元素都只有一个直接前驱,比如，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+<meta property="article:published_time" content="2024-02-14T12:15:55.000Z">
+<meta property="article:modified_time" content="2024-04-24T06:46:01.397Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="底层">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+  
+  
+  
+  <title>2、数据结构——简单的线性表——顺序表（一） - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403091115002.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="2、数据结构——简单的线性表——顺序表（一）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-14 20:15" pubdate>
+          2024年2月14日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">2、数据结构——简单的线性表——顺序表（一）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="一、线性表的基本概念"><a href="#一、线性表的基本概念" class="headerlink" title="一、线性表的基本概念"></a>一、线性表的基本概念</h2><h4 id="严谨定义"><a href="#严谨定义" class="headerlink" title="严谨定义"></a>严谨定义</h4><p>​		线性表是具有<strong>相同</strong>数据类型的n(n≥0)个<strong>数据元素</strong>的<strong>有限序列</strong>，其中n为<strong>表长</strong>，当n&#x3D;0时线性表是一个空表。若用L命名线性表，则其一般表示为<br>$$<br>L&#x3D;(a<del>1</del>,a<del>2</del>,…,a<del>i</del>a<del>i+1</del>…,a<del>n</del>)<br>$$</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060004304.png" srcset="/img/loading.gif" lazyload alt="image-20240205205027913" style="zoom:50%;" />
+
+<h4 id="专业概念"><a href="#专业概念" class="headerlink" title="专业概念"></a>专业概念</h4><ul>
+<li><p><strong>a<del>i</del></strong> 是线性表的<strong>“第i个”</strong> 元素线性表中的<font color='red'><strong>位序</strong></font></p>
+</li>
+<li><p><strong>a<del>1</del></strong> 是<font color='red'><strong>表头元素</strong></font> ;<strong>a<del>n</del></strong> 是<font color='red'><strong>表尾元素</strong></font></p>
+</li>
+<li><p>除了第一个元素之外，每个元素都只有一个<font color='red'><strong>直接前驱</strong></font>,比如，**a<del>2</del>**是 <strong>a<del>1</del><strong>的</strong>直接前驱</strong>；除了最后一个元素之外，每个元素都只有一个<font color='red'><strong>直接后继</strong></font>例子和前面是同理的</p>
+</li>
+</ul>
+<h2 id="二、理解到底什么是线性表"><a href="#二、理解到底什么是线性表" class="headerlink" title="二、理解到底什么是线性表"></a>二、理解到底什么是线性表</h2><p>​		实际上线性表使用大白话来讲，可以理解为：<strong>将一组一组数据按照一定的关系联系起来的结构</strong>。例子</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060004535.png" srcset="/img/loading.gif" lazyload alt="image-20240205210833561" style="zoom:50%;" />
+
+
+
+<h2 id="三、线性表的基本操作（实际上之后我们介绍的每一种结构都是按照这种思路进行分析学习的）"><a href="#三、线性表的基本操作（实际上之后我们介绍的每一种结构都是按照这种思路进行分析学习的）" class="headerlink" title="三、线性表的基本操作（实际上之后我们介绍的每一种结构都是按照这种思路进行分析学习的）"></a>三、线性表的基本操作（实际上之后我们介绍的每一种结构都是按照这种思路进行分析学习的）</h2><ul>
+<li><h4 id="初始化操作（InitList-L-）"><a href="#初始化操作（InitList-L-）" class="headerlink" title="初始化操作（InitList(&amp;L)）"></a>初始化操作（InitList(&amp;L)）</h4></li>
+<li><h4 id="销毁操作（DestoryList-L-）"><a href="#销毁操作（DestoryList-L-）" class="headerlink" title="销毁操作（DestoryList(&amp;L)）"></a>销毁操作（DestoryList(&amp;L)）</h4></li>
+<li><h4 id="插入操作（ListInsert（-L，i，e））"><a href="#插入操作（ListInsert（-L，i，e））" class="headerlink" title="插入操作（ListInsert（&amp;L，i，e））"></a>插入操作（ListInsert（&amp;L，i，e））</h4></li>
+<li><h4 id="删除操作（ListDelete（-L，i，-e））"><a href="#删除操作（ListDelete（-L，i，-e））" class="headerlink" title="删除操作（ListDelete（&amp;L，i，&amp;e））"></a>删除操作（ListDelete（&amp;L，i，&amp;e））</h4></li>
+<li><h4 id="按值查找（LocateElem-L-e-）"><a href="#按值查找（LocateElem-L-e-）" class="headerlink" title="按值查找（LocateElem(L,.e)）"></a>按值查找（LocateElem(L,.e)）</h4></li>
+<li><h4 id="按位置查找（GetElem-L-i-）"><a href="#按位置查找（GetElem-L-i-）" class="headerlink" title="按位置查找（GetElem(L,i)）"></a>按位置查找（GetElem(L,i)）</h4></li>
+<li><h4 id="求线性表长-Length-L"><a href="#求线性表长-Length-L" class="headerlink" title="求线性表长(Length(L))"></a>求线性表长(Length(L))</h4></li>
+<li><h4 id="输出线性表所有元素"><a href="#输出线性表所有元素" class="headerlink" title="输出线性表所有元素"></a>输出线性表所有元素</h4></li>
+<li><h4 id="判断表是否为空"><a href="#判断表是否为空" class="headerlink" title="判断表是否为空"></a>判断表是否为空</h4></li>
+</ul>
+<h5 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h5><blockquote>
+<p><strong>&amp;这个符号的含义:</strong> 就是将参数修改的结果带回来。换句话说就是你给函数传了一个X，函数内部对X的处理会真正影响到函数外的X的数值，比如你调用一个函数实现X+1操作，那么你的原本数据也会随之加1.</p>
+</blockquote>
+<p>​		接下来我们就会讲解线性表的具体类型已经如何结合结构体来实现这种关系……</p>
+<h2 id="四、顺序表"><a href="#四、顺序表" class="headerlink" title="四、顺序表"></a>四、顺序表</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>​		用<strong>顺序存储</strong>的方式实现线性表顺序存储。把逻辑上相邻的元素存储在物理位置上也相邻的存储单元中，元素之间的关系由存储单元的<strong>邻接关系</strong>来体现。线性表是具有相同数据类型的所占空间大小也相同的n**(n≥0)**个数据元素的有限序列。</p>
+<h3 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a><font color='red'>结构体定义</font></h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Elemtype; <span class="hljs-comment">// 写Elemtype就相当于写int，好处是：之后你需要修改数据类型只需要修改此处的类型即可，不用全局修改</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MaxSize 10</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span>&#123;<br>    ElemType data[MaxSize]; <span class="hljs-comment">// 用静态的“数组”存放数据元素</span><br>    <span class="hljs-type">int</span> length; <span class="hljs-comment">// 顺序表长度</span><br>&#125;SqList;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span>&#123;<br>    <span class="hljs-type">int</span> *data;<br>	<span class="hljs-type">int</span> MaxSize;<br>    <span class="hljs-type">int</span> length;<br>&#125;SqList; <span class="hljs-comment">// 动态存储</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>对于动态存储的data的理解：</strong> 假设我们为p分配了40个字节的空间，由于1个int类型数据占4个字节，因此我们就可以为p分配10个int类型的数据，地址是从<strong>2000~2040（这个2000是我假设的指针p的第一个元素起始位置）</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402061244620.png" srcset="/img/loading.gif" lazyload alt="image-20240206124400825"></p>
+<h3 id="实现功能一：初始化一个顺序表-完整代码"><a href="#实现功能一：初始化一个顺序表-完整代码" class="headerlink" title="实现功能一：初始化一个顺序表(完整代码)"></a><font color='red'>实现功能一：初始化一个顺序表(完整代码)</font></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 1、静态存储方式</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Elemtype; <br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MaxSize 10; <span class="hljs-comment">// 这里最好不要无限大，否则会存在浪费空间的情况</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>    ElemType data[MaxSize]; <br>    <span class="hljs-type">int</span> length;<br>&#125;SqList; <span class="hljs-comment">// 静态存储方式，就是说你事先已经规定好了存取的数组大小MaxSize</span><br><br><br><span class="hljs-comment">// 1、初始化功能</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">InitList</span><span class="hljs-params">(SqList &amp;L)</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; MaxSize; i ++) &#123;<br>        L.data[i] = <span class="hljs-number">0</span>; <span class="hljs-comment">// 一般的情况来说，全局变量的初始值均为0，但是肯呢个会存在脏数据，所以建议进行一下赋值为0的初始化操作</span><br>    &#125;<br>    L.length=o; <br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    SqList L;<br>    InitList(L); <span class="hljs-comment">// 初始化</span><br>    <span class="hljs-comment">// 待续......</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br><br><span class="hljs-comment">// 2、动态存储方式</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdilb.h&gt;</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Elemtype; <br><span class="hljs-meta">#<span class="hljs-keyword">define</span> InitSize 10; <span class="hljs-comment">// 这里最好不要无限大，否则会存在浪费空间的情况</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>    <span class="hljs-type">int</span> *data;<br>	<span class="hljs-type">int</span> MaxSize;<br>    <span class="hljs-type">int</span> length;<br>&#125;SqList; <span class="hljs-comment">// 动态存储</span><br><br><br><span class="hljs-comment">// 1、初始化功能</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">InitList</span><span class="hljs-params">(SqList &amp;L)</span> &#123;<br>	L.data=(<span class="hljs-type">int</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>) * InitSize); <span class="hljs-comment">// 为data分配一段连续的内存空间</span><br>    L.length=<span class="hljs-number">0</span>; <br>    L.MaxSize=InitSize;<br>&#125;<br><br><span class="hljs-comment">// 2、增长动态数组长度功能（注意：实际是给数组分配更多的空间）</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">InsertSqlist</span><span class="hljs-params">(Sqlist &amp;L,<span class="hljs-type">int</span> len)</span> &#123;<br>    <span class="hljs-type">int</span> *p = L.data;<br>    L.data=(<span class="hljs-type">int</span> *)<span class="hljs-built_in">malloc</span>((L.MaxSize + len)*<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; L.length; i++) &#123;<br>        L.data[i] = p[i];<br>    &#125;<br>    L.MaxSize = L,MaxSize + len;<br>    <span class="hljs-built_in">free</span>(p);<br>&#125;<br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    SqList L;<br>    InitList(L); <span class="hljs-comment">// 初始化</span><br>	InsertSqlist(L,<span class="hljs-number">5</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="实现功能二：插入元素"><a href="#实现功能二：插入元素" class="headerlink" title="实现功能二：插入元素"></a><font color='red'>实现功能二：插入元素</font></h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402061118833.png" srcset="/img/loading.gif" lazyload alt="image-20240206111442417" style="zoom:45%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402061124272.png" srcset="/img/loading.gif" lazyload alt="image-20240206112400460" style="zoom:50%;" />
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 1、插入代码1.0（尚未考虑特殊情况）</span><br><span class="hljs-comment">// 前面的初始化代码省略......</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(Sqlist &amp;L,<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> e)</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=L.length;j &gt;= i; j--) &#123;<span class="hljs-number">1</span><br>        L.data[j] = L.data[j - <span class="hljs-number">1</span>];<br>    &#125;<br>    L.data[i - <span class="hljs-number">1</span>] = e;<br>    L.length++;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    Sqlist L;<br>    InitList(L);<br>    <br>    <span class="hljs-comment">// 在顺序表中插入几个元素</span><br>    ListInsert(L,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);<br>    ListInsert(L,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>);<br>    ListInsert(L,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>);<br>    ListInsert(L,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>);<br>    ListInsert(L,<span class="hljs-number">5</span>,<span class="hljs-number">5</span>);<br>    <br>    <span class="hljs-comment">// 现在在L的第2个位置后(第3个位置)面添加元素6</span><br>    ListInsert(L,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">//2、插入代码2.0（考虑到空间不够或者空间饱满情况），修改bool ListInsert(Sqlist &amp;L,int i, int e)</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(Sqlist &amp;L,<span class="hljs-type">int</span> i, <span class="hljs-type">int</span> e)</span> &#123;<br>	<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> || i &gt; L.length + <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">if</span> (L.length &gt;= MaxSize) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=L.length;j &gt;= i; j--) &#123;<span class="hljs-number">1</span><br>        L.data[j] = L.data[j - <span class="hljs-number">1</span>];<br>    &#125;<br>    L.data[i - <span class="hljs-number">1</span>] = e;<br>    L.length++;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-0是健壮的代码，可以应对特殊情况"><a href="#2-0是健壮的代码，可以应对特殊情况" class="headerlink" title="2.0是健壮的代码，可以应对特殊情况"></a>2.0是健壮的代码，可以应对特殊情况</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402061138898.png" srcset="/img/loading.gif" lazyload alt="image-20240206112941242" style="zoom:50%;" />
+
+<h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><ul>
+<li><p><strong>最好情况：</strong> 就是元素刚好插到顺序表尾部，这时就不需要移动元素，<strong>复杂度:O(1)</strong> </p>
+</li>
+<li><p><strong>最坏情况：</strong> 就是元素插在顺序表的最前面，这时就需要将顺序表所有元素向后移动一个位置 <strong>复杂度:O(n)</strong></p>
+</li>
+<li><p><strong>平均情况：</strong> 新元素插入到任何一个位置的概率是相同的，为<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402061138580.png" srcset="/img/loading.gif" lazyload alt="image-20240206113814574" style="zoom:33%;" />从<code>i=1</code>开始，循环n次；<code>i=2</code>时，循环n-1次；……i&#x3D;n+1,循环0次。现在计算一下<strong>平均循环次数 &#x3D; n*p + (n - 1) <em>p …… 1 * p &#x3D; p</em>(1 + 2 + 3 + …  + n) &#x3D; p * n(n +1)&#x2F;2&#x3D;n&#x2F;2</strong></p>
+<p><strong>平均时间复杂度：O(n)</strong></p>
+</li>
+</ul>
+<h3 id="实现功能三：删除元素（其实和插入操作异曲同工）"><a href="#实现功能三：删除元素（其实和插入操作异曲同工）" class="headerlink" title="实现功能三：删除元素（其实和插入操作异曲同工）"></a><font color='red'>实现功能三：删除元素（其实和插入操作异曲同工）</font></h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402061151633.png" srcset="/img/loading.gif" lazyload alt="image-20240206115122889" style="zoom:45%;" />
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 前面介绍过的代码就不写了......</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(Sqlist &amp;L,<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> &amp;e)</span> &#123;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>||i&gt;L.length) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    e = L.data[i - <span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = i; j &lt; L.length; j++) &#123;<br>        L.data[j - <span class="hljs-number">1</span>] = L.data[j];<br>    &#125;<br>    L.length--;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    Sqlist L;<br>    InitSqlist(L);<br>    <span class="hljs-comment">// 和前面一样插入几个元素...</span><br>    <span class="hljs-type">int</span> e = <span class="hljs-number">-1</span>; <span class="hljs-comment">// 记录删除的具体元素</span><br>    <span class="hljs-keyword">if</span> (ListDelete(L,<span class="hljs-number">3</span>,e)) &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;删除第3个元素成功，第3个元素使%d&quot;</span>,e);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;删除不合法!!!&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><ul>
+<li>和插入操作是一模一样的，推理过程几乎都是一样的，所以这里就不重复介绍了……</li>
+</ul>
+<h3 id="实现功能三：按位置查找元素"><a href="#实现功能三：按位置查找元素" class="headerlink" title="实现功能三：按位置查找元素"></a><font color='red'>实现功能三：按位置查找元素</font></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 对于静态存储方式和动态存储方式两种写法，按照位置查找元素的方式都是相同的</span><br>ElemType <span class="hljs-title function_">GetElem</span><span class="hljs-params">(Sqlist L, <span class="hljs-type">int</span> i)</span> &#123;<br>	<span class="hljs-keyword">return</span> L.data[i - <span class="hljs-number">1</span>];<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="时间复杂度：O（1）"><a href="#时间复杂度：O（1）" class="headerlink" title="时间复杂度：O（1）"></a>时间复杂度：O（1）</h4><h3 id="实现功能四：按值查找"><a href="#实现功能四：按值查找" class="headerlink" title="实现功能四：按值查找"></a><font color='red'>实现功能四：按值查找</font></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 当我们需要查找的数据元素仅仅是个简单数据类型(int、float、double......) 1.0</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">GetByElem</span><span class="hljs-params">(Sqlist L,ElemType e)</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; L.length; i++) &#123;<br>        <span class="hljs-keyword">if</span> (L.data[i] == e) &#123;<br>            <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 当我们需要查找的数据元素是个结构体类型 2.0,我们就需要将内部的各个元素进行比较</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; L.length; i++) &#123;<br>        <span class="hljs-keyword">if</span> (L.data[i].a == e.a &amp;&amp; L.data[i] == e.b &amp;&amp; L.data[i].c == e.c) &#123;<br>            <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="时间复杂度-2"><a href="#时间复杂度-2" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>和之前的插入、删除是一模一样的思路，此处不再讲解。</p>
+<h3 id="顺序表特点"><a href="#顺序表特点" class="headerlink" title="顺序表特点"></a><font color='red'>顺序表特点</font></h3><ul>
+<li>随意访问，即可以在O(1)时间找到第i个元素</li>
+<li>存储密度高，每个节点只存储数据元素</li>
+<li>拓展容量不方便(即便使用动态分配的方式实现，时间复杂度也是很高的)</li>
+<li>插入删除操作不方便，需要移动大量元素</li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a><font color='red'>注意事项</font></h3><p>​		我们需要非常注意我们何时需要添加引用<font color='red'><strong><code>&amp;</code></strong></font> ，何时不需要添加，加了之后，函数内部对元素的操作就会直接影响到传入的那个参数本身！！！</p>
+<h4 id="下一节内容是：3、简单的线性表——单链表！！！"><a href="#下一节内容是：3、简单的线性表——单链表！！！" class="headerlink" title="下一节内容是：3、简单的线性表——单链表！！！"></a>下一节内容是：3、简单的线性表——单链表！！！</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o…….."></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o……..</font></h4>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E5%8D%95%E9%93%BE%E8%A1%A8%EF%BC%88%E4%BA%8C%EF%BC%89/" title="3、数据结构——简单的线性表——单链表（二）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">3、数据结构——简单的线性表——单链表（二）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/13/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E4%BA%8C%E5%88%86%E6%B3%95/" title="算法学习专栏——二分法">
+                        <span class="hidden-mobile">算法学习专栏——二分法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

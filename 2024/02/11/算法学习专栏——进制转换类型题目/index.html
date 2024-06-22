@@ -1,0 +1,974 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="位运算按位与（&amp;）计算方式： 有0出0，全1出1 例如： 4&amp;5改为二进制 4 –&gt; 0000 0100 5 –&gt; 0000 0101 ​	 0000 0100 &lt;–4 因此4&amp;5&#x3D;4 按位或（|）计算方式： 有1出1，全0出0 例如： 4&amp;5改为二进制 4 –&gt; 0000 0100 5 –&gt; 0000 0101 ​	 000">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法学习专栏——进制转换类型题目">
+<meta property="og:url" content="http://example.com/2024/02/11/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="位运算按位与（&amp;）计算方式： 有0出0，全1出1 例如： 4&amp;5改为二进制 4 –&gt; 0000 0100 5 –&gt; 0000 0101 ​	 0000 0100 &lt;–4 因此4&amp;5&#x3D;4 按位或（|）计算方式： 有1出1，全0出0 例如： 4&amp;5改为二进制 4 –&gt; 0000 0100 5 –&gt; 0000 0101 ​	 000">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404292224130.webp">
+<meta property="article:published_time" content="2024-02-11T06:04:04.000Z">
+<meta property="article:modified_time" content="2024-05-16T15:11:04.527Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="进制转换">
+<meta property="article:tag" content="C++基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404292224130.webp">
+  
+  
+  
+  <title>算法学习专栏——进制转换类型题目 - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404292224130.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="算法学习专栏——进制转换类型题目"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-11 14:04" pubdate>
+          2024年2月11日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          628 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">算法学习专栏——进制转换类型题目</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="按位与（-）"><a href="#按位与（-）" class="headerlink" title="按位与（&amp;）"></a>按位与（&amp;）</h2><p><strong>计算方式：</strong></p>
+<p>有0出0，全1出1</p>
+<p><strong>例如</strong>：</p>
+<p>4&amp;5改为二进制</p>
+<p>4 –&gt; 0000 0100</p>
+<p>5 –&gt; <u>0000 0101</u></p>
+<p>​	 0000 0100 &lt;–4</p>
+<p>因此4&amp;5&#x3D;4</p>
+<h2 id="按位或（-）"><a href="#按位或（-）" class="headerlink" title="按位或（|）"></a>按位或（|）</h2><p><strong>计算方式：</strong></p>
+<p>有1出1，全0出0</p>
+<p><strong>例如</strong>：</p>
+<p>4&amp;5改为二进制</p>
+<p>4 –&gt; 0000 0100</p>
+<p>5 –&gt; <u>0000 0101</u></p>
+<p>​	 0000 0101 &lt;–5</p>
+<p>因此4|5&#x3D;5</p>
+<h2 id="按位异或（-）"><a href="#按位异或（-）" class="headerlink" title="按位异或（^）"></a>按位异或（^）</h2><p><strong>计算方式:</strong></p>
+<p>相同为0，不同为1</p>
+<p><strong>例如</strong>：</p>
+<p>4&amp;5改为二进制</p>
+<p>4 –&gt; 0000 0100</p>
+<p>5 –&gt; <u>0000 0101</u></p>
+<p>​	 0000 0001 &lt;–1</p>
+<p>因此4^5&#x3D;1</p>
+<p><strong>用途：交换变量</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-type">int</span> a = <span class="hljs-number">1</span>, b = <span class="hljs-number">2</span>;<br>a = a ^ b;<br>b = a ^ b; <span class="hljs-comment">// b = a ^ b ^ b = a;</span><br>a = a ^ b; <span class="hljs-comment">// a = a ^ b ^ a;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="取反（-）"><a href="#取反（-）" class="headerlink" title="取反（~）"></a>取反（~）</h2><p><strong>计算方式:</strong></p>
+<p>二进制中的1变0，0变1</p>
+<h2 id="位运算符（-和"><a href="#位运算符（-和" class="headerlink" title="位运算符（&gt;&gt; 和 &lt;&lt;）"></a>位运算符（&gt;&gt; 和 &lt;&lt;）</h2><p><strong>计算方式：</strong></p>
+<p>将一个数的二进制位全部左移（右移）若干位</p>
+<p><strong>左移：</strong>高位溢出不用，低位补0</p>
+<p><strong>右移：</strong>低位溢出不用，高位正数补0，负数补1</p>
+<p>左移一位相当于乘<em>2，</em>2^n^相当于左移n位，右移同理</p>
+<p><strong>例子：</strong></p>
+<p>a &#x3D; 10 &#x3D; （1010）<del>2</del></p>
+<p>a &#x3D; a &lt;&lt; 2 &#x3D;（1000）<del>2</del></p>
+<h1 id="一、数的进制转换（—）（简单-）"><a href="#一、数的进制转换（—）（简单-）" class="headerlink" title="一、数的进制转换（—）（简单-）"></a>一、数的进制转换（—）<font color='green'>（简单-）</font></h1><p>大家好，我是小刘，现在我正在学习计算机的基础知识：进制转换，但是现在有个问题，我发现学校交给我们进制转换仅仅是2、8、10、16进制之间的转换，现在我想设计一段代码，可以实现任何进制数对任何进制数之间的转换。</p>
+<p>注意：字母这里可能为大小写字母，不需要考虑大小写问题，比如Ab23。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一个字符串 X，X的进制为Y，需要转化为的进制为Z。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出转换为Z进制的数X的格式。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1 &lt;&#x3D; X.length() &lt;&#x3D; 5\<br>2&lt;&#x3D;Y&lt;&#x3D;36\<br>2&lt;&#x3D;Z&lt;&#x3D;36<br>$$</p>
+<h4 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">10<br>2<br>7<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">2<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">A123</span><br><span class="hljs-number">11</span><br><span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">54142<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><details>
+    <summary>思路</summary>
+    <pre>
+    可以选择先将这个数转换为10进制，再将其转换为对应进制，这个思路是最常见最简单的一套思路
+    </pre>
+</details>
+
+
+
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < algorithm>
+#include < vector>
+using namespace std;
+string x;
+int y,z;
+int k = 1;
+long long ans;
+vector<int> C;
+int main() 
+{
+    cin >> x >> y >> z;        
+    for (int i = x.size() - 1; i >= 0; i--) 
+    {
+        if (x[i] >= 'A' && x[i] <= 'Z') ans += (x[i] - 'A' + 10) * k;
+        if (x[i] >= 'a' && x[i] <= 'z') ans += (x[i] - 'a' + 10) * k;
+        else ans += (x[i] - '0') * k;
+        k *= y;
+    }
+    // 下面这种写法也可以
+    //for (int i = x.size() - 1; i >= 0; i--) 
+    //{
+    //    x[i] = tolower(x[i]); // 这个函数的作用是将字母转换为小写字母，比如'A'变为'a',
+    //    if (x[i] >= 'a' && x[i] <= 'z') ans += (x[i] - 'a' + 10) * k;
+    //    else ans += (x[i] - '0') * k;
+    //    k *= y;
+    //}
+    while (ans){
+        C.push_back(ans % z);
+        ans /= z;
+    } 
+    for (int i = C.size() - 1; i >= 0; i--) cout << C[i];
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+
+<h2 id="二、数的进制转换（二）（简单）"><a href="#二、数的进制转换（二）（简单）" class="headerlink" title="二、数的进制转换（二）（简单）"></a>二、数的进制转换（二）<font color='green'>（简单）</font></h2><p>编写一个程序，可以实现将一个数字由一个进制转换为另一个进制。</p>
+<p>这里有 62 个不同数位 **{0−9,A−Z,a−z}{0−9}**。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行输入一个整数，代表接下来的行数。</p>
+<p>接下来每一行都包含三个数字，首先是输入进制（十进制表示），然后是输出进制（十进制表示），最后是用输入进制表示的输入数字，数字之间用空格隔开。</p>
+<p>输入进制和输出进制都在 22 到 6262 的范围之内。</p>
+<p>（在十进制下）A&#x3D;10，B&#x3D;11，…，Z&#x3D;35，a&#x3D;36，b&#x3D;37，…，z&#x3D;61 (0−9 仍然表示 0−9)。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>对于每一组进制转换，程序的输出都由三行构成。</p>
+<p>第一行包含两个数字，首先是输入进制（十进制表示），然后是用输入进制表示的输入数字。</p>
+<p>第二行包含两个数字，首先是输出进制（十进制表示），然后是用输出进制表示的输入数字。</p>
+<p>第三行为空白行。</p>
+<p>同一行内数字用空格隔开。</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">8</span><br><span class="hljs-symbol">62 </span><span class="hljs-number">2</span> abcdefghiz<br><span class="hljs-symbol">10 </span><span class="hljs-number">16</span> <span class="hljs-number">1234567890123456789012345678901234567890</span><br><span class="hljs-symbol">16 </span><span class="hljs-number">35</span> <span class="hljs-number">3</span>A0C92075C0DBF3B8ACBC5F96CE3F0AD2<br><span class="hljs-symbol">35 </span><span class="hljs-number">23</span> <span class="hljs-number">333</span>YMHOUE8JPLT7OX6K9FYCQ8A<br><span class="hljs-symbol">23 </span><span class="hljs-number">49</span> <span class="hljs-number">946</span>B9AA02MI37E3D3MMJ4G7BL2F05<br><span class="hljs-symbol">49 </span><span class="hljs-number">61</span> <span class="hljs-number">1</span>VbDkSIMJL3JjRgAdlUfcaWj<br><span class="hljs-symbol">61 </span><span class="hljs-number">5</span> dl9MDSWqwHjDnToKcsWE1S<br><span class="hljs-symbol">5 </span><span class="hljs-number">10</span> <span class="hljs-number">42104444441001414401221302402201233340311104212022133030</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">62 </span>abcdefghiz<br><span class="hljs-symbol">2 </span><span class="hljs-number">11011100000100010111110010010110011111001001100011010010001</span><br><br><span class="hljs-symbol">10 </span><span class="hljs-number">1234567890123456789012345678901234567890</span><br><span class="hljs-symbol">16 </span><span class="hljs-number">3</span>A0C92075C0DBF3B8ACBC5F96CE3F0AD2<br><br><span class="hljs-symbol">16 </span><span class="hljs-number">3</span>A0C92075C0DBF3B8ACBC5F96CE3F0AD2<br><span class="hljs-symbol">35 </span><span class="hljs-number">333</span>YMHOUE8JPLT7OX6K9FYCQ8A<br><br><span class="hljs-symbol">35 </span><span class="hljs-number">333</span>YMHOUE8JPLT7OX6K9FYCQ8A<br><span class="hljs-symbol">23 </span><span class="hljs-number">946</span>B9AA02MI37E3D3MMJ4G7BL2F05<br><br><span class="hljs-symbol">23 </span><span class="hljs-number">946</span>B9AA02MI37E3D3MMJ4G7BL2F05<br><span class="hljs-symbol">49 </span><span class="hljs-number">1</span>VbDkSIMJL3JjRgAdlUfcaWj<br><br><span class="hljs-symbol">49 </span><span class="hljs-number">1</span>VbDkSIMJL3JjRgAdlUfcaWj<br><span class="hljs-symbol">61 </span>dl9MDSWqwHjDnToKcsWE1S<br><br><span class="hljs-symbol">61 </span>dl9MDSWqwHjDnToKcsWE1S<br><span class="hljs-symbol">5 </span><span class="hljs-number">42104444441001414401221302402201233340311104212022133030</span><br><br><span class="hljs-symbol">5 </span><span class="hljs-number">42104444441001414401221302402201233340311104212022133030</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">1234567890123456789012345678901234567890</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>​	和上一道题目思路几乎一致</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>#include <iostream>
+#include < algorithm>
+#include < cstring>
+using namespace std;
+const int Max = 1100;
+#define fir(a,b,c) for (int a = b;a <= c;a++)
+int t[Max],A[Max],n,m,i,len,k;
+char str1[Max], str2[Max];
+void solve()
+{
+    k=0;
+    len = strlen(str1);
+    for(i=len; i >= 0; i--) 
+        t[len - i - 1] = str1[i] -(str1[i]<58 ? 48: str1[i]<97 ? 55: 61);//开始转换成为十进制
+    while(len)
+    {
+    //这个写法大家
+        for(i = len; i >= 1; i--) 
+        {
+            t[i - 1] +=t[i] % m * n;//开始计算,首先*n,为n进制,然后转移到m进制
+            t[i] /= m;//当前数已经处理完了
+        }
+        A[k++] = t[0] % m;//直接加到答案数组中
+        t[0] /= m;//当前数已经处理完了
+        while(len > 0&& !t[len - 1])  //处理0的情况
+            len--;
+    }
+    str2[k] =NULL;//第k位,我们不需要,直接抛去,利用NULL这个特殊的字符串结束符,具体可以自行百度.
+    fir(i,0,k - 1)//这里使用这个写法就是让大家熟悉一下，之后使用这个方法可以简化代码
+        str2[k - 1 - i] = A[i]+(A[i] < 10 ? 48: A[i] < 36 ? 55:61);//三目运算符,这段代码的意思是,
+        // 找这个数字对应的字母
+}
+int main()
+{
+    int t;
+    scanf("%d\n",&t);
+    while(t--) 
+    {
+        scanf("%d %d %s\n",&n,&m,str1);
+        solve();
+        printf("%d %s\n%d %s\n\n",n,str1,m,str2);
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+
+
+
+<h2 id="三、数列（简单）"><a href="#三、数列（简单）" class="headerlink" title="三、数列（简单）"></a>三、数列<font color='green'>（简单）</font></h2><p>给定一个正整数 k，把所有 k 的方幂及所有有限个互不相等的 k 的方幂之和构成一个递增的序列，例如，当 k&#x3D;3 时，这个序列是：</p>
+<p>1，3，4，9，10，12，13，…</p>
+<p>该序列实际上就是：3^0^，3^1^，3^0^+3^1^，3^2^，3^0^+3^2^，3^1^+3^2^，3^0^+3^1^+3^2^……</p>
+<p>请你求出这个序列的第 N 项的值（N 用 10 进制数表示，从 1 开始）。 </p>
+<p>例如，对于 k&#x3D;3，N&#x3D;100正确答案应该是 981。</p>
+<h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入文件只有 11 行，为 22 个正整数，用一个空格隔开：k,N,。</p>
+<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出文件为计算结果，是一个正整数（在所有的测试数据中，结果均不超过 2.1×1092.1×109）。（整数前不要有空格和其他符号）。</p>
+<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>3≤k≤15\<br>10≤N≤1000<br>$$</p>
+<h4 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">3 </span><span class="hljs-number">100</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">981<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><details>
+    <summary>思路</summary>
+    <pre>
+这道题目实质上就是一个扩展思维类型题目，大家可以仔细观察一下题目给出的一串数列，然后再结合二进制来看一下就不难看出就是一个从1~n的二进制数的排列罢了，比如说：对于数字9而言对应二进制位1001,那么我们对应数列的项就是3^0 + 3^3。
+    </pre>
+    <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402121644161.png" srcset="/img/loading.gif" lazyload alt="image-20240212164415749" style="zoom:50%;" />
+</details>
+
+
+
+
+
+
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < cmath>
+using namespace std;
+typedef long long LL;
+int k, n;
+LL ans;
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >> k >> n;
+    for (int i = 0; i < 15;i ++) {
+        if ((n >> i) & 1) {
+            ans += pow(k, i);
+        }
+    }
+    cout << ans;
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/11/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89/" title="算法学习专栏——栈（一）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法学习专栏——栈（一）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/09/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94C++%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BE%8B%E9%A2%98/" title="算法学习专栏——C++需要知道的一些基础知识例题">
+                        <span class="hidden-mobile">算法学习专栏——C++需要知道的一些基础知识例题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

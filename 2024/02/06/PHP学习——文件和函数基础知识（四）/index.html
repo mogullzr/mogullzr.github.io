@@ -1,0 +1,808 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、常用的系统函数1）有关输出的函数print()：类似于 echo 输出提供的内容，本质是一个结构（不是函数），echo print(任何数值) 都是输出1 print_r(): 类似于var_dump,但是更简单，不会输出数据的类型，只会输出具体的数值   2）有关时间的函数date():  按照指定格式对对应的时间戳（从1970年格林威治时间开始计算的秒数），没有指定时间戳，就是默认当前的时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP学习——文件和函数基础知识（四）">
+<meta property="og:url" content="http://example.com/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E5%9B%9B%EF%BC%89/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="一、常用的系统函数1）有关输出的函数print()：类似于 echo 输出提供的内容，本质是一个结构（不是函数），echo print(任何数值) 都是输出1 print_r(): 类似于var_dump,但是更简单，不会输出数据的类型，只会输出具体的数值   2）有关时间的函数date():  按照指定格式对对应的时间戳（从1970年格林威治时间开始计算的秒数），没有指定时间戳，就是默认当前的时">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060012313.jpg">
+<meta property="article:published_time" content="2024-02-05T16:10:52.000Z">
+<meta property="article:modified_time" content="2024-02-05T16:31:57.934Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="学校课程">
+<meta property="article:tag" content="退役语言">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060012313.jpg">
+  
+  
+  
+  <title>PHP学习——文件和函数基础知识（四） - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="PHP学习——文件和函数基础知识（四）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-06 00:10" pubdate>
+          2024年2月6日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">PHP学习——文件和函数基础知识（四）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="一、常用的系统函数"><a href="#一、常用的系统函数" class="headerlink" title="一、常用的系统函数"></a>一、常用的系统函数</h2><h3 id="1）有关输出的函数"><a href="#1）有关输出的函数" class="headerlink" title="1）有关输出的函数"></a>1）有关输出的函数</h3><p><code>print()：</code>类似于 <code>echo</code> 输出提供的内容，本质是一个结构<strong>（不是函数）</strong>，<code>echo print(任何数值)</code> 都是输出1</p>
+<p><code>print_r():</code> 类似于var_dump,但是更简单，不会输出数据的类型，只会输出具体的数值</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018348.png" srcset="/img/loading.gif" lazyload alt="image-20240204165320284" style="zoom:50%;" />
+
+<h3 id="2）有关时间的函数"><a href="#2）有关时间的函数" class="headerlink" title="2）有关时间的函数"></a>2）有关时间的函数</h3><p><code>date(): </code> 按照指定格式对对应的时间戳<strong>（从1970年格林威治时间开始计算的秒数）</strong>，没有指定时间戳，就是默认当前的时间戳。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019802.png" srcset="/img/loading.gif" lazyload alt="image-20240204165959713"></p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018508.png" srcset="/img/loading.gif" lazyload alt="image-20240204165703801" style="zoom:50%;" />
+
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020436.png" srcset="/img/loading.gif" lazyload alt="image-20240204165803099" style="zoom:50%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020821.png" srcset="/img/loading.gif" lazyload alt="image-20240204165824133" style="zoom:50%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019593.png" srcset="/img/loading.gif" lazyload alt="image-20240204165841954" style="zoom:50%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020807.png" srcset="/img/loading.gif" lazyload alt="image-20240204165852622"></p>
+<p><code>time():</code> 当前时间对应的时间戳</p>
+<p><code>mircrotime():</code> 获取微秒级别的时间</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019305.png" srcset="/img/loading.gif" lazyload alt="image-20240204170229255" style="zoom:50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019078.png" srcset="/img/loading.gif" lazyload alt="image-20240204173208281" style="zoom:50%;" />
+
+<p><strong><code>Strtotime():</code></strong> 按照规定格式的字符串换成时间戳。</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019636.png" srcset="/img/loading.gif" lazyload alt="image-20240204173525221" style="zoom:50%;" />
+
+<h3 id="3）有关数学的函数"><a href="#3）有关数学的函数" class="headerlink" title="3）有关数学的函数"></a>3）有关数学的函数</h3><ul>
+<li><p><strong>max()：</strong>指定参数中最大值</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019298.png" srcset="/img/loading.gif" lazyload alt="image-20240205104042000" style="zoom:33%;" />
+</li>
+<li><p><strong>min()：</strong></p>
+</li>
+<li><p><strong>rand()：</strong></p>
+</li>
+<li><p><strong>mt_rand()：</strong></p>
+</li>
+<li><p><strong>round()：</strong></p>
+</li>
+<li><p><strong>cell()：</strong></p>
+</li>
+<li><p><strong>floor()：</strong></p>
+</li>
+<li><p><strong>pow()：</strong></p>
+</li>
+</ul>
+<h2 id="二、文件"><a href="#二、文件" class="headerlink" title="二、文件"></a>二、文件</h2><h4 id="PHP-代码执行流程"><a href="#PHP-代码执行流程" class="headerlink" title="PHP 代码执行流程"></a>PHP 代码执行流程</h4><ul>
+<li>读取代码程序<strong>（PHP程序）</strong></li>
+<li><strong>编译：</strong>将PHP代码转换为字节码<strong>（生成opcode）</strong></li>
+<li>zendengine来解析opcode，按照字节码去进行逻辑运算</li>
+<li>转换成对应的<strong>HTML</strong>代码</li>
+</ul>
+<h4 id="文件加载原理"><a href="#文件加载原理" class="headerlink" title="文件加载原理"></a>文件加载原理</h4><ul>
+<li>在文件加载<strong>（include 或者 require）</strong>的时候，系统自动将包含文件中的代码相当于嵌入到当前文件中</li>
+<li><strong>加载位置：</strong> 在哪加载，对应文件中的代码相当于嵌入到当前文件中</li>
+<li>在PHP中包含的文件是<strong>单独</strong>进行编译</li>
+</ul>
+<p>​		PHP文件在编泽的过程中如果出现了语法错误，那么会失败（不会执行）：但是如果被包含文件有错误的时候，系统会在执行到包含include这条语句的时候才会报错。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019741.png" srcset="/img/loading.gif" lazyload alt="image-20240204185526695"></p>
+<p><strong>相当于</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019891.png" srcset="/img/loading.gif" lazyload alt="image-20240204185602158" style="zoom:50%;" />
+
+
+
+<h2 id="三、Include-和-include-one的区别"><a href="#三、Include-和-include-one的区别" class="headerlink" title="三、Include 和 include_one的区别"></a>三、Include 和 include_one的区别</h2><ul>
+<li><p>**Include:**系统会碰到一次，执行一次：如果对统一个文件进行多次加载，那么系统会执行多次； </p>
+</li>
+<li><p>**Include_once:**系统碰到多次，也只会执行一次</p>
+</li>
+</ul>
+<h2 id="四、Include和require的区别"><a href="#四、Include和require的区别" class="headerlink" title="四、Include和require的区别"></a>四、Include和require的区别</h2><ul>
+<li><p>本质都是包含文件，唯一的区别就是包含不到文件的时候的报错形式不一样</p>
+</li>
+<li><p>Include报错之后后面的PHP代码可以继续执行</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019706.png" srcset="/img/loading.gif" lazyload alt="image-20240204190411452" style="zoom:33%;" />
+</li>
+<li><p>require报错之后PHP代码不可以继续执行</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019314.png" srcset="/img/loading.gif" lazyload alt="image-20240204190455053" style="zoom:33%;" /></li>
+</ul>
+<h2 id="五、函数基本概念、语法、命名"><a href="#五、函数基本概念、语法、命名" class="headerlink" title="五、函数基本概念、语法、命名"></a>五、函数基本概念、语法、命名</h2><h4 id="函数声明和调用是不分顺序的（原因：先编译后执行）"><a href="#函数声明和调用是不分顺序的（原因：先编译后执行）" class="headerlink" title="函数声明和调用是不分顺序的（原因：先编译后执行）"></a><strong>函数声明和调用是不分顺序的（原因：先编译后执行）</strong></h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019037.png" srcset="/img/loading.gif" lazyload alt="image-20240204192333956" style="zoom:33%;" />
+
+
+
+<h4 id="函数执行流程"><a href="#函数执行流程" class="headerlink" title="函数执行流程"></a>函数执行流程</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019516.png" srcset="/img/loading.gif" lazyload alt="image-20240204192732156" style="zoom:50%;" />
+
+
+
+<h4 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h4><p>​		和变量的规则几乎是一样的，两种常用的方式：驼峰式和下划线式</p>
+<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><p>​		指的是形参的默认值，在函数定义的时候，就给形参进行一个初始赋值：如果实际调用传入参数（实参）没有提供，那么形参就会使用定义时的值进入函数内部参与运算。</p>
+<p>​		<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019257.png" srcset="/img/loading.gif" lazyload alt="image-20240204200238198" style="zoom:50%;" /></p>
+<h3 id="引用传递（-函数内部操作会影响外部）"><a href="#引用传递（-函数内部操作会影响外部）" class="headerlink" title="引用传递（ 函数内部操作会影响外部）"></a>引用传递（ 函数内部操作会影响外部）</h3><p>​		有的时候，希望在函数内部掌到的外部数据，能够在团数内陪改变，那么就需要明确告知团数<strong>（定义时）</strong>，函数才会在调用的时候去主动获取外喽数据的内存地址。以上这种定义形式参数的方式叫作引用传值。</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019843.png" srcset="/img/loading.gif" lazyload alt="image-20240204200628543" style="zoom: 33%;" />
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019612.png" srcset="/img/loading.gif" lazyload alt="image-20240204200758239"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020445.png" srcset="/img/loading.gif" lazyload alt="image-20240204200814864"></p>
+<h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p>​		还可以在文件中之际使用<strong>（不在函数里）</strong> ，表示文件将结果return 后面跟的内容，转交给包含当前文件的位置。return在文件中就代表着终止文件。</p>
+<h2 id="六、作用域"><a href="#六、作用域" class="headerlink" title="六、作用域"></a>六、作用域</h2><h4 id="超全局变量（第三种）"><a href="#超全局变量（第三种）" class="headerlink" title="超全局变量（第三种）"></a>超全局变量（第三种）</h4><ul>
+<li>系统定义的变量<strong>（预定义变量）</strong></li>
+<li>PHP 中只允许全局空间使用，理论上函数内部不可以</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019020.png" srcset="/img/loading.gif" lazyload alt="image-20240204203841347"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019239.png" srcset="/img/loading.gif" lazyload alt="image-20240204203953187"></p>
+<p>如果想函数内部使用外变量：除了**$GLOBALS**之外，通过参数传值（如果要统一战线还可以使用引用传值)。</p>
+<p>在PHP中，其实还有一种方式，能韵够实现全局访问局部，同时局t也可以访问全局：<strong>global关键字</strong></p>
+<p> <strong>Global关键字：</strong>是一种在函数里面定义变童的一种方式</p>
+<ul>
+<li><p>如果使用global定义的变量名在外部存在（全局变量），那么系统在函数内部定义的变量直接指向外部全局变量所指向的内存空间<strong>（同一个变量）</strong></p>
+</li>
+<li><p>如果使用glo6al定义的变量名在外都不存在<strong>（全局变量）</strong>，系统会自动在全局空间（外部)定义一个与局变量同名的全局变量本质的形式：在通数的内和外部，对一个同名变量<strong>（全局和局部）</strong>使用同一块内存地址保存数据，从而实现共同拥有。·</p>
+</li>
+<li><p><strong>基本语法：</strong> Global变量名；不能赋值变量名&#x3D;值：</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019059.png" srcset="/img/loading.gif" lazyload alt="image-20240204204428516"></p>
+<p>但是，我们一般也不会这么勇。</p>
+<h2 id="七、静态变量"><a href="#七、静态变量" class="headerlink" title="七、静态变量"></a>七、静态变量</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020551.png" srcset="/img/loading.gif" lazyload alt="image-20240204213835711" style="zoom:33%;" />
+
+
+
+<h2 id="八、可变函数"><a href="#八、可变函数" class="headerlink" title="八、可变函数"></a>八、可变函数</h2><p><strong>概念：</strong>当前有一个变量所保存到值，刚好是一个函数的名字，那么就可以使用变量<code>+()</code>来充当函数名使用。</p>
+<p><strong>例子</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019662.png" srcset="/img/loading.gif" lazyload alt="image-20240205091749041"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020350.png" srcset="/img/loading.gif" lazyload alt="image-20240205095130787" style="zoom:50%;" /></p>
+<h2 id="九、匿名、闭包函数"><a href="#九、匿名、闭包函数" class="headerlink" title="九、匿名、闭包函数"></a>九、匿名、闭包函数</h2><p><strong>概念：</strong> 没有名字的函数，本质上是一个对象。</p>
+<p><strong>例子</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019028.png" srcset="/img/loading.gif" lazyload alt="image-20240205095508066" style="zoom:50%;" />
+
+<h4 id="闭包函数"><a href="#闭包函数" class="headerlink" title="闭包函数"></a>闭包函数</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>	<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">display</span>(<span class="hljs-params"></span>)</span>&#123;<br>		<span class="hljs-variable">$name</span> = <span class="hljs-keyword">__FUNCTION__</span>;<br>		<br>		<span class="hljs-variable">$innerfunction</span>=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) <span class="hljs-keyword">use</span>(<span class="hljs-params"><span class="hljs-variable">$name</span></span>)</span>&#123;<br>			<span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span>;<br>		&#125;;<br>		<br>		<span class="hljs-variable">$innerfunction</span>();<br>	&#125;;<br><br>	<span class="hljs-title function_ invoke__">display</span>();<br><span class="hljs-meta">?&gt;</span>  <br><br><br><span class="hljs-meta">&lt;?php</span><br>	<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">display</span>(<span class="hljs-params"></span>)</span>&#123;<br>		<span class="hljs-variable">$name</span> = <span class="hljs-keyword">__FUNCTION__</span>;<br>		<br>		<span class="hljs-variable">$innerfunction</span>=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) <span class="hljs-keyword">use</span>(<span class="hljs-params"><span class="hljs-variable">$name</span></span>)</span>&#123;<br>			<span class="hljs-keyword">echo</span> <span class="hljs-variable">$name</span>;<br>		&#125;;<br>		<br>		<span class="hljs-keyword">return</span> <span class="hljs-variable">$innerfunction</span>();<br>	&#125;;<br><br>	<span class="hljs-variable">$closure</span> = <span class="hljs-title function_ invoke__">display</span>(); <span class="hljs-comment">// 这一行执行完之后局部变量是不会被释放 ，从而外部嗲用内部匿名函数的时候可以调用</span><br><br><span class="hljs-meta">?&gt;</span>  <br><br></code></pre></td></tr></table></figure>
+
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019315.png" srcset="/img/loading.gif" lazyload alt="image-20240205104243721" style="zoom: 50%;" />
+
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019211.png" srcset="/img/loading.gif" lazyload alt="image-20240205104340756"></p>
+<p><strong>注意：</strong>在php中允许实参个数多于形参个数:多余部分函数内部不用而已</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020965.png" srcset="/img/loading.gif" lazyload alt="image-20240205110337552" style="zoom:50%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060019920.png" srcset="/img/loading.gif" lazyload alt="image-20240205110405944" style="zoom:50%;" /></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E9%94%99%E8%AF%AF%EF%BC%88%E4%BA%94%EF%BC%89/" title="PHP学习——错误（五）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">PHP学习——错误（五）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/06/PHP%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E4%B9%8BHTML%E4%B8%8EPHP%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8%EF%BC%88%E4%B8%89%EF%BC%89/" title="PHP学习——语法基础之HTML与PHP的结合使用（三）">
+                        <span class="hidden-mobile">PHP学习——语法基础之HTML与PHP的结合使用（三）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

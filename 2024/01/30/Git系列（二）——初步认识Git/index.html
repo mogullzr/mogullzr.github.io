@@ -1,0 +1,760 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了 一、初步认识Git​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可以恢复到以前任意时刻的状态。同时它还支持跨区域多人协作编辑，是团队项目开发的必备基础。 二、Git基本概">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git系列（二）——初步认识Git">
+<meta property="og:url" content="http://example.com/2024/01/30/Git%E7%B3%BB%E5%88%97%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86Git/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="前言​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了 一、初步认识Git​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可以恢复到以前任意时刻的状态。同时它还支持跨区域多人协作编辑，是团队项目开发的必备基础。 二、Git基本概">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300100488.png">
+<meta property="article:published_time" content="2024-01-30T12:48:01.000Z">
+<meta property="article:modified_time" content="2024-01-30T13:11:06.979Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="开发">
+<meta property="article:tag" content="控制">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401300100488.png">
+  
+  
+  
+  <title>Git系列（二）——初步认识Git - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Git系列（二）——初步认识Git"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-30 20:48" pubdate>
+          2024年1月30日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Git系列（二）——初步认识Git</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​		如果大家认为这个章节看得不太明白，太晕了可以直接跳过，继续看完后面内容再回来看就会豁然开朗了</p>
+<h2 id="一、初步认识Git"><a href="#一、初步认识Git" class="headerlink" title="一、初步认识Git"></a>一、初步认识Git</h2><p>​		Git是当前先进的最主流的分布式控制系统，核心能力就是可以进行版本控制。说得更加直白一点，就是可以将你每次提交的代码的状态管理起来，会保存好这种状态信息，这就意味着你可<strong>以恢复到以前任意时刻的状态</strong>。同时它还<strong>支持跨区域多人协作编辑</strong>，是团队项目开发的必备基础。</p>
+<h2 id="二、Git基本概念术语"><a href="#二、Git基本概念术语" class="headerlink" title="二、Git基本概念术语"></a>二、Git基本概念术语</h2><table>
+<thead>
+<tr>
+<th align="center">概念名称</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">头<strong>（HEAD）</strong></td>
+<td align="center">HEAD类似于一个“指针”，指向的就是<font color='red'><strong>当前分支的最新版本</strong></font></td>
+</tr>
+<tr>
+<td align="center">提交<strong>（Commit）</strong></td>
+<td align="center">将暂缓区变更内容提交到当前仓库的活动分支</td>
+</tr>
+<tr>
+<td align="center">推送<strong>（Push）</strong></td>
+<td align="center">將本地仓库的版本推送到服务端<strong>（远程）</strong>仓库</td>
+</tr>
+<tr>
+<td align="center">拉取<strong>（Pull）</strong></td>
+<td align="center">从服务端（远程）仓库获取更新到本地仓库，获取他人共享的更新。</td>
+</tr>
+<tr>
+<td align="center">获取<strong>（Fetch）</strong></td>
+<td align="center">从服务端（远程）仓库更新，和Pull一个作用，但是不会自动合并</td>
+</tr>
+<tr>
+<td align="center">冲突<strong>（Conflict）</strong></td>
+<td align="center"><font color='red'><strong>多人对同一文件副本进行操作进行修改</strong></font>，并将这些更改合并到仓库时就会出现多个版本的情况，内容修改各不相同，这时候我们就需要将修改的部分<font color='red'><strong>全部融合到一个版本</strong></font>去</td>
+</tr>
+<tr>
+<td align="center">合并<strong>（Merge）</strong></td>
+<td align="center">对冲突的文件进行合并操作，<code>Git</code>会自动合并更改内容，会自动处理冲突内容等待提示信息</td>
+</tr>
+<tr>
+<td align="center">标签<strong>（Tags）</strong></td>
+<td align="center">指的是某个分支某个特定的时间点状态，可以直接理解为<font color='red'><strong>提交记录</strong></font>，标记一个版本号</td>
+</tr>
+<tr>
+<td align="center">分支<strong>（Branch）</strong></td>
+<td align="center">分支是从主线分离出来的“副本”，可以独立操作互不干扰，仓库初始化有一个默认主分支<font color='red'><strong><code>main</code></strong></font>,2020年之前的默认分支为<font color='red'><strong><code>master</code></strong></font></td>
+</tr>
+<tr>
+<td align="center">工作区<strong>（Workspace）</strong></td>
+<td align="center">就是我们电脑看到的代码库目录，我们日常“搬砖”的地方</td>
+</tr>
+<tr>
+<td align="center">暂缓区<strong>（stage）</strong></td>
+<td align="center">用于*<font color='red'><strong>临时存放文件的修改</strong></font>，实际上就是一个<font color='red'><strong><code>.git</code></strong></font>文件，保存列表信息</td>
+</tr>
+<tr>
+<td align="center">版本库&#x2F;仓库<strong>（Repository）</strong></td>
+<td align="center"><font color='red'><strong>Git管理仓库</strong></font>，记录文件&#x2F;目录状态的地方，所有内容的修改记录都在这里</td>
+</tr>
+<tr>
+<td align="center">服务端&#x2F;远程仓库<strong>（origin&#x2F;remote）</strong></td>
+<td align="center"><font color='red'><strong>服务端的版本库</strong></font>，专用的Git服务器，为多人共享 提供服务器，<code>push</code>指令把代码推送到服务器端版本库</td>
+</tr>
+<tr>
+<td align="center">本地仓库</td>
+<td align="center">用户机器上直接使用的版本库</td>
+</tr>
+</tbody></table>
+<h2 id="三、工作区-暂缓区-仓库"><a href="#三、工作区-暂缓区-仓库" class="headerlink" title="三、工作区 &#x2F; 暂缓区 &#x2F; 仓库"></a>三、工作区 &#x2F; 暂缓区 &#x2F; 仓库</h2><h4 id="流程理解"><a href="#流程理解" class="headerlink" title="流程理解"></a>流程理解</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302051093.png" srcset="/img/loading.gif" lazyload alt="Git2.1"></p>
+<h2 id="四、Git的基本流程"><a href="#四、Git的基本流程" class="headerlink" title="四、Git的基本流程"></a>四、Git的基本流程</h2><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401291245406.webp" srcset="/img/loading.gif" lazyload alt="3810ba37b21e48859a855eda9a61e1bd~tplv-k3u1fbpfcp-jj-mark_3024_0_0_0_q75"></p>
+<p>​		小明是一个刚刚毕业的大学生，被一家知名的互联网企业签下了，由于第一次参与企业级大型项目，所以对于复杂的 Git 工作流十分的不熟悉，于是公司的老员工们纷纷来帮助他。</p>
+<p>​		小明先是打开了公司开源的 Git 仓库地址，并利用 Git 工具 clone 下来了项目的代码，但是一看到上百条分支就头晕了，于是老员工 Jack 拿出了上面那张 Git 基本工作流的图片来一一为他讲解，Jack 说：其实呢，之所以创建这么多的分支的原因就是为了方便基于老代码进行的优化和更新的新代码能够根据不同的变化占有一个分支，将一大个复杂的问题分类成一个个小的问题，从而下派给各个部门进行工作，这样不同的部门各自管理一条各自的分支，工作就井然有序啦！</p>
+<p>​		小明说：哦，原来是这样，那这个图上这些分支的名字都代表什么含义呢？</p>
+<p>​		这时另一名老员工 Smith 说：这张图呢是我们企业最初一张基本的 Git 工作流的图咯，现在已经非常复杂了，不过对于你初步理解整个流程是非常好的，那么这个<strong>Master</strong>分支，顾名思义就是我们的<strong>主分支</strong>啦，是我们所有部门整合起来的一个主分支，代表了我们项目整体的走向，每次一个<strong>子分支</strong>完成测试后就将其 <strong>merge</strong> 到 <strong>Master</strong> 分支然后再进行整体的测试，如果一个版本的功能已经完成全部测试，那么就将其发放到 <strong>Release</strong> 分支啦，也就是正式发行给大众的分支，就像咱们平时使用的某一款软件的一个版本更新一样（类比上图就相当于基于 <strong>Master</strong> 分支创建了一个 <strong>Develop</strong> 分支，然后 Develop 分支开发到一定程度后将其 <strong>merge</strong> 到 <strong>Release</strong> 分支和 <strong>Master</strong> 分支），那么图中的 <strong>HotFix</strong> 分支顾名思义就是处理一些突发 bug 的分支，进行快速修改再重新 <strong>Merge</strong> 到 <strong>Master</strong> 分支，<strong>Feature</strong> 分支就是代表一个个新功能的分支。</p>
+<p>​		小明说：哦，原来如此，明白了，那我就利用手上的 Git 工具进行一下实践试试看咯！</p>
+<p>​		另一名老员工小姐姐 Mary 说：嗯嗯，有什么问题可以继续问我们哦，哦对了，你有没有考虑过这样一种情况呢，如果在 <strong>Master</strong> 分支的某一个节点创建了一个子分支，并在子分支对文件 1 进行了修改，与此同时 <strong>Master</strong> 分支也对文件 1 进行了修改，然后子分支 <strong>Merge</strong> 到了 <strong>Master</strong> 分支，这时候怎么处理呐！</p>
+<p>​		小明说：哦，这不是合并冲突嘛！通常我们就手动的查看冲突的内容，通过一些解决冲突的工具，比如 <strong>mergetool</strong> 或者是 IDE 中的一些插件，然后选择自己想要留下的那个文件的内容就可以啦！解决冲突之后再进行 <strong>Merge</strong></p>
+<p>大家露出了欣慰的表情，都回到了自己的工位。。。。。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7283315133140729896">https://juejin.cn/post/7283315133140729896</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/30/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AAIDEA%E6%8F%92%E4%BB%B6%EF%BC%88%E4%B8%80%EF%BC%89/" title="如何自己写一个IDEA插件（一）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">如何自己写一个IDEA插件（一）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/01/30/Git%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E5%88%9D%E5%AD%A6Github/" title="Git系列（一）——初学github">
+                        <span class="hidden-mobile">Git系列（一）——初学github</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

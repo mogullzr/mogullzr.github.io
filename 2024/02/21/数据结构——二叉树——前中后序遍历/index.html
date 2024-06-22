@@ -1,0 +1,744 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、二叉树的遍历（理论部分）本节我将给大家介绍三种遍历方式：  前序遍历（根左右） 中序遍历（左根右） 后序遍历（左右根）  现在我们就来稍微讲一下这三个遍历是咋遍历的，后面括号里的内容实际上就是遍历的规则，可以结合参考下面进行理解。   前序遍历（前根遍历）以上图为例： ​	首先从根节点出发，始终按照根左右的口诀进行遍历，所以结点1的下一步应该是遍历到结点2，到结点2之后继续按照根左右的规则进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="24、数据结构——二叉树——前中后序遍历">
+<meta property="og:url" content="http://example.com/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%94%E2%80%94%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="一、二叉树的遍历（理论部分）本节我将给大家介绍三种遍历方式：  前序遍历（根左右） 中序遍历（左根右） 后序遍历（左右根）  现在我们就来稍微讲一下这三个遍历是咋遍历的，后面括号里的内容实际上就是遍历的规则，可以结合参考下面进行理解。   前序遍历（前根遍历）以上图为例： ​	首先从根节点出发，始终按照根左右的口诀进行遍历，所以结点1的下一步应该是遍历到结点2，到结点2之后继续按照根左右的规则进行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+<meta property="article:published_time" content="2024-02-21T15:04:16.000Z">
+<meta property="article:modified_time" content="2024-04-24T06:47:25.857Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="底层">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+  
+  
+  
+  <title>24、数据结构——二叉树——前中后序遍历 - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403091115002.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="24、数据结构——二叉树——前中后序遍历"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-21 23:04" pubdate>
+          2024年2月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">24、数据结构——二叉树——前中后序遍历</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="一、二叉树的遍历（理论部分）"><a href="#一、二叉树的遍历（理论部分）" class="headerlink" title="一、二叉树的遍历（理论部分）"></a>一、二叉树的遍历（理论部分）</h2><p>本节我将给大家介绍三种遍历方式：</p>
+<ul>
+<li><strong>前序遍历（根左右）</strong></li>
+<li><strong>中序遍历（左根右）</strong></li>
+<li><strong>后序遍历（左右根）</strong></li>
+</ul>
+<p>现在我们就来稍微讲一下这三个遍历是咋遍历的，后面括号里的内容实际上就是遍历的规则，可以结合参考下面进行理解。</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403061446919.png" srcset="/img/loading.gif" lazyload alt="image-20240306144504737" style="zoom: 50%;" />
+
+<h4 id="前序遍历（前根遍历）"><a href="#前序遍历（前根遍历）" class="headerlink" title="前序遍历（前根遍历）"></a>前序遍历（前根遍历）</h4><p>以上图为例：</p>
+<p>​	首先从根节点出发，始终按照<strong>根左右</strong>的口诀进行遍历，所以结点1的下一步应该是遍历到结点2，到结点2之后继续按照<strong>根左右</strong>的规则进行遍历就到了结点4，然后此时你会发现4没有左节点，然后又发现没有右节点，那么我们就回溯到4的父节点2，父节点2左节点刚刚已经找过一次了，现在就找右节点，也就是结点5，下面和节点4也是同样的道理会回到节点2，然后你发现节点2的左右结点都已经遍历过了，所以再回到节点2的父节点，也就是结点1.</p>
+<p>​	然后节点1左节点遍历过了，所以进入右节点3，对于右节点3也是和节点2同样的规则，最后我们就可以得到<strong>这棵树的前序遍历：</strong> <code>1-&gt;2&gt;4&gt;5-&gt;4-&gt;3-&gt;6-&gt;7</code></p>
+<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>​	如果前序遍历看懂了，那么下面两个遍历就简单一些了，和前序遍历的区别就是规则不同，对于中序遍历来说是按照<strong>左根右的规则</strong>遍历的。</p>
+<p>​	首先，始终记住 <strong>左根右的规则</strong> ，第一个遍历的是左节点，那么从根节点出发寻找左节点，那就是结点2，但是结点2现在在2、4、5这棵子树里不是左节点，而是根节点，因此我们要继续找这棵树的左节点，一直找下去，最后我们找到的左节点就是4，找完4左节点之后，再往上找根节点，也就是结点2，找完根节点了，就是时候找右节点了，也就是结点5，再回溯到节点2回溯到结点1，结点1是根节点因此下一步遍历到的就是节点1.右边也是一个道理。<strong>中序遍历就是：</strong> <code>4-&gt;2-&gt;5-&gt;1-&gt;6-&gt;3-&gt;7</code>如果这里没有看懂的话，可以看下面的动画尝试理解：</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403061505889.gif" srcset="/img/loading.gif" lazyload alt="4" style="zoom:67%;" />
+
+
+
+<h4 id="后序遍历（后根遍历）"><a href="#后序遍历（后根遍历）" class="headerlink" title="后序遍历（后根遍历）"></a>后序遍历（后根遍历）</h4><p>这个理解过程就交给大家自己了，下面我就直接来举几个例子来让大家看看是否对这三种遍历方式理解好了：</p>
+<p>如果没有看明白，可以看看<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1b7411N798/?p=46&spm_id_from=pageDriver&vd_source=2a4a0816a6950de0fb15868c762fad9c">链接</a>，讲解得十分清楚！<strong>前面6min是讲解这三种遍历方式部分</strong>，后面的部分基本都是练习题部分。</p>
+<p>这一块内容大家必须理解程度100%，不然后面的内容就完全看不懂了的！！！</p>
+<h4 id="注意：对于这部分内容考研考到过"><a href="#注意：对于这部分内容考研考到过" class="headerlink" title="注意：对于这部分内容考研考到过"></a>注意：对于这部分内容考研考到过</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403061518727.png" srcset="/img/loading.gif" lazyload alt="image-20240306151825327" style="zoom: 50%;" />
+
+<p>​	<font color='red'><strong>这个部分就开始递归方面内容的理解了，如果大家现在的目标是考研，那么这个地方的理解就必须是100%的，如果只是为了 学完这个学期的数据结构的话，下面的代码部分就不用看了，后面再了解一下层次遍历是什么即可</strong></font></p>
+<h2 id="二、三种遍历（代码）"><a href="#二、三种遍历（代码）" class="headerlink" title="二、三种遍历（代码）"></a>二、三种遍历（代码）</h2><h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">BitNode</span> &#123;<br>    ElemType data;<br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">BitNode</span> *lchild, *rchild;<br>&#125;BitNode, *BitTree;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="先序遍历递归代码"><a href="#先序遍历递归代码" class="headerlink" title="先序遍历递归代码"></a>先序遍历递归代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Visit</span><span class="hljs-params">(BitTree T)</span> </span>&#123;<br>    <span class="hljs-comment">// 这里面的代码就是随意了的，比如下面我写的就是打印一下这个节点的数据</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, T.data); <span class="hljs-comment">// 假设data的类型是int</span><br>&#125;<br><span class="hljs-comment">// 先序遍历</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">PreOrder</span><span class="hljs-params">(BitTree T)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (T != <span class="hljs-literal">NULL</span>) &#123;<br>        <span class="hljs-built_in">Visit</span>(T); <span class="hljs-comment">// 访问根节点</span><br>        <span class="hljs-built_in">PreOrder</span>(T -&gt; lchild);  <span class="hljs-comment">// 遍历左子树</span><br>        <span class="hljs-built_in">PreOrder</span>(T -&gt; rchild);  <span class="hljs-comment">// 遍历右子树</span><br>		<span class="hljs-comment">// 这个地方就看是递归层次代码的理解了，这个地方大家必须理解透彻的！！</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="中序遍历递归代码"><a href="#中序遍历递归代码" class="headerlink" title="中序遍历递归代码"></a>中序遍历递归代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">Visit</span><span class="hljs-params">(BitTree T)</span> &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, T.data); <br>&#125;<br><span class="hljs-comment">// 中序遍历</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">PostOrder</span><span class="hljs-params">(BitTree T)</span> &#123;<br>    <span class="hljs-keyword">if</span> (T != <span class="hljs-literal">NULL</span>) &#123;<br>        PostOrder(T -&gt; lchild);  <br>        Visit(T); <br>        PostOrder(T -&gt; rchild);  <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="后序遍历递归代码"><a href="#后序遍历递归代码" class="headerlink" title="后序遍历递归代码"></a>后序遍历递归代码</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">Visit</span><span class="hljs-params">(BitTree T)</span> &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, T.data); <br>&#125;<br><span class="hljs-comment">// 后序遍历</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">BackOrder</span><span class="hljs-params">(BitTree T)</span> &#123;<br>    <span class="hljs-keyword">if</span> (T != <span class="hljs-literal">NULL</span>) &#123;<br>        BackOrder(T -&gt; lchild);  <br>        BackOrder(T -&gt; rchild);  <br>          Visit(T); <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>​	对于王道视频中的通过遍历次数判断遍历顺序的办法本人还是不是非常建议，因为这种办法感觉还是会对于其本生的理解减弱，本人更加推崇使用<strong>三个原则</strong>的方法来进行遍历顺序的判断。</p>
+<h4 id="应用：求树的深度"><a href="#应用：求树的深度" class="headerlink" title="应用：求树的深度"></a>应用：求树的深度</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">treeDepth</span><span class="hljs-params">(BitTree T)</span> &#123;<br>    <span class="hljs-keyword">if</span> (T == <span class="hljs-literal">NULL</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-type">int</span> l = treeDepth(T-&gt;lchild);<br>        <span class="hljs-type">int</span> r = treeDepth(T-&gt;rchild);<br>        <span class="hljs-keyword">return</span> l&gt;r?l + <span class="hljs-number">1</span>:r + <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="四、层次遍历（相比之下最简单）"><a href="#四、层次遍历（相比之下最简单）" class="headerlink" title="四、层次遍历（相比之下最简单）"></a>四、层次遍历（相比之下最简单）</h2><p><strong>规则就是一句话：</strong> <strong>层数按照从小到大</strong>依次将各层元素从左到右连接出来即可，比如下图的层次遍历为：<strong>1-&gt;2&gt;3-&gt;4-&gt;5-&gt;6-&gt;7</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403061801397.png" srcset="/img/loading.gif" lazyload alt="image-20240306180052676" style="zoom:50%;" />
+
+<h4 id="算法实现思想"><a href="#算法实现思想" class="headerlink" title="算法实现思想"></a>算法实现思想</h4><ul>
+<li>初始化一个队列</li>
+<li>根节点入队</li>
+<li>若队列非空，则队头结点出队，访问该结点，并将其左右结点插入队尾<strong>（有的话）</strong></li>
+<li>重复第3步一直到队列为空为止</li>
+</ul>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BiTNode</span> &#123;</span><br>    <span class="hljs-type">char</span> data;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BitNode</span> * <span class="hljs-title">lchild</span>, *<span class="hljs-title">rchild</span>;</span><br>&#125;BiTNode, *BiTree;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LinkNode</span>&#123;</span><br>    BiTNode * data; <span class="hljs-comment">// 注意：需要存的是指针而不是结点本身</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LinkNode</span> *<span class="hljs-title">next</span>;</span><br>&#125;LinkNode;<br><span class="hljs-type">void</span> <span class="hljs-title function_">LevelOrder</span><span class="hljs-params">(BitNode T)</span> &#123;<br>    LinkQueue Q;<br>    InitQueue(Q);<br>    BitTree p;<br>    EnQueue(Q, T);<br>    <span class="hljs-keyword">while</span> (!IsEmpty(Q))&#123; <span class="hljs-comment">// 判断队列是否为空</span><br>        DeQueue(Q, p); <span class="hljs-comment">// 将队列队头元素出队</span><br>        visit(p); <span class="hljs-comment">// 访问p元素</span><br>        <span class="hljs-keyword">if</span> (p-&gt;lchild != <span class="hljs-literal">NULL</span>) EnQueue(Q, p-&gt;lchild); <span class="hljs-comment">// 如果其包含左孩子，左孩子入队</span><br>        <span class="hljs-keyword">if</span> (p-&gt;rchild != <span class="hljs-literal">NULL</span>) EnQueue(Q, p-&gt;rchild); <span class="hljs-comment">// 如果其包含右孩子，右孩子入队</span><br>    &#125;<br>&#125; <br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="下一节内容是25、二叉树——构建二叉树……"><a href="#下一节内容是25、二叉树——构建二叉树……" class="headerlink" title="下一节内容是25、二叉树——构建二叉树……."></a>下一节内容是25、二叉树——构建二叉树…….</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%94%E2%80%94%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/" title="25、数据结构——二叉树——通过遍历构建二叉树">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">25、数据结构——二叉树——通过遍历构建二叉树</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%94%E2%80%94%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" title="23、数据结构——二叉树——存储结构">
+                        <span class="hidden-mobile">23、数据结构——二叉树——存储结构</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

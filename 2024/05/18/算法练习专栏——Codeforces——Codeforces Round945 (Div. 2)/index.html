@@ -1,0 +1,873 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="A. Chess For Three原题 Three friends gathered to play a few games of chess together. In every game, two of them play against each other. The winner gets $2$ points while the loser gets $0$, and in case">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法练习专栏——Codeforces——Codeforces Round945 (Div. 2)">
+<meta property="og:url" content="http://example.com/2024/05/18/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94Codeforces%E2%80%94%E2%80%94Codeforces%20Round945%20(Div.%202)/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="A. Chess For Three原题 Three friends gathered to play a few games of chess together. In every game, two of them play against each other. The winner gets $2$ points while the loser gets $0$, and in case">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403161128034.jpg">
+<meta property="article:published_time" content="2024-05-18T04:16:55.000Z">
+<meta property="article:modified_time" content="2024-05-18T04:21:37.209Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="ACM">
+<meta property="article:tag" content="Codeforces">
+<meta property="article:tag" content="比赛">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403161128034.jpg">
+  
+  
+  
+  <title>算法练习专栏——Codeforces——Codeforces Round945 (Div. 2) - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405082113225.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="算法练习专栏——Codeforces——Codeforces Round945 (Div. 2)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-05-18 12:16" pubdate>
+          2024年5月18日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          20 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">算法练习专栏——Codeforces——Codeforces Round945 (Div. 2)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="A-Chess-For-Three"><a href="#A-Chess-For-Three" class="headerlink" title="A. Chess For Three"></a>A. Chess For Three</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1973/problem/A">原题</a></p>
+<p>Three friends gathered to play a few games of chess together.</p>
+<p>In every game, two of them play against each other. The winner gets $2$ points while the loser gets $0$, and in case of a draw, both players get $1$ point each. Note that the same pair of players could have played any non-negative number of times (possibly zero). It is also possible that no games were played at all.</p>
+<p>You’ve been told that their scores after all the games were played were $p_1$, $p_2$ and $p_3$. Additionally, it is guaranteed that $p_1 \leq p_2 \leq p_3$ holds.</p>
+<p>Find the maximum number of draws that could have happened and print it. If there isn’t any way to obtain $p_1$, $p_2$ and $p_3$ as a result of a non-negative number of games between the three players, print $-1$ instead.</p>
+<p><strong>Input</strong></p>
+<p>Each test contains multiple test cases. The first line contains the number of test cases $t$ ($1 \le t \le 500$). The description of the test cases follows.</p>
+<p>The first line of each test case contains three integers $p_1$, $p_2$ and $p_3$ ($0 \leq p_1 \leq p_2 \leq p_3 \leq 30$) — the scores of the three players, sorted non-decreasingly.</p>
+<p><strong>Output</strong></p>
+<p>For each testcase, print one number — the maximum possible number of draws that could’ve happened, or $-1$ if the scores aren’t consistent with any valid set of games and results.</p>
+<p><strong>Example</strong></p>
+<p><strong>input</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">7</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">3</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>output</strong></p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs diff">0<br>1<br><span class="hljs-deletion">-1</span><br>2<br><span class="hljs-deletion">-1</span><br>6<br>2<br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>In the first example, no games were played at all, so no draws could occur either.</p>
+<p>For the second example, exactly one game occurred between the second and the third player and it ended in draw, so the answer is $1$.</p>
+<p>It’s easy to see that there’s no set of games achieving the scores in third example, so the answer for it is $-1$.</p>
+<h1 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h1><p>三个朋友聚在一起下几盘棋。</p>
+<p>在每场比赛中，他们两人都会互相对抗。获胜者获得 $2$ 分，失败者获得 $0$ 分，如果平局，双方玩家各获得 $1$ 分。请注意，同一对玩家可以玩任意非负次数(可能为零)。也有可能根本没有玩任何游戏。</p>
+<p>您被告知，所有比赛结束后他们的得分分别是 $p &#95; 1$ 、 $p &#95; 2$ 和 $p &#95; 3$ 。此外，还保证 $p &#95; 1 \leq p &#95; 2 \leq p &#95; 3$ 成立。</p>
+<p>找出可能发生的最大抽奖次数并打印出来。如果由于三名玩家之间的游戏次数为非负数而无法获取 $p &#95; 1$ 、 $p &#95; 2$ 和 $p &#95; 3$ ，请改为打印 $-1$ 。</p>
+<p><strong>输入</strong></p>
+<p>每个测试包含多个测试用例。第一行包含测试用例的数量 $t$ ( $1 \le t \le 500$ )。测试用例的描述如下。</p>
+<p>每个测试用例的第一行包含三个整数 $p_1$ 、 $p_2$ 和 $p_3$ ( $0 \leq p_1 \leq p_2 \leq p_3 \leq 30$ ) - 三位玩家的分数，非降序排序。</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，打印一个数字 - 可能发生的最大可能平局次数，如果分数与任何有效的一组游戏和结果不一致，则打印 $-1$ 。</p>
+<p><strong>Example</strong></p>
+<p><strong>input</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">7</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">3</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>output</strong></p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs diff">0<br>1<br><span class="hljs-deletion">-1</span><br>2<br><span class="hljs-deletion">-1</span><br>6<br>2<br></code></pre></td></tr></table></figure>
+
+<p><strong>笔记</strong></p>
+<p>在第一个示例中，根本没有进行任何比赛，因此也不会发生平局。</p>
+<p>对于第二个示例，第二个和第三个玩家之间恰好发生了一场比赛，并且以平局结束，因此答案是 $1$ 。</p>
+<p>很容易看出，没有一组游戏能够达到第三个示例中的分数，因此答案是 $-1$ 。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unordered_map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;set&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stack&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;deque&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bitset&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iomanip&gt;</span></span><br><br><span class="hljs-comment">// #define int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ull unsigned long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ed <span class="hljs-string">&#x27;\n&#x27;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fi first</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> se second</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fore(i, l, r) for(int i = (int)(l); i &lt;=(int)r; i++)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> debug(x) cout &lt;&lt; <span class="hljs-string">&quot;#x = &quot;</span> &lt;&lt; x &lt;&lt; ed;</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PI acos(-1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> E exp(1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> IOS ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> me0(st) memset(st, 0, sizeof st)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> me3f(st) memset(st, 0x3f, sizeof st)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pdf(x) printf(<span class="hljs-string">&quot;%lf&quot;</span>, double(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pif(x) printf(<span class="hljs-string">&quot;%d &quot;</span>,  int(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> scf(x) printf(<span class="hljs-string">&quot;%d&quot;</span>,  int(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> re return 0</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> max(a, b) ((a) &gt; (b) ? (a) : (b))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> min(a, b) ((a) &lt; (b) ? (a) : (b))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> out(x, k) cout &lt;&lt; fixed &lt;&lt; setprecision(k) &lt;&lt; x &lt;&lt; ed</span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; PII;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">double</span> db;<br><br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> INF = <span class="hljs-number">1e9</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> p1, p2, p3;<br>    cin &gt;&gt; p1 &gt;&gt; p2 &gt;&gt; p3;<br> <br>    <span class="hljs-keyword">if</span> ((p1 + p2 + p3) % <span class="hljs-number">2</span>) &#123;<br>      cout &lt;&lt; <span class="hljs-string">&quot;-1\n&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span> &#123;<br> <br>      vector&lt;<span class="hljs-type">int</span>&gt; cur = &#123;p1, p2, p3&#125;;<br>      <span class="hljs-built_in">sort</span>(cur.<span class="hljs-built_in">begin</span>(), cur.<span class="hljs-built_in">end</span>());<br>      <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>      <span class="hljs-keyword">while</span> (cur[<span class="hljs-number">1</span>]) &#123;<br>        ans++;<br>        cur[<span class="hljs-number">2</span>]--;<br>        cur[<span class="hljs-number">1</span>]--;<br>        <span class="hljs-built_in">sort</span>(cur.<span class="hljs-built_in">begin</span>(), cur.<span class="hljs-built_in">end</span>());<br>      &#125;<br>      cout &lt;&lt; ans &lt;&lt; ed;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IOS;<br>    <span class="hljs-type">int</span> _ = <span class="hljs-number">1</span>;<br>    cin &gt;&gt; _;<br>    <br>    <span class="hljs-keyword">while</span>(_--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br>    <br>    re;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h1 id="B-Cat-Fox-and-the-Lonely-Array"><a href="#B-Cat-Fox-and-the-Lonely-Array" class="headerlink" title="B. Cat, Fox and the Lonely Array"></a>B. Cat, Fox and the Lonely Array</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1973/problem/B">原题</a></p>
+<p>Today, Cat and Fox found an array $a$ consisting of $n$ non-negative integers.</p>
+<p>Define the loneliness of $a$ as the <strong>smallest</strong> positive integer $k$ ($1 \le k \le n$) such that for any two positive integers $i$ and $j$ ($1 \leq i, j \leq n - k +1$), the following holds:</p>
+<p>$$<br>a_i | a_{i+1} | \ldots | a_{i+k-1} &#x3D; a_j | a_{j+1} | \ldots | a_{j+k-1},<br>$$<br> where $x | y$ denotes the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bitwise_operation#OR">bitwise OR</a> of $x$ and $y$. In other words, for every $k$ consecutive elements, their bitwise OR should be the same. Note that the loneliness of $a$ is well-defined, because for $k &#x3D; n$ the condition is satisfied.</p>
+<p>Cat and Fox want to know how lonely the array $a$ is. Help them calculate the loneliness of the found array.</p>
+<p><strong>Input</strong></p>
+<p>Each test consists of multiple test cases. The first line contains a single integer $t$ ($1 \leq t \leq 10^4 $ ) — the number of test cases. The description of the test cases follows.</p>
+<p>The first line of each test case contains one integer $n$ ($1 \leq n \leq 10^5$) — the length of the array $a$.</p>
+<p>The second line of each test case contains $n$ integers $a_1, a_2, \ldots, a_n$ ($0 \leq a_i &lt; 2^{20}$) — the elements of the array.</p>
+<p>It is guaranteed that the sum of $n$ over all test cases doesn’t exceed $10^5$.</p>
+<p><strong>Output</strong></p>
+<p>For each test case, print one integer  — the loneliness of the given array.</p>
+<p><strong>Example</strong></p>
+<p><strong>input</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">7</span><br><span class="hljs-number">1</span><br><span class="hljs-number">0</span><br><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">2</span> <span class="hljs-number">2</span><br><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">0</span> <span class="hljs-number">2</span><br><span class="hljs-number">5</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">0</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span><br><span class="hljs-number">7</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span><br><span class="hljs-number">8</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>output</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">1<br>1<br>3<br>4<br>4<br>7<br>3<br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>In the first example, the loneliness of an array with a single element is always $1$, so the answer is $1$.</p>
+<p>In the second example, the OR of each subarray of length $k &#x3D; 1$ is $2$, so the loneliness of the whole array is $1$.</p>
+<p>In the seventh example, it’s true that $(0 | 1 | 3) &#x3D; (1 | 3 | 2) &#x3D; (3 | 2 | 2) &#x3D; (2 | 2 | 1) &#x3D; (2 | 1 | 0) &#x3D; (1 | 0 | 3) &#x3D; 3$, so the condition is satisfied for $k &#x3D; 3$. We can verify that the condition is not true for any smaller $k$, so the answer is indeed $3$.</p>
+<h1 id="翻译-1"><a href="#翻译-1" class="headerlink" title="翻译"></a>翻译</h1><p>今天，Cat 和 Fox 发现了一个由 $n$ 非负整数组成的数组 $a$ 。</p>
+<p>将 $a$ 的孤独度定义为 <strong>最小</strong> 正整数 $k$ ( $1 \le k \le n$ )，这样对于任意两个正整数 $i$ 和 $j$ ( $1 \leq i, j \leq n - k +1$ )，以下公式成立：</p>
+<p>$$<br>a &#95; i | a &#95; {i+1} | \ldots | a &#95; {i+k-1} &#x3D; a &#95; j | a &#95; {j+1} | \ldots | a &#95; {j+k-1},<br>$$<br> 其中 $x | y$ 表示 $x$ 和 $y$ 的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bitwise_operation#OR">按位 OR</a>。换句话说，对于每个 $k$ 连续元素，它们的按位或应该相同。请注意， $a$ 的孤独性是明确定义的，因为对于 $k &#x3D; n$ 满足条件。</p>
+<p>猫和狐狸想知道数组 $a$ 有多孤独。帮助他们计算找到的数组的孤独度。</p>
+<p><strong>输入</strong></p>
+<p>每个测试由多个测试用例组成。第一行包含一个整数 $t$ ( $1 \leq t \leq 10^4 $ ) - 测试用例的数量。测试用例的描述如下。</p>
+<p>每个测试用例的第一行包含一个整数 $n$ ( $1 \leq n \leq 10^5$ ) - 数组 $a$ 的长度。</p>
+<p>每个测试用例的第二行包含 $n$ 整数 $a &#95; 1, a &#95; 2, \ldots, a &#95; n$ ( $0 \leq a &#95; i &lt; 2^{20}$ ) - 数组的元素。</p>
+<p>保证所有测试用例的 $n$ 之和不超过 $10^5$ 。</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，打印一个整数——给定数组的孤独度。</p>
+<p><strong>Example</strong></p>
+<p><strong>input</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">7</span><br><span class="hljs-number">1</span><br><span class="hljs-number">0</span><br><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">2</span> <span class="hljs-number">2</span><br><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">0</span> <span class="hljs-number">2</span><br><span class="hljs-number">5</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">0</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span><br><span class="hljs-number">7</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span><br><span class="hljs-number">8</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>output</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">1<br>1<br>3<br>4<br>4<br>7<br>3<br></code></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>​	这道题目主要是利用了**<code>|</code>** 操作的性质来写的,<strong><code>|</code></strong> 这个操作有着只要一段区间中存在着一个1,那么这段区间的对应的某一位就是1.</p>
+</blockquote>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">/**</span><br><span class="hljs-comment">                                                                                   .@@</span><br><span class="hljs-comment">                                                                                  .@@@@</span><br><span class="hljs-comment">                                                     :--:::::::-----==:           %%@@@%</span><br><span class="hljs-comment">                                             :*++*+==--========----------:-==:    @%@@@@.</span><br><span class="hljs-comment">                                        .:. ..-=+=+*+==---=----------------------:*@%@@@@         .:..</span><br><span class="hljs-comment">                                    .::::-----==+++====+***#+----=------:--------:-=%%@@@#+%@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="hljs-comment">                :+%@@@@@@@@@@@@@@%::::=*=+++++=++==*%*=-:=*#+##=-----------------:::-@%@@@@@@@@@@@@@@@@@@@@@@@@@@@*</span><br><span class="hljs-comment">             %%%%%%%%%%%%@@@@@@= .:=%@@@@@%#+=+++%@@@%+-==--++-=*=-------------:-----:*@@@@@@@@@@@@@@@@@@@@@@@@@@%</span><br><span class="hljs-comment">             .@%%%%%%%%%@@@@%-  .-+%@@@%@%%%####%#*#%%%%==----+=:-++-::------=----:::-:=@@@@@@@@@@@@@@@@@@@@@@@@%</span><br><span class="hljs-comment">               %%%%%%%%@%@@+  .::*%@@@@%#**#####******+*%+===---+=..:==---------:---::::-@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="hljs-comment">                %%%@%@%@@@:  .:.%%%%%#=+*+*+*#*+=+***+*#+##=--=-:-+.   ==--------::::--::-@@@@@@@@@@@@@@@@@@@@@</span><br><span class="hljs-comment">                .#%%%@%@%   . -@%%%*==+*++++**+++=+*++=++=+#--=----=:    +---:-::::::::--:-%@@@@@@@@@@@@@@@@@@=</span><br><span class="hljs-comment">                 :@%%%@=   . =%%%#---======+=========++=====*+--=-=--=.    --::::::::::::--=@@@@@@@@@@@@@@@@@@@:</span><br><span class="hljs-comment">                  @%@#   .  -%%*+---========-:===++======-==-==--=-----:     :-::::::::::::-=@@@@@@@@@@@@@@@@@@@=</span><br><span class="hljs-comment">                  @#.   .  .#*=+.-=-==-==-=-::===+=-==-=--=--==+=:------=     .-:::::::-:--:--#@@@@@@@@@@@@@@@@@@#</span><br><span class="hljs-comment">                 -         #+=-.:----=------.:-=-*===----==--==-+=-:::-::-:     :-::::::::::::==+@@@@@@@@@@@@@@@@@@</span><br><span class="hljs-comment">                     .    -==:..-=--==--:--:.-===+====----=====--=--::::::--      ::::::::::--:=%*=*@@@@@@@@@@@@@@@@.</span><br><span class="hljs-comment">                .+: .    .==-. :----==-::--:.---==-===---:------:----::::::-+       -:::------=--+#+#@@@@@@@@@@@@@@@@.</span><br><span class="hljs-comment">              .  . -    ::--. .::---:-:.-=-: :--==--==:=--:-::::::--=-:::-:::*.      :::-==-==--:--**@@@@@@@%@@@@@@@@@=</span><br><span class="hljs-comment">                :.:     :::.. .--:::::: --::.:-:---:--:--:::::::::--:==:::::::+.       -:-=-=------:*+@@@@@@@@+ #@@@@@@</span><br><span class="hljs-comment">               #-.     -::.. .=+:::::-:.--:-:.::::::::::+:::::::::::::=-:::::::=.       :=-=---------=%@@@@@@@@@  :@@@@</span><br><span class="hljs-comment">             =@-.     :=..   -=::::-:=.:::::-.::::::::::%.::::::::::::-=:::::::-+-        *%+=-------::%@@@@@@@@@:   :.</span><br><span class="hljs-comment">            #@*.      +-..  :-:::::::-..::::::.:::::::::%:-==:..::::::--+:::-:-====        :*%*+--------@@@@@@@@@@@</span><br><span class="hljs-comment">          .@@#       :=:   .::::::::-:.::::::-.::::::.::#.:-=-.:..::-.::-+:-=--===-=         -#++*+===-:#@@@@@@@@@@@@</span><br><span class="hljs-comment">         *@@*.    .  --.  .:::::::::-..::::.:::.::..:..-+:: :.......=-.::==--==-====-         .**++++++=*@@@@@@@@@@@@@@:</span><br><span class="hljs-comment">       =@@@==.   .: .=-.  ::::::.:::= .::::...::.-.....+::.  - :....:*::--==--=======-          -*++=+=++@@@@@@@@@@@@@@@@@@%-</span><br><span class="hljs-comment">     +@@@@::- . .:- :=-. .::::::.::=- .::......=.=.....+ :.  :  ... - -:-==+---==-=--*: .        .*++++=+%@@@@@@@@@@@@@@@</span><br><span class="hljs-comment">   :@@@@%.=.. : :--.-=:..:.::.:....-  ......... --:   ::.:.  .  :::.-  ----=#+====-==-*.           :*++=++@@@@@@@@@@@@@.</span><br><span class="hljs-comment">     +*#-- :.:: :-::==..::.:..:...:: .:....... . ::   :. :.      -::. ..:#=-=+-==-===-=+.+       ..  -+=++%#=-+=%@@@@#</span><br><span class="hljs-comment">        . ...::.--::==: ::........-:..=-   :  .   .   . .:.      :-*-    .:=-+====-==--=-+#       :.   +++++==+++++*@@*</span><br><span class="hljs-comment">          :.::.::-.-==-.=-:...--.: :.::-.  :            .:    :+--:.     ::.==+===---=-=+--%.      +@@=. :=*+++++++*++*</span><br><span class="hljs-comment">          .::::::::==---=-:.. =- .  ..: :..:  .:...  :  -. .+.   -*=:.+@@@@@@@@*====---=+*:**. .    =@@**%+:-+*%*++***+=</span><br><span class="hljs-comment">       . ...::::::-+=--+-=:--.+:.    ..  :.-.:::::. .:  :.*.  :-:+#@@%#++=%:-@##+===-==-=+--==+ ..   .###*+++**#@%#+*+++*=</span><br><span class="hljs-comment">       ..::::::::.*+--:=-----:=:-....::=:--=:....:..=. :.    ..+@@@*+==---#-=@*+*====-===+:-=*@% ::    *#*+*#+*++#%%%%##*+++-</span><br><span class="hljs-comment">       .::.:::::::%=--:-------: .     : -:-+#+-....= ..:     -*#::%+-:=+---:+**-+==-===-=-+-=@@@@ -#    =***#%#+*+#%==*+</span><br><span class="hljs-comment">      :.:::::::::-+=:---=-----. .      :. ::=..:..:   .       :   -=--:..:--+#-:-+=======-%==#@@@@:.@=   :#***%%#*+=#-==</span><br><span class="hljs-comment">      :-::-::::.:--*:---=-=---: . ..-+*#%#=-+:...:.                :+-....-+=::::#=======-*%-+@@@%@@-%%-  .#++*%%#*+#*+-</span><br><span class="hljs-comment">    . =-:::=:::::-:+.:--=-=--:- .=**+-:::+++%-..:.   .               ::..--:....:=#-=====-#@+=@@@%*%@%%@%-  -*+#%:*%++*=</span><br><span class="hljs-comment">      =:::---:------::-:==-=--+.      ....:  :.:.                     .   ......::*=-====-*@#-%@@%#*%%%%%%@*. +**- .*#**=</span><br><span class="hljs-comment">     +:::. :---=--=:=:-:==-==-:@.    .....:. ..:.                       ...::...--:*=====-+@@-*@%%*##%%*###+#*= +-  ::-:**</span><br><span class="hljs-comment">     ::-:   .:---.#:=.:-==-==-:%%    ....  ..:  :                              :=  ==-+==-*@@=*@%#**#%#****##*++**- .:     .</span><br><span class="hljs-comment">    .--      .:--:=:=-.-==-==-:%@+   ....   .:                                ::   :=--===#@@**%%**#*##***++**+=+*- ::</span><br><span class="hljs-comment">   :.         :----=.- -=-====-%@@:   ...   .      .                         .     :---==-@@@#%%%#*#*******+++***+# :</span><br><span class="hljs-comment"> .             -:--: .:-+--==-:%@@@                                              . #%:-===@@@#%##*##**+++#*+*+*+****-</span><br><span class="hljs-comment">                ::-:  *:%==----*+%@%   .                                        . #@%--+=*@%@%%##**#**+++%#*==+*++*+=</span><br><span class="hljs-comment">                -=$:-. #:+#+---:#%++%#.                      . .:. .:+          ..#@@@--**%%%%%###*+#++*++*--+*==+++-+.</span><br><span class="hljs-comment">                . =:: -==%@--=-=%**%%+                 =@+ .....:.:.:.         .*:@@%--%%@%%%####**#++*+++--:   .+*-==</span><br><span class="hljs-comment">                   :---+**%%---:@**%%#+     .      :@%%%::.:::::..:.:         .-::%%%-:@%%%%%###**#*+++=*+-::    :==:-=</span><br><span class="hljs-comment">               .    :=-+*##*#:-:**+*%**@:           =@#*:.::::::::::        .:...:@%%-+%%%%%###**+%*==+=%=:-.    ..    :.</span><br><span class="hljs-comment">               .     +*=+**%**-:=***##*+%%.        . .*%.:::::::::..       :. ....@%%=%%%#*#####+#%+===+:-:-.    .</span><br><span class="hljs-comment">                     .+-++**#+** +*-*++++%%%.    ..     --:.::.:::       =: .    .%%#+%%####*+@*++%+=-+. .:-</span><br><span class="hljs-comment">                      --++=**#*+*-++==+++%%%#@+..         .:::.        :=.  .    .%%%#*#*##*#+#=++#===:  .-</span><br><span class="hljs-comment">               .    . =-=+****+**+#:+==++#%%#%%%@%=. ..              :-:       .  %#%###%*##.:*+==#++-    :</span><br><span class="hljs-comment">                    .  :-=+=++***++#-:+++*++*#%%%%@@%=.. ..       :---.           #@@%@@@@=  :=  .+-+-</span><br><span class="hljs-comment">                .    . :.-===++**+==*+::+#++++*#%%%%%%%%-.     .*=:-:.            *%%%##*==+**#*+==*+=</span><br><span class="hljs-comment">                     :  -::====++*=+=+*==*=-=#**##%#%%%%%*+-:%#--:-. ..           .%#*=-==-*#*++==++-=#*:</span><br><span class="hljs-comment">                     :*::**=====+**==+=++*##*+++**##%%%%%%. :::.:. ..             .:=--===+@#*+++=+*+=-=+=*#=</span><br><span class="hljs-comment">                     #-=+==*=-++++#++==-++++*++++*#%%%%%%=-  .:.... .            .  -=--=+@#*#%@@%+==+=====+*+</span><br><span class="hljs-comment">                   ..*++==+**+:=*++%++++#++++++*+**#%%%%#-=. .:........              .@-=+++#%%@@%@=======++*@+</span><br><span class="hljs-comment">                .+-.-+*==*++#+-:=++*%+=**++++++*++**%%%%--=-.::..........            .: ==++*%@@%@+========+*#@@+</span><br><span class="hljs-comment">               -:--.=-*+*+++++=:.:-+*#+++*****=+*##%+#%==---::...........           :    .+%@@@%@#+======++*#%%@@#%=</span><br><span class="hljs-comment">              +::-:==--=*==**=#=:::-+#**+*+**++**%=.-++-:::--... ..  ....          :.     ..-@@@*++====++++*#%@@@%*=+.</span><br><span class="hljs-comment">              =---.=--:*+=+#*+=:-:--=++=**+++++*#+:=-.--:.:::..........           +        ..*%-+=-====+++*###@@@#+=+#*</span><br><span class="hljs-comment">              =----==-*+===@%:..-=---++##=+++***#-. .:=::...:..........         :=          :*:==-=====+++*%#%@@*++++##@*</span><br><span class="hljs-comment">             .+=-=*=+#*---==%:.:-=%+#+-:--+++*+*%:..  -::.............         :.          .--==-=======+*#*%@%+++==+##@#%+</span><br><span class="hljs-comment">             -:=##*+=-::-===+:.--+*#---::+*++++#+ ....-  .:.........  ..   . :+. .         =============+**#*++++===*%%#%###.</span><br><span class="hljs-comment">             :--*#@*+-::::-==-:-=#=.---:-+*==+#-......-:  ..........        :.            +============+*##**++====*%%%#**+=+</span><br><span class="hljs-comment">            .:---%=@*+-::--:-:.-*=:=:--=#++*@%-... . .-:.... ......       .:.           .=-===========+**+++===-===*#***+++=-:</span><br><span class="hljs-comment">            ..:-==+*#+*=:-::--.=+=::-=+*+%@+#@%.... ..-:.  .........     .-            .+============++========--===++**++==--</span><br><span class="hljs-comment">             .:----++%**-::  .+=+=++++++*%#+@@@%......-:.  .            =. .          .+-===-===-==++==--===------==+++====--:</span><br><span class="hljs-comment">              ..:--=*#%*+=   .=%##-:-+++*##+@@@@@.... -:.  .         ..-             -+==-======++*=======------==++======+*#*</span><br><span class="hljs-comment">               .::=-=#+#-  .::=#-:-:=++=+##*@@@@@@.. .::.  .         -:      .     .=+==-==+-==++=:=---=----========+**+=----:=</span><br><span class="hljs-comment">                .::--=+#=.:::-*=:::::++=+*#*%.#@@@@:..::.   .   .  .+           .=#*++++*+=====--=-=---=--=+**##*+=====-------:-</span><br><span class="hljs-comment">                 ..::-=*+::::=:.::::--===**+*. -@@@@:.::  ...  .  -.. .  .  .-%@@@*+*#*#*+====--=-:----*##*+==--==---======----:</span><br><span class="hljs-comment">                   ..:-:+:-:--:::--:::-+#*+++:   @@@@+:-  ..  .  +. ..   -@@@@@@@*@%*###*======*+-=-=%#=-=======-====-=======-:-+</span><br><span class="hljs-comment">                     ..:=::::::::::-:**++=-++.   .@@@@#= . .   :+    :#@@@@@@@@@%##%%%%#+++==#@%%@=**+==========-------=====-=+==</span><br><span class="hljs-comment">                       .  .:::::::--+==----+#++.  .@@@@@ .. ..:::+#%@%@@@@@@@#@%%%%%%@%*=+#@@@%@#%@=============------=====++++=+</span><br><span class="hljs-comment">                          ....  ..::=-:----+*=+**=++@@@@@:.-*@@%%%%%@@@@*: . .@@%%@%%@%**%@@@@@##@@*========--------=====+++*#*+==</span><br><span class="hljs-comment">                           .    ...::=:--==++=+++=+++%@@@@@@@%%@%@@#-      :%#%%%%@%#@@@@@@@%#@*@@+--===-----------======*##**=--</span><br><span class="hljs-comment">                                ...:.--:--=*+===++=++=#@@@@@%%%#*++=.     :%%%@@%%@@@@@@@@+@@#+*@@+===-----------====+++*##**+=-:</span><br><span class="hljs-comment">                                ....:+=:-==#++===+++===%@@%#*+==+++++++*##@@@%@@@@@@@@@**%##+=-%@#=-------------====+++*##*++=-:.</span><br><span class="hljs-comment">                                 ..:-+#===+#  .-:=+=*+*+#*+==+++++++++**%@@@@@@@@@@@*-@@#+=+==+@@=--------------===+++*##*+=-:.</span><br><span class="hljs-comment">                                  ..:=%+==+%       =#*-##*#+=%+++=++*+#%@@@@@@@@@@:%@#*=+=-+=#@@+-=-------------====+*#*++=-:.</span><br><span class="hljs-comment">                                     .=*===*      .--#:..-#@@-.   .:=**@@@@@@@@*@@@%+%+@@=--#@%=--:----------------=+++==-:.</span><br><span class="hljs-comment">                                       =::--         :*-##==-.        -@@@@@@@@@@@@@@@@@@@@@%+=::::::::::::::::::--====-:..</span><br><span class="hljs-comment">                                           ...        *%=-.....       %@@@@@@@@@@@@@@@@@@@@@*-::..:.............:::--:..      .-:</span><br><span class="hljs-comment">                                                  ::  ==.   .....    +@%@@@@@@@@@@@@@@@@@@@@*.:. . ...          .... .     =@*-:</span><br><span class="hljs-comment">                                                      ::..:---::... :#*#@@@@@@@@@%%@@@@@@@@@@+ .                  :*    ##+%+:</span><br><span class="hljs-comment">                                                             ...::::*-:::@@@@@@%##%%%%@@@@@@@#                   -+. *+ =  -:</span><br><span class="hljs-comment">                                                                   ..  .#@@%%%%##*+*#%@@@%%%=                    . :     ::</span><br><span class="hljs-comment">                                                                        @@@%%%######%%%%#####%=                =        #</span><br><span class="hljs-comment">                                                                          @@@@@%@@%%%###*##*-                 . .     =</span><br><span class="hljs-comment">                                                                          :@@%%%%###******+=-                 .</span><br><span class="hljs-comment">                                                                            *@###***+**+++:</span><br><span class="hljs-comment">                                                                               -*- =*++*:</span><br><span class="hljs-comment"> </span><br><span class="hljs-comment"> </span><br><span class="hljs-comment">                                         Credit for the pic: J5-daigada from deviantart</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unordered_map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;set&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stack&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;deque&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bitset&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iomanip&gt;</span></span><br><br><span class="hljs-comment">// #define int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ull unsigned long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ed <span class="hljs-string">&#x27;\n&#x27;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fi first</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> se second</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fore(i, l, r) for(int i = (int)(l); i &lt;=(int)r; i++)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> debug(x) cout &lt;&lt; <span class="hljs-string">&quot;#x = &quot;</span> &lt;&lt; x &lt;&lt; ed;</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PI acos(-1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> E exp(1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> IOS ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> me0(st) memset(st, 0, sizeof st)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> me3f(st) memset(st, 0x3f, sizeof st)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pdf(x) printf(<span class="hljs-string">&quot;%lf&quot;</span>, double(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pif(x) printf(<span class="hljs-string">&quot;%d &quot;</span>,  int(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> scf(x) printf(<span class="hljs-string">&quot;%d&quot;</span>,  int(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> re return 0</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> max(a, b) ((a) &gt; (b) ? (a) : (b))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> min(a, b) ((a) &lt; (b) ? (a) : (b))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> out(x, k) cout &lt;&lt; fixed &lt;&lt; setprecision(k) &lt;&lt; x &lt;&lt; ed</span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; PII;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">double</span> db;<br><br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> INF = <span class="hljs-number">1e9</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin &gt;&gt; n;<br>    array&lt;vector&lt;<span class="hljs-type">int</span>&gt;, 20&gt; in;<br>    fore (i, <span class="hljs-number">1</span>, n) &#123;<br>        <span class="hljs-type">int</span> x;<br>        cin &gt;&gt; x;<br>        fore (k, <span class="hljs-number">0</span>, <span class="hljs-number">19</span>) &#123;<br>            <span class="hljs-keyword">if</span> (x &amp; (<span class="hljs-number">1</span> &lt;&lt; k)) &#123;<br>                in[k].<span class="hljs-built_in">push_back</span>(i);<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">1</span>;<br>    fore (k, <span class="hljs-number">0</span>, <span class="hljs-number">19</span>) &#123;<br>        <span class="hljs-keyword">if</span> (in[k].<span class="hljs-built_in">empty</span>()) <span class="hljs-keyword">continue</span>;<br>        ans = <span class="hljs-built_in">max</span>(ans, in[k][<span class="hljs-number">0</span>]);<br>        ans = <span class="hljs-built_in">max</span>(ans, n - in[k].<span class="hljs-built_in">back</span>() + <span class="hljs-number">1</span>);<br>        fore (i, <span class="hljs-number">1</span>, in[k].<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>) &#123;<br>            ans = <span class="hljs-built_in">max</span>(ans, in[k][i] - in[k][i - <span class="hljs-number">1</span>]);<br>        &#125;<br>    &#125;<br><br>    cout &lt;&lt; ans &lt;&lt; ed;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IOS;<br>    <span class="hljs-type">int</span> _ = <span class="hljs-number">1</span>;<br>    cin &gt;&gt; _;<br>    <br>    <span class="hljs-keyword">while</span>(_--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br>    <br>    re;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="C-Cat-Fox-and-Double-Maximum"><a href="#C-Cat-Fox-and-Double-Maximum" class="headerlink" title="C. Cat, Fox and Double Maximum"></a><font color="red">C. Cat, Fox and Double Maximum</font></h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1973/problem/C">原题</a></p>
+<p>Fox loves permutations! She came up with the following problem and asked Cat to solve it:</p>
+<p>You are given an <strong>even</strong> positive integer $n$ and a permutation$^\dagger$ $p$ of length $n$.</p>
+<p>The score of another permutation $q$ of length $n$ is the number of <strong>local maximums</strong> in the array $a$ of length $n$, where $a_i &#x3D; p_i + q_i$ for all $i$ ($1 \le i \le n$). In other words, the score of $q$ is the number of $i$ such that $1 &lt; i &lt; n$ (note the <strong>strict</strong> inequalities), $a_{i-1} &lt; a_i$, and $a_i &gt; a_{i+1}$ (once again, note the strict inequalities).</p>
+<p>Find the permutation $q$ that achieves the maximum score for given $n$ and $p$. If there exist multiple such permutations, you can pick any of them.</p>
+<p>$^\dagger$ A permutation of length $n$ is an array consisting of $n$ distinct integers from $1$ to $n$ in arbitrary order. For example, $[2,3,1,5,4]$ is a permutation, but $[1,2,2]$ is not a permutation ($2$ appears twice in the array), and $[1,3,4]$ is also not a permutation ($n&#x3D;3$ but there is $4$ in the array).</p>
+<p><strong>Input</strong></p>
+<p>The first line of input contains an integer $t$ ($1 \leq t \leq 10^4$) — the number of test cases in the input you will have to solve.</p>
+<p>The first line of each test case contains one <strong>even</strong> integer $n$ ($4 \leq n \leq 10^5$, $n$ is even) — the length of the permutation $p$.</p>
+<p>The second line of each test case contains the $n$ integers $p_1, p_2, \ldots, p_n$ ($1 \leq p_i \leq n$). It is guaranteed that $p$ is a permutation of length $n$.</p>
+<p>It is guaranteed that the sum of $n$ across all test cases doesn’t exceed $10^5$.</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output one line containing any permutation of length $n$ (the array $q$), such that $q$ maximizes the score under the given constraints.</p>
+<p><strong>Example</strong></p>
+<p><strong>input</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">4</span><br><span class="hljs-number">4</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span><br><span class="hljs-number">4</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-number">6</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-number">8</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>output</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">2 </span><span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>In the first example, $a &#x3D; [3, 6, 4, 7]$. The array has just one local maximum (on the second position), so the score of the chosen permutation $q$ is $1$. It can be proven that this score is optimal under the constraints.</p>
+<p>In the last example, the resulting array $a &#x3D; [6, 6, 12, 7, 14, 7, 14, 6]$ has $3$ local maximums — on the third, fifth and seventh positions.</p>
+<h1 id="翻译-2"><a href="#翻译-2" class="headerlink" title="翻译"></a>翻译</h1><p>狐狸喜欢排列！她提出了以下问题并请 Cat 解决：</p>
+<p>给您一个<strong>偶数</strong>正整数 $n$ 和长度为 $n$ 的排列 $^\dagger$ $p$ 。</p>
+<p>长度为 $n$ 的另一个排列 $q$ 的分数是长度为 $n$ 的数组 $a$ 中<strong>局部最大值</strong>的数量，其中 $a_i &#x3D; p_i + q_i$ 代表所有 $i$ ( $1 \le i \le n$ )。换句话说， $q$ 的分数是 $i$ 的数量，使得 $1 &lt; i &lt; n$ （注意<strong>严格</strong>不等式）、 $a_{i-1} &lt; a_i$ 和 $a_i &gt; a_{i+1}$ （再次注意严格不等式） 。</p>
+<p>查找给定 $n$ 和 $p$ 获得最高分数的排列 $q$ 。如果存在多个这样的排列，您可以选择其中任何一个。</p>
+<p>$^\dagger$ 长度为 $n$ 的排列是一个由 $n$ 个从 $1$ 到 $n$ 的不同整数以任意顺序组成的数组。例如， $[2,3,1,5,4]$ 是一个排列，但 $[1,2,2]$ 不是一个排列（ $2$ 在数组中出现了两次），而 $[1,3,4]$ 也不是一个排列（ $n&#x3D;3$ 但数组中有 $4$ ）大批）。</p>
+<p><strong>输入</strong><br>输入的第一行包含一个整数 $t$ ( $1 \leq t \leq 10^4$ ) - 输入中您必须解决的测试用例的数量。</p>
+<p>每个测试用例的第一行包含一个 <strong>偶数</strong> 整数 $n$ （ $4 \leq n \leq 10^5$ ， $n$ 是偶数） - 排列的长度 $p$ 。</p>
+<p>每个测试用例的第二行包含 $n$ 整数 $p_1, p_2, \ldots, p_n$ ( $1 \leq p_i \leq n$ )。保证 $p$ 是长度为 $n$ 的排列。</p>
+<p>确保所有测试用例的 $n$ 之和不超过 $10^5$ 。</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，输出一行包含任意长度排列 $n$ （数组 $q$ ），使得 $q$ 在给定约束下最大化分数。</p>
+<p><strong>Example</strong></p>
+<p><strong>input</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">4</span><br><span class="hljs-number">4</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span><br><span class="hljs-number">4</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-number">6</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-number">8</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>output</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">2 </span><span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>笔记</strong></p>
+<p>在第一个示例中， $a &#x3D; [3, 6, 4, 7]$ 。该数组只有一个局部最大值（在第二个位置），因此所选排列 $q$ 的得分为 $1$ 。可以证明这个分数在约束条件下是最优的。</p>
+<p>在最后一个示例中，生成的数组 $a &#x3D; [6, 6, 12, 7, 14, 7, 14, 6]$ 具有 $3$ 局部最大值 - 位于第三、第五和第七位置。</p>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>​	…..</p>
+</blockquote>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 持续....</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/05/18/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E7%BA%BF%E6%AE%B5%E6%A0%91%E2%80%94%E2%80%94%E6%9C%80%E5%A4%A7gcd/" title="算法学习专栏——线段树——最大gcd">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法学习专栏——线段树——最大gcd</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/05/18/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E2%80%94%E2%80%94%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B125/" title="算法练习专栏——牛客练习——牛客练习赛125">
+                        <span class="hidden-mobile">算法练习专栏——牛客练习——牛客练习赛125</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

@@ -1,0 +1,1129 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="A. Maximize?Problem - A - Codeforces You are given an integer $x$. Your task is to find any integer $y (1≤y&lt;x)$ such that $gcd(x,y)+y$ is maximum possible. Note that if there is more than one y whi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法练习专栏——Codeforces——Codeforces Round 943 (Div. 3)">
+<meta property="og:url" content="http://example.com/2024/05/05/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94Codeforces%E2%80%94%E2%80%94Codeforces%20Round%20943%20(Div.%203)/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="A. Maximize?Problem - A - Codeforces You are given an integer $x$. Your task is to find any integer $y (1≤y&lt;x)$ such that $gcd(x,y)+y$ is maximum possible. Note that if there is more than one y whi">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403161128034.jpg">
+<meta property="article:published_time" content="2024-05-05T05:53:21.000Z">
+<meta property="article:modified_time" content="2024-05-08T13:14:00.188Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="ACM">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="Codeforces">
+<meta property="article:tag" content="比赛">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403161128034.jpg">
+  
+  
+  
+  <title>算法练习专栏——Codeforces——Codeforces Round 943 (Div. 3) - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405082113225.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="算法练习专栏——Codeforces——Codeforces Round 943 (Div. 3)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-05-05 13:53" pubdate>
+          2024年5月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          41 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">算法练习专栏——Codeforces——Codeforces Round 943 (Div. 3)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="A-Maximize"><a href="#A-Maximize" class="headerlink" title="A. Maximize?"></a>A. Maximize?</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1968/problem/A">Problem - A - Codeforces</a></p>
+<p>You are given an integer $x$. Your task is to find any integer $y (1≤y&lt;x)$ such that $gcd(x,y)+y$ is maximum possible.</p>
+<p><strong>Note that if there is more than one y which satisfies the statement, you are allowed to find any.</strong></p>
+<p>$gcd(a,b)$is the Greatest Common Divisor of a and b. For example, $gcd(6,4)&#x3D;2gcd(6,4)&#x3D;2$.</p>
+<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>The first line contains a single integer $t (1≤t≤1000)$ — the number of test cases.</p>
+<p>Each of the following $t$ lines contains a single integer $x (2≤x≤1000)$.</p>
+<h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><p>For each test case, output any $y (1≤y&lt;x)$, which satisfies the statement.</p>
+<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><h5 id="input"><a href="#input" class="headerlink" title="input"></a>input</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-number">7</span><br><span class="hljs-number">10</span><br><span class="hljs-number">7</span><br><span class="hljs-number">21</span><br><span class="hljs-number">100</span><br><span class="hljs-number">2</span><br><span class="hljs-number">1000</span><br><span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output"><a href="#output" class="headerlink" title="output"></a>output</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">5<br>6<br>18<br>98<br>1<br>750<br>3<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p>给你一个整数 $x$ 。你的任务是找出任意一个整数  $y (1≤y&lt;x)$ ，使得 $\gcd(x,y)+y$ 为最大可能数。$y (1≤y&lt;x) $   $\gcd(x,y)+y$ 最大。</p>
+<p>注意，如果有一个以上的 $y$ 满足该语句，则允许你找出任何一个。</p>
+<p>$\gcd(a,b)$ 是 $a$ 和 $b$ 的最大公约数。例如， $\gcd(6,4)&#x3D;2$ 。</p>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 $t$ ( $1 \le t \le 1000$ ) - 测试用例数。</p>
+<p>下面每行 $t$ 都包含一个整数 $x$ ( $2 \le x \le 1000$ )。</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，输出任何满足声明的 $y$ ( $1 \le y \le x$ ) 。</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h5><h5 id="input-1"><a href="#input-1" class="headerlink" title="input"></a>input</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-number">7</span><br><span class="hljs-number">10</span><br><span class="hljs-number">7</span><br><span class="hljs-number">21</span><br><span class="hljs-number">100</span><br><span class="hljs-number">2</span><br><span class="hljs-number">1000</span><br><span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-1"><a href="#output-1" class="headerlink" title="output"></a>output</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">5<br>6<br>18<br>98<br>1<br>750<br>3<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>​	直接暴力没啥好说的</p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin &gt;&gt; n;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>, k;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-type">int</span> kk = __gcd(n, i) + i;<br>        <span class="hljs-keyword">if</span> (kk &gt; ans) &#123;<br>            k = i;<br>            ans = kk; <br>        &#125;<br>    &#125; <br><br>    cout &lt;&lt; k &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>),cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>),cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="B-Prefiquence"><a href="#B-Prefiquence" class="headerlink" title="B. Prefiquence"></a>B. Prefiquence</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1968/problem/B">Problem - B - Codeforces</a></p>
+<p>You are given two binary strings $a$ and $b$. A binary string is a string consisting of the characters ‘0’ and ‘1’.</p>
+<p>Your task is to determine the maximum possible number $k$ such that a prefix of string $a$ of length $k$ is a subsequence of string $b$.</p>
+<p>A sequence $a$ is a subsequence of a sequence $b$ if $a$ can be obtained from $b$​ by the deletion of several (possibly, zero or all) elements.</p>
+<p><strong>Input</strong></p>
+<p>The first line consists of a single integer $t$ ($1 \le t \le 10^4$) — the number of test cases.</p>
+<p>The first line of each test case contains two integers $n$ and $m$ ($1\le n,m \le 2 \cdot 10^5$) — the length of string $a$ and the length of string $b$, respectively.</p>
+<p>The second line of each test case contains a binary string $a$ of length $n$.</p>
+<p>The third line of each test case contains a binary string $b$ of length $m$.</p>
+<p>It is guaranteed that the sum of values $n$ over all test cases does not exceed $2 \cdot 10^5$. Similarly, the sum of values $m$ over all test cases does not exceed $2 \cdot 10^5$.</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output a single number — the maximum $k$, such that the first $k$ characters of $a$ form a subsequence of $b$.</p>
+<p><strong>Note</strong></p>
+<p>In the first example, the string ‘$10$’ is a subsequence of ‘$1\color{red}11\color{red}0$’ but the string ‘$100$’ is not. So the answer is $2$.</p>
+<p>In the fifth example, $a$=‘$100$’, $b$=‘$1\color{red}{10}1\color{red}0$’, whole string $a$ is a subsequence of string $b$. So the answer is $3$.</p>
+<p>In the sixth example, string $b$ does not contain ‘$1$’ so the answer is $0$.</p>
+<h2 id="翻译-1"><a href="#翻译-1" class="headerlink" title="翻译"></a>翻译</h2><p>给你两个二进制字符串 $a$ 和 $b$ 。二进制字符串是由字符 “0 “和 “1 “组成的字符串。</p>
+<p>您的任务是确定最大可能的数字 $k$ ，使得长度为 $k$ 的字符串 $a$ 的前缀是字符串 $$b$ 的子序列。</p>
+<p>如果 $a$$ 可以从 $b$ 中删除几个(可能是零个或全部)元素，那么序列 $$a$$ 就是序列 $b 的子序列。</p>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 $t$ ( $1 \le t \le 10^4$ ) - 测试用例数。</p>
+<p>每个测试用例的第一行包含两个整数 $n$ 和 $m$ ( $1\le n,m \le 2 \cdot 10^5$ ) - 分别是字符串 $a$ 的长度和字符串 $b$ 的长度。</p>
+<p>每个测试用例的第二行包含长度为 $n$ 的二进制字符串 $a$ 。</p>
+<p>每个测试用例的第三行包含长度为 $m$ 的二进制字符串 $b$ 。</p>
+<p>保证所有测试用例的值 $n$ 之和不超过 $2 \cdot 10^5$ 。同样，所有测试用例中 $m$ 的值之和不超过 $2 \cdot 10^5$ 。</p>
+<p><strong>注</strong></p>
+<p>在第一个例子中，字符串” $10$ “是” $1\color{red}11\color{red}0$ “的子序列，但字符串” $100$ “不是。因此答案是 $2$ 。</p>
+<p>在第五个例子中， $a$ &#x3D;’ $100$ ‘， $b$ &#x3D;’ $1\color{red}{10}1\color{red}0$ ‘，整个字符串 $a$ 是字符串 $b$ 的子序列。所以答案是 $3$ 。</p>
+<p>在第六个示例中，字符串 $b$ 不包含’ $1$ ‘，所以答案是 $0$ 。</p>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h5><h5 id="input-2"><a href="#input-2" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">6</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">4</span><br><span class="hljs-number">10011</span><br><span class="hljs-number">1110</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">3</span><br><span class="hljs-number">100</span><br><span class="hljs-number">110</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-number">1</span><br><span class="hljs-number">111</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">4</span><br><span class="hljs-number">1011</span><br><span class="hljs-number">1111</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-number">100</span><br><span class="hljs-number">11010</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">1</span><br><span class="hljs-number">100</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-2"><a href="#output-2" class="headerlink" title="output"></a>output</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs">2<br>2<br>1<br>1<br>3<br>0<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>​	一个简单的匹配问题，无他都是暴力。</p>
+</blockquote>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> n, m;<br>    <span class="hljs-type">int</span> i, j;<br><br>    string a, b;<br>    cin &gt;&gt; n &gt;&gt; m;<br>    cin &gt;&gt; a &gt;&gt; b;<br>    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>; i &lt; n &amp;&amp; j &lt; m;) &#123;<br>        <span class="hljs-keyword">if</span> (a[i] == b[j]) &#123;<br>            i++;<br>            j++;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            j++;<br>        &#125;<br>    &#125;<br>    cout &lt;&lt; i &lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>),cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>),cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="C-Assembly-via-Remainders"><a href="#C-Assembly-via-Remainders" class="headerlink" title="C. Assembly via Remainders"></a>C. Assembly via Remainders</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1968/problem/C">Problem - C - Codeforces</a></p>
+<p>You are given an array $x_2,x_3,\dots,x_n$. Your task is to find <strong>any</strong> array $a_1,\dots,a_n$, where:</p>
+<ul>
+<li>$1\le a_i\le 10^9$ for all $1\le i\le n$.</li>
+<li>$x_i&#x3D;a_i \bmod a_{i-1}$ for all $2\le i\le n$.</li>
+</ul>
+<p>Here $c\bmod d$ denotes the remainder of the division of the integer $c$ by the integer $d$. For example $5 \bmod 2 &#x3D; 1$, $72 \bmod 3 &#x3D; 0$, $143 \bmod 14 &#x3D; 3$.</p>
+<p><strong>Note that if there is more than one $a$ which satisfies the statement, you are allowed to find any.</strong></p>
+<p><strong>Input</strong></p>
+<p>The first line contains a single integer $t$ $(1\le t\le 10^4)$ — the number of test cases.</p>
+<p>The first line of each test case contains a single integer $n$ $(2\le n\le 500)$ — the number of elements in $a$.</p>
+<p>The second line of each test case contains $n-1$ integers $x_2,\dots,x_n$ $(1\le x_i\le 500)$ — the elements of $x$.</p>
+<p>It is guaranteed that the sum of values $n$ over all test cases does not exceed $2 \cdot 10^5$.</p>
+<p><strong>Output</strong></p>
+<p>For each test case output any $a_1,\dots,a_n$ ($1 \le a_i \le 10^9$) which satisfies the statement.</p>
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example"></a>Example</h5><h5 id="input-3"><a href="#input-3" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span> <span class="hljs-number">1</span><br><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-number">6</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-number">2</span><br><span class="hljs-number">500</span><br><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-3"><a href="#output-3" class="headerlink" title="output"></a>output</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">3 </span><span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span> <span class="hljs-number">11</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">14</span> <span class="hljs-number">16</span> <span class="hljs-number">5</span> <span class="hljs-number">11</span> <span class="hljs-number">24</span><br><span class="hljs-symbol">501 </span><span class="hljs-number">500</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">7</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>In the first test case $a&#x3D;[3,5,4,9]$ satisfies the conditions, because:</p>
+<ul>
+<li>$a_2\bmod a_1&#x3D;5\bmod 3&#x3D;2&#x3D;x_2$;</li>
+<li>$a_3\bmod a_2&#x3D;4\bmod 5&#x3D;4&#x3D;x_3$;</li>
+<li>$a_4\bmod a_3&#x3D;9\bmod 4&#x3D;1&#x3D;x_4$;</li>
+</ul>
+<h2 id="翻译-2"><a href="#翻译-2" class="headerlink" title="翻译"></a>翻译</h2><p>给你一个数组 $x_2,x_3,\dots,x_n$ 。你的任务是找出任意一个数组 $a_1,\dots,a_n$ ，其中：</p>
+<ul>
+<li>$1\le a_i\le 10^9$ 为所有的 $1\le i\le n$ 。</li>
+<li>$x_i&#x3D;a_i \bmod a_{i-1}$ 代表所有的 $2\le i\le n$ 。</li>
+</ul>
+<p>这里的 $c\bmod d$ 表示整数 $c$ 除以整数 $d$ 的余数。例如， $5 \bmod 2 &#x3D; 1$ ， $72 \bmod 3 &#x3D; 0$ ， $143 \bmod 14 &#x3D; 3$ 。</p>
+<p>注意，如果有一个以上的 $a$ 满足该语句的要求，你可以找到任何一个。</p>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 $t$ $(1\le t\le 10^4)$ 。- 测试用例的数量。</p>
+<p>每个测试用例的第一行包含一个整数 $n$ $(2\le n\le 500)$ - {7001414} 中的元素个数。 $(2\le n\le 500)$ - $a$ 中的元素个数。</p>
+<p>每个测试用例的第二行包含 $n-1$ 个整数 $x_2,\dots,x_n$ - $a$ 中的元素个数。 $(1\le x_i\le 500)$ - $x$ 中的元素。</p>
+<p>保证所有测试用例中 $n$ 的值之和不超过 $2 \cdot 10^5$ 。</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，输出任何满足语句的 $a_1,\dots,a_n$ ( $1 \le a_i \le 10^9$ )</p>
+<p><strong>注</strong></p>
+<p>第一个测试用例 $a&#x3D;[3,5,4,9]$ 满足条件，因为</p>
+<ul>
+<li>$a_2\bmod a_1&#x3D;5\bmod 3&#x3D;2&#x3D;x_2$ ;</li>
+<li>$a_3\bmod a_2&#x3D;4\bmod 5&#x3D;4&#x3D;x_3$ ;</li>
+<li>$a_4\bmod a_3&#x3D;9\bmod 4&#x3D;1&#x3D;x_4$ ;</li>
+</ul>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>​	完全就是一个数学问题，这个问题可以转为 a[i] ÷ a[i - 1] &#x3D; k …… x[i - 1],最开始的a[1] 我们可以直接设置为x[1] + 1.然后从i &#x3D; 2开始枚举，之后我们现在就是需要确定这个k就可以将这个a[i]推出来了，但是我们需要注意一个地方，就是你你得到的a[i]这个数必须 &gt; x[i]，否则a[i + 1] % a[i]的时候就不可能得到x[i]了，具体的处理方式请看代码。</p>
+</blockquote>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">510</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> INF = <span class="hljs-number">1e9</span>;<br><br>LL x[N], a[N];<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n - <span class="hljs-number">1</span>; i++) cin &gt;&gt; x[i];   <br><br>    a[<span class="hljs-number">1</span>] = x[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>        <span class="hljs-type">int</span> k = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> kk = x[i - <span class="hljs-number">1</span>] + a[i - <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">if</span> (x[i] &lt; kk) a[i] = kk;<br>        <span class="hljs-keyword">else</span> a[i] = a[i - <span class="hljs-number">1</span>] * <span class="hljs-built_in">ceil</span>(<span class="hljs-number">1.0</span> * x[i] / a[i - <span class="hljs-number">1</span>]) + x[i - <span class="hljs-number">1</span>];<br>    &#125; <br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) cout &lt;&lt; a[i] &lt;&lt; <span class="hljs-string">&quot; \n&quot;</span>[i == n];<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>),cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>),cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="D：Permutation-Game"><a href="#D：Permutation-Game" class="headerlink" title="D：Permutation Game"></a>D：Permutation Game</h1><p>Bodya and Sasha found a permutation $p_1,\dots,p_n$ and an array $a_1,\dots,a_n$. They decided to play a well-known “Permutation game”.</p>
+<p>A permutation of length $n$ is an array consisting of $n$ distinct integers from $1$ to $n$ in arbitrary order. For example, $[2,3,1,5,4]$ is a permutation, but $[1,2,2]$ is not a permutation ($2$ appears twice in the array), and $[1,3,4]$ is also not a permutation ($n&#x3D;3$ but there is $4$ in the array).</p>
+<p>Both of them chose a starting position in the permutation.</p>
+<p>The game lasts $k$ turns. The players make moves simultaneously. On each turn, two things happen to each player:</p>
+<ul>
+<li>If the current position of the player is $x$, his score increases by $a_x$.</li>
+<li>Then the player either <strong>stays</strong> at his current position $x$ or <strong>moves</strong> from $x$ to $p_x$.</li>
+</ul>
+<p>The winner of the game is the player with the higher score after exactly $k$ turns.</p>
+<p>Knowing Bodya’s starting position $P_B$ and Sasha’s starting position $P_S$, determine who wins the game if both players are trying to win.</p>
+<p><strong>Input</strong></p>
+<p>The first line contains a single integer $t$ ($1\le t\le 10^4$) — the number of testcases.</p>
+<p>The first line of each testcase contains integers $n$, $k$, $P_B$, $P_S$ ($1\le P_B,P_S\le n\le 2\cdot 10^5$, $1\le k\le 10^9$) — length of the permutation, duration of the game, starting positions respectively.</p>
+<p>The next line contains $n$ integers $p_1,\dots,p_n$ ($1 \le p_i \le n$) — elements of the permutation $p$.</p>
+<p>The next line contains $n$ integers $a_1,\dots,a_n$ ($1\le a_i\le 10^9$) — elements of array $a$.</p>
+<p>It is guaranteed that the sum of values of $n$ over all test cases does not exceed $2 \cdot 10^5$.</p>
+<p><strong>Output</strong></p>
+<p>For each testcase output:</p>
+<ul>
+<li>“Bodya” if Bodya wins the game.</li>
+<li>“Sasha” if Sasha wins the game.</li>
+<li>“Draw” if the players have the same score.</li>
+</ul>
+<h5 id="Example-4"><a href="#Example-4" class="headerlink" title="Example"></a>Example</h5><h5 id="input-4"><a href="#input-4" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">10</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">10</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">10</span> <span class="hljs-number">6</span> <span class="hljs-number">9</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">10</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">10</span> <span class="hljs-number">15</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1000000000</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">10</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">100</span> <span class="hljs-number">101</span> <span class="hljs-number">102</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">6</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">10</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">8</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1000000000</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">1000000000 </span><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-4"><a href="#output-4" class="headerlink" title="output"></a>output</h5><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs gauss">Bodya<br>Sasha<br><span class="hljs-built_in">Draw</span><br><span class="hljs-built_in">Draw</span><br>Bodya<br>Sasha<br>Sasha<br>Sasha<br>Sasha<br>Bodya<br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>Below you can find the explanation for the first testcase, where the game consists of $k&#x3D;2$ turns.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Turn</strong></th>
+<th><strong>Bodya’s position</strong></th>
+<th><strong>Bodya’s score</strong></th>
+<th><strong>Bodya’s move</strong></th>
+<th><strong>Sasha’s position</strong></th>
+<th><strong>Sasha’s score</strong></th>
+<th><strong>Sasha’s move</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>first</td>
+<td>$3$</td>
+<td>$0 + a_3 &#x3D; 0 + 5 &#x3D; 5$</td>
+<td>stays on the same position</td>
+<td>$2$</td>
+<td>$0 + a_2 &#x3D; 0 + 2 &#x3D; 2$</td>
+<td>moves to $p_2&#x3D;1$</td>
+</tr>
+<tr>
+<td>second</td>
+<td>$3$</td>
+<td>$5 + a_3 &#x3D; 5 + 5 &#x3D; 10$</td>
+<td>stays on the same position</td>
+<td>$1$</td>
+<td>$2 + a_1 &#x3D; 2 + 7 &#x3D; 9$</td>
+<td>stays on the same position</td>
+</tr>
+<tr>
+<td>final results</td>
+<td>$3$</td>
+<td>$10$</td>
+<td></td>
+<td>$1$</td>
+<td>$9$</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>As we may see, Bodya’s score is greater, so he wins the game. It can be shown that Bodya always can win this game.</p>
+<h1 id="翻译-3"><a href="#翻译-3" class="headerlink" title="翻译"></a>翻译</h1><p>Bodya 和 Sasha 发现了一个排列 $p_1,\dots,p_n$ 和一个数组 $a_1,\dots,a_n$ 。他们决定玩一个著名的 “排列游戏”。</p>
+<p>长度为 $n$ 的排列是由 $n$ 个不同的整数组成的数组，这些整数从 $1$ 到 $n$ 按任意顺序排列。例如， $[2,3,1,5,4]$ 是一个排列，但 $[1,2,2]$ 不是一个排列（ $2$ 在数组中出现了两次）， $[1,3,4]$ 也不是一个排列（ $n&#x3D;3$ ，但数组中有 $4$ ）。</p>
+<p>它们都在排列中选择了一个起始位置。</p>
+<p>对局持续了 $k$ 个回合。棋手同时下棋。在每个回合中，每个棋手都会发生两件事：</p>
+<ul>
+<li>如果棋手当前的位置是 $x$ ，那么他的得分就会增加 $a_x$ 。</li>
+<li>然后棋手要么<strong>停留在当前位置 $x$ ，要么</strong>从 $x$ 移动到 $p_x$ 。</li>
+</ul>
+<p>在整整 $k$ 个回合后，得分较高的棋手即为获胜者。</p>
+<p>知道了博迪娅的起始位置 $P_B$ 和萨沙的起始位置 $P_S$​ 后，如果双方都想获胜，那么谁会赢得对局？</p>
+<p><strong>输出</strong></p>
+<p>每个测试用例的输出：</p>
+<ul>
+<li>如果 Bodya 赢得游戏，则输出 “Bodya”。</li>
+<li>如果 Sasha 赢得比赛，则输出 “Sasha”。</li>
+<li>如果双方得分相同，则输出 “平局”。</li>
+</ul>
+<h5 id="Example-5"><a href="#Example-5" class="headerlink" title="Example"></a>Example</h5><h5 id="input-5"><a href="#input-5" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">10</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">10</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">10</span> <span class="hljs-number">6</span> <span class="hljs-number">9</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">10</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">10</span> <span class="hljs-number">15</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1000000000</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">10</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">100</span> <span class="hljs-number">101</span> <span class="hljs-number">102</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">6</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">10</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">8</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1000000000</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">1000000000 </span><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-5"><a href="#output-5" class="headerlink" title="output"></a>output</h5><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs gauss">Bodya<br>Sasha<br><span class="hljs-built_in">Draw</span><br><span class="hljs-built_in">Draw</span><br>Bodya<br>Sasha<br>Sasha<br>Sasha<br>Sasha<br>Bodya<br></code></pre></td></tr></table></figure>
+
+<p><strong>注</strong></p>
+<p>下面是第一个测试案例的说明，其中游戏由 $k&#x3D;2$ 个回合组成。</p>
+<table>
+<thead>
+<tr>
+<th><strong>Turn</strong></th>
+<th><strong>Bodya’s position</strong></th>
+<th><strong>Bodya’s score</strong></th>
+<th><strong>Bodya’s move</strong></th>
+<th><strong>Sasha’s position</strong></th>
+<th><strong>Sasha’s score</strong></th>
+<th><strong>Sasha’s move</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>first</td>
+<td>$3$</td>
+<td>$0 + a_3 &#x3D; 0 + 5 &#x3D; 5$</td>
+<td>stays on the same position</td>
+<td>$2$</td>
+<td>$0 + a_2 &#x3D; 0 + 2 &#x3D; 2$</td>
+<td>moves to $p_2&#x3D;1$</td>
+</tr>
+<tr>
+<td>second</td>
+<td>$3$</td>
+<td>$5 + a_3 &#x3D; 5 + 5 &#x3D; 10$</td>
+<td>stays on the same position</td>
+<td>$1$</td>
+<td>$2 + a_1 &#x3D; 2 + 7 &#x3D; 9$</td>
+<td>stays on the same position</td>
+</tr>
+<tr>
+<td>final results</td>
+<td>$3$</td>
+<td>$10$</td>
+<td></td>
+<td>$1$</td>
+<td>$9$</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>我们可以看到，Bodya 的得分更高，因此他赢得了比赛。由此可见，博迪亚总是能赢得这盘棋。</p>
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>​	稍微分析一下，我们其实就可以很快得出一个结论：就是我们如果选择停下来的话就会一直停留到结束，这个结论显然是不言而喻的。这样的话我们思路其实就蛮清晰了，每到一个位置我们就计算一下下面的轮次一直留在这个位置的总时间和ans取max即可，最后比较一下ansa和ansb两个大小即可。</p>
+</blockquote>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">using</span> pii = pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt;;<br><br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-number">0</span>);<br>	cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>); cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br><br>	<span class="hljs-type">int</span> t; cin &gt;&gt; t;<br>	<span class="hljs-keyword">while</span> (t--) &#123;<br>		<span class="hljs-type">int</span> n, k, pb, ps; cin &gt;&gt; n &gt;&gt; k &gt;&gt; pb &gt;&gt; ps;<br>		<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">p</span><span class="hljs-params">(n + <span class="hljs-number">5</span>)</span>, <span class="hljs-title">a</span><span class="hljs-params">(n + <span class="hljs-number">5</span>)</span></span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)cin &gt;&gt; p[i];<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)cin &gt;&gt; a[i];<br>		<br>		<br>		<span class="hljs-type">int</span> maxi = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) maxi = <span class="hljs-built_in">max</span>(maxi, a[i]);<br><br>		<span class="hljs-type">int</span> turn = <span class="hljs-number">0</span>; <br>		<span class="hljs-type">int</span> cost = <span class="hljs-number">0</span>; <br>		<span class="hljs-type">int</span> ansb = <span class="hljs-number">0</span>;<br>		<span class="hljs-function">vector&lt;<span class="hljs-type">bool</span>&gt; <span class="hljs-title">visb</span><span class="hljs-params">(n + <span class="hljs-number">5</span>)</span></span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> pos = pb;;) &#123;<br>			<span class="hljs-type">int</span> now = cost + (k - turn) * a[pos]; <br>			ansb = <span class="hljs-built_in">max</span>(ansb, now);<br>			turn++;<br>			cost += a[pos];<br>			<span class="hljs-keyword">if</span> (a[pos] == maxi)<span class="hljs-keyword">break</span>;<br>			visb[pos] = <span class="hljs-number">1</span>;<br>			pos = p[pos];<br>			<span class="hljs-keyword">if</span> (turn == k || visb[pos])<span class="hljs-keyword">break</span>;<br>		&#125;<br><br>		turn = <span class="hljs-number">0</span>;<br>		cost = <span class="hljs-number">0</span>;<br>		<span class="hljs-type">int</span> anss = <span class="hljs-number">0</span>;<br>		<span class="hljs-function">vector&lt;<span class="hljs-type">bool</span>&gt; <span class="hljs-title">viss</span><span class="hljs-params">(n + <span class="hljs-number">5</span>)</span></span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> pos = ps;;) &#123;<br>			<span class="hljs-type">int</span> now = cost + (k - turn) * a[pos]; <br>			anss = <span class="hljs-built_in">max</span>(anss, now);<br>			turn++;<br>			cost += a[pos];<br>			<span class="hljs-keyword">if</span> (a[pos] == maxi) <span class="hljs-keyword">break</span>;<br>			viss[pos] = <span class="hljs-number">1</span>;<br>			pos = p[pos];<br>			<span class="hljs-keyword">if</span> (turn == k || viss[pos]) <span class="hljs-keyword">break</span>;<br>		&#125;<br><br>		<span class="hljs-keyword">if</span> (ansb &gt; anss) cout&lt;&lt;<span class="hljs-string">&quot;Bodya&quot;</span>&lt;&lt;endl;<br>		<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (anss &gt; ansb) cout&lt;&lt;<span class="hljs-string">&quot;Sasha&quot;</span>&lt;&lt;endl<br>		<span class="hljs-keyword">else</span> cout&lt;&lt;<span class="hljs-string">&quot;Draw&quot;</span>&lt;&lt;endl<br>	&#125;<br><br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="E：Cells-Arrangement"><a href="#E：Cells-Arrangement" class="headerlink" title="E：Cells Arrangement"></a>E：Cells Arrangement</h1><p>You are given an integer $n$. You choose $n$ cells $(x_1,y_1), (x_2,y_2),\dots,(x_n,y_n)$ in the grid $n\times n$ where $1\le x_i\le n$ and $1\le y_i\le n$.</p>
+<p>Let $\mathcal{H}$ be the set of <strong>distinct</strong> Manhattan distances between any pair of cells. Your task is to maximize the size of $\mathcal{H}$. Examples of sets and their construction are given in the notes.</p>
+<p><strong>If there exists more than one solution, you are allowed to output any.</strong></p>
+<p>Manhattan distance between cells $(x_1,y_1)$ and $(x_2,y_2)$ equals $|x_1-x_2|+|y_1-y_2|$.</p>
+<p><strong>Input</strong></p>
+<p>The first line contains a single integer $t$ ($1\le t\le 50$) — the number of test cases.</p>
+<p>Each of the following $t$ lines contains a single integer $n$ ($2\le n\le 10^3$​).</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output $n$ points which maximize the size of $\mathcal{H}$. It is not necessary to output an empty line at the end of the answer for each test case.</p>
+<h5 id="Example-6"><a href="#Example-6" class="headerlink" title="Example"></a>Example</h5><h5 id="input-6"><a href="#input-6" class="headerlink" title="input"></a>input</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs">5<br>2<br>3<br>4<br>5<br>6<br></code></pre></td></tr></table></figure>
+
+<h5 id="output-6"><a href="#output-6" class="headerlink" title="output"></a>output</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">1</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">4</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">6</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>In the first testcase we have $n&#x3D;2$. One of the possible arrangements is:</p>
+<p><img src="https://espresso.codeforces.com/619f3eb4f0a07b27282e90e698cf25f3ab939167.png" srcset="/img/loading.gif" lazyload> The arrangement with cells located in $(1,1)$ and $(1,2)$.</p>
+<p>In this case $\mathcal{H}&#x3D;{|1-1|+|1-1|,|1-1|+|2-2|,|1-1|+|1-2|}&#x3D;{0,0,1}&#x3D;{0,1}$. Hence, the size of $\mathcal{H}$ is $2$. It can be shown that it is the greatest possible answer.</p>
+<p>In the second testcase we have $n&#x3D;3$. The optimal arrangement is:</p>
+<p><img src="https://espresso.codeforces.com/59007fd957d51732d99aff9e1f38c3e56e41780a.png" srcset="/img/loading.gif" lazyload> The arrangement with cells located in $(2,1)$, $(2,3)$ and $(3,1)$.</p>
+<p>$\mathcal{H}$=${|2-2|+|1-1|,|2-2|+|3-3|,|3-3|+|1-1|,|2-2|+|1-3|,|2-3|+|1-1|,|2-3|+|3-1|}$=${0,0,0,2,1,3}$=${0,1,2,3}$.</p>
+<p>For $n&#x3D;4$ a possible arrangement is:</p>
+<p><img src="https://espresso.codeforces.com/8dc634c93736dd491405e75b24d2c3b9a483174f.png" srcset="/img/loading.gif" lazyload></p>
+<p>For $n&#x3D;5$ a possible arrangement is:</p>
+<p><img src="https://espresso.codeforces.com/6303c5548a763408f28244b54dddbfcdcba2631d.png" srcset="/img/loading.gif" lazyload></p>
+<p>For $n&#x3D;6$ a possible arrangement is:</p>
+<p><img src="https://espresso.codeforces.com/27daf1094c624409e4a29d80d4b47de49a8ecdab.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="翻译-4"><a href="#翻译-4" class="headerlink" title="翻译"></a>翻译</h1><p>给你一个整数 $n$。您在网格 $n\times n$ 中的 $n$ 单元格 $(x_1,y_1), (x_2,y_2),\dots,(x_n,y_n))$ 中选择 $1\le x_i \le n$ 和 $1\le y_i \le n$$ 。</p>
+<p>假设 $$\mathcal{H}$$ 是任意一对单元格之间<strong>不同</strong>的曼哈顿距离集合。你的任务是最大化 $$\mathcal{H}$$ 的大小。注释中给出了集合及其构造的例子。</p>
+<p>如果存在多个解，你可以输出任意一个。</p>
+<p>单元格$$(x_1,y_1), (x_2,y_2)$$  之间的曼哈顿距离等于 $$|x_1 - x_2|+|y_1 - y_2|$$ 。</p>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 $t$ ( $1\le t\le 50$ )。( $1\le t\le 50$ ) - 测试用例的数量。</p>
+<p>下面每行 $t$ 都包含一个整数 $n$ ( $2\le n\le 10^3$$ )。</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，输出 $n$ 个点，使 $\mathcal{H}$ 的大小达到最大。无需在每个测试用例的答案末尾输出空行。</p>
+<h5 id="Example-7"><a href="#Example-7" class="headerlink" title="Example"></a>Example</h5><h5 id="input-7"><a href="#input-7" class="headerlink" title="input"></a>input</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs">5<br>2<br>3<br>4<br>5<br>6<br></code></pre></td></tr></table></figure>
+
+<h5 id="output-7"><a href="#output-7" class="headerlink" title="output"></a>output</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">1</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">4</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><br><span class="hljs-symbol">1 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">6</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>注</strong></p>
+<p>在第一个测试案例中，我们有 $n&#x3D;2$ 。其中一种可能的排列方式是</p>
+<p><img src="https://espresso.codeforces.com/619f3eb4f0a07b27282e90e698cf25f3ab939167.png" srcset="/img/loading.gif" lazyload> 单元格位于 $(1,1)$ 和 $(1,2)$ 的排列。</p>
+<p>在这种情况下为 $\mathcal{H}&#x3D;{|1-1|+|1-1|,|1-1|+|2-2|,|1-1|+|1-2|}&#x3D;{0,0,1}&#x3D;{0,1}$ 。因此， $\mathcal{H}$ 的大小为 $2$ 。可以证明这是最可能的答案。</p>
+<p>在第二个测试案例中，我们有 $n&#x3D;3$ 。最佳排列是</p>
+<p><img src="https://espresso.codeforces.com/59007fd957d51732d99aff9e1f38c3e56e41780a.png" srcset="/img/loading.gif" lazyload> 单元格位于 $(2,1)$ 、 $(2,3)$ 和 $(3,1)$ 的排列。</p>
+<p>$\mathcal{H}$ = ${|2-2|+|1-1|,|2-2|+|3-3|,|3-3|+|1-1|,|2-2|+|1-3|,|2-3|+|1-1|,|2-3|+|3-1|}$ = ${0,0,0,2,1,3}$ = ${0,1,2,3}$ .</p>
+<p>对于 $n&#x3D;4$ ，一种可能的排列方式是：</p>
+<p><img src="https://espresso.codeforces.com/8dc634c93736dd491405e75b24d2c3b9a483174f.png" srcset="/img/loading.gif" lazyload></p>
+<p>对于 $n&#x3D;5$ ，可能的排列方式是：</p>
+<p><img src="https://espresso.codeforces.com/6303c5548a763408f28244b54dddbfcdcba2631d.png" srcset="/img/loading.gif" lazyload></p>
+<p>对于 $n&#x3D;6$ ，一种可能的排列方式是：</p>
+<p><img src="https://espresso.codeforces.com/27daf1094c624409e4a29d80d4b47de49a8ecdab.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h1><blockquote>
+<p>​	一般来说这种题目我一般第一个想法大多都是取寻找一下对角线这种情况，但是对于这种情况我们只可以得到$2,4,6,…,2(n - 1)$,这些情况，如果我们可以找到一种情况找到$1~2(n - 1)$的话，这种方式就一定是最优解，怎么搞呢？我们需要知道我们之所以对角线只能弄出这种偶数的倍数的情况是因为每个点之间的距离都是2的倍数，那么我们将其中$2$个点之间的位置的长度设置为1就可以了，这个操作可以选择将第2个结点的位置设置为$(1, 2)$即可。</p>
+</blockquote>
+<h1 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin &gt;&gt; n;<br>    cout &lt;&lt; <span class="hljs-string">&quot;1 1\n&quot;</span>;<br>    cout &lt;&lt; <span class="hljs-string">&quot;1 2\n&quot;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++) &#123;<br>        cout &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;&quot;</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="F-Equal-XOR-Segments-continous-study……"><a href="#F-Equal-XOR-Segments-continous-study……" class="headerlink" title="F. Equal XOR Segments)(continous study……)"></a><font color="red">F. Equal XOR Segments)(continous study……)</font></h1><p>Let us call an array $x_1,\dots,x_m$ interesting if it is possible to divide the array into $k\gt1$ parts so that <a target="_blank" rel="noopener" href="http://tiny.cc/xor_wiki_eng">bitwise XOR</a> of values from each part are equal.</p>
+<p>More formally, you must split array $x$ into $k$ consecutive segments, each element of $x$ must belong to <strong>exactly</strong> $1$ segment. Let $y_1,\dots,y_k$ be the XOR of elements from each part respectively. Then $y_1&#x3D;y_2&#x3D;\dots&#x3D;y_k$ must be fulfilled.</p>
+<p>For example, if $x &#x3D; [1, 1, 2, 3, 0]$, you can split it as follows: $[\color{blue}1], [\color{green}1], [\color{red}2, \color{red}3, \color{red}0]$. Indeed $\color{blue}1&#x3D;\color{green}1&#x3D;\color{red}2 \oplus \color{red}3\oplus \color{red}0$.</p>
+<p>You are given an array $a_1,\dots,a_n$. Your task is to answer $q$ queries:</p>
+<ul>
+<li>For fixed $l$, $r$, determine whether the subarray $a_l,a_{l+1},\dots,a_r$ is interesting.</li>
+</ul>
+<p><strong>Input</strong></p>
+<p>The first line contains a single integer $t$ ($1\le t\le 10^4$) — the number of test cases.</p>
+<p>The first line of each test case contains two integers $n$ and $q$ ($2 \le n \le 2 \cdot 10^5$, $1 \le q \le 2 \cdot 10^5$) — the number of elements in the array and the number of queries respectively.</p>
+<p>The next line contains $n$ integers $a_1,\dots,a_n$ ($0 \le a_i \lt 2^{30}$) — elements of the array.</p>
+<p>Each of the next $q$ lines contains two integers $l$ and $r$ ($1 \le l \lt r \le n$) describing the query.</p>
+<p>It is guaranteed that the sum of $n$ over all testcases does not exceed $2 \cdot 10^5$.</p>
+<p>It is guaranteed that the sum of $q$ over all testcases does not exceed $2 \cdot 10^5$.</p>
+<p><strong>Output</strong></p>
+<p>For each query, output “YES” if the subarray is interesting and “NO” otherwise.</p>
+<p>You can output “Yes” and “No” in any case (for example, the strings “yES”, “yes”, and “Yes” will be recognized as correct answers).</p>
+<h5 id="Example-8"><a href="#Example-8" class="headerlink" title="Example"></a>Example</h5><h5 id="input-8"><a href="#input-8" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">4</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">12 </span><span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">9</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">7</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">6</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">7</span><br><span class="hljs-symbol">11 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">11</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-8"><a href="#output-8" class="headerlink" title="output"></a>output</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">YES</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>Explanation for the first test case:</p>
+<p>The first query is described in the statement.</p>
+<p>In the second query, we should divide $[1,2,3]$. A possible division is $[1,2],[3]$, since $1\oplus 2&#x3D;3$.</p>
+<p>It can be shown that for queries $3,4,5$, the subarrays are not interesting.</p>
+<h1 id="翻译-5"><a href="#翻译-5" class="headerlink" title="翻译"></a>翻译</h1><p>如果可以将数组分成 $k\gt 1$ 部分，使得每一部分的值的 <a target="_blank" rel="noopener" href="http://tiny.cc/xor_wiki_eng">bitwise XOR</a> 都相等，那么我们就称这个数组为 $x_1,\dots,x_m$ 有意思。</p>
+<p>更正式地说，你必须将数组 $x$ 分割成 $k$ 个连续的部分，而 $x$ 中的每个元素都必须准确地**属于 $1$ 个部分。设 $y_1,\dots,y_k$ 分别是各部分元素的 XOR。那么 $y_1&#x3D;y_2&#x3D;\dots&#x3D;y_k$ 必须满足。</p>
+<p>例如，如果是 $x &#x3D; [1, 1, 2, 3, 0]$ ，可以将其拆分如下： $[\color{blue}1], [\color{green}1], [\color{red}2, \color{red}3, \color{red}0]$ .确实是 $\color{blue}1&#x3D;\color{green}1&#x3D;\color{red}2 \oplus \color{red}3\oplus \color{red}0$ 。</p>
+<p>给你一个数组 $a_1,\dots,a_n$ 。你的任务是回答 $q$ 个查询：</p>
+<ul>
+<li>对于固定的 $l$ , $r$ , 判断子数组 $a_l,a_{l+1},\dots,a_r$​ 是否有趣。</li>
+</ul>
+<p><strong>输入</strong></p>
+<p>第一行包含一个整数 $t$ ( $1\le t\le 10^4$ ) - 测试用例数。</p>
+<p>每个测试用例的第一行包含两个整数 $n$ 和 $q$ ( $2 \le n \le 2 \cdot 10^5$ , $1 \le q \le 2 \cdot 10^5$ )–分别是数组中的元素个数和查询次数。</p>
+<p>下一行包含 $n$ 个整数 $a_1,\dots,a_n$ ( $0 \le a_i \lt 2^{30}$ ) - 数组元素。</p>
+<p>接下来的 {326120} 行分别包含两个整数 $l$ 和 $r$ ( $1 \le l \lt r \le n$ )，用于描述查询。</p>
+<p>保证所有测试用例中 $n$ 的总和不超过 $2 \cdot 10^5$ 。</p>
+<p>保证所有测试用例中 $q$ 的总和不超过 $2 \cdot 10^5$​ 。</p>
+<p><strong>输出</strong></p>
+<p>对于每个查询，如果子数组有趣，则输出 “YES”，否则输出 “NO”。</p>
+<p>您可以在任何情况下输出 “YES “和 “NO”（例如，字符串 “yES”、”yes “和 “Yes “将被识别为正确答案）。</p>
+<h5 id="Example-9"><a href="#Example-9" class="headerlink" title="Example"></a>Example</h5><h5 id="input-9"><a href="#input-9" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">4</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">12 </span><span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">9</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">7</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">6</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">7</span><br><span class="hljs-symbol">11 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">11</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-9"><a href="#output-9" class="headerlink" title="output"></a>output</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">YES</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>注</strong></p>
+<p>第一个测试案例的解释：</p>
+<p>语句中描述了第一个查询。</p>
+<p>在第二个查询中，我们应该除以 $[1,2,3]$ 。可能的除法是 $[1,2],[3]$ ，因为 $1\oplus 2&#x3D;3$ 。</p>
+<p>可以证明，对于查询 $3,4,5$ ，子数组并不重要。</p>
+<h2 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<pre><code class="hljs">        $bitwise XOR$表示：按位异或运算符。
+    
+        **前沿：**
+    
+        ​	这道题目的话我们基本只需要知道一件事情就很简单了，就是异或操作是有前缀和的性质的，因为异或操作的特征之一：相同为0，不同为1。如此假设我们求出了前l项和r项的异或和，那么我们要是想找到l~r项的异或和的话就只需要a[r] ^ a[l - 1]，前面的异或是相同的，所以会直接相同抵消为0。
+    
+        **思路：**
+    
+        ​	这道题目我们稍微推导一下就可以知道，如果一个子序列满足条件，就一定满足以下条件之一：
+    
+        - 全部异或和为0
+        - 可以分为3段异或和，又由于3段异或和是相同的，所以l~第2段的右端点位置j的异或和为0.也就是说设三段的4个端点分别为**l, i, j, r**，那么我们其实是可以知道$a[i] = a[r]$的，同时$a[j] = a[l - 1]$的。如此我们只要使用一个$Map$存一下各个异或和对应的下标，然后我们在需要寻找对应异或和下标的时候对其进行二分查找即可，时间复杂度为$O(qlogn)$
+</code></pre>
+</blockquote>
+<h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unordered_map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;set&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stack&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;deque&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bitset&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><br><span class="hljs-comment">// #define int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ull unsigned long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ed <span class="hljs-string">&#x27;\n&#x27;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fi first</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> se second</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fore(i, l, r) for(int i = (int)(l); i &lt;=(int)r; i++)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> debug(x) cout &lt;&lt; <span class="hljs-string">&quot;#x = &quot;</span> &lt;&lt; x &lt;&lt; ed;</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PI acos(-1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> E exp(1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> IOS ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> me0(st) memset(st, 0, sizeof st)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> me3f(st) memset(st, 0x3f, sizeof st)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pdf(x) printf(<span class="hljs-string">&quot;%lf&quot;</span>, double(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pif(x) printf(<span class="hljs-string">&quot;%d &quot;</span>,  int(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> scf(x) printf(<span class="hljs-string">&quot;%d&quot;</span>,  int(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> re return</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> max(a, b) ((a) &gt; (b) ? (a) : (b))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> min(a, b) ((a) &lt; (b) ? (a) : (b))</span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; PII;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">double</span> db;<br><br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> INF = <span class="hljs-number">1e9</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">2e5</span> + <span class="hljs-number">10</span>;<br><br>LL a[N];<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    map&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;&gt; Map;<br>    <span class="hljs-type">int</span> n, q, ii;<br>    cin &gt;&gt; n &gt;&gt; q;<br>    fore (ii, <span class="hljs-number">1</span>, n) cin &gt;&gt; a[ii];<br>    fore (ii, <span class="hljs-number">1</span>, n) &#123;<br>        a[ii] ^= a[ii - <span class="hljs-number">1</span>];<br>        Map[a[ii]].<span class="hljs-built_in">push_back</span>(ii);<br>    &#125;<br><br>    <span class="hljs-keyword">while</span> (q--) &#123;<br>        <span class="hljs-type">int</span> l, r, k;<br>        cin &gt;&gt; l &gt;&gt; r;<br>        k = a[r] ^ a[l - <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">if</span> (k == <span class="hljs-number">0</span>) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; ed;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <br>        <span class="hljs-comment">// 1、快速找到 i &gt;= l的最小下标使得 s[i] = s[r]</span><br>		<span class="hljs-keyword">auto</span> i = <span class="hljs-built_in">lower_bound</span>(Map[a[r]].<span class="hljs-built_in">begin</span>(),Map[a[r]].<span class="hljs-built_in">end</span>(),l) ;<br>		<span class="hljs-keyword">if</span>(i == Map[a[r]].<span class="hljs-built_in">end</span>() || *i &gt;= r)&#123;<br>			cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; ed ;<br>			<span class="hljs-keyword">continue</span>;<br>		&#125;<br>		<span class="hljs-comment">// 2、快速找到最小的 j &gt; i 使 s[j] = s[l - 1]</span><br>		<span class="hljs-keyword">auto</span> j = <span class="hljs-built_in">upper_bound</span>(Map[a[l - <span class="hljs-number">1</span>]].<span class="hljs-built_in">begin</span>(),Map[a[l - <span class="hljs-number">1</span>]].<span class="hljs-built_in">end</span>(), *i);<br><br>		<span class="hljs-keyword">if</span>(j == Map[a[l - <span class="hljs-number">1</span>]].<span class="hljs-built_in">end</span>())&#123;<br>		    cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; ed;<br>		    <span class="hljs-keyword">continue</span>;<br>		&#125;<br>		<span class="hljs-keyword">if</span>(*i &lt; *j &amp;&amp; *j &lt; r) cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; ed ;<br>		<span class="hljs-keyword">else</span> cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; ed ;<br>	&#125; <br>    cout &lt;&lt; ed;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IOS;<br>    <span class="hljs-type">int</span> _ = <span class="hljs-number">1</span>;<br>    cin &gt;&gt; _;<br>    <span class="hljs-keyword">while</span>(_--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br>    re <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/05/05/%E6%9D%82%E9%A2%98%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%BB%B4%E5%BA%A6/" title="杂题——第五维度">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">杂题——第五维度</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/05/05/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94Codeforces%E2%80%94%E2%80%94CodeforcesRound38-div3/" title="算法练习专栏——Codeforces——CodeforcesRound38-div3">
+                        <span class="hidden-mobile">算法练习专栏——Codeforces——CodeforcesRound38-div3</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

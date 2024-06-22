@@ -1,0 +1,960 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言​	先照顾一下基础薄弱的同学，介绍一下什么是栈。 ​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈   进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进  出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1  空栈：栈内没有小球（元素）  一、模拟栈（简单-）实现一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法学习专栏——栈（一）">
+<meta property="og:url" content="http://example.com/2024/02/11/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="前言​	先照顾一下基础薄弱的同学，介绍一下什么是栈。 ​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈   进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进  出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1  空栈：栈内没有小球（元素）  一、模拟栈（简单-）实现一个">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404292224130.webp">
+<meta property="article:published_time" content="2024-02-11T15:09:48.000Z">
+<meta property="article:modified_time" content="2024-04-29T14:41:35.201Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="C++基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404292224130.webp">
+  
+  
+  
+  <title>算法学习专栏——栈（一） - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="算法学习专栏——栈（一）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-11 23:09" pubdate>
+          2024年2月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          536 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">算法学习专栏——栈（一）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	先照顾一下基础薄弱的同学，介绍一下什么是栈。</p>
+<p>​	栈就是一个头开底闭的一个盒子，首先看一下下面的动画视频来了解一下栈</p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112052380.png" srcset="/img/loading.gif" lazyload alt="image-20240211205239864" style="zoom:50%;" />
+
+<h4 id="进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进"><a href="#进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进" class="headerlink" title="进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进"></a>进栈操作（栈顶插入一个元素）：这个过程是一个一个进的，球1进完，球2再进</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112054922.png" srcset="/img/loading.gif" lazyload alt="image-20240211205345226" style="zoom:50%;" />
+
+<h4 id="出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1"><a href="#出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1" class="headerlink" title="出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1"></a>出栈操作（从栈顶弹出一个数）：必须按照从上往下的顺序弹出栈里元素操作，比如下图，不可以先将球1拿出来，必须先将球2拿出来之后再拿球1</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112055341.png" srcset="/img/loading.gif" lazyload alt="image-20240211205537544" style="zoom:50%;" />
+
+<h4 id="空栈：栈内没有小球（元素）"><a href="#空栈：栈内没有小球（元素）" class="headerlink" title="空栈：栈内没有小球（元素）"></a>空栈：栈内没有小球（元素）</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112058912.png" srcset="/img/loading.gif" lazyload alt="image-20240211205803296" style="zoom:50%;" />
+
+<h2 id="一、模拟栈（简单-）"><a href="#一、模拟栈（简单-）" class="headerlink" title="一、模拟栈（简单-）"></a>一、模拟栈<font color='green'>（简单-）</font></h2><p>实现一个栈，栈初始为空，支持四种操作：</p>
+<ol>
+<li><code>push x</code> – 向栈顶插入一个数 x；</li>
+<li><code>pop</code> – 从栈顶弹出一个数；</li>
+<li><code>empty</code> – 判断栈是否为空；</li>
+<li><code>query</code> – 查询栈顶元素。</li>
+</ol>
+<p>现在要对栈进行 M 个操作，其中的每个操作 33 和操作 44 都要输出相应的结果。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 M，表示操作次数。</p>
+<p>接下来 M 行，每行包含一个操作命令，操作命令为 <code>push x</code>，<code>pop</code>，<code>empty</code>，<code>query</code> 中的一种。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>对于每个 <code>empty</code> 和 <code>query</code> 操作都要输出一个查询结果，每个结果占一行。</p>
+<p>其中，<code>empty</code> 操作的查询结果为 <code>YES</code> 或 <code>NO</code>，<code>query</code> 操作的查询结果为一个整数，表示栈顶元素的值。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤M≤100000\<br>1≤x≤109<br>$$</p>
+<p>所有操作保证合法。</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-number">10</span><br><span class="hljs-built_in">push</span> <span class="hljs-number">5</span><br>query<br><span class="hljs-built_in">push</span> <span class="hljs-number">6</span><br><span class="hljs-built_in">pop</span><br>query<br><span class="hljs-built_in">pop</span><br>empty<br><span class="hljs-built_in">push</span> <span class="hljs-number">4</span><br>query<br>empty<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-number">5</span><br><span class="hljs-number">5</span><br><span class="hljs-keyword">YES</span><br><span class="hljs-number">4</span><br><span class="hljs-keyword">NO</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>​	<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112130123.png" srcset="/img/loading.gif" lazyload alt="image-20240211213008658" style="zoom:50%;" /></p>
+<p>​	此时的top&#x3D;3，指向的是元素st[3] &#x3D; 4。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+using namespace std;
+const int N = 1e5 + 10;
+int st[N],top;
+int n;
+// 初始化栈
+void Init()
+{
+    top = -1; // top是栈顶，一开始没有元素，初始化为-1,top指向的就是栈顶部元素的下标，请看上图理解top
+}
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >> n;
+    Init();//1、初始化栈
+    while (n--)
+    {
+        string s;
+        cin >> s;
+        if (s == "push") // 入栈
+        {
+            int x;
+            cin >> x;
+            st[++top] = x;
+        }
+        else if (s == "pop") // 出栈
+        {
+            top--;
+        }
+        else if (s == "empty") // 判断栈是否为空
+        {
+            if(top == -1) cout << "YES\n"; 
+            else cout << "NO\n";
+        }
+        else // 查询栈的顶部元素
+        {
+            cout << st[top] << '\n';            
+        }
+    }
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+
+<h2 id="二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）"><a href="#二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）" class="headerlink" title="二、火车进栈（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）"></a>二、火车进栈<font color='green'>（这道题目大家可以先放着，因为涉及到了后面的一个递归算法，所以不会写也没有很大的关系，简单）</font></h2><p>这里有 n 列火车将要进站再出站，但是，每列火车只有 11 节，那就是车头。</p>
+<p>这 n 列火车按 1 到 n 的顺序从东方左转进站，这个车站是南北方向的，它虽然无限长，只可惜是一个死胡同，而且站台只有一条股道，火车只能倒着从西方出去，而且每列火车必须进站，先进后出。</p>
+<p>也就是说这个火车站其实就相当于一个栈，每次可以让右侧头火车进栈，或者让栈顶火车出站。</p>
+<p>下面是火车进站的一种方式的动态图：</p>
+<p>​						<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402112112783.gif" srcset="/img/loading.gif" lazyload alt="动画" style="zoom:30%;" /></p>
+<p>现在请你按字典序输出前 20 种可能的出栈方案。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一个整数 n，代表火车数量。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>按照《字典序》输出前 20 种答案，每行一种，不要空格。</p>
+<h4 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a>数据范围</h4><p>1≤n≤20</p>
+<h4 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">3<br></code></pre></td></tr></table></figure>
+
+<h4 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs">123<br>132<br>213<br>231<br>321<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>​	使用最基础的dfs的思想</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include< iostream>
+#include< vector>
+using namespace std;
+const int N = 2e1 + 5;
+int n, remain = 0;
+int tt, stk[N];
+vector< int> path;
+void dfs(int u) {
+    if (u == n + 1) { // edge：边界
+        if (++remain > 20) {
+            exit(0);
+        }
+        for (auto x:path) { //输出路径中的
+            cout << x;
+        }
+        // 如果没有数字可用了, 那么输出一下path+栈中的数字
+        for (int i = tt - 1; i >= 0; i--) { //输出栈中剩下的(后进先出
+            cout << stk[i];
+        }
+        cout << endl;
+        return;
+    }
+    if (tt) {
+        path.push_back(stk[--tt]);
+        dfs(u);
+        stk[tt++] = path.back();
+        path.pop_back();
+    }
+    stk[tt++] = u;
+    dfs(u + 1);
+    tt--;
+}
+int main() {
+    cin >> n;
+    dfs(1);
+    return 0;
+}
+        </blockcode>
+    </pre>
+</details>
+
+
+
+
+<h2 id="三、有效括号（简单-）"><a href="#三、有效括号（简单-）" class="headerlink" title="三、有效括号（简单+）"></a>三、有效括号<font color='green'>（简单+）</font></h2><p>小刘在大一下学期学习到了数据结构栈操作中的经典例题，但是他不会写，请帮助他编写C++代码解决下列例题。</p>
+<p>给定一个只包括 ‘(’，‘)’，‘{’，‘}’，‘[’，‘]’ 的字符串 s ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<p>左括号必须用相同类型的右括号闭合。</p>
+<p>左括号必须以正确的顺序闭合。</p>
+<p>每个右括号都有一个对应的相同类型的左括号。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “()”<br>输出：<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<p>示例 2：</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “()[]&#123;&#125;”<br>输出：<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = “(]”<br>输出：<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>&lt;= s.length &lt;= <span class="hljs-number">104</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>s 仅由括号 <code>‘()[]&#123;&#125;’</code> 组成</p>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>​	代码中有解释，基本就是按照栈的基本操作思路实现的。</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><details>
+    <summary>答案（请自己先思考一下再参考）</summary>
+    <pre>
+        <blockcode>
+#include < iostream>
+#include < algorithm>
+#include < stack>
+using namespace std;
+int main()
+{
+    string s;
+    cin >> s;
+    if(s.size()== 0)
+    {
+        cout << "false"; 
+        return 0;
+    }
+    if(s.size()%2 == 1)
+    {
+        cout << "false";
+        return 0;
+    }
+    if(s[0] &&(s[0]== ']' || s[0]== '}'||s[0] == ')'  )) {
+        cout <<  "false";
+        return 0;
+    }
+    int length = s.size() ; 
+    stack< char> charst ; 
+    char current_deal_char; // 当前处理的字符
+    for(int i = 0 ;i < length ; i++) {
+        if(charst.size() == 0 && (s[i]== ']' || s[i]== '}'||s[i] == ')'  )){
+            cout << "false";
+            return 0;
+        }
+        // 如果遇到左括号，入栈
+        if(s[i] == '(' || s[i] == '{' || s[i] == '['){ 
+            charst.push(s[i]) ; 
+        } 
+        else if(s[i]== ']' || s[i]== '}'||s[i] == ')'){
+            // 如果遇到右括号
+            char tmp = charst.top() ; 
+            //cout<< tmp << endl; 
+            if(s[i] ==']' && tmp =='[') {
+                // 如果相等，则抵消
+                charst.pop() ; 
+            }else if(s[i] == ')' && tmp == '(') {
+                charst.pop() ; 
+            }else if(s[i] == '}' && tmp == '{') {     
+                charst.pop() ; 
+            }else {
+                cout << "false";
+                return 0;
+            }
+        }
+    }
+    // cout<< charst.size()<< endl;
+    cout << (charst.empty() == 1 ? "true" : "false");
+}
+        </blockcode>
+    </pre>
+</details>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/12/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E6%A0%88%EF%BC%88%E4%BA%8C%EF%BC%89/" title="算法学习专栏——栈（二）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法学习专栏——栈（二）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/11/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE/" title="算法学习专栏——进制转换类型题目">
+                        <span class="hidden-mobile">算法学习专栏——进制转换类型题目</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

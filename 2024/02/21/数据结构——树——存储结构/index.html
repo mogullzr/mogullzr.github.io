@@ -1,0 +1,717 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="森林的基本概念    一、双亲表示法（顺序存储）描述 每个结点中保存指向双亲的“指针”  结构体12345678910#define MAX_TREE_SIZE 100 		 &#x2F;&#x2F; 树中最多的结点数typedef struct &#123; 		         &#x2F;&#x2F; 树的结点定义    ElemType data;        		 &#x2F;&#x2F; 数据元素    int parent;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="27、数据结构——树——存储结构">
+<meta property="og:url" content="http://example.com/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%91%E2%80%94%E2%80%94%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="森林的基本概念    一、双亲表示法（顺序存储）描述 每个结点中保存指向双亲的“指针”  结构体12345678910#define MAX_TREE_SIZE 100 		 &#x2F;&#x2F; 树中最多的结点数typedef struct &#123; 		         &#x2F;&#x2F; 树的结点定义    ElemType data;        		 &#x2F;&#x2F; 数据元素    int parent;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+<meta property="article:published_time" content="2024-02-21T15:04:23.000Z">
+<meta property="article:modified_time" content="2024-02-21T15:04:23.000Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="底层">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401302216901.jpg">
+  
+  
+  
+  <title>27、数据结构——树——存储结构 - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403091115002.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="27、数据结构——树——存储结构"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-21 23:04" pubdate>
+          2024年2月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          815 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">27、数据结构——树——存储结构</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="森林的基本概念"><a href="#森林的基本概念" class="headerlink" title="森林的基本概念"></a>森林的基本概念</h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101327629.png" srcset="/img/loading.gif" lazyload alt="image-20240310132742766" style="zoom:50%;" />
+
+
+
+<h2 id="一、双亲表示法（顺序存储）"><a href="#一、双亲表示法（顺序存储）" class="headerlink" title="一、双亲表示法（顺序存储）"></a>一、双亲表示法（顺序存储）</h2><h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><blockquote>
+<p>每个结点中保存指向双亲的“指针”</p>
+</blockquote>
+<h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAX_TREE_SIZE 100 		 <span class="hljs-comment">// 树中最多的结点数</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123; 		         <span class="hljs-comment">// 树的结点定义</span><br>    ElemType data;        		 <span class="hljs-comment">// 数据元素</span><br>    <span class="hljs-type">int</span> parent;           		 <span class="hljs-comment">// 双亲位置域，当parent==-1的时候该结点无双亲结点，也就是根节点</span><br>&#125;PTNode;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123;<br>    PTNode nodes[MAX_TREE_SIZE]; <span class="hljs-comment">// 双亲表示 </span><br>    <span class="hljs-type">int</span> n;                       <span class="hljs-comment">// 结点数</span><br>&#125;PTree;<br></code></pre></td></tr></table></figure>
+
+<h5 id="注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。"><a href="#注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。" class="headerlink" title="注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。"></a><font color='red'>注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。</font></h5><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>​	查找某个特定结点的双亲结点时候会很方便</p>
+<h4 id="添加节点和删除节点"><a href="#添加节点和删除节点" class="headerlink" title="添加节点和删除节点"></a>添加节点和删除节点</h4><p><strong>添加叶子节点：</strong> 加上节点的时候需要将其双亲节点记录一下。</p>
+<p><strong>删除叶子节点：</strong> 删除节点的时候需要将其双亲节点删除：</p>
+<ul>
+<li>这个时候你可以选择将该结点的双亲结点设置为-1，表示该位置是空的；<strong>（缺点：在再次进行遍历操作的时候会出现空数据情况从而导致遍历变慢，同时还会存在空间利用率低的情况）</strong></li>
+<li>也可以将我们存储数组的最后一个元素移动到这个删除节点的位置以保证所有的存储单元对应结点都是有效的</li>
+</ul>
+<p><strong>删除分支结点：</strong> 这个时候我们需要删除的就是以这个分支节点为根节点的子树中所有的结点了。</p>
+<h2 id="二、孩子表示法（顺序-链式存储）"><a href="#二、孩子表示法（顺序-链式存储）" class="headerlink" title="二、孩子表示法（顺序+链式存储）"></a>二、孩子表示法（顺序+链式存储）</h2><h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h3><p>​	顺序存储各个节点，每个结点中保存孩子结点的链表头指针。</p>
+<h3 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体"></a>结构体</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">CTNode</span> &#123;<br>    <span class="hljs-type">int</span> child; <span class="hljs-comment">// 孩子结点在数组中的位置</span><br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CTNode</span> *next; <span class="hljs-comment">// 下一个孩子</span><br>&#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span>  &#123;<br>    ElemType data;<br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CTNode</span> *firstChild; <span class="hljs-comment">// 第一个孩子</span><br>&#125; CTBox;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123;<br>    CTBox nodes[MAX_TREE_SIZE];<br>    <span class="hljs-type">int</span> n, r; <span class="hljs-comment">// 结点和根的位置</span><br>&#125;CTree;<br></code></pre></td></tr></table></figure>
+
+<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101412187.png" srcset="/img/loading.gif" lazyload alt="image-20240310141218213" style="zoom:50%;" />
+
+<h3 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h3><ul>
+<li>这种存储方式，很明显：寻找某个结点的孩子结点就会变得非常方便，但是找双亲结点就有点麻烦了<strong>（找双亲这里提供一种方法，就是对所有结点A&#x2F;B&#x2F;C&#x2F;D&#x2F;E的孩子结点进行遍历，由于一个结点只有一个双亲结点，所有一旦搜索到寻找结点为X结点的孩子结点，那么X结点就是寻找结点的双亲结点）</strong></li>
+</ul>
+<h2 id="三、孩子兄弟表示法（链式存储）"><a href="#三、孩子兄弟表示法（链式存储）" class="headerlink" title="三、孩子兄弟表示法（链式存储）"></a>三、孩子兄弟表示法（链式存储）</h2><h3 id="结构体-2"><a href="#结构体-2" class="headerlink" title="结构体"></a>结构体</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CSNode</span> &#123;<br>    ElemType data; <span class="hljs-comment">// 数据域</span><br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CSNode</span> *firstchild, *nextsibling; <span class="hljs-comment">// 第一个孩子结点和兄弟结点</span><br>&#125;CSNode,*CSTree;<br></code></pre></td></tr></table></figure>
+
+
+
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101438092.png" srcset="/img/loading.gif" lazyload alt="image-20240310143814680" style="zoom:50%;" />
+
+<p>我们之后还会学习如何进行树和二叉树和森林之间的转换，这里介绍的就是树转换为二叉树。</p>
+<p>详细过程请看 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1b7411N798/?p=52&vd_source=2a4a0816a6950de0fb15868c762fad9c">链接</a> <strong>7min25s~末尾</strong> <font color='red'><strong>这一部分是期末考试的重大考点之一</strong></font> </p>
+<h4 id="一节内容是28、树——树和森林的遍历……"><a href="#一节内容是28、树——树和森林的遍历……" class="headerlink" title="一节内容是28、树——树和森林的遍历……."></a>一节内容是28、树——树和森林的遍历…….</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%91%E2%80%94%E2%80%94%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97%E7%9A%84%E9%81%8D%E5%8E%86/" title="28、数据结构——树——树和森林的遍历">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">28、数据结构——树——树和森林的遍历</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%94%E2%80%94%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/" title="26、数据结构——二叉树——线索二叉树">
+                        <span class="hidden-mobile">26、数据结构——二叉树——线索二叉树</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>

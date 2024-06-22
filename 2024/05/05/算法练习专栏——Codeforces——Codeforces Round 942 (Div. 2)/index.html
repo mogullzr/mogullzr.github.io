@@ -1,0 +1,933 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <link rel="icon" href="/themes%5Cfluid%5Csource%5Cimg%5Cfluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mogullzr">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="A：Contest ProposalProblem - A - Codeforces A contest contains $n$ problems and the difficulty of the $i$-th problem is expected to be at most $b_i$. There are already $n$ problem proposals and the dif">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法练习专栏——Codeforces——Codeforces Round 942 (Div. 2)">
+<meta property="og:url" content="http://example.com/2024/05/05/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94Codeforces%E2%80%94%E2%80%94Codeforces%20Round%20942%20(Div.%202)/index.html">
+<meta property="og:site_name" content="程序书架">
+<meta property="og:description" content="A：Contest ProposalProblem - A - Codeforces A contest contains $n$ problems and the difficulty of the $i$-th problem is expected to be at most $b_i$. There are already $n$ problem proposals and the dif">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403161128034.jpg">
+<meta property="article:published_time" content="2024-05-05T05:46:43.000Z">
+<meta property="article:modified_time" content="2024-05-15T12:09:24.422Z">
+<meta property="article:author" content="Mogullzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="ACM">
+<meta property="article:tag" content="Codeforces">
+<meta property="article:tag" content="比赛">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403161128034.jpg">
+  
+  
+  
+  <title>算法练习专栏——Codeforces——Codeforces Round 942 (Div. 2) - 程序书架</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/scrolling.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"VaWI69hN1Uf358CVZVg2Iyit-MdYXbMMI","app_key":"fXsBv2VvrZmTmQHp5XNkk0yB","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mogullzr</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/" target="_self">
+                <i class="iconfont icon-music"></i>
+                <span>音乐</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>须知</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405082113225.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="算法练习专栏——Codeforces——Codeforces Round 942 (Div. 2)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-05-05 13:46" pubdate>
+          2024年5月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">算法练习专栏——Codeforces——Codeforces Round 942 (Div. 2)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="A：Contest-Proposal"><a href="#A：Contest-Proposal" class="headerlink" title="A：Contest Proposal"></a>A：Contest Proposal</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1972/problem/A">Problem - A - Codeforces</a></p>
+<p>A contest contains $n$ problems and the difficulty of the $i$-th problem is expected to be <strong>at most</strong> $b_i$. There are already $n$ problem proposals and the difficulty of the $i$-th problem is $a_i$. Initially, both $a_1, a_2, \ldots, a_n$ and $b_1, b_2, \ldots, b_n$ are sorted in non-decreasing order. Some of the problems may be more difficult than expected, so the writers must propose more problems. When a new problem with difficulty $w$ is proposed, the most difficult problem will be deleted from the contest, and the problems will be sorted in a way that the difficulties are non-decreasing. In other words, in each operation, you choose an integer $w$, insert it into the array $a$, sort array $a$ in non-decreasing order, and remove the last element from it. Find the minimum number of new problems to make $a_i\le b_i$ for all $i$.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>Each test contains multiple test cases. The first line contains the number of test cases $t$ ($1\le t\le 100$). The description of the test cases follows. The first line of each test case contains only one positive integer $n$ ($1 \leq n \leq 100$), representing the number of problems. The second line of each test case contains an array $a$ of length $n$ ($1\le a_1\le a_2\le\cdots\le a_n\le 10^9$). The third line of each test case contains an array $b$ of length $n$ ($1\le b_1\le b_2\le\cdots\le b_n\le 10^9$).</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>For each test case, print an integer as your answer in a new line.</p>
+<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">2</span><br><span class="hljs-number">6</span><br><span class="hljs-symbol">1000 </span><span class="hljs-number">1400</span> <span class="hljs-number">2000</span> <span class="hljs-number">2000</span> <span class="hljs-number">2200</span> <span class="hljs-number">2700</span><br><span class="hljs-symbol">800 </span><span class="hljs-number">1200</span> <span class="hljs-number">1500</span> <span class="hljs-number">1800</span> <span class="hljs-number">2200</span> <span class="hljs-number">3000</span><br><span class="hljs-number">6</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="output"><a href="#output" class="headerlink" title="output"></a>output</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">2<br>3<br></code></pre></td></tr></table></figure>
+
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a><strong>Note</strong></h2><p>In the first test case: -   Propose a problem with difficulty $w&#x3D;800$ and $a$ becomes $[800,1000,1400,2000,2000,2200]$. -   Propose a problem with difficulty $w&#x3D;1800$ and $a$ becomes $[800,1000,1400,1800,2000,2000]$. It can be proved that it’s impossible to reach the goal by proposing fewer new problems. In the second test case: -   Propose a problem with difficulty $w&#x3D;1$ and $a$ becomes $[1,4,5,6,7,8]$. -   Propose a problem with difficulty $w&#x3D;2$ and $a$ becomes $[1,2,4,5,6,7]$. -   Propose a problem with difficulty $w&#x3D;3$ and $a$ becomes $[1,2,3,4,5,6]$. It can be proved that it’s impossible to reach the goal by proposing fewer new problems.</p>
+<h1 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h1><p>一个竞赛包含n 个问题，而第 i 个问题的难度预计最多b<del>i</del> 。现在已经有 n 个问题提案，而 i 个问题的难度是 ai 。最初，$a_1,a_2,…,a_n$ 和$b_1,b_2,…,b_n$ 都是按照不递减的顺序排列的。</p>
+<p>有些问题可能比预期的更难，因此作者必须提出更多的问题。当提出难度为 $w$ 的新问题时，最难的问题将从竞赛中删除，问题将以难度不递减的方式排序。</p>
+<p>换句话说，在每次操作中，你都要选择一个整数 $w$ ，将其插入数组 $a$ 中，对数组 $a$ 进行非递减排序，并从中删除最后一个元素。</p>
+<p>求在所有 i$ 中，使得$a_i \le b_i$ 的最小新问题数。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a><strong>输入</strong></h2><p>每个测试包含多个测试用例。第一行包含测试用例的数量 $t$ ( $1\le t\le 100$ )。测试用例说明如下。</p>
+<p>每个测试用例的第一行只包含一个正整数 $n$ ( $1 \leq n \leq 100$ )，表示问题的数量。</p>
+<p>每个测试用例的第二行包含一个长度为 $n$  $(1\le a_1 \le a_2 \le … \le a_n) $ 的数组 $a$。</p>
+<p>每个测试用例的第三行包含一个长度为 $n$  $(1\le b_1 \le b_2 \le … \le b_n)$ 的数组 $b$。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a><strong>输出</strong></h2><p>对于每个测试用例，请在新行中打印一个整数作为答案。</p>
+<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h2><h4 id="input-1"><a href="#input-1" class="headerlink" title="input"></a>input</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">2</span><br><span class="hljs-number">6</span><br><span class="hljs-symbol">1000 </span><span class="hljs-number">1400</span> <span class="hljs-number">2000</span> <span class="hljs-number">2000</span> <span class="hljs-number">2200</span> <span class="hljs-number">2700</span><br><span class="hljs-symbol">800 </span><span class="hljs-number">1200</span> <span class="hljs-number">1500</span> <span class="hljs-number">1800</span> <span class="hljs-number">2200</span> <span class="hljs-number">3000</span><br><span class="hljs-number">6</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="output-1"><a href="#output-1" class="headerlink" title="output"></a>output</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">2<br>3<br></code></pre></td></tr></table></figure>
+
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a><strong>注</strong></h2><p>在第一个测试案例中</p>
+<ul>
+<li>提出难度为 $w&#x3D;800$ 的问题， $a$ 变为 $[800,1000,1400,2000,2000,2200]$ 。</li>
+<li>提出难度为 $w&#x3D;1800$ 的问题， $a$ 变为 $[800,1000,1400,1800,2000,2000]$ 。</li>
+</ul>
+<p>可以证明，提出更少的新问题是不可能达到目标的。</p>
+<p>在第二个测试案例中</p>
+<ul>
+<li>提出一个难度为 $w&#x3D;1$ 的问题， $a$ 变为 $[1,4,5,6,7,8]$ 。</li>
+<li>提出难度为 $w&#x3D;2$ 的问题， $a$ 变为 $[1,2,4,5,6,7]$ 。</li>
+<li>提出一个难度为 $w&#x3D;3$ 的问题， $a$ 变为 $[1,2,3,4,5,6]$ 。</li>
+</ul>
+<p>可以证明，提出更少的新问题是不可能达到目标的。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">110</span>;<br><span class="hljs-type">int</span> a[N], b[N];<br> <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        <span class="hljs-type">int</span> n;<br>        cin &gt;&gt; n;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) cin &gt;&gt; a[i];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) cin &gt;&gt; b[i];<br>        <span class="hljs-type">int</span> j = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (a[j] &lt;= b[i]) &#123;<br>                j++;<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; n - j + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br><br><br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="B：Coin-Games"><a href="#B：Coin-Games" class="headerlink" title="B：Coin Games"></a>B：Coin Games</h1><p>There are $n$ coins on the table forming a circle, and each coin is either facing up or facing down. Alice and Bob take turns to play the following game, and Alice goes first.</p>
+<p>In each operation, the player chooses a facing-up coin, removes the coin, and flips the two coins that are adjacent to it. If (before the operation) there are only two coins left, then one will be removed and the other won’t be flipped (as it would be flipped twice). If (before the operation) there is only one coin left, no coins will be flipped. If (before the operation) there are no facing-up coins, the player loses.</p>
+<p>Decide who will win the game if they both play optimally. It can be proved that the game will end in a finite number of operations, and one of them will win.</p>
+<p><strong>Input</strong></p>
+<p>Each test contains multiple test cases. The first line contains the number of test cases $t$ ($1\le t\le 100$). The description of the test cases follows.</p>
+<p>The first line of each test case contains only one positive integer $n$ ($1 \leq n \leq 100$), representing the number of the coins.</p>
+<p>A string $s$ of length $n$ follows on the second line of each test case, containing only “U” and “D”, representing that each coin is facing up or facing down.</p>
+<p><strong>Output</strong></p>
+<p>For each test case, print “YES” if Alice will win the game, and “NO” otherwise.</p>
+<p>You can output the answer in any case (upper or lower). For example, the strings “yEs”, “yes”, “Yes”, and “YES” will be recognized as positive responses.</p>
+<h4 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h4><h5 id="input-2"><a href="#input-2" class="headerlink" title="input"></a>input</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">3<br>5<br>UUDUD<br>5<br>UDDUD<br>2<br>UU<br></code></pre></td></tr></table></figure>
+
+<h5 id="output-2"><a href="#output-2" class="headerlink" title="output"></a>output</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>In the first test case, the game may go as follows.</p>
+<ul>
+<li>Alice chooses the first coin and $s$ becomes “DDUU”.</li>
+<li>Bob chooses the last coin and $s$ becomes “UDD”.</li>
+<li>Alice chooses the first coin and $s$ becomes “UU”.</li>
+<li>Bob chooses the first coin and $s$ becomes “U”.</li>
+<li>Alice chooses the only coin and $s$ becomes empty.</li>
+<li>Bob can’t choose any coin now, and he loses the game.</li>
+</ul>
+<p>It can be proved that Bob will always lose if they both play optimally.</p>
+<h1 id="翻译-1"><a href="#翻译-1" class="headerlink" title="翻译"></a>翻译</h1><p>桌子上有 $$n$$ 枚硬币围成一个圆圈，每枚硬币要么朝上，要么朝下。爱丽丝和鲍勃轮流玩下面的游戏，爱丽丝先玩。</p>
+<p>在每次操作中，玩家选择一枚正面朝上的硬币，取出硬币并翻转与其相邻的两枚硬币。如果(操作前)只剩下两枚硬币，则取出一枚，另一枚不翻转(因为会翻转两次)。如果(操作前)只剩下一枚硬币，则不会翻转任何硬币。如果(操作前)没有正面朝上的硬币，玩家就输了。</p>
+<p>如果两人都以最佳方式下棋，谁会赢呢？可以证明，游戏将在有限次的操作中结束，其中一人将获胜。</p>
+<p><strong>输入</strong></p>
+<p>每个测试包含多个测试用例。第一行包含测试用例的数量 $t$ ( $1\le t\le 100$ )。测试用例说明如下。</p>
+<p>每个测试用例的第一行只包含一个正整数 $n$ ( $1 \leq n \leq 100$ )，代表硬币的数量。</p>
+<p>每个测试用例的第二行后面都有一个长度为 $n$ 的字符串 $s$ ，其中只包含 “U “和 “D”，代表每个硬币朝上或朝下。</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，如果 Alice 将赢得游戏，则打印 “YES”，否则打印 “NO”。</p>
+<p>您可以用任何大小写(大写或小写)输出答案。例如，字符串 “yEs”、”yes”、”Yes “和 “YES “将被识别为肯定回答。</p>
+<h4 id="Example-3"><a href="#Example-3" class="headerlink" title="Example"></a>Example</h4><h5 id="input-3"><a href="#input-3" class="headerlink" title="input"></a>input</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">3<br>5<br>UUDUD<br>5<br>UDDUD<br>2<br>UU<br></code></pre></td></tr></table></figure>
+
+<h5 id="output-3"><a href="#output-3" class="headerlink" title="output"></a>output</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-keyword">YES</span><br><span class="hljs-keyword">NO</span><br><span class="hljs-keyword">NO</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>注</strong></p>
+<p>在第一个测试案例中，游戏过程可能如下。</p>
+<ul>
+<li>爱丽丝选择第一枚硬币， $s$ 变成 “DDUU”。</li>
+<li>鲍勃选择最后一枚硬币， $s$ 变成 “UDD”。</li>
+<li>爱丽丝选择第一枚硬币， $s$ 变成 “UU”。</li>
+<li>鲍勃选择第一枚硬币， $s$ 变成 “U”。</li>
+<li>爱丽丝选择了唯一一枚硬币， $s$ 变成了 “空”。</li>
+<li>鲍勃现在不能选择任何一枚硬币，他输掉了游戏。</li>
+</ul>
+<p>可以证明，如果两人都以最优方式下棋，鲍勃总是会输。</p>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        <span class="hljs-type">int</span> n, res = <span class="hljs-number">0</span>;<br>        cin &gt;&gt; n;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-type">char</span> c;<br>            cin &gt;&gt; c;<br>            <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;U&#x27;</span>) res++;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (res % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) cout &lt;&lt; <span class="hljs-string">&quot;NO\n&quot;</span>;<br>        <span class="hljs-keyword">else</span> cout &lt;&lt; <span class="hljs-string">&quot;YES\n&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="C-：Permutation-Counting"><a href="#C-：Permutation-Counting" class="headerlink" title="C.：Permutation Counting"></a>C.：Permutation Counting</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1972/problem/C">Problem - C - Codeforces</a></p>
+<p>You have some cards. An integer between $1$ and $n$ is written on each card: specifically, for each $i$ from $1$ to $n$, you have $a_i$ cards which have the number $i$ written on them.</p>
+<p>There is also a shop which contains unlimited cards of each type. You have $k$ coins, so you can buy $k$ new cards in total, and the cards you buy can contain any integer between $1$ and $n$.</p>
+<p>After buying the new cards, you rearrange all your cards in a line. The score of a rearrangement is the number of (contiguous) subarrays of length $n$ which are a permutation of $[1, 2, \ldots, n]$. What’s the maximum score you can get?</p>
+<p><strong>Input</strong></p>
+<p>Each test contains multiple test cases. The first line contains the number of test cases $t\ (1\le t\le 100)$. The description of the test cases follows.</p>
+<p>The first line of each test case contains two integers $n$, $k$ ($1\le n \le 2 \cdot 10^5$, $0\le k \le 10^{12}$) — the number of distinct types of cards and the number of coins.</p>
+<p>The second line of each test case contains $n$ integers $a_1, a_2, \ldots, a_n$ ($1 \le a_i \le 10^{12}$) — the number of cards of type $i$ you have at the beginning.</p>
+<p>It is guaranteed that the sum of $n$ over all test cases does not exceed $5 \cdot 10^5$.</p>
+<p><strong>Output</strong></p>
+<p>For each test case, output a single line containing an integer: the maximum score you can get.</p>
+<h5 id="Example-4"><a href="#Example-4" class="headerlink" title="Example"></a>Example</h5><p>input</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">8</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">10</span><br><span class="hljs-number">1</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">1</span> <span class="hljs-number">8</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">6</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">6</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">7</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">10</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
+
+<p>output</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs">11<br>15<br>15<br>22<br>28<br>32<br>28<br>36<br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>In the first test case, the final (and only) array we can get is $[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]$ (including $11$ single $1$s), which contains $11$ subarrays consisting of a permutation of $[1]$.</p>
+<p>In the second test case, we can buy $0$ cards of type $1$ and $4$ cards of type $2$, and then we rearrange the cards as following: $[1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]$. There are $8$ subarrays equal to $[1, 2]$ and $7$ subarrays equal to $[2, 1]$, which make a total of $15$ subarrays which are a permutation of $[1, 2]$. It can also be proved that this is the maximum score we can get.</p>
+<p>In the third test case, one of the possible optimal rearrangements is $[3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 3]$.</p>
+<h2 id="翻译-2"><a href="#翻译-2" class="headerlink" title="翻译"></a>翻译</h2><p>你有几张牌。每张卡片上都写着一个介于 $1$ 和 $n$ 之间的整数：具体来说，从 $1$ 到 $n$ 的每张 $i$ ，你们的卡片。</p>
+<p>还有一个商店，里面有无限量的各种类型的卡片。你有 $k$ 枚金币，因此你总共可以购买 $k$ 张新卡片，你购买的卡片可以包含 $1$ 到 $n$$ 之间的任意整数。</p>
+<p>买完新牌后，你要将所有牌重新排列成一行。重新排列的得分是长度为 $n$ 的(连续)子数组的数量，这些子数组是 $[1, 2, \ldots, n]$ 的排列组合。你能得到的最高分是多少？</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，输出一行包含一个整数的数据：你能得到的最大分数。</p>
+<p><strong>输出</strong></p>
+<p>对于每个测试用例，输出一行包含一个整数的数据：你能得到的最大分数。</p>
+<h4 id="Example-5"><a href="#Example-5" class="headerlink" title="Example"></a>Example</h4><p>input</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">8</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">10</span><br><span class="hljs-number">1</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">1</span> <span class="hljs-number">8</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">6</span> <span class="hljs-number">2</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">6</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">7</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">10</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
+
+<p>output</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs">11<br>15<br>15<br>22<br>28<br>32<br>28<br>36<br></code></pre></td></tr></table></figure>
+
+<h1 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h1><blockquote>
+<p>​	本人思路：可以分析出来，将所有的数字按照1,2,3…n,1,2,3,…,n,1,2,….这样的顺序一致排列下去可以得到的排序的子数组种类最多<strong>（其实是我打表打出来的）</strong>，然后就有了两种想法，可以每n个为一组，少则用k的补上，多的一些数字往后面加上即可，什么意思呢？比如说：现在有1,2,3,数字各7,6,2,个，k&#x3D;5，那么排序下来是这样的，<code>1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,1</code>但是直接按照这种思路模拟就会很困难，我估计如果要使用这种思路来写这道题目可能要使用到树状数组了，然后还有蛮多的细节需要处理，因此我没写出来。</p>
+<p>​	之后的思路：使用贪心+二分的思想来写，这里的难点就是这个二分的点是什么，这里我们可以选择选取1~n这些数的组数来作为二分的目标，找到了最终的<code>1,2,...,n</code>的组数，而最后对于剩下多余的数字。</p>
+</blockquote>
+<h1 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">2e5</span> + <span class="hljs-number">10</span>;<br>LL a[N];<br>LL n, k;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(LL kk)</span> </span>&#123;<br>    LL sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>        <span class="hljs-keyword">if</span> (a[i] &gt;= kk) <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-keyword">else</span> sum += kk - a[i];<br>        <span class="hljs-comment">// cout &lt;&lt; sum &lt;&lt; &#x27; &#x27; &lt;&lt; k &lt;&lt; &#x27;\n&#x27;;</span><br>        <span class="hljs-keyword">if</span> (sum &gt; k) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> sum &lt;= k;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>),cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>),cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--)&#123;<br>        LL sum = <span class="hljs-number">0</span>;<br>        cin &gt;&gt; n &gt;&gt; k;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            cin &gt;&gt; a[i];<br>            sum += a[i];<br>        &#125;<br><br>        <span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + n + <span class="hljs-number">1</span>);<br>        LL l = a[<span class="hljs-number">1</span>], r = <span class="hljs-number">2e12</span> + <span class="hljs-number">10</span>;<br>        <br>        <span class="hljs-comment">// 二分找到最大可能可以组成的1,2,3...,n的组数</span><br>        <span class="hljs-keyword">while</span>(l &lt; r)&#123;<br>            LL mid = l + r + <span class="hljs-number">1</span> &gt;&gt; <span class="hljs-number">1</span> ;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">check</span>(mid)) l = mid;<br>            <span class="hljs-keyword">else</span> r = mid - <span class="hljs-number">1</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// cout &lt;&lt; r &lt;&lt; &#x27;\n&#x27;;</span><br>        <br>        <span class="hljs-comment">// 现在有 r 组 1 ~ n 的组合，那么就应该有 n (r - 1) + 1 组数据 </span><br>        LL ans = n * r - n + <span class="hljs-number">1</span>;<br><br><br>        LL checked = sum + k - <span class="hljs-number">1LL</span> * r * n;<br>        <span class="hljs-comment">// 如果我们可以通过 k 购买数字可以刚刚好组成r组的话就直接输出ans即可。</span><br>        <span class="hljs-keyword">if</span> (checked == <span class="hljs-number">0</span>) &#123;<br>            cout &lt;&lt; ans &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-comment">// 组成目标组数之后看看还可以买多少张卡片</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)<br>		&#123;<br>            <span class="hljs-keyword">if</span>(a[i] &lt; r) k -= r - a[i];<br>        &#125;<br>        <br>        <span class="hljs-comment">// 现在直接从 n 往前枚举到 1 ，对于多余部分，只要有多余部分就可以 + 1，而最后如果 k = 0了同时卡片 i 也没有了，这样的话就结束了。</span><br><br>        <span class="hljs-comment">// cout &lt;&lt; ans &lt;&lt; &#x27;\n&#x27;;</span><br><br>        <span class="hljs-comment">// 注意：这个地方可能有同学会有这样的疑惑：</span><br>        <span class="hljs-comment">// 交错排序为：123123，但是还多出1个2，k = 2,这个时候我们可以排序成这个样子2132132，对于其他情况也是一样的，比如1234512345,多出来1个1，1个3和1个5，这时候我们就可以变为1352413524135这种模式。</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = n; i &gt;= <span class="hljs-number">1</span>; i--) &#123;<br>            <span class="hljs-keyword">if</span> (a[i] &gt; r) ans++;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (k) &#123;<br>                ans ++;<br>                k--;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; ans &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="D1：Reverse-Card-Easy-Version"><a href="#D1：Reverse-Card-Easy-Version" class="headerlink" title="D1：Reverse Card (Easy Version)"></a>D1：Reverse Card (Easy Version)</h1><p><strong>The two versions are different problems. You may want to read both versions. You can make hacks only if both versions are solved.</strong></p>
+<p>You are given two positive integers $n$, $m$.</p>
+<p>Calculate the number of ordered pairs $(a, b)$ satisfying the following conditions:</p>
+<ul>
+<li>$1\le a\le n$, $1\le b\le m$;</li>
+<li>$a+b$ is a multiple of $b \cdot \gcd(a,b)$.</li>
+</ul>
+<p><strong>Input</strong></p>
+<p>Each test contains multiple test cases. The first line contains the number of test cases $t$ ($1\le t\le 10^4$). The description of the test cases follows.</p>
+<p>The first line of each test case contains two integers $n$, $m$ ($1\le n,m\le 2 \cdot 10^6$).</p>
+<p>It is guaranteed that neither the sum of $n$ nor the sum of $m$ over all test cases exceeds $2 \cdot 10^6$.</p>
+<p><strong>Output</strong></p>
+<p>For each test case, print a single integer: the number of valid pairs.</p>
+<h5 id="Example-6"><a href="#Example-6" class="headerlink" title="Example"></a>Example</h5><h5 id="input-4"><a href="#input-4" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">6</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">100 </span><span class="hljs-number">1233</span><br><span class="hljs-symbol">1000000 </span><span class="hljs-number">1145141</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-4"><a href="#output-4" class="headerlink" title="output"></a>output</h5><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-number">1</span><br><span class="hljs-number">3</span><br><span class="hljs-number">4</span><br><span class="hljs-number">14</span><br><span class="hljs-number">153</span><br><span class="hljs-number">1643498</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Note</strong></p>
+<p>In the first test case, only $(1,1)$ satisfies the conditions.</p>
+<p>In the fourth test case, $(1,1),(2,1),(2,2),(3,1),(4,1),(5,1),(6,1),(6,2),(6,3),(7,1),(8,1),(9,1),(10,1),(10,2)$ satisfy the conditions.</p>
+<h1 id="翻译-3"><a href="#翻译-3" class="headerlink" title="翻译"></a>翻译</h1><p>两个版本的问题不同。您可能需要同时阅读两个版本。只有两个版本的问题都解决了，您才能进行破解。</p>
+<p>给你两个正整数 $$n$ , $m$$ 。</p>
+<p>计算满足以下条件的有序数对 $$(a, b)$$ 的个数：</p>
+<ul>
+<li>$1\le a\le n$ , $1\le b\le m$ ;</li>
+<li>$a+b$ 是 $b \cdot \gcd(a,b)$ 的倍数。</li>
+</ul>
+<p><strong>输入</strong></p>
+<p>每个测试包含多个测试用例。第一行包含测试用例的数量 $t$ ( $1\le t\le 10^4$ )。测试用例说明如下。</p>
+<p>每个测试用例的第一行包含两个整数 $n$ , $m$ ( $1\le n,m\le 2 \cdot 10^6$ )。</p>
+<p>保证所有测试用例中 $n$ 和 $m$ 的总和不超过 $2 \cdot 10^6$ 。</p>
+<p><strong>输出</strong></p>
+<p>为每个测试用例打印一个整数：有效配对的数量。</p>
+<h5 id="Example-7"><a href="#Example-7" class="headerlink" title="Example"></a>Example</h5><h5 id="input-5"><a href="#input-5" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">6</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">100 </span><span class="hljs-number">1233</span><br><span class="hljs-symbol">1000000 </span><span class="hljs-number">1145141</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-5"><a href="#output-5" class="headerlink" title="output"></a>output</h5><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-number">1</span><br><span class="hljs-number">3</span><br><span class="hljs-number">4</span><br><span class="hljs-number">14</span><br><span class="hljs-number">153</span><br><span class="hljs-number">1643498</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>注</strong></p>
+<p>在第一个测试案例中，只有 $(1,1)$ 满足条件。</p>
+<p>在第四个测试用例中， $(1,1),(2,1),(2,2),(3,1),(4,1),(5,1),(6,1),(6,2),(6,3),(7,1),(8,1),(9,1),(10,1),(10,2)$ 满足条件。</p>
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>​	这道题目是一道纯粹的数学公式推导类型题目，具体的推导过程请看代码部分。</p>
+</blockquote>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> t;<br>    LL n, m;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--)&#123;<br>        LL ans = <span class="hljs-number">0</span>;<br>        cin &gt;&gt; n &gt;&gt; m;<br>        <span class="hljs-comment">// (a + b) % (b * gcd(a, b)) == 0;</span><br>        <span class="hljs-comment">// 所以知道 (a + b) % b == 0</span><br>        <span class="hljs-comment">// a = kb;</span><br>        <span class="hljs-comment">// 所有 gcd(a, b) = b;</span><br>        <span class="hljs-comment">// (kb + b) % (b * b) == 0;</span><br>        <span class="hljs-comment">// k = (b - 1, 2b - 1, 3b - 1, ...)</span><br>        <span class="hljs-comment">// a = kb = (kk * b - 1) * b = kk * b ^ 2 - b &lt;= n</span><br>        <span class="hljs-comment">// kk &lt;= (n + b) / b^2</span><br><br>        <span class="hljs-keyword">for</span> (LL b = <span class="hljs-number">1</span>; b &lt;= m; b++) &#123;<br>            <span class="hljs-keyword">if</span> (b == <span class="hljs-number">1</span>) ans += n;<br>            <span class="hljs-keyword">else</span> &#123;<br>                ans += (n + b) / (b * b);<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; ans &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>; <br>    &#125;<br> <br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="D2：Reverse-Card-Hard-Version"><a href="#D2：Reverse-Card-Hard-Version" class="headerlink" title="D2：Reverse Card (Hard Version)"></a>D2：Reverse Card (Hard Version)</h1><p>两个版本的问题不同。您可能需要同时阅读两个版本。只有两个版本的问题都解决了，您才能进行破解。</p>
+<p>给你两个正整数 $n$ ， $m$ 。</p>
+<p>请计算满足下列条件的有序数对 $(a, b)$ 的个数：</p>
+<ul>
+<li>$1\le a\le n$ , $1\le b\le m$ ;</li>
+<li>$b \cdot \gcd(a,b)$ 是 $a+b$​ 的倍数。</li>
+</ul>
+<p><strong>输入</strong></p>
+<p>每个测试包含多个测试用例。第一行包含测试用例的数量 $t$ ( $1\le t\le 10^4$ )。测试用例说明如下。</p>
+<p>每个测试用例的第一行包含两个整数 $n$ 、 $m$ ( $1\le n,m\le 2 \cdot 10^6$ )。</p>
+<p>保证所有测试用例中 $n$ 和 $m$ 的总和都不超过 $2 \cdot 10^6$ 。</p>
+<p><strong>输出</strong></p>
+<p>为每个测试用例打印一个整数：有效配对的数量。</p>
+<h5 id="Example-8"><a href="#Example-8" class="headerlink" title="Example"></a>Example</h5><h5 id="input-6"><a href="#input-6" class="headerlink" title="input"></a>input</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">6</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">100 </span><span class="hljs-number">1233</span><br><span class="hljs-symbol">1000000 </span><span class="hljs-number">1145141</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="output-6"><a href="#output-6" class="headerlink" title="output"></a>output</h5><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-number">0</span><br><span class="hljs-number">1</span><br><span class="hljs-number">1</span><br><span class="hljs-number">6</span><br><span class="hljs-number">423</span><br><span class="hljs-number">5933961</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>注</strong></p>
+<p>在第一个测试案例中，没有一对符合条件。</p>
+<p>在第四个测试用例中， $(2,2),(3,6),(4,4),(6,3),(6,6),(8,8)$ 满足条件。</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> IOS ios::sync_with_stdio(0);cin.tie(0);cout.tie(0)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> endl <span class="hljs-string">&#x27;\n&#x27;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> mod = <span class="hljs-number">1e9</span>+<span class="hljs-number">7</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">2e5</span>+<span class="hljs-number">10</span>;<br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br> <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> b ? <span class="hljs-built_in">gcd</span>(b, a % b) : a;<br>&#125;<br> <br><span class="hljs-comment">// 1 . b * gcd(a , b) % (a + b) == 0</span><br><span class="hljs-comment">// 2 . 设 g =  gcd(a,b) , 则 a=xg , b=yg ;   </span><br><span class="hljs-comment">// 3 . ==&gt; gy * g = k * (gx + gy)</span><br><span class="hljs-comment">// 4 . ==&gt; gy = k * (x + y);</span><br><span class="hljs-comment">// 5 . 由2可得 : x,y互质。那么y,x+y也互质</span><br><span class="hljs-comment">// 6 . ==&gt; g = k * (x+y);</span><br><span class="hljs-comment">// 7 . ==&gt; a=k*(x+y)*x,b=k*(x+y)*y ，满足a%x==0,b%y==0,gcd(x,y)==1  </span><br> <br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">int</span> a , b ; cin &gt;&gt; a &gt;&gt; b ;<br>	<span class="hljs-type">int</span> ans = <span class="hljs-number">0</span> ;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> x=<span class="hljs-number">1</span>;x&lt;=a/x;x++)&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> y=<span class="hljs-number">1</span>;y&lt;=b/y;y++)&#123;<br>			<span class="hljs-keyword">if</span>(<span class="hljs-built_in">gcd</span>(x,y)==<span class="hljs-number">1</span>)&#123;<br>				<span class="hljs-type">int</span> cnt = <span class="hljs-built_in">min</span>(a/((x+y)*x),b/((x+y)*y));<br>				<span class="hljs-keyword">if</span>(cnt&gt;=<span class="hljs-number">1</span>) ans += cnt ;<br>			&#125;<br>		&#125;<br>	&#125;	<br>	cout &lt;&lt; ans &lt;&lt; endl ;<br>&#125;<br> <br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IOS；<br>    <span class="hljs-type">int</span> _ = <span class="hljs-number">1</span>;<br>    cin &gt;&gt; _;<br>    <span class="hljs-keyword">while</span>(_ --) <span class="hljs-built_in">solve</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/05/05/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94Codeforces%E2%80%94%E2%80%94CodeforcesRound38-div3/" title="算法练习专栏——Codeforces——CodeforcesRound38-div3">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法练习专栏——Codeforces——CodeforcesRound38-div3</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/04/30/%E6%9D%82%E9%A2%98%E2%80%94%E2%80%94%E8%B7%91%E6%AD%A5/" title="杂题——跑步">
+                        <span class="hidden-mobile">杂题——跑步</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="lv-container" data-id="city" data-uid="MTAyMC81OTQ3MC8zNTkzMg==">
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#lv-container', function() {
+        Fluid.utils.createScript('https://cdn-city.livere.com/js/embed.dist.js');
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="9222697135" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0" lrc-type="1"></div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span>本网站由</span> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271824923.png" srcset="/img/loading.gif" lazyload align="absmiddle" width="59px" height="30px" /></a> <span>提供CDN加速/云存储服务</span>    </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/diy/timeDate.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客量 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/css/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>
