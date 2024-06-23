@@ -28,9 +28,9 @@
 <meta property="article:modified_time" content="2024-05-18T04:22:24.415Z">
 <meta property="article:author" content="Mogullzr">
 <meta property="article:tag" content="算法">
+<meta property="article:tag" content="比赛">
 <meta property="article:tag" content="ACM">
 <meta property="article:tag" content="Codeforces">
-<meta property="article:tag" content="比赛">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403161128034.jpg">
   
@@ -527,13 +527,13 @@
 <h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><blockquote>
 <p>​	参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_61556180/article/details/131299524">原文</a></p>
 <p>思路：改成正三角形比较直观易懂。如图：</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405152002831.png" srcset="/img/loading.gif" lazyload alt="image-20240515200217706" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405152002831.png" srcset="/img/loading.gif" lazyload alt="image-20240515200217706" style="zoom:50%;">
 
 <p>这样即可找出规律：</p>
 <p>所求倒下的木块编号，即该点的主对角线左上部分加上该点上面的点的左上部分所有的木块。</p>
 <p>这样可以前缀和预处理出该点的左上角部分加本身的s数组。</p>
 <p>不可以把前缀和设置成左上角加正上方因为这样会重复。 </p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405152003831.png" srcset="/img/loading.gif" lazyload alt="image-20240515200227387" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405152003831.png" srcset="/img/loading.gif" lazyload alt="image-20240515200227387" style="zoom:50%;">
 
 <p>如若如此5^2的点的前缀和中和9^2的前缀和中</p>
 </blockquote>

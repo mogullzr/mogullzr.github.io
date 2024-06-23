@@ -27,8 +27,8 @@
 <meta property="article:published_time" content="2024-02-25T14:56:16.000Z">
 <meta property="article:modified_time" content="2024-02-25T14:56:16.000Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="算法">
 <meta property="article:tag" content="练习">
+<meta property="article:tag" content="算法">
 <meta property="article:tag" content="Acwing">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403022333362.png">
@@ -333,7 +333,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="算法练习专栏Acwing周赛练习第147场周赛"><a href="#算法练习专栏Acwing周赛练习第147场周赛" class="headerlink" title="算法练习专栏Acwing周赛练习第147场周赛"></a>算法练习专栏Acwing周赛练习第147场周赛</h1><h2 id="A：平衡数组（简单）"><a href="#A：平衡数组（简单）" class="headerlink" title="A：平衡数组（简单）"></a>A：平衡数组<font color='green'>（简单）</font></h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/5558/">5555. 平衡数组 - AcWing题库</a></p>
+                <h1 id="算法练习专栏Acwing周赛练习第147场周赛"><a href="#算法练习专栏Acwing周赛练习第147场周赛" class="headerlink" title="算法练习专栏Acwing周赛练习第147场周赛"></a>算法练习专栏Acwing周赛练习第147场周赛</h1><h2 id="A：平衡数组（简单）"><a href="#A：平衡数组（简单）" class="headerlink" title="A：平衡数组（简单）"></a>A：平衡数组<font color="green">（简单）</font></h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/5558/">5555. 平衡数组 - AcWing题库</a></p>
 <p>给定一个长度为 n 的整数数组 a<del>1</del>,a<del>2</del>,…,a<del>n</del>。</p>
 <p>如果一个整数数组恰好包含相同数量的奇数元素和偶数元素，就称该数组为一个平衡数组。</p>
 <p>请你判断数组 a 是否是一个平衡数组。</p>
@@ -356,7 +356,7 @@
 
 
 
-<h2 id="B：牛的语言学（困难）"><a href="#B：牛的语言学（困难）" class="headerlink" title="B：牛的语言学（困难）"></a>B：牛的语言学<font color='red'>（困难）</font></h2><p>牛语单词通过以下规则构造：</p>
+<h2 id="B：牛的语言学（困难）"><a href="#B：牛的语言学（困难）" class="headerlink" title="B：牛的语言学（困难）"></a>B：牛的语言学<font color="red">（困难）</font></h2><p>牛语单词通过以下规则构造：</p>
 <ul>
 <li>牛语单词仅由小写字母构成。</li>
 <li>牛语单词的具体结构为：词根+若干个（个或更多）后缀，其中：<ul>
@@ -387,7 +387,7 @@
 <h2 id="代码-DP"><a href="#代码-DP" class="headerlink" title="代码(DP)"></a>代码(DP)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;set&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">10010</span>;<br><br><span class="hljs-type">int</span> n;<br>string s;<br><span class="hljs-type">bool</span> f[N];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; s;<br>    n = s.<span class="hljs-built_in">size</span>();<br><br>    f[n - <span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>    set&lt;string&gt; res;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = n - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">4</span>; i -- )<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">2</span>; j &lt;= <span class="hljs-number">3</span>; j ++ )<br>            <span class="hljs-keyword">if</span> (f[i + j])<br>            &#123;<br>                string a = s.<span class="hljs-built_in">substr</span>(i + <span class="hljs-number">1</span>, j);<br>                string b = s.<span class="hljs-built_in">substr</span>(i + <span class="hljs-number">1</span> + j, j);<br>                <span class="hljs-keyword">if</span> (a != b || f[i + <span class="hljs-number">5</span>])<br>                &#123;<br>                    f[i] = <span class="hljs-literal">true</span>;<br>                    res.<span class="hljs-built_in">insert</span>(a);<br>                &#125;<br>            &#125;<br><br>    cout &lt;&lt; res.<span class="hljs-built_in">size</span>() &lt;&lt; endl;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span>&amp; t: res) cout &lt;&lt; t &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>​	</p>
-<h2 id="C：孤立点数量（中等）"><a href="#C：孤立点数量（中等）" class="headerlink" title="C：孤立点数量（中等）"></a>C：孤立点数量<font color='orange'>（中等）</font></h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/5560/">5557. 孤立点数量 - AcWing题库</a></p>
+<h2 id="C：孤立点数量（中等）"><a href="#C：孤立点数量（中等）" class="headerlink" title="C：孤立点数量（中等）"></a>C：孤立点数量<font color="orange">（中等）</font></h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/5560/">5557. 孤立点数量 - AcWing题库</a></p>
 <p>给定一个 n 个点 m 条边的无向图。</p>
 <p>图中没有重边和自环。</p>
 <p><strong>不保证</strong>给定图是连通图。</p>

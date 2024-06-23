@@ -332,7 +332,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、图中点的层次（中等-）"><a href="#一、图中点的层次（中等-）" class="headerlink" title="一、图中点的层次（中等-）"></a>一、图中点的层次<font color='orange'>（中等-）</font></h2><p>给定一个 n 个点 m 条边的有向图，图中可能存在重边和自环。</p>
+                <h2 id="一、图中点的层次（中等-）"><a href="#一、图中点的层次（中等-）" class="headerlink" title="一、图中点的层次（中等-）"></a>一、图中点的层次<font color="orange">（中等-）</font></h2><p>给定一个 n 个点 m 条边的有向图，图中可能存在重边和自环。</p>
 <p>所有边的长度都是 1，点的编号为 1∼n。</p>
 <p>请你求出 1 号点到 n 号点的最短距离，如果从 1 号点无法走到 n 号点，输出 −1。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含两个整数 n 和 m。</p>
@@ -366,25 +366,7 @@ int bfs(int x)
     q[0] = 1;    
     memset(d, -1, sizeof d);    
     d[1] = 0;   
-    while (hh <= tt)
-    {
-        int t = q[hh++];      
-        for (int i = h[t]; i != -1; i = ne[i])
-        {
-            int j = e[i];
-            if (d[j] == -1)
-            {
-                d[j] = d[t] + 1;
-                q[++tt] = j;
-            }
-        }
-    }   
-    return d[n];    
-}
-int main()
-{
-    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
-    cin >> n >> m;
+    while (hh <= tt) { int t="q[hh++];" for (int i="h[t];" !="-1;" j="e[i];" if (d[j]="=" -1) d[j]="d[t]" + 1; q[++tt]="j;" } return d[n]; main() ios::sync_with_stdio(false),cin.tie(0),cout.tie(0); cin>> n >> m;
     memset(h, -1, sizeof h);
     for (int i = 0; i < m; i++)
     {
@@ -395,12 +377,12 @@ int main()
     cout << bfs(1);    
     return 0;
 }
-        </blockcode>
+        </=></blockcode>
     </pre>	
 </details>
 
 
-<h2 id="二、复习前面所有内容，吃透！！！-（困难–）"><a href="#二、复习前面所有内容，吃透！！！-（困难–）" class="headerlink" title="二、复习前面所有内容，吃透！！！+ （困难–）"></a>二、复习前面所有内容，吃透！！！+ <font color='red'>（困难–）</font></h2>
+<h2 id="二、复习前面所有内容，吃透！！！-（困难–）"><a href="#二、复习前面所有内容，吃透！！！-（困难–）" class="headerlink" title="二、复习前面所有内容，吃透！！！+ （困难–）"></a>二、复习前面所有内容，吃透！！！+ <font color="red">（困难–）</font></h2>
                 
               </div>
             

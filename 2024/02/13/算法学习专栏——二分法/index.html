@@ -333,7 +333,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、数的范围（简单）"><a href="#一、数的范围（简单）" class="headerlink" title="一、数的范围（简单）"></a>一、数的范围<font color='green'>（简单）</font></h2><p>给定一个按照升序排列的长度为 n 的整数数组，以及 q 个查询。</p>
+                <h2 id="一、数的范围（简单）"><a href="#一、数的范围（简单）" class="headerlink" title="一、数的范围（简单）"></a>一、数的范围<font color="green">（简单）</font></h2><p>给定一个按照升序排列的长度为 n 的整数数组，以及 q 个查询。</p>
 <p>对于每个查询，返回一个元素 k 的起始位置和终止位置（位置从 00 开始计数）。</p>
 <p>如果数组中不存在该元素，则返回 <code>-1 -1</code>。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n 和 q，表示数组长度和询问个数。</p>
@@ -381,16 +381,8 @@ int main()
             while (l < r)
             {
                 int mid =(l + r + 1) / 2;
-                if (arr[mid] <= x) l = mid;
-                else r = mid - 1;
-            }
-            printf("%d\n",l);
-        }
-    }   
-    return 0;
-}
-        </blockcode>
-    </pre>
+                if (arr[mid] <= x) l="mid;" else r="mid" - 1; } printf("%d\n",l); return 0; < blockcode>
+    </=></blockcode></pre>
 </details>
 
 
@@ -444,7 +436,7 @@ int main()
 
 
 
-<h2 id="二、冶炼金属（简单-）"><a href="#二、冶炼金属（简单-）" class="headerlink" title="二、冶炼金属（简单++）"></a>二、冶炼金属<font color='green'>（简单++）</font></h2><p>小蓝有一个神奇的炉子用于将普通金属 O 冶炼成为一种特殊金属 X。</p>
+<h2 id="二、冶炼金属（简单-）"><a href="#二、冶炼金属（简单-）" class="headerlink" title="二、冶炼金属（简单++）"></a>二、冶炼金属<font color="green">（简单++）</font></h2><p>小蓝有一个神奇的炉子用于将普通金属 O 冶炼成为一种特殊金属 X。</p>
 <p>这个炉子有一个称作转换率的属性 V，V 是一个正整数，这意味着消耗 V 个普通金属 O 恰好可以冶炼出一个特殊金属 X，当普通金属 O 的数目不足 V 时，无法继续冶炼。</p>
 <p>现在给出了 N 条冶炼记录，每条记录中包含两个整数 A 和 B，这表示本次投入了 A 个普通金属 O，最终冶炼出了 B 个特殊金属 X。</p>
 <p>每条记录都是独立的，这意味着上一次没消耗完的普通金属 O 不会累加到下一次的冶炼当中。</p>
@@ -462,10 +454,10 @@ int main()
 <p>且再也找不到比 20 更小或者比 25 更大的符合条件的 V 值了。</p>
 <h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>​	<strong>方法一</strong> 就不介绍了，就是最基本的二分思路，两个模板。</p>
 <p>​	<strong>方法二</strong> 主要是按照数学公式推导的方法来写的，推到过程如下：</p>
-<p>​											<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402210959901.png" srcset="/img/loading.gif" lazyload alt="image-20240221095850456" style="zoom:50%;" /></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402210959143.png" srcset="/img/loading.gif" lazyload alt="image-20240221095913224" style="zoom:50%;" />
+<p>​											<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402210959901.png" srcset="/img/loading.gif" lazyload alt="image-20240221095850456" style="zoom:50%;"></p>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402210959143.png" srcset="/img/loading.gif" lazyload alt="image-20240221095913224" style="zoom:50%;">
 
-<p>​											<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402210959212.png" srcset="/img/loading.gif" lazyload alt="image-20240221095936650" style="zoom:50%;" /></p>
+<p>​											<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402210959212.png" srcset="/img/loading.gif" lazyload alt="image-20240221095936650" style="zoom:50%;"></p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
@@ -582,8 +574,7 @@ int main()
 {
     ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
     cin >> n;
-    for (int i = 1; i <= n; i++) {
-        cin >> a[i];
+    for (int i = 1; i <= n; i++) { cin>> a[i];
     }
     cin >> q;
     while (q--) {
@@ -598,15 +589,8 @@ int main()
         int ll = 0, rr = n;
         while (ll < rr) {
             int mid = (ll + rr + 1) >> 1;
-            if (a[mid] <= y) ll = mid;
-            else rr = mid - 1;
-        }      
-        cout << rr - l + 1 << '\n';
-    }  
-    return 0;
-}
-        </blockcode>
-    </pre>
+            if (a[mid] <= 1 y) ll="mid;" else rr="mid" - 1; } cout << l + '\n'; return 0; < blockcode>
+    </=></=></blockcode></pre>
 </details>
 
 

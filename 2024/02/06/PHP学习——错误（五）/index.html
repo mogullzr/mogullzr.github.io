@@ -353,9 +353,9 @@
 <p><strong>只要警告和通知：</strong><code>E_WARNING | E_NOTICE</code></p>
 <h2 id="三、错误触发"><a href="#三、错误触发" class="headerlink" title="三、错误触发"></a>三、错误触发</h2><h4 id="举例1：漏分号"><a href="#举例1：漏分号" class="headerlink" title="举例1：漏分号"></a>举例1：漏分号</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060023394.png" srcset="/img/loading.gif" lazyload alt="image-20240205111744819"></p>
 <h4 id="举例2：除数为0"><a href="#举例2：除数为0" class="headerlink" title="举例2：除数为0"></a>举例2：除数为0</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060023283.png" srcset="/img/loading.gif" lazyload alt="image-20240205111822461"></p>
-<h4 id="举例3：人为触发错误（默认为Notice-使用中文需要使用head-Content-type-text-html-charset-utf-8-）"><a href="#举例3：人为触发错误（默认为Notice-使用中文需要使用head-Content-type-text-html-charset-utf-8-）" class="headerlink" title="举例3：人为触发错误（默认为Notice,使用中文需要使用head(&#39;Content-type:text/html;charset=utf-8&#39;)）"></a>举例3：人为触发错误（默认为Notice,使用中文需要使用<code>head(&#39;Content-type:text/html;charset=utf-8&#39;)</code>）</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020046.png" srcset="/img/loading.gif" lazyload alt="image-20240205112233103" style="zoom:33%;" />
+<h4 id="举例3：人为触发错误（默认为Notice-使用中文需要使用head-Content-type-text-html-charset-utf-8-）"><a href="#举例3：人为触发错误（默认为Notice-使用中文需要使用head-Content-type-text-html-charset-utf-8-）" class="headerlink" title="举例3：人为触发错误（默认为Notice,使用中文需要使用head(&#39;Content-type:text/html;charset=utf-8&#39;)）"></a>举例3：人为触发错误（默认为Notice,使用中文需要使用<code>head(&#39;Content-type:text/html;charset=utf-8&#39;)</code>）</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020046.png" srcset="/img/loading.gif" lazyload alt="image-20240205112233103" style="zoom:33%;">
 
-<p>​	<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020308.png" srcset="/img/loading.gif" lazyload alt="image-20240205112651341" style="zoom:50%;" /></p>
+<p>​	<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020308.png" srcset="/img/loading.gif" lazyload alt="image-20240205112651341" style="zoom:50%;"></p>
 <h2 id="四、错误日志设置"><a href="#四、错误日志设置" class="headerlink" title="四、错误日志设置"></a>四、错误日志设置</h2><p>​		在实际生产环境中，不会直接让错误赤裸裸的展示给用户：</p>
 <ul>
 <li><p>不友好 </p>
@@ -364,16 +364,16 @@
 <p>​		所以在生产环境中，一般不显示错误<strong>（错误也比较少）</strong>，但是不可能避免会出现错误**（测试的时候不会发现所有的间题)<strong>，这个时候不希望看到，但是又希望捕捉到可以让后台程序员去修改：需要保存到日志文件中，需要在PHP配置文件中或者代码中(ini_set)设置对应的</strong><code>error_log</code>**配置项</p>
 <ol>
 <li><p>开启日志功能</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020964.png" srcset="/img/loading.gif" lazyload alt="image-20240205113338110" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020964.png" srcset="/img/loading.gif" lazyload alt="image-20240205113338110" style="zoom:50%;">
 </li>
 <li><p>指定路径</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020290.png" srcset="/img/loading.gif" lazyload alt="image-20240205113153723" style="zoom:50%;" /></li>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020290.png" srcset="/img/loading.gif" lazyload alt="image-20240205113153723" style="zoom:50%;"></li>
 </ol>
 </li>
 </ul>
-<h2 id="五、自定义错误处理"><a href="#五、自定义错误处理" class="headerlink" title="五、自定义错误处理"></a>五、自定义错误处理</h2><h4 id="将用户自定义函数放到系统中"><a href="#将用户自定义函数放到系统中" class="headerlink" title="将用户自定义函数放到系统中"></a>将用户自定义函数放到系统中</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020054.png" srcset="/img/loading.gif" lazyload alt="image-20240205113555328" style="zoom:50%;" />
+<h2 id="五、自定义错误处理"><a href="#五、自定义错误处理" class="headerlink" title="五、自定义错误处理"></a>五、自定义错误处理</h2><h4 id="将用户自定义函数放到系统中"><a href="#将用户自定义函数放到系统中" class="headerlink" title="将用户自定义函数放到系统中"></a>将用户自定义函数放到系统中</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020054.png" srcset="/img/loading.gif" lazyload alt="image-20240205113555328" style="zoom:50%;">
 
-<h4 id="自定义处理函数，系统有要求"><a href="#自定义处理函数，系统有要求" class="headerlink" title="自定义处理函数，系统有要求"></a>自定义处理函数，系统有要求</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020734.png" srcset="/img/loading.gif" lazyload alt="image-20240205113800772" style="zoom:50%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020156.png" srcset="/img/loading.gif" lazyload alt="image-20240205114500612" style="zoom: 33%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020373.png" srcset="/img/loading.gif" lazyload alt="image-20240205114645563" style="zoom:33%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020756.png" srcset="/img/loading.gif" lazyload alt="image-20240205114932829" style="zoom:33%;" /></p>
+<h4 id="自定义处理函数，系统有要求"><a href="#自定义处理函数，系统有要求" class="headerlink" title="自定义处理函数，系统有要求"></a>自定义处理函数，系统有要求</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020734.png" srcset="/img/loading.gif" lazyload alt="image-20240205113800772" style="zoom:50%;"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020156.png" srcset="/img/loading.gif" lazyload alt="image-20240205114500612" style="zoom: 33%;"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020373.png" srcset="/img/loading.gif" lazyload alt="image-20240205114645563" style="zoom:33%;"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060020756.png" srcset="/img/loading.gif" lazyload alt="image-20240205114932829" style="zoom:33%;"></p>
 
                 
               </div>

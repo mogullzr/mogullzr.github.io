@@ -333,8 +333,8 @@
               <div class="markdown-body">
                 
                 <h2 id="一、PHP代码标记"><a href="#一、PHP代码标记" class="headerlink" title="一、PHP代码标记"></a>一、PHP代码标记</h2><p>我们用于区分PHP脚本的标志</p>
-<p><strong>ASP 标记：</strong><code>&lt;% php代码%&gt;</code> <font color='red'><strong>基本不用，要用需要配置</strong></font></p>
-<p><strong>短标记：</strong> <code>&lt;? php 代码 ? &gt;</code> <font color='red'><strong>基本不用，要用需要配置</strong></font></p>
+<p><strong>ASP 标记：</strong><code>&lt;% php代码%&gt;</code> <font color="red"><strong>基本不用，要用需要配置</strong></font></p>
+<p><strong>短标记：</strong> <code>&lt;? php 代码 ? &gt;</code> <font color="red"><strong>基本不用，要用需要配置</strong></font></p>
 <p><strong>脚本标记：</strong><code> &lt; script language=&quot;php&quot;&gt;php代码&lt; /script&gt;</code></p>
 <p><strong>标准标记（常用）：</strong> <code>&lt; ?php php代码?&gt;</code></p>
 <h2 id="二、PHP注释"><a href="#二、PHP注释" class="headerlink" title="二、PHP注释"></a>二、PHP注释</h2><p><strong>单行注释：</strong> <code>//</code>或者<code>#</code></p>
@@ -394,7 +394,7 @@
 <li><strong>数据段：</strong> 存储普通数据<strong>（全局区和静态区）</strong></li>
 <li><strong>堆区：</strong> 存储复杂的数据，大但是效率高</li>
 </ul>
-<h5 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h5><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060017144.png" srcset="/img/loading.gif" lazyload alt="image-20240203135128389" style="zoom: 33%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060023845.png" srcset="/img/loading.gif" lazyload alt="image-20240203135814196" style="zoom:33%;" /></p>
+<h5 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h5><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060017144.png" srcset="/img/loading.gif" lazyload alt="image-20240203135128389" style="zoom: 33%;"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060023845.png" srcset="/img/loading.gif" lazyload alt="image-20240203135814196" style="zoom:33%;"></p>
 <h2 id="五、常量"><a href="#五、常量" class="headerlink" title="五、常量"></a>五、常量</h2><p><strong>定义方式：</strong> </p>
 <ul>
 <li><strong>使用定义变量的函数：</strong><code>define(&#39;常量名&#39;,常量值)</code></li>
@@ -431,7 +431,7 @@
 </li>
 </ul>
 <h2 id="六、数据类型"><a href="#六、数据类型" class="headerlink" title="六、数据类型"></a>六、数据类型</h2><p>PHP 指的是存储的数据本身的类型，而不是变量的类型。PHP 是一种弱类型语言，变量本生没有数据类型。</p>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a><font color='red'>分类</font></h3><ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a><font color="red">分类</font></h3><ul>
 <li><h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a><strong>基本数据类型</strong></h4><ul>
 <li>整型：int\integer，系统分配 4个字节存储，表示整数类型</li>
 <li>浮点型：float&#x2F;double，系统分配8个字节，表示小数或者整型存不下的整数</li>
@@ -450,13 +450,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a><font color='red'>类型转换</font></h3><ul>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a><font color="red">类型转换</font></h3><ul>
 <li><h4 id="自动转换"><a href="#自动转换" class="headerlink" title="自动转换"></a>自动转换</h4></li>
 <li><h4 id="强制（手动）转换规则"><a href="#强制（手动）转换规则" class="headerlink" title="强制（手动）转换规则"></a>强制（手动）转换规则</h4><ul>
-<li><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018449.png" srcset="/img/loading.gif" lazyload alt="image-20240203160616764" style="zoom:33%;" />
+<li><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018449.png" srcset="/img/loading.gif" lazyload alt="image-20240203160616764" style="zoom:33%;">
 </li>
 <li><p>例子</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018681.png" srcset="/img/loading.gif" lazyload alt="image-20240203161149949" style="zoom:33%;" /></li>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018681.png" srcset="/img/loading.gif" lazyload alt="image-20240203161149949" style="zoom:33%;"></li>
 </ul>
 </li>
 </ul>
@@ -464,20 +464,20 @@
 <li>以字母开头的字符串永远为0</li>
 <li>以数字开头的字符串，取到碰到字符串类型位置<strong>（不可以同时包含两个小数点）</strong></li>
 </ul>
-<h3 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a><font color='red'>类型判断</font></h3><p>​		<strong>概念：</strong>通过一组类型判断函数，来判断变量，最终返回这个变量保存数据的数据类型：是一组以 is_开头后面跟类型名字的函数：is_XXX(变量名)</p>
+<h3 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a><font color="red">类型判断</font></h3><p>​		<strong>概念：</strong>通过一组类型判断函数，来判断变量，最终返回这个变量保存数据的数据类型：是一组以 is_开头后面跟类型名字的函数：is_XXX(变量名)</p>
 <p>​		<strong>注意：</strong> <code>Bool</code>类型不能使用<code>echo</code>来查看，可以使用<code>var_dump</code>结构查看</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-string">&#x27;123&#x27;</span><br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">is_int</span>(<span class="hljs-variable">$a</span>)); <span class="hljs-comment"># false</span><br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">is_strin</span>(<span class="hljs-variable">$a</span>)); <span class="hljs-comment"># true</span><br></code></pre></td></tr></table></figure>
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018421.png" srcset="/img/loading.gif" lazyload alt="image-20240203161650949" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018421.png" srcset="/img/loading.gif" lazyload alt="image-20240203161650949" style="zoom:50%;">
 
 
 
-<h3 id="类型获取和设定"><a href="#类型获取和设定" class="headerlink" title="类型获取和设定"></a><font color='red'>类型获取和设定</font></h3><p><strong>例子：</strong></p>
+<h3 id="类型获取和设定"><a href="#类型获取和设定" class="headerlink" title="类型获取和设定"></a><font color="red">类型获取和设定</font></h3><p><strong>例子：</strong></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment"># 获取类型</span><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">gettype</span>(<span class="hljs-variable">$a</span>); <span class="hljs-comment"># string</span><br><br><span class="hljs-comment"># 设置类型</span><br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-title function_ invoke__">settype</span>(<span class="hljs-variable">$b</span>,<span class="hljs-string">&#x27;int&#x27;</span>));<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">gettype</span>(<span class="hljs-variable">$b</span>); <span class="hljs-comment"># integer</span><br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="七、PHP中的进制"><a href="#七、PHP中的进制" class="headerlink" title="七、PHP中的进制"></a>七、PHP中的进制</h2><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a><font color='red'>进制转换</font></h3><ul>
+<h2 id="七、PHP中的进制"><a href="#七、PHP中的进制" class="headerlink" title="七、PHP中的进制"></a>七、PHP中的进制</h2><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a><font color="red">进制转换</font></h3><ul>
 <li><strong>10进制转换为16进制：</strong> Dechex（）</li>
 <li><strong>10进制转换为8进制：</strong>Decoct（）</li>
 <li><strong>10进制转换为2进制</strong>Decbin（）</li>
@@ -489,11 +489,11 @@
 <p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018217.png" srcset="/img/loading.gif" lazyload alt="image-20240204151834705"></p>
 <p>**Empty():**判断数据的值是否为“空”，不是NULL,如果为空返回true,不为空返回false . </p>
 <p>**Isset():**判断数据存储的变量本身是否存在，存在变量返回true,不存在返回false.</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018770.png" srcset="/img/loading.gif" lazyload alt="image-20240204152532284" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018770.png" srcset="/img/loading.gif" lazyload alt="image-20240204152532284" style="zoom:50%;">
 
 
 
-<h2 id="九、运算符"><a href="#九、运算符" class="headerlink" title="九、运算符"></a>九、运算符</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018018.png" srcset="/img/loading.gif" lazyload alt="image-20240204153741856" style="zoom:50%;" />
+<h2 id="九、运算符"><a href="#九、运算符" class="headerlink" title="九、运算符"></a>九、运算符</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018018.png" srcset="/img/loading.gif" lazyload alt="image-20240204153741856" style="zoom:50%;">
 
 <h3 id="连接运算符"><a href="#连接运算符" class="headerlink" title="连接运算符"></a>连接运算符</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$a</span> = <span class="hljs-string">&#x27;hello &#x27;</span>;<br><span class="hljs-variable">$b</span> = <span class="hljs-number">123</span>;<br><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span> . <span class="hljs-variable">$b</span>; <span class="hljs-comment">//將a变量和b变量连接起来，输出hello 123</span><br><span class="hljs-variable">$a</span> .= <span class="hljs-variable">$b</span>; <span class="hljs-comment">// 相当于$a = $a . $b</span><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>; <span class="hljs-comment">//输出hello 123</span><br></code></pre></td></tr></table></figure>
 
@@ -505,7 +505,7 @@
 
 
 <h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>  …….</p>
-<h2 id="十、判断分支、循环分支"><a href="#十、判断分支、循环分支" class="headerlink" title="十、判断分支、循环分支"></a>十、判断分支、循环分支</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018826.png" srcset="/img/loading.gif" lazyload alt="image-20240204160953736" style="zoom:33%;" />
+<h2 id="十、判断分支、循环分支"><a href="#十、判断分支、循环分支" class="headerlink" title="十、判断分支、循环分支"></a>十、判断分支、循环分支</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402060018826.png" srcset="/img/loading.gif" lazyload alt="image-20240204160953736" style="zoom:33%;">
                 
               </div>
             

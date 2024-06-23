@@ -27,8 +27,8 @@
 <meta property="article:published_time" content="2024-02-21T15:04:27.000Z">
 <meta property="article:modified_time" content="2024-02-21T15:04:27.000Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="算法">
 <meta property="article:tag" content="底层">
+<meta property="article:tag" content="算法">
 <meta property="article:tag" content="考研">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
@@ -346,36 +346,36 @@
 <p>$$<br>WPL&#x3D;\sum^{n}_{i&#x3D;1}w_il_i<br>$$</p>
 <p>​	</p>
 <p>下面就来举两个例子来介绍一下怎么计算<strong>（考的概率蛮大）</strong></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111422676.png" srcset="/img/loading.gif" lazyload alt="image-20240311142207412" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111422676.png" srcset="/img/loading.gif" lazyload alt="image-20240311142207412" style="zoom:50%;">
 $$
 WPL=1 \times 2 + 2 \times 2+3 \times2+4\times2=20
 $$
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111443815.png" srcset="/img/loading.gif" lazyload alt="image-20240311144303573" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111443815.png" srcset="/img/loading.gif" lazyload alt="image-20240311144303573" style="zoom:50%;">
 $$
 WPL=1\times3+2\times3+3\times2+4\times1=10
 $$
-对于n个带权结点的二叉树中，其中WPL最小的二叉树称为<font color='red'>哈夫曼树</font>，也称为<font color='red'>最优二叉树</font>。那么我们应该如何通过已知节点来构造出一棵WPL最小的二叉树呢，这就是我们今天要学的一个重点内容，请看下一个内容。
+对于n个带权结点的二叉树中，其中WPL最小的二叉树称为<font color="red">哈夫曼树</font>，也称为<font color="red">最优二叉树</font>。那么我们应该如何通过已知节点来构造出一棵WPL最小的二叉树呢，这就是我们今天要学的一个重点内容，请看下一个内容。
 
 
 
 <h2 id="哈夫曼树的构造"><a href="#哈夫曼树的构造" class="headerlink" title="哈夫曼树的构造"></a>哈夫曼树的构造</h2><p>$$<br>\begin{flalign}<br>&amp;给定n个权值分别为w_1w_2,w_n的结点，构造哈夫曼树的算法描述如下：\<br>&amp;1)将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F。\<br>&amp;2)构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左、右子树，\<br>&amp;并且将新结点的权值置为左、右子树上根结点的权值之和。\<br>&amp;3)从F中删除刚才选出的两棵树，同时将新得到的树加入F中。\<br>&amp;4)重复步骤(2)和(3)，直至F中只剩下一棵树为止。&amp;<br>\end{flalign}<br>$$</p>
 <p>这是一个官方化的构造方式，下面我们就来一个例子来讲一下如何构造哈夫曼树：</p>
 <p><strong>现在给出几个节点，需要你构造出一个哈夫曼树：</strong></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111532065.png" srcset="/img/loading.gif" lazyload alt="image-20240311153253706" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111532065.png" srcset="/img/loading.gif" lazyload alt="image-20240311153253706" style="zoom:33%;">
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111537950.png" srcset="/img/loading.gif" lazyload alt="image-20240311153614539" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111537950.png" srcset="/img/loading.gif" lazyload alt="image-20240311153614539" style="zoom:50%;">
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111537498.png" srcset="/img/loading.gif" lazyload alt="image-20240311153750049" style="zoom: 33%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111537498.png" srcset="/img/loading.gif" lazyload alt="image-20240311153750049" style="zoom: 33%;">
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111539492.png" srcset="/img/loading.gif" lazyload alt="image-20240311153910800" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111539492.png" srcset="/img/loading.gif" lazyload alt="image-20240311153910800" style="zoom:33%;">
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111542576.png" srcset="/img/loading.gif" lazyload alt="image-20240311154238241" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111542576.png" srcset="/img/loading.gif" lazyload alt="image-20240311154238241" style="zoom:33%;">
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111546496.png" srcset="/img/loading.gif" lazyload alt="image-20240311154559501" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111546496.png" srcset="/img/loading.gif" lazyload alt="image-20240311154559501" style="zoom:33%;">
 
-<h4 id="注意：哈夫曼树不是唯一的，但是它们的WPL一定是相同的，比如我再写另一个哈夫曼树"><a href="#注意：哈夫曼树不是唯一的，但是它们的WPL一定是相同的，比如我再写另一个哈夫曼树" class="headerlink" title="注意：哈夫曼树不是唯一的，但是它们的WPL一定是相同的，比如我再写另一个哈夫曼树"></a>注意：哈夫曼树不是唯一的，但是它们的WPL一定是相同的，比如我再写另一个哈夫曼树</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111548032.png" srcset="/img/loading.gif" lazyload alt="image-20240311154807849" style="zoom: 33%;" />
+<h4 id="注意：哈夫曼树不是唯一的，但是它们的WPL一定是相同的，比如我再写另一个哈夫曼树"><a href="#注意：哈夫曼树不是唯一的，但是它们的WPL一定是相同的，比如我再写另一个哈夫曼树" class="headerlink" title="注意：哈夫曼树不是唯一的，但是它们的WPL一定是相同的，比如我再写另一个哈夫曼树"></a>注意：哈夫曼树不是唯一的，但是它们的WPL一定是相同的，比如我再写另一个哈夫曼树</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403111548032.png" srcset="/img/loading.gif" lazyload alt="image-20240311154807849" style="zoom: 33%;">
 
-<h2 id="哈弗曼编码"><a href="#哈弗曼编码" class="headerlink" title="哈弗曼编码"></a>哈弗曼编码</h2><h3 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="持续更新中……"></a><font color='red'>持续更新中……</font></h3>
+<h2 id="哈弗曼编码"><a href="#哈弗曼编码" class="headerlink" title="哈弗曼编码"></a>哈弗曼编码</h2><h3 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="持续更新中……"></a><font color="red">持续更新中……</font></h3>
                 
               </div>
             

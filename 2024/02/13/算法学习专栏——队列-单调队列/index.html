@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          517 字
+          535 字
         
       </span>
     
@@ -334,8 +334,8 @@
                 
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	队列是什么？</p>
 <p>​	我们先想一下我们生活中排队的时候的样子。这样一支队伍我们有什么特点。我们队伍最前面的人可以结账<strong>离开（出队）</strong>，最后的人可以随意进入<strong>（入队）</strong>。中间的人就不可以随意离开<strong>（都已经排队了，不想放弃，就这样理解）</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402130015742.png" srcset="/img/loading.gif" lazyload alt="image-20240213001506492" style="zoom:50%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402130015195.png" srcset="/img/loading.gif" lazyload alt="image-20240213001541349" style="zoom:50%;" /></p>
-<h2 id="一、模拟队列（简单）"><a href="#一、模拟队列（简单）" class="headerlink" title="一、模拟队列（简单）"></a>一、模拟队列<font color='green'>（简单）</font></h2><p>实现一个队列，队列初始为空，支持四种操作：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402130015742.png" srcset="/img/loading.gif" lazyload alt="image-20240213001506492" style="zoom:50%;"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402130015195.png" srcset="/img/loading.gif" lazyload alt="image-20240213001541349" style="zoom:50%;"></p>
+<h2 id="一、模拟队列（简单）"><a href="#一、模拟队列（简单）" class="headerlink" title="一、模拟队列（简单）"></a>一、模拟队列<font color="green">（简单）</font></h2><p>实现一个队列，队列初始为空，支持四种操作：</p>
 <ol>
 <li><code>push x</code> – 向队尾插入一个数 x；</li>
 <li><code>pop</code> – 从队头弹出一个数；</li>
@@ -400,24 +400,15 @@ int main()
             push(x);
         }
         else if (!strcmp(op,"pop")) pop();
-        else if (!strcmp(op,"query")) cout << querys[top_1] <<'\n';
-        else 
-        {
-            if (top_2 == top_1) cout << "YES\n";
-            else cout << "NO\n";
-        }
-    } 
-    return 0;
-}
-        </blockcode>
-    </pre>
+        else if (!strcmp(op,"query")) cout << querys[top_1] <<'\n'; else { if (top_2="=" top_1) cout << "yes\n"; "no\n"; } return 0; < blockcode>
+    </'\n';></blockcode></pre>
 </details>
 
 
 
 
 
-<h2 id="二、滑动窗口（中等-）"><a href="#二、滑动窗口（中等-）" class="headerlink" title="二、滑动窗口（中等-）"></a>二、滑动窗口<font color='orange'>（中等-）</font></h2><p>给定一个大小为 n≤10^6^ 的数组。</p>
+<h2 id="二、滑动窗口（中等-）"><a href="#二、滑动窗口（中等-）" class="headerlink" title="二、滑动窗口（中等-）"></a>二、滑动窗口<font color="orange">（中等-）</font></h2><p>给定一个大小为 n≤10^6^ 的数组。</p>
 <p>有一个大小为 k 的滑动窗口，它从数组的最左边移动到最右边。</p>
 <p>你只能在窗口中看到 k 个数字。</p>
 <p>每次滑动窗口向右移动一个位置。</p>
@@ -476,7 +467,7 @@ int main()
 
 
 
-<h2 id="思路（实在搞不懂就直播录屏，和我提！！！）"><a href="#思路（实在搞不懂就直播录屏，和我提！！！）" class="headerlink" title="思路（实在搞不懂就直播录屏，和我提！！！）"></a>思路<font color='red'>（实在搞不懂就直播录屏，和我提！！！）</font></h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131144147.gif" srcset="/img/loading.gif" lazyload alt="动画2" style="zoom:50%;" />
+<h2 id="思路（实在搞不懂就直播录屏，和我提！！！）"><a href="#思路（实在搞不懂就直播录屏，和我提！！！）" class="headerlink" title="思路（实在搞不懂就直播录屏，和我提！！！）"></a>思路<font color="red">（实在搞不懂就直播录屏，和我提！！！）</font></h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131144147.gif" srcset="/img/loading.gif" lazyload alt="动画2" style="zoom:50%;">
 
 <h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
@@ -495,23 +486,21 @@ int main()
     for (int i = 0; i < n; i++) cin >> a[i];
     int hh = 0, tt = -1;
     for (int i = 0; i < n; i++) {
-        if (hh <= tt && i - k + 1 > q[hh]) hh++;
-        while (hh <= tt && a[i] <= a[q[tt]]) tt--;
-        q[++tt] = i;
-        if (i - k + 1 >= 0) cout << a[q[hh]] << " ";
+        if (hh <= 1 tt && i - k +> q[hh]) hh++;
+        while (hh <= 1 tt && a[i] <="a[q[tt]])" tt--; q[++tt]="i;" if (i - k +>= 0) cout << a[q[hh]] << " ";
     }
     puts("");
     hh = 0,tt = -1;
     int q[N] = {0};    
     for (int i = 0; i < n; i++) {
-        if (hh <= tt && i - k + 1 > q[hh]) hh++;
-        while (hh <= tt && a[i] >= a[q[tt]]) tt--;
+        if (hh <= 1 tt && i - k +> q[hh]) hh++;
+        while (hh <= tt && a[i]>= a[q[tt]]) tt--;
         q[++tt] = i;
         if (i - k + 1 >= 0) cout << a[q[hh]] << " ";
     }
     return 0;
 }
-        </blockcode>
+        </=></=></=></=></blockcode>
     </pre>
 </details>
 

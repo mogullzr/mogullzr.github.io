@@ -27,8 +27,8 @@
 <meta property="article:published_time" content="2024-02-21T15:04:20.000Z">
 <meta property="article:modified_time" content="2024-04-24T06:47:16.216Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="算法">
 <meta property="article:tag" content="底层">
+<meta property="article:tag" content="算法">
 <meta property="article:tag" content="考研">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
@@ -337,41 +337,39 @@
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	这部分可以说是无论是考研还是期末考试都是非常喜欢出这种类型的题目的，只不过考研的话可能会更加恶心，没有考研需求的同学把这里看懂，复习的时候会轻松很多！</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>​	如果我们现在不知道一棵树长什么样子，只知道这棵树的前中后序、层次遍历的一种，我们是不可以确定一棵二叉树的。</p>
 <p>​	如果我们需要确定一颗二叉树，就至少需要<strong>前序&#x2F;后序&#x2F;层次遍历</strong> + <strong>中序遍历</strong>。</p>
-<h2 id="前序-中序遍历序列"><a href="#前序-中序遍历序列" class="headerlink" title="前序+中序遍历序列"></a>前序+中序遍历序列</h2><p><strong>前序遍历序列：</strong> <font color='red'><strong>根节点</strong></font> <font color='green'><strong>左子树前序遍历序列</strong></font> <font color='orange'><strong>右子树前序遍历序列</strong></font></p>
-<p><strong>中序遍历序列：</strong>  <font color='green'><strong>左子树前序遍历序列</strong></font>  <font color='red'><strong>根节点</strong></font>  <font color='orange'><strong>右子树前序遍历序列</strong></font></p>
+<h2 id="前序-中序遍历序列"><a href="#前序-中序遍历序列" class="headerlink" title="前序+中序遍历序列"></a>前序+中序遍历序列</h2><p><strong>前序遍历序列：</strong> <font color="red"><strong>根节点</strong></font> <font color="green"><strong>左子树前序遍历序列</strong></font> <font color="orange"><strong>右子树前序遍历序列</strong></font></p>
+<p><strong>中序遍历序列：</strong>  <font color="green"><strong>左子树前序遍历序列</strong></font>  <font color="red"><strong>根节点</strong></font>  <font color="orange"><strong>右子树前序遍历序列</strong></font></p>
 <p>那么<strong>前序遍历序列</strong>的第一个结点<strong>不就是根节点吗？</strong>，然后我们就可以根据<strong>中序遍历序列</strong>找到<strong>根节点</strong>从而确认<strong>左右子树</strong>有哪些构成了对不对？下面我们需要做的就是反复执行这么上述操作，现在我这么讲肯定是非常抽象的，下面我们通过例子来理解：</p>
 <p><strong>前序遍历序列：</strong>A D B C E</p>
 <p><strong>中序遍历序列：</strong>B D C A E</p>
-<h4 id="第一步：找到根节点A，再在中序遍历确定左右子树，如图"><a href="#第一步：找到根节点A，再在中序遍历确定左右子树，如图" class="headerlink" title="第一步：找到根节点A，再在中序遍历确定左右子树，如图"></a>第一步：找到根节点A，再在中序遍历确定左右子树，如图</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072159610.png" srcset="/img/loading.gif" lazyload alt="image-20240307215849749" style="zoom:67%;" />
+<h4 id="第一步：找到根节点A，再在中序遍历确定左右子树，如图"><a href="#第一步：找到根节点A，再在中序遍历确定左右子树，如图" class="headerlink" title="第一步：找到根节点A，再在中序遍历确定左右子树，如图"></a>第一步：找到根节点A，再在中序遍历确定左右子树，如图</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072159610.png" srcset="/img/loading.gif" lazyload alt="image-20240307215849749" style="zoom:67%;">
 
-<h4 id="第二步：然后我继续分析左右子树，左子树的话我们就可以通过前序遍历序列继续确认其根节点，然后就是前序遍历确认左右子树，如DBC对应着D就是根节点，再在中序遍历找D，左子树为B，右子树就为C，如图"><a href="#第二步：然后我继续分析左右子树，左子树的话我们就可以通过前序遍历序列继续确认其根节点，然后就是前序遍历确认左右子树，如DBC对应着D就是根节点，再在中序遍历找D，左子树为B，右子树就为C，如图" class="headerlink" title="第二步：然后我继续分析左右子树，左子树的话我们就可以通过前序遍历序列继续确认其根节点，然后就是前序遍历确认左右子树，如DBC对应着D就是根节点，再在中序遍历找D，左子树为B，右子树就为C，如图"></a>第二步：然后我继续分析左右子树，左子树的话我们就可以通过前序遍历序列继续确认其根节点，然后就是前序遍历确认左右子树，如DBC对应着D就是根节点，再在中序遍历找D，左子树为B，右子树就为C，如图</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072204492.png" srcset="/img/loading.gif" lazyload alt="image-20240307220422608" style="zoom:67%;" />
+<h4 id="第二步：然后我继续分析左右子树，左子树的话我们就可以通过前序遍历序列继续确认其根节点，然后就是前序遍历确认左右子树，如DBC对应着D就是根节点，再在中序遍历找D，左子树为B，右子树就为C，如图"><a href="#第二步：然后我继续分析左右子树，左子树的话我们就可以通过前序遍历序列继续确认其根节点，然后就是前序遍历确认左右子树，如DBC对应着D就是根节点，再在中序遍历找D，左子树为B，右子树就为C，如图" class="headerlink" title="第二步：然后我继续分析左右子树，左子树的话我们就可以通过前序遍历序列继续确认其根节点，然后就是前序遍历确认左右子树，如DBC对应着D就是根节点，再在中序遍历找D，左子树为B，右子树就为C，如图"></a>第二步：然后我继续分析左右子树，左子树的话我们就可以通过前序遍历序列继续确认其根节点，然后就是前序遍历确认左右子树，如DBC对应着D就是根节点，再在中序遍历找D，左子树为B，右子树就为C，如图</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072204492.png" srcset="/img/loading.gif" lazyload alt="image-20240307220422608" style="zoom:67%;">
 
 
 
 <p><strong>现在给一个例子大家自己尝试一下，下面有答案：</strong></p>
 <p><strong>前序遍历：</strong>D A E F B C H G I</p>
 <p><strong>中序遍历：</strong>E A F D H C B G I</p>
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
-  <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+  <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
- <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;" />
-
-
+ <img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072232033.png" srcset="/img/loading.gif" lazyload alt="image-20240229232149636" style="zoom: 33%;">
 
 
 
@@ -381,28 +379,30 @@
 
 
 
-<h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072214978.png" srcset="/img/loading.gif" lazyload alt="image-20240307221053428" style="zoom:50%;" />
 
-<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072214340.png" srcset="/img/loading.gif" lazyload alt="image-20240307221124548" style="zoom:50%;" />
 
-<h4 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072215148.png" srcset="/img/loading.gif" lazyload alt="image-20240307221320289" style="zoom:50%;" />
+<h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072214978.png" srcset="/img/loading.gif" lazyload alt="image-20240307221053428" style="zoom:50%;">
 
-<h4 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072215830.png" srcset="/img/loading.gif" lazyload alt="image-20240307220939378" style="zoom:50%;" />
+<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072214340.png" srcset="/img/loading.gif" lazyload alt="image-20240307221124548" style="zoom:50%;">
+
+<h4 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072215148.png" srcset="/img/loading.gif" lazyload alt="image-20240307221320289" style="zoom:50%;">
+
+<h4 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072215830.png" srcset="/img/loading.gif" lazyload alt="image-20240307220939378" style="zoom:50%;">
 
 <h4 id="注意：为了保险起见，大家可以在这里对自己画的树进行验证一下，自己按照前序遍历和中序遍历读一次看看对不对"><a href="#注意：为了保险起见，大家可以在这里对自己画的树进行验证一下，自己按照前序遍历和中序遍历读一次看看对不对" class="headerlink" title="注意：为了保险起见，大家可以在这里对自己画的树进行验证一下，自己按照前序遍历和中序遍历读一次看看对不对"></a>注意：为了保险起见，大家可以在这里对自己画的树进行验证一下，自己按照前序遍历和中序遍历读一次看看对不对</h4><h2 id="后序-中序遍历序列（和前面的寻找方法几乎一模一样，只不过我们前序遍历确认根节点是通过看第1个结点，后序遍历则是看最后1个结点确认根节点的）"><a href="#后序-中序遍历序列（和前面的寻找方法几乎一模一样，只不过我们前序遍历确认根节点是通过看第1个结点，后序遍历则是看最后1个结点确认根节点的）" class="headerlink" title="后序+中序遍历序列（和前面的寻找方法几乎一模一样，只不过我们前序遍历确认根节点是通过看第1个结点，后序遍历则是看最后1个结点确认根节点的）"></a>后序+中序遍历序列（和前面的寻找方法几乎一模一样，只不过我们前序遍历确认根节点是通过看第1个结点，后序遍历则是看最后1个结点确认根节点的）</h2><p><strong>后序遍历序列：</strong> E F A H C I G B D</p>
 <p><strong>中序遍历序列：</strong> E A F D H C B G I</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072221510.png" srcset="/img/loading.gif" lazyload alt="image-20240307222059614" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072221510.png" srcset="/img/loading.gif" lazyload alt="image-20240307222059614" style="zoom:50%;">
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072224717.png" srcset="/img/loading.gif" lazyload alt="image-20240307222148584" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072224717.png" srcset="/img/loading.gif" lazyload alt="image-20240307222148584" style="zoom:50%;">
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072224115.png" srcset="/img/loading.gif" lazyload alt="image-20240307222415826" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072224115.png" srcset="/img/loading.gif" lazyload alt="image-20240307222415826" style="zoom:50%;">
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072225979.png" srcset="/img/loading.gif" lazyload alt="image-20240307222503286" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403072225979.png" srcset="/img/loading.gif" lazyload alt="image-20240307222503286" style="zoom:50%;">
 
 
 
 <p><strong>持续更新……</strong></p>
-<h4 id="下一节内容是26、二叉树——线索二叉树……"><a href="#下一节内容是26、二叉树——线索二叉树……" class="headerlink" title="下一节内容是26、二叉树——线索二叉树……."></a>下一节内容是26、二叉树——线索二叉树…….</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4>
+<h4 id="下一节内容是26、二叉树——线索二叉树……"><a href="#下一节内容是26、二叉树——线索二叉树……" class="headerlink" title="下一节内容是26、二叉树——线索二叉树……."></a>下一节内容是26、二叉树——线索二叉树…….</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color="red">一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4>
                 
               </div>
             

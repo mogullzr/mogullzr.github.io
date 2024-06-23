@@ -336,7 +336,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>	<span class="hljs-keyword">if</span> (n != <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> n + <span class="hljs-built_in">sum</span>(n - <span class="hljs-number">1</span>);<br>	<span class="hljs-keyword">return</span> n;<br>&#125;<br><span class="hljs-type">int</span> n;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cin &gt;&gt; n;<br>	<br>	cout &lt;&lt; <span class="hljs-built_in">sum</span>(n);<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>​	上述代码大家应该可以大概在脑袋中描绘出这个递归流程，但是如果想通过画图讲解出来就有点繁琐，个人感觉不太好表示。因此本节我的讲解应该可能还是以直播为主，笔记为辅的模式。</p>
-<h2 id="一、排列数字（简单-）"><a href="#一、排列数字（简单-）" class="headerlink" title="一、排列数字（简单+）"></a>一、排列数字<font color='green'>（简单+）</font></h2><p>给定一个整数 n，将数字 1∼n 排成一排，将会有很多种排列方法。</p>
+<h2 id="一、排列数字（简单-）"><a href="#一、排列数字（简单-）" class="headerlink" title="一、排列数字（简单+）"></a>一、排列数字<font color="green">（简单+）</font></h2><p>给定一个整数 n，将数字 1∼n 排成一排，将会有很多种排列方法。</p>
 <p>现在，请你按照字典序将所有的排列方法输出。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含一个整数 n。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>按字典序输出所有排列方案，每个方案占一行。</p>
@@ -359,26 +359,11 @@ bool st[N];
 int n;
 void dfs(int x) {
     if (x > n) {
-        for (int i = 1; i <= n; i++) cout << a[i] << " ";
-        puts("");
-    }  
-    for (int i = 1; i <= n; i++) {
-        if (!st[i]) {
-            st[i] = true;
-            a[x] = i;
-            dfs(x + 1);
-            a[x] = 0;
-            st[i] = false;
-        }
-    }
-}
-int main()
-{
-    cin >> n;    
+        for (int i = 1; i <= n; i++) cout << a[i] " "; puts(""); } for (int i="1;" <="n;" { if (!st[i]) st[i]="true;" a[x]="i;" dfs(x + 1); int main() cin>> n;    
     dfs(1);    
     return 0;
 }
-        </blockcode>
+        </=></blockcode>
     </pre>
 </details>
 
@@ -386,7 +371,7 @@ int main()
 
 
 
-<h2 id="二、八皇后（简单-）"><a href="#二、八皇后（简单-）" class="headerlink" title="二、八皇后（简单+++）"></a>二、八皇后<font color='green'>（简单+++）</font></h2><p>n−−皇后问题是指将 n 个皇后放在 n×n× 的国际象棋棋盘上，使得皇后不能相互攻击到，即任意两个皇后都不能处于同一行、同一列或同一斜线上。</p>
+<h2 id="二、八皇后（简单-）"><a href="#二、八皇后（简单-）" class="headerlink" title="二、八皇后（简单+++）"></a>二、八皇后<font color="green">（简单+++）</font></h2><p>n−−皇后问题是指将 n 个皇后放在 n×n× 的国际象棋棋盘上，使得皇后不能相互攻击到，即任意两个皇后都不能处于同一行、同一列或同一斜线上。</p>
 <p><img src="https://cdn.acwing.com/media/article/image/2019/06/08/19_860e00c489-1_597ec77c49-8-queens.png" srcset="/img/loading.gif" lazyload alt="1_597ec77c49-8-queens.png"></p>
 <p>现在给定整数 n，请你输出所有的满足条件的棋子摆法。</p>
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含整数 n。</p>
@@ -414,39 +399,9 @@ bool cols[N],dg[N],udg[N];
 int n;
 void dfs(int x) {
     if (x > n) {
-        for (int i = 1; i <= n; i++)
-        {
-            for (int j = 1; j <= n; j++) {
-                cout << a[i][j];    
-            }
-            puts("");
-        }
-        puts("");
-    }  
-    for (int i = 1; i <= n; i++) {
-        if (!cols[i] && !dg[i + x] && !udg[n - x + i]) {
-            a[x][i] = 'Q';
-            cols[i] = dg[i + x] = udg[n - x + i] = true;
-            dfs(x + 1);
-            cols[i] = dg[i + x] = udg[n - x + i] = false;
-            a[x][i] = '.';
-        }
-    }
-}
-int main()
-{
-    cin >> n;    
-    for (int i = 1; i <= n; i++) 
-    {
-        for (int j = 1; j <= n; j++) {
-            a[i][j] = '.';    
-        }
-    }
-    dfs(1);    
-    return 0;
-}
-        </blockcode>
-    </pre>
+        for (int i = 1; i <= n; i++) { for (int j="1;" <="n;" j++) cout << a[i][j]; } puts(""); i="1;" if (!cols[i] && !dg[i + x] !udg[n - x i]) a[x][i]="Q" ; cols[i]="dg[i" i]="true;" dfs(x 1); int main() cin>> n;    
+    for (int i = 1; i <= n; i++) { for (int j="1;" <="n;" j++) a[i][j]="." ; } dfs(1); return 0; blockcode>
+    </=></=></blockcode></pre>
 </details>
 
 

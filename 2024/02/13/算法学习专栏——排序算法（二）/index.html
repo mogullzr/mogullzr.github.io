@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          204 字
+          249 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          2 分钟
+          3 分钟
         
       </span>
     
@@ -332,7 +332,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、归并排序（简单-）"><a href="#一、归并排序（简单-）" class="headerlink" title="一、归并排序（简单+）"></a>一、归并排序<font color='green'>（简单+）</font></h2><p>给定你一个长度为 n 的整数数列。</p>
+                <h2 id="一、归并排序（简单-）"><a href="#一、归并排序（简单-）" class="headerlink" title="一、归并排序（简单+）"></a>一、归并排序<font color="green">（简单+）</font></h2><p>给定你一个长度为 n 的整数数列。</p>
 <p>请你使用归并排序对这个数列按照从小到大进行排序。</p>
 <p>并将排好序的数列按顺序输出。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入共两行，第一行包含整数 n。</p>
@@ -362,18 +362,10 @@ void merge_sort(int l,int r) {
     merge_sort(l,mid);
     merge_sort(mid + 1, r);
     int i = l, j = mid + 1, k = 0;
-    while (i <= mid && j <= r) {
-        if (a[i] > a[j]) q[k++] = a[j++];
+    while (i <= mid && j <="r)" { if (a[i]> a[j]) q[k++] = a[j++];
         else q[k++] = a[i++];
     }
-    while (i <= mid) q[k++] = a[i++];
-    while (j <= mid) q[k++] = a[j++];
-    for (int i = 0,j = l; i < k; j++,i++) a[j] = q[i]; 
-}
-int main()
-{
-    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
-    cin >> n;
+    while (i <= mid) q[k++]="a[i++];" while (j <="mid)" for (int i="0,j" = l; k; j++,i++) a[j]="q[i];" } int main() { ios::sync_with_stdio(false),cin.tie(0),cout.tie(0); cin>> n;
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
@@ -382,7 +374,7 @@ int main()
         cout << a[i] << " ";
 }
 return 0;
-        </blockcode>
+        </=></=></blockcode>
     </pre>
 </details>
 
@@ -390,7 +382,7 @@ return 0;
 
 
 
-<h2 id="二、堆排序（简单-）"><a href="#二、堆排序（简单-）" class="headerlink" title="二、堆排序（简单++）"></a>二、堆排序<font color='green'>（简单++）</font></h2><p>输入一个长度为 n 的整数数列，从小到大输出前 m 小的数。</p>
+<h2 id="二、堆排序（简单-）"><a href="#二、堆排序（简单-）" class="headerlink" title="二、堆排序（简单++）"></a>二、堆排序<font color="green">（简单++）</font></h2><p>输入一个长度为 n 的整数数列，从小到大输出前 m 小的数。</p>
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n 和 m。</p>
 <p>第二行包含 n 个整数，表示整数数列。</p>
 <h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含 m 个整数，表示整数数列中前 m 小的数。</p>
@@ -413,19 +405,8 @@ int h[N];
 void down(int x)
 {
     int t = x;
-    if (2 * t <= sz && h[2 * t] <= h[x]) x = 2 * t;
-    if (2 * t + 1 <= sz && h[2 * t + 1] <= h[x]) x = 2 * t + 1;
-    if (t != x)
-    {
-        swap(h[t],h[x]);
-        down(x);
-    }
-}
-int main()
-{
-    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
-    cin >>n >> k;
-    for (int i = 1; i <= n; i++) cin >> h[i];    
+    if (2 * t <= 1 sz && h[2 * t] <="h[x])" x="2" t; if (2 t + 1] 1; (t !="x)" { swap(h[t],h[x]); down(x); } int main() ios::sync_with_stdio(false),cin.tie(0),cout.tie(0); cin>>n >> k;
+    for (int i = 1; i <= n; i++) cin>> h[i];    
     sz = n;    
     for (int i = n / 2; i ; i--) down(i);    
     while (k--)
@@ -437,7 +418,7 @@ int main()
     }    
     return 0;
 }
-        </blockcode>
+        </=></=></blockcode>
     </pre>
 </details>
 
@@ -446,7 +427,7 @@ int main()
 
 
 
-<h2 id="三、模拟堆（中等–）"><a href="#三、模拟堆（中等–）" class="headerlink" title="三、模拟堆（中等–）"></a>三、模拟堆<font color='orange'>（中等–）</font></h2><p>维护一个集合，初始时集合为空，支持如下几种操作：</p>
+<h2 id="三、模拟堆（中等–）"><a href="#三、模拟堆（中等–）" class="headerlink" title="三、模拟堆（中等–）"></a>三、模拟堆<font color="orange">（中等–）</font></h2><p>维护一个集合，初始时集合为空，支持如下几种操作：</p>
 <ol>
 <li><code>I x</code>，插入一个数 x；</li>
 <li><code>PM</code>，输出当前集合中的最小值；</li>

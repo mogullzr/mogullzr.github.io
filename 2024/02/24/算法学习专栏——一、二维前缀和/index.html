@@ -27,8 +27,8 @@
 <meta property="article:published_time" content="2024-02-24T05:09:49.000Z">
 <meta property="article:modified_time" content="2024-06-15T08:33:14.250Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="算法">
 <meta property="article:tag" content="练习">
+<meta property="article:tag" content="算法">
 <meta property="article:tag" content="前缀和">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404292224130.webp">
@@ -335,7 +335,7 @@
                 
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	接下来两天介绍的算法还算比较轻松，打算今日讲解<strong>一维前缀和</strong>和<strong>二维前缀和</strong>。</p>
 <p>​	但是这种类型的题目出现在比赛中就绝对不是这种形式了，一般就是以一种完全不一样的模式出现的。下面的<strong>激光炸弹</strong>是几年前蓝桥杯的一道C++组真题。</p>
-<h2 id="一、前缀和（一维）（简单-）"><a href="#一、前缀和（一维）（简单-）" class="headerlink" title="一、前缀和（一维）（简单-）"></a>一、前缀和（一维）<font color='green'>（简单-）</font></h2><p>输入一个长度为 n 的整数序列。</p>
+<h2 id="一、前缀和（一维）（简单-）"><a href="#一、前缀和（一维）（简单-）" class="headerlink" title="一、前缀和（一维）（简单-）"></a>一、前缀和（一维）<font color="green">（简单-）</font></h2><p>输入一个长度为 n 的整数序列。</p>
 <p>接下来再输入 m 个询问，每个询问输入一对 l,r,。</p>
 <p>对于每个询问，输出原序列中从第 l 个数到第 r 个数的和。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含两个整数 n 和 m。</p>
@@ -354,7 +354,7 @@
 
 
 
-<h2 id="二、前缀和（二维）（简单-）"><a href="#二、前缀和（二维）（简单-）" class="headerlink" title="二、前缀和（二维）（简单+）"></a>二、前缀和（二维）<font color='green'>（简单+）</font></h2><p>输入一个 n 行 m 列的整数矩阵，再输入 q 个询问，每个询问包含四个整数 x1,y1,x2,y21,1,2,2，表示一个子矩阵的左上角坐标和右下角坐标。</p>
+<h2 id="二、前缀和（二维）（简单-）"><a href="#二、前缀和（二维）（简单-）" class="headerlink" title="二、前缀和（二维）（简单+）"></a>二、前缀和（二维）<font color="green">（简单+）</font></h2><p>输入一个 n 行 m 列的整数矩阵，再输入 q 个询问，每个询问包含四个整数 x1,y1,x2,y21,1,2,2，表示一个子矩阵的左上角坐标和右下角坐标。</p>
 <p>对于每个询问输出子矩阵中所有数的和。</p>
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含三个整数 n，m，q，，。</p>
 <p>接下来 n 行，每行包含 m 个整数，表示整数矩阵。</p>
@@ -372,7 +372,7 @@
 
 
 
-<h2 id="三、激光炸弹（蓝桥杯，中等-）"><a href="#三、激光炸弹（蓝桥杯，中等-）" class="headerlink" title="三、激光炸弹（蓝桥杯，中等-）"></a>三、激光炸弹<font color='orange'>（蓝桥杯，中等-）</font></h2><p>地图上有 N 个目标，用整数 Xi,Yi, 表示目标在地图上的位置，每个目标都有一个价值 Wi。</p>
+<h2 id="三、激光炸弹（蓝桥杯，中等-）"><a href="#三、激光炸弹（蓝桥杯，中等-）" class="headerlink" title="三、激光炸弹（蓝桥杯，中等-）"></a>三、激光炸弹<font color="orange">（蓝桥杯，中等-）</font></h2><p>地图上有 N 个目标，用整数 Xi,Yi, 表示目标在地图上的位置，每个目标都有一个价值 Wi。</p>
 <p><strong>注意</strong>：不同目标可能在同一位置。</p>
 <p>现在有一种新型的激光炸弹，可以摧毁一个包含 R×R× 个位置的正方形内的所有目标。</p>
 <p>激光炸弹的投放是通过卫星定位的，但其有一个缺点，就是其爆炸范围，即那个正方形的边必须和 x，y， 轴平行。</p>
