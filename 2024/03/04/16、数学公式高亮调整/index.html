@@ -16,23 +16,23 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言​		如果你只是想建造一个好看的仅仅自己看起来舒服的网站，下面就不需要看了。下面的笔记主要是为了让网站更加规范化，同时让访问的速度加快（图片较多的情况下访问会比较慢） 一、CDN加速（阿里云 + CloudFlare，加速效果中等，处理时间最快）第一步​		点击Here 注册一个阿里云账号，自己购买一个域名我的域名就是https:&#x2F;&#x2F;rzcode.top 。180块钱10年所有权， 第二步​">
+    <meta name="description" content="一、步骤非常简单(一般情況下)第一步：打开你的主题配置文件，将各个参数修改为下面样子（我的是Fluid）  第二步：每当你写文章的时候，如果文章中存在公式的话，就需要是在文章的tags下面加上math:true（如果不在这下面可能会出现问题）12345678---title: 天梯赛算法小扩展02——如何将多个区间进行合并操作（必看）categories: 天梯赛备赛（2个月，天梯赛备考专属）ta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="11、webp图片设置和CDN加速全站">
-<meta property="og:url" content="http://example.com/2024/01/26/11%E3%80%81webp%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE%E5%92%8CCDN%E5%8A%A0%E9%80%9F%E5%85%A8%E7%AB%99/index.html">
+<meta property="og:title" content="16、数学公式高亮调整">
+<meta property="og:url" content="http://example.com/2024/03/04/16%E3%80%81%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E9%AB%98%E4%BA%AE%E8%B0%83%E6%95%B4/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="前言​		如果你只是想建造一个好看的仅仅自己看起来舒服的网站，下面就不需要看了。下面的笔记主要是为了让网站更加规范化，同时让访问的速度加快（图片较多的情况下访问会比较慢） 一、CDN加速（阿里云 + CloudFlare，加速效果中等，处理时间最快）第一步​		点击Here 注册一个阿里云账号，自己购买一个域名我的域名就是https:&#x2F;&#x2F;rzcode.top 。180块钱10年所有权， 第二步​">
+<meta property="og:description" content="一、步骤非常简单(一般情況下)第一步：打开你的主题配置文件，将各个参数修改为下面样子（我的是Fluid）  第二步：每当你写文章的时候，如果文章中存在公式的话，就需要是在文章的tags下面加上math:true（如果不在这下面可能会出现问题）12345678---title: 天梯赛算法小扩展02——如何将多个区间进行合并操作（必看）categories: 天梯赛备赛（2个月，天梯赛备考专属）ta">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270039642.webp">
-<meta property="article:published_time" content="2024-01-26T14:58:26.000Z">
-<meta property="article:modified_time" content="2024-01-27T11:06:01.187Z">
+<meta property="og:image" content="http://example.com/assets/index.png">
+<meta property="article:published_time" content="2024-03-04T14:58:10.000Z">
+<meta property="article:modified_time" content="2024-06-26T06:48:59.672Z">
 <meta property="article:author" content="Mogullzr">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401270039642.webp">
+<meta name="twitter:image" content="http://example.com/assets/index.png">
   
   
   
-  <title>11、webp图片设置和CDN加速全站 - 程序书架</title>
+  <title>16、数学公式高亮调整 - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -246,7 +246,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="11、webp图片设置和CDN加速全站"></span>
+            <span id="subtitle" data-typed-text="16、数学公式高亮调整"></span>
           
         </div>
 
@@ -257,8 +257,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-26 22:58" pubdate>
-          2024年1月26日 晚上
+        <time datetime="2024-03-04 22:58" pubdate>
+          2024年3月4日 晚上
         </time>
       </span>
     
@@ -269,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          603 字
+          312 字
         
       </span>
     
@@ -280,7 +280,7 @@
         
         
         
-          6 分钟
+          3 分钟
         
       </span>
     
@@ -325,38 +325,36 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">11、webp图片设置和CDN加速全站</h1>
+            <h1 id="seo-header">16、数学公式高亮调整</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​		如果你只是想建造一个好看的仅仅自己看起来舒服的网站，下面就不需要看了。下面的笔记主要是为了让网站更加规范化，同时让访问的速度加快<strong>（图片较多的情况下访问会比较慢）</strong></p>
-<h2 id="一、CDN加速（阿里云-CloudFlare，加速效果中等，处理时间最快）"><a href="#一、CDN加速（阿里云-CloudFlare，加速效果中等，处理时间最快）" class="headerlink" title="一、CDN加速（阿里云 + CloudFlare，加速效果中等，处理时间最快）"></a>一、CDN加速（阿里云 + CloudFlare，加速效果中等，处理时间最快）</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>​		点击<a target="_blank" rel="noopener" href="https://www.aliyun.com/">Here</a> 注册一个阿里云账号，自己购买一个域名我的域名就是<code>https://rzcode.top</code> 。180块钱10年所有权，</p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>​		点击<a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">Here</a> 注册一个CLOUDFLARE账号，	搜索购买的域名<strong>（可以不备案）</strong></p>
-<p>​		<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271632021.png" srcset="/img/loading.gif" lazyload alt="image-20240127163227225"></p>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>​		根据提示信息一直到下面这步</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271639212.png" srcset="/img/loading.gif" lazyload alt="image-20240127163929822"></p>
-<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p>​		进入<a target="_blank" rel="noopener" href="https://aliyun.com/">阿里云</a>，打开控制台-&gt;打开域名-&gt;域名列表-&gt;解析-&gt;DNS服务器-&gt;DNS修改</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271638806.png" srcset="/img/loading.gif" lazyload alt="image-20240127163802588"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271638056.png" srcset="/img/loading.gif" lazyload alt="image-20240127163857379"></p>
-<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>​		将之前的两个CloudFlare名称的服务器替换原来的2个DNS服务器</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271641311.png" srcset="/img/loading.gif" lazyload alt="image-20240127164132988"></p>
-<h3 id="第六步"><a href="#第六步" class="headerlink" title="第六步"></a>第六步</h3><p>​		等待几分钟阿里云同步数据成功，同步完之后会在你绑定的QQ中发来消息。当出现了这条信息之后，你的网站就可以被加速成功了！</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401271643428.png" srcset="/img/loading.gif" lazyload alt="image-20240127164323280"></p>
-<h2 id="二、CDN加速（阿里云-又拍云联盟）"><a href="#二、CDN加速（阿里云-又拍云联盟）" class="headerlink" title="二、CDN加速（阿里云 + 又拍云联盟）"></a>二、CDN加速（阿里云 + 又拍云联盟）</h2><h3 id="第一步-1"><a href="#第一步-1" class="headerlink" title="第一步"></a>第一步</h3><p>   点击<a target="_blank" rel="noopener" href="https://www.upyun.com/">Here</a> 注册又拍云账号</p>
-<p>   为了防止失败，最好将个人实名认证搞定</p>
-<h3 id="第二步-1"><a href="#第二步-1" class="headerlink" title="第二步"></a>第二步</h3><p>   点击<a target="_blank" rel="noopener" href="https://www.upyun.com/">Here</a> 加入又拍云联盟，同时享有</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401262209156.png" srcset="/img/loading.gif" lazyload alt="image-20240126220910383"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401262209658.png" srcset="/img/loading.gif" lazyload alt="image-20240126220938247"></p>
-<h3 id="第三步-1"><a href="#第三步-1" class="headerlink" title="第三步"></a>第三步</h3><p>   现在来我们的Fluid来先设置一下底部的样式，打开Fluid得配置文件，找到footer的content：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">content:</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">  &lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener&quot;&gt;&lt;span&gt;Hexo&lt;/span&gt;&lt;/a&gt;</span><br><span class="hljs-string">  &lt;i class=&quot;iconfont icon-love&quot;&gt;&lt;/i&gt;</span><br><span class="hljs-string">  &lt;a href=&quot;https://github.com/fluid-dev/hexo-theme-fluid&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener&quot;&gt;&lt;span&gt;Fluid&lt;/span&gt;&lt;/a&gt;</span><br><span class="hljs-string">  &lt;div&gt;</span><br><span class="hljs-string">    &lt;span&gt;本网站由&lt;/span&gt;</span><br><span class="hljs-string">    &lt;a href=&quot;https://www.upyun.com/?utm_source=lianmeng&amp;amp;utm_medium=referra&quot;&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401262222693.png&quot; align=&quot;absmiddle&quot; width=&quot;59px&quot; height=&quot;30px&quot; /&gt;&lt;/a&gt;</span><br><span class="hljs-string">    &lt;span&gt;提供CDN加速/云存储服务&lt;/span&gt;</span><br><span class="hljs-string">  &lt;/div&gt;</span><br><span class="hljs-string">  &lt;div style=&quot;font-size: 0.85rem&quot;&gt;</span><br><span class="hljs-string">    &lt;span id=&quot;timeDate&quot;&gt;载入天数...&lt;/span&gt;</span><br><span class="hljs-string">    &lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/span&gt;</span><br><span class="hljs-string">    &lt;script src=&quot;/js/diy/timeDate.js&quot;&gt;&lt;/script&gt;</span><br><span class="hljs-string">  &lt;/div&gt;</span><br><span class="hljs-string">&#x27;</span><br></code></pre></td></tr></table></figure>
+                <h2 id="一、步骤非常简单-一般情況下"><a href="#一、步骤非常简单-一般情況下" class="headerlink" title="一、步骤非常简单(一般情況下)"></a>一、步骤非常简单(一般情況下)</h2><h4 id="第一步：打开你的主题配置文件，将各个参数修改为下面样子（我的是Fluid）"><a href="#第一步：打开你的主题配置文件，将各个参数修改为下面样子（我的是Fluid）" class="headerlink" title="第一步：打开你的主题配置文件，将各个参数修改为下面样子（我的是Fluid）"></a>第一步：打开你的主题配置文件，将各个参数修改为下面样子（我的是Fluid）</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042352385.png" srcset="/img/loading.gif" lazyload alt="image-20240304235144672" style="zoom:50%;" />
 
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401262237324.png" srcset="/img/loading.gif" lazyload alt="image-20240126223650845"></p>
-<h3 id="第四步-1"><a href="#第四步-1" class="headerlink" title="第四步"></a>第四步</h3><p>   写申请表</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401262240627.png" srcset="/img/loading.gif" lazyload alt="image-20240126224050130"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401262241727.png" srcset="/img/loading.gif" lazyload alt="image-20240126224129394"></p>
-<p>等待几天时间……</p>
-<h3 id="第五步-1"><a href="#第五步-1" class="headerlink" title="第五步"></a>第五步</h3><p>未完待续……</p>
+<h4 id="第二步：每当你写文章的时候，如果文章中存在公式的话，就需要是在文章的tags下面加上math-true（如果不在这下面可能会出现问题）"><a href="#第二步：每当你写文章的时候，如果文章中存在公式的话，就需要是在文章的tags下面加上math-true（如果不在这下面可能会出现问题）" class="headerlink" title="第二步：每当你写文章的时候，如果文章中存在公式的话，就需要是在文章的tags下面加上math:true（如果不在这下面可能会出现问题）"></a>第二步：每当你写文章的时候，如果文章中存在公式的话，就需要是在文章的tags下面加上<code>math:true</code><font color='red'>（如果不在这下面可能会出现问题）</font></h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 天梯赛算法小扩展02——如何将多个区间进行合并操作（必看）<br>categories: 天梯赛备赛（2个月，天梯赛备考专属）<br>tags: <br><span class="hljs-bullet">-</span> 算法<br><span class="hljs-bullet">-</span> 天梯赛<br><span class="hljs-section">math: true</span><br><span class="hljs-section">---</span><br></code></pre></td></tr></table></figure>
 
+
+
+<h2 id="二、如果进行了以上操作还是有问题就进行以下操作-可能存在情況"><a href="#二、如果进行了以上操作还是有问题就进行以下操作-可能存在情況" class="headerlink" title="二、如果进行了以上操作还是有问题就进行以下操作(可能存在情況)"></a>二、如果进行了以上操作还是有问题就进行以下操作(可能存在情況)</h2><h4 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm uninstall hexo-renderer-marked --save<br>npm install hexo-renderer-kramed --save<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="第二步：打开node-modules-kramed-lib-rules-inline-js"><a href="#第二步：打开node-modules-kramed-lib-rules-inline-js" class="headerlink" title="第二步：打开node_modules\kramed\lib\rules\inline.js"></a>第二步：打开node_modules\kramed\lib\rules\inline.js</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs r"><span class="hljs-operator">/</span><span class="hljs-operator">/</span>escape<span class="hljs-operator">:</span> <span class="hljs-operator">/</span><span class="hljs-operator">^</span><span class="hljs-punctuation">\</span><span class="hljs-punctuation">\</span><span class="hljs-punctuation">(</span><span class="hljs-punctuation">[</span><span class="hljs-punctuation">\</span><span class="hljs-punctuation">\</span>`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,<br>escape: /^\\([`<span class="hljs-operator">*</span><span class="hljs-punctuation">\</span><span class="hljs-punctuation">[</span><span class="hljs-punctuation">\</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><span class="hljs-comment">#$+\-.!_&gt;])</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 只需要有两个部分都需要修改<br><span class="hljs-regexp">//</span>em: <span class="hljs-regexp">/^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,<br> em: <span class="hljs-regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="第三步：开启MathJax（和上面的一致）"><a href="#第三步：开启MathJax（和上面的一致）" class="headerlink" title="第三步：开启MathJax（和上面的一致）"></a>第三步：开启MathJax（和上面的一致）</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Math Equations Render Support</span><br><span class="hljs-attr">math:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">per_page:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">engine:</span> <span class="hljs-string">mathjax</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="第四步：还需要在文章的Front-matter里打开mathjax开关，如下："><a href="#第四步：还需要在文章的Front-matter里打开mathjax开关，如下：" class="headerlink" title="第四步：还需要在文章的Front-matter里打开mathjax开关，如下："></a>第四步：还需要在文章的Front-matter里打开mathjax开关，如下：</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 天梯赛算法小扩展02——如何将多个区间进行合并操作（必看）<br>categories: 天梯赛备赛（2个月，天梯赛备考专属）<br>tags: <br><span class="hljs-bullet">-</span> 算法<br><span class="hljs-bullet">-</span> 天梯赛<br><span class="hljs-section">mathjax: true</span><br><span class="hljs-section">---</span><br></code></pre></td></tr></table></figure>
+
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             
@@ -368,9 +366,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/26/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/" title="图片处理">
+                      <a href="/2024/03/06/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95-%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0-%E7%BA%A6%E6%95%B0%E5%92%8C/" title="算法练习专栏——埃氏筛法+约数个数+约数和">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">图片处理</span>
+                        <span class="hidden-mobile">算法练习专栏——埃氏筛法+约数个数+约数和</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -378,8 +376,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/26/10%E3%80%81%E4%BF%AE%E6%94%B9%E8%83%8C%E6%99%AF%E5%9B%BE/" title="10、修改背景图">
-                        <span class="hidden-mobile">10、修改背景图</span>
+                      <a href="/2024/03/04/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E4%B8%93%E6%A0%8F%E2%80%94%E2%80%94%E7%AE%97%E6%B3%95%E5%B0%8F%E6%89%A9%E5%B1%9502%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E5%B0%86%E5%A4%9A%E4%B8%AA%E5%8C%BA%E9%97%B4%E8%BF%9B%E8%A1%8C%E5%90%88%E5%B9%B6%E6%93%8D%E4%BD%9C%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/" title="算法练习专栏算法小扩展02——如何将多个区间进行合并操作（必看）">
+                        <span class="hidden-mobile">算法练习专栏算法小扩展02——如何将多个区间进行合并操作（必看）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
