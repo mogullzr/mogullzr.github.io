@@ -337,17 +337,17 @@
                 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>​	<strong>线性表</strong>是具有相同数据类型的n(n ≥ 0)个数据元素的有限序列，其中<strong>n为表长</strong>，当n&#x3D;0时线性表是一个空表。若用命名线性表，则其一般表示为 </p>
 <p>$$<br>L&#x3D;(a_1,a_2…,a_i~…,a_n)<br>$$<br>​	<strong>栈(Stack)<strong>是只允许在一端进行插入或删除操作的</strong>线性表</strong></p>
 <p>​	<strong>重要术语：</strong> 栈底、栈顶、空栈</p>
-<p>​					<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171504055.png" srcset="/img/loading.gif" lazyload alt="image-20240217150449837" style="zoom:33%;"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171503181.png" srcset="/img/loading.gif" lazyload style="zoom:33%;"></p>
+<p>​					<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171504055.png" srcset="/img/loading.gif" lazyload alt="image-20240217150449837" style="zoom:33%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171503181.png" srcset="/img/loading.gif" lazyload style="zoom:33%;" /></p>
 <p>​	<strong>特点：</strong> 后进现出，比如这个图的进栈顺序是<br>$$<br>a_1-&gt;a_2-&gt;a_3-&gt;a_4-&gt;a_5<br>$$<br>​	出栈顺序是<br>$$<br>a_5-&gt;a_4-&gt;a_3-&gt;a_2-&gt;a_1<br>$$</p>
-<h2 id="栈的基本操作"><a href="#栈的基本操作" class="headerlink" title="栈的基本操作"></a>栈的基本操作</h2><p><strong>InitStack(&amp; S)：</strong><font color="red">初始化栈</font>。构造一个空栈S，分配内存空间。</p>
-<p><strong>DestotyStack(&amp; L)：</strong> <font color="red">销毁栈</font>。销毁并释放栈S所占的内存空间。</p>
-<p><strong>Push(&amp;S,x)：</strong> <font color="red">进栈</font>。若S未满，将x插入成为新栈。</p>
-<p><strong>Pop(&amp;S)：</strong> <font color="red">出栈</font>。若S非空，将栈顶x弹出成为新栈。</p>
-<p><strong>GetTop(&amp;S)：</strong><font color="red">读栈顶元素</font>。若栈S非空，则用 x 返回栈顶元素。</p>
+<h2 id="栈的基本操作"><a href="#栈的基本操作" class="headerlink" title="栈的基本操作"></a>栈的基本操作</h2><p><strong>InitStack(&amp; S)：</strong><font color='red'>初始化栈</font>。构造一个空栈S，分配内存空间。</p>
+<p><strong>DestotyStack(&amp; L)：</strong> <font color='red'>销毁栈</font>。销毁并释放栈S所占的内存空间。</p>
+<p><strong>Push(&amp;S,x)：</strong> <font color='red'>进栈</font>。若S未满，将x插入成为新栈。</p>
+<p><strong>Pop(&amp;S)：</strong> <font color='red'>出栈</font>。若S非空，将栈顶x弹出成为新栈。</p>
+<p><strong>GetTop(&amp;S)：</strong><font color='red'>读栈顶元素</font>。若栈S非空，则用 x 返回栈顶元素。</p>
 <p><strong>StackEmpty(&amp; S)：</strong> 判断一个栈 S 是否为空。若S为空，则返回true，反之返回false。</p>
-<h2 id="一个公式"><a href="#一个公式" class="headerlink" title="一个公式"></a>一个公式</h2><p>​	n个不同元素进栈，出栈元素不同排列的个数为<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171610064.png" srcset="/img/loading.gif" lazyload alt="image-20240217161028431" style="zoom:33%;">上述公式称为卡特兰(Catalan)数，可采用数学归纳法证明（不要求掌握)。</p>
-<p>​							<img src="/.com//image-20240217163522336.png" srcset="/img/loading.gif" lazyload alt="image-20240217163522336" style="zoom:50%;"></p>
-<h4 id="下一节内容是：8、栈与队列——顺序栈！！！"><a href="#下一节内容是：8、栈与队列——顺序栈！！！" class="headerlink" title="下一节内容是：8、栈与队列——顺序栈！！！"></a>下一节内容是：8、栈与队列——顺序栈！！！</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o…….."></a><font color="red">一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o……..</font></h4>
+<h2 id="一个公式"><a href="#一个公式" class="headerlink" title="一个公式"></a>一个公式</h2><p>​	n个不同元素进栈，出栈元素不同排列的个数为<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402171610064.png" srcset="/img/loading.gif" lazyload alt="image-20240217161028431" style="zoom:33%;" />上述公式称为卡特兰(Catalan)数，可采用数学归纳法证明（不要求掌握)。</p>
+<p>​							<img src="./assets/image-20240217163522336.png" srcset="/img/loading.gif" lazyload alt="image-20240217163522336" style="zoom:50%;" /></p>
+<h4 id="下一节内容是：8、栈与队列——顺序栈！！！"><a href="#下一节内容是：8、栈与队列——顺序栈！！！" class="headerlink" title="下一节内容是：8、栈与队列——顺序栈！！！"></a>下一节内容是：8、栈与队列——顺序栈！！！</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o…….."></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o……..</font></h4><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

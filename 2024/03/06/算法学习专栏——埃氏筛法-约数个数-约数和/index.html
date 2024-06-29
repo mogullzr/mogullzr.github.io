@@ -333,7 +333,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、筛质数（简单-）"><a href="#一、筛质数（简单-）" class="headerlink" title="一、筛质数（简单+）"></a><font color="green">一、筛质数（简单+）</font></h2><p>给定一个正整数 n，请你求出 1∼n 中质数的个数。</p>
+                <h2 id="一、筛质数（简单-）"><a href="#一、筛质数（简单-）" class="headerlink" title="一、筛质数（简单+）"></a><font color='green'>一、筛质数（简单+）</font></h2><p>给定一个正整数 n，请你求出 1∼n 中质数的个数。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含整数 n。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数，表示 1∼n 中质数的个数。</p>
 <h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>\begin{flalign}<br>&amp;1≤n≤10^6&amp;<br>\end{flalign}<br>$$</p>
@@ -347,7 +347,7 @@
 
 
 
-<h2 id="二、约数个数-简单"><a href="#二、约数个数-简单" class="headerlink" title="二、约数个数(简单+)"></a><font color="green">二、约数个数(简单+)</font></h2><p>给定 n 个正整数 a<del>i</del>，请你输出这些数的乘积的约数个数，答案对 10^9^+7 取模。</p>
+<h2 id="二、约数个数-简单"><a href="#二、约数个数-简单" class="headerlink" title="二、约数个数(简单+)"></a><font color='green'>二、约数个数(简单+)</font></h2><p>给定 n 个正整数 a<del>i</del>，请你输出这些数的乘积的约数个数，答案对 10^9^+7 取模。</p>
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n。</p>
 <p>接下来 n 行，每行包含一个整数 a<del>i</del>。</p>
 <h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一个整数，表示所给正整数的乘积的约数个数，答案需对 10^9^+7 取模。</p>
@@ -362,7 +362,7 @@
 
 
 
-<h2 id="三、约数的和"><a href="#三、约数的和" class="headerlink" title="三、约数的和"></a><font color="green">三、约数的和</font></h2><p>给定 n 个正整数 a<del>i</del>，请你输出这些数的乘积的约数之和，答案对 10^9^+7取模。</p>
+<h2 id="三、约数的和"><a href="#三、约数的和" class="headerlink" title="三、约数的和"></a><font color='green'>三、约数的和</font></h2><p>给定 n 个正整数 a<del>i</del>，请你输出这些数的乘积的约数之和，答案对 10^9^+7取模。</p>
 <h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n。</p>
 <p>接下来 n 行，每行包含一个整数 a<del>i</del>。</p>
 <h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一个整数，表示所给正整数的乘积的约数之和，答案需对 10^9^+7取模。</p>
@@ -375,7 +375,7 @@
 
 <h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unordered_map&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> mod = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><span class="hljs-type">int</span> n;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>),cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>),cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    unordered_map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; prime;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        <span class="hljs-type">int</span> x;<br>        cin &gt;&gt; x;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i * i &lt;= x; i ++) &#123;<br>            <span class="hljs-keyword">while</span> (x % i == <span class="hljs-number">0</span>) &#123;<br>                x /= i;<br>                prime[i]++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">1</span>) prime[x]++;<br>    &#125;<br><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> res = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> k:prime) &#123;<br>        <span class="hljs-type">int</span> a = k.first, b = k.second;<br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> tt = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; b; i++) &#123;<br>            tt = (tt * a + <span class="hljs-number">1</span>) % mod;<br>        &#125;<br>        res = res * tt % mod;<br>    &#125;<br>    <br>    cout &lt;&lt; res;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

@@ -341,17 +341,17 @@
 <li>每个结点最多只有两个子树</li>
 <li>左右子树不可以颠倒<strong>（二叉树是有序树，因此它和度为2的有序树是有区别的）</strong></li>
 </ul>
-<p>​				<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042159874.png" srcset="/img/loading.gif" lazyload alt="image-20240304215923866" style="zoom:50%;"><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042201046.png" srcset="/img/loading.gif" lazyload alt="image-20240304220130194" style="zoom:50%;"></p>
+<p>​				<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042159874.png" srcset="/img/loading.gif" lazyload alt="image-20240304215923866" style="zoom:50%;" /><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042201046.png" srcset="/img/loading.gif" lazyload alt="image-20240304220130194" style="zoom:50%;" /></p>
 <h2 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h2><p>$$<br>一棵高度为h，且含有2^h - 1个结点的二叉树，不能多也不能少<br>$$</p>
 <h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
 <li>只有最后一层有叶子结点</li>
 <li>不存在度为1的结点</li>
 <li>按层序从1开始编号，结点i的左孩子为2i，右孩子为2i+1，结点i的父节点为i&#x2F;2进行上去取整 <strong>（如果有的话）</strong></li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042209221.png" srcset="/img/loading.gif" lazyload alt="image-20240304220911623" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042209221.png" srcset="/img/loading.gif" lazyload alt="image-20240304220911623" style="zoom:50%;" />
 
 <h2 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h2><p>当且仅当每个结点都与高度为h的满二叉树中编号为1~n结点一一对应。</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042210882.png" srcset="/img/loading.gif" lazyload alt="image-20240304221001729" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042210882.png" srcset="/img/loading.gif" lazyload alt="image-20240304221001729" style="zoom:50%;" />
 
 <h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ul>
 <li>只有最后两层可能有叶子结点</li>
@@ -359,7 +359,7 @@
 <li>按层序从1开始编号，结点i的左孩子为2i，右孩子为2i+1，结点i的父节点为i&#x2F;2进行上去取整 <strong>（如果有的话）</strong></li>
 </ul>
 <p><strong>注意：</strong> 如果大家对于这里的一一对应没有看太明白，就看下面的这个例子，这个不属于完全二叉树。</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042215443.png" srcset="/img/loading.gif" lazyload alt="image-20240304221344180" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042215443.png" srcset="/img/loading.gif" lazyload alt="image-20240304221344180" style="zoom:50%;" />
 
 <h2 id="二叉排序树（用于元素的排序和搜索）"><a href="#二叉排序树（用于元素的排序和搜索）" class="headerlink" title="二叉排序树（用于元素的排序和搜索）"></a>二叉排序树（用于元素的排序和搜索）</h2><p>一棵二叉树或者是空二叉树，或者是具有如下性质的二叉树：</p>
 <ul>
@@ -367,16 +367,16 @@
 <li><strong>右子树</strong>上的所有结点的关键字<strong>均大于</strong>根结点的关键字</li>
 <li>左子树和右子树又各是一棵二叉排序树</li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042218779.png" srcset="/img/loading.gif" lazyload alt="image-20240304221813549" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042218779.png" srcset="/img/loading.gif" lazyload alt="image-20240304221813549" style="zoom:50%;" />
 
 <p>​	如果按照这种规则，比如我们想将68加入这个数里面去，我们一般就是这样的，首先从19开始和68进行大小比较，68大，进入右子树中，现在来到节点50，和68比较，68大，进入右子树，继续是66和68比较，68大，进入右节点，和70进行比较，68小，同时发现节点70没有左节点，所以直接插入即可。等到我们学习到后阶段，这种类型的代码肯定是要随手可写的，现在大家需要做到的主要就是可以把我上面介绍的思路理清楚即可。现在随意给出一个数组[4,5,1,2,3]，大家可以尝试着将这个数组构造成下面的树。后面有答案。</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042226959.png" srcset="/img/loading.gif" lazyload alt="image-20240304222653859" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042226959.png" srcset="/img/loading.gif" lazyload alt="image-20240304222653859" style="zoom:50%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042231926.png" srcset="/img/loading.gif" lazyload alt="image-20240304223148280" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403042231926.png" srcset="/img/loading.gif" lazyload alt="image-20240304223148280" style="zoom:50%;" />
 
 <h2 id="平衡二叉树（相比于一般的二叉排序树而言搜索效率更高）"><a href="#平衡二叉树（相比于一般的二叉排序树而言搜索效率更高）" class="headerlink" title="平衡二叉树（相比于一般的二叉排序树而言搜索效率更高）"></a>平衡二叉树（相比于一般的二叉排序树而言搜索效率更高）</h2><p>树上任一结点的<strong>左子树</strong>和<strong>右子树</strong>的<strong>深度之差不超过1</strong></p>
 <p><strong>例子：</strong>左边的是平衡二叉树，右边的不是。但是二者都是二叉排序树，大家观察一下这两个图搜索某一个数的时候你会发现，第1个图的效率明显会比第2个图快得多，比如：你要搜索66，第1个图首先比较50和66的大小，50&lt;66，进入右子树，然后发现6666,1步就找到了。如果是第2个图来搜，首先26和66比较，22&lt;66，进入子树，30和66比较，30&lt;66，进入右子树，….，最后找到66</p>
-<p>​				 <img src="/.com//image-20240304223320960.png" srcset="/img/loading.gif" lazyload alt="image-20240304223320960" style="zoom: 33%;"></p>
+<p>​				 <img src="./assets/image-20240304223320960.png" srcset="/img/loading.gif" lazyload alt="image-20240304223320960" style="zoom: 33%;" /></p>
 <p><strong>详细构造方法后续还会详细介绍！</strong></p>
 <h2 id="二叉树的一些常用性质"><a href="#二叉树的一些常用性质" class="headerlink" title="二叉树的一些常用性质"></a>二叉树的一些常用性质</h2><ul>
 <li><p>设非空二叉树中度为0、1和2的结点个数分别为n<del>0</del>、n<del>1</del>和n<del>2</del>，则&#x3D;&#x3D;n<del>0</del>&#x3D;n<del>2</del> + 1&#x3D;&#x3D;</p>
@@ -403,7 +403,7 @@
 <li><p>如果完全二叉树有2k - 1个结点，必有&#x3D;&#x3D;n<del>1</del>&#x3D;0,n<del>0</del>&#x3D;k,n<del>2</del>&#x3D;k-1&#x3D;&#x3D;</p>
 </li>
 </ul>
-<h4 id="下一节内容是：22、二叉树——存储结构！！！……"><a href="#下一节内容是：22、二叉树——存储结构！！！……" class="headerlink" title="下一节内容是：22、二叉树——存储结构！！！…….."></a>下一节内容是：22、二叉树——存储结构！！！……..</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color="red">一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4>
+<h4 id="下一节内容是：22、二叉树——存储结构！！！……"><a href="#下一节内容是：22、二叉树——存储结构！！！……" class="headerlink" title="下一节内容是：22、二叉树——存储结构！！！…….."></a>下一节内容是：22、二叉树——存储结构！！！……..</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

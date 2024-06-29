@@ -334,7 +334,7 @@
             
               <div class="markdown-body">
                 
-                <h3 id="森林的基本概念"><a href="#森林的基本概念" class="headerlink" title="森林的基本概念"></a>森林的基本概念</h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101327629.png" srcset="/img/loading.gif" lazyload alt="image-20240310132742766" style="zoom:50%;">
+                <h3 id="森林的基本概念"><a href="#森林的基本概念" class="headerlink" title="森林的基本概念"></a>森林的基本概念</h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101327629.png" srcset="/img/loading.gif" lazyload alt="image-20240310132742766" style="zoom:50%;" />
 
 
 
@@ -343,7 +343,7 @@
 </blockquote>
 <h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAX_TREE_SIZE 100 		 <span class="hljs-comment">// 树中最多的结点数</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123; 		         <span class="hljs-comment">// 树的结点定义</span><br>    ElemType data;        		 <span class="hljs-comment">// 数据元素</span><br>    <span class="hljs-type">int</span> parent;           		 <span class="hljs-comment">// 双亲位置域，当parent==-1的时候该结点无双亲结点，也就是根节点</span><br>&#125;PTNode;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123;<br>    PTNode nodes[MAX_TREE_SIZE]; <span class="hljs-comment">// 双亲表示 </span><br>    <span class="hljs-type">int</span> n;                       <span class="hljs-comment">// 结点数</span><br>&#125;PTree;<br></code></pre></td></tr></table></figure>
 
-<h5 id="注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。"><a href="#注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。" class="headerlink" title="注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。"></a><font color="red">注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。</font></h5><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>​	查找某个特定结点的双亲结点时候会很方便</p>
+<h5 id="注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。"><a href="#注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。" class="headerlink" title="注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。"></a><font color='red'>注意：这里大家如果对于后面代码大概有个怎么写的概念的话，那么就可以证明树这节内容你掌握得还算要得，如果对于后面我需要如何实现代码一点思路都没有，那么你就最好还是先把前面的内容再温习温习再回到这里继续观看下面的内容。</font></h5><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>​	查找某个特定结点的双亲结点时候会很方便</p>
 <h4 id="添加节点和删除节点"><a href="#添加节点和删除节点" class="headerlink" title="添加节点和删除节点"></a>添加节点和删除节点</h4><p><strong>添加叶子节点：</strong> 加上节点的时候需要将其双亲节点记录一下。</p>
 <p><strong>删除叶子节点：</strong> 删除节点的时候需要将其双亲节点删除：</p>
 <ul>
@@ -354,7 +354,7 @@
 <h2 id="二、孩子表示法（顺序-链式存储）"><a href="#二、孩子表示法（顺序-链式存储）" class="headerlink" title="二、孩子表示法（顺序+链式存储）"></a>二、孩子表示法（顺序+链式存储）</h2><h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h3><p>​	顺序存储各个节点，每个结点中保存孩子结点的链表头指针。</p>
 <h3 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体"></a>结构体</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">CTNode</span> &#123;<br>    <span class="hljs-type">int</span> child; <span class="hljs-comment">// 孩子结点在数组中的位置</span><br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CTNode</span> *next; <span class="hljs-comment">// 下一个孩子</span><br>&#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span>  &#123;<br>    ElemType data;<br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CTNode</span> *firstChild; <span class="hljs-comment">// 第一个孩子</span><br>&#125; CTBox;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123;<br>    CTBox nodes[MAX_TREE_SIZE];<br>    <span class="hljs-type">int</span> n, r; <span class="hljs-comment">// 结点和根的位置</span><br>&#125;CTree;<br></code></pre></td></tr></table></figure>
 
-<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101412187.png" srcset="/img/loading.gif" lazyload alt="image-20240310141218213" style="zoom:50%;">
+<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h3><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101412187.png" srcset="/img/loading.gif" lazyload alt="image-20240310141218213" style="zoom:50%;" />
 
 <h3 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h3><ul>
 <li>这种存储方式，很明显：寻找某个结点的孩子结点就会变得非常方便，但是找双亲结点就有点麻烦了<strong>（找双亲这里提供一种方法，就是对所有结点A&#x2F;B&#x2F;C&#x2F;D&#x2F;E的孩子结点进行遍历，由于一个结点只有一个双亲结点，所有一旦搜索到寻找结点为X结点的孩子结点，那么X结点就是寻找结点的双亲结点）</strong></li>
@@ -363,11 +363,11 @@
 
 
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101438092.png" srcset="/img/loading.gif" lazyload alt="image-20240310143814680" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403101438092.png" srcset="/img/loading.gif" lazyload alt="image-20240310143814680" style="zoom:50%;" />
 
 <p>我们之后还会学习如何进行树和二叉树和森林之间的转换，这里介绍的就是树转换为二叉树。</p>
-<p>详细过程请看 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1b7411N798/?p=52&vd_source=2a4a0816a6950de0fb15868c762fad9c">链接</a> <strong>7min25s~末尾</strong> <font color="red"><strong>这一部分是期末考试的重大考点之一</strong></font> </p>
-<h4 id="一节内容是28、树——树和森林的遍历……"><a href="#一节内容是28、树——树和森林的遍历……" class="headerlink" title="一节内容是28、树——树和森林的遍历……."></a>一节内容是28、树——树和森林的遍历…….</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color="red">一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4>
+<p>详细过程请看 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1b7411N798/?p=52&vd_source=2a4a0816a6950de0fb15868c762fad9c">链接</a> <strong>7min25s~末尾</strong> <font color='red'><strong>这一部分是期末考试的重大考点之一</strong></font> </p>
+<h4 id="一节内容是28、树——树和森林的遍历……"><a href="#一节内容是28、树——树和森林的遍历……" class="headerlink" title="一节内容是28、树——树和森林的遍历……."></a>一节内容是28、树——树和森林的遍历…….</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o"></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o</font></h4><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

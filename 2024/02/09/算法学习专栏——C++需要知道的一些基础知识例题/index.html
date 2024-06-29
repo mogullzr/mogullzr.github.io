@@ -332,7 +332,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、天数转换（简单–）"><a href="#一、天数转换（简单–）" class="headerlink" title="一、天数转换（简单–）"></a>一、天数转换<font color="green">（简单–）</font></h2><p>读取对应于一个人的年龄（以天为单位）的整数值，并转化为年，月和日表示方式输出，年、月、日分别对应 <code>ano(s)</code>, <code>mes(es)</code>, <code>dia(s)</code>。</p>
+                <h2 id="一、天数转换（简单–）"><a href="#一、天数转换（简单–）" class="headerlink" title="一、天数转换（简单–）"></a>一、天数转换<font color='green'>（简单–）</font></h2><p>读取对应于一个人的年龄（以天为单位）的整数值，并转化为年，月和日表示方式输出，年、月、日分别对应 <code>ano(s)</code>, <code>mes(es)</code>, <code>dia(s)</code>。</p>
 <p>注意：为了方便计算，假设全年 365天，每月 30 天。 数据保证，不会出现 12个月和几天的情况，例如 360,363 或 364。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一个整数 N。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>参照输出样例，输出转换后的天数表达。</p>
@@ -373,7 +373,7 @@ int main()
 
 
 
-<h2 id="二、简单排序（简单–）"><a href="#二、简单排序（简单–）" class="headerlink" title="二、简单排序（简单–）"></a>二、简单排序<font color="green">（简单–）</font></h2><p>读取三个整数并按升序对它们进行排序。</p>
+<h2 id="二、简单排序（简单–）"><a href="#二、简单排序（简单–）" class="headerlink" title="二、简单排序（简单–）"></a>二、简单排序<font color='green'>（简单–）</font></h2><p>读取三个整数并按升序对它们进行排序。</p>
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含三个整数。</p>
 <h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>首先，将三个整数按升序顺序输出，每行输出一个整数。</p>
 <p>然后，输出一个空行。</p>
@@ -415,7 +415,7 @@ int main()
 
 
 
-<h2 id="三、约数（简单–）"><a href="#三、约数（简单–）" class="headerlink" title="三、约数（简单–）"></a>三、约数<font color="green">（简单–）</font></h2><p>输入一个整数 N，按照从小到大的顺序输出它的全部约数。</p>
+<h2 id="三、约数（简单–）"><a href="#三、约数（简单–）" class="headerlink" title="三、约数（简单–）"></a>三、约数<font color='green'>（简单–）</font></h2><p>输入一个整数 N，按照从小到大的顺序输出它的全部约数。</p>
 <h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>一个整数 N。</p>
 <h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出全部约数，每个约数占一行。</p>
 <h4 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤N≤1000<br>$$</p>
@@ -438,14 +438,20 @@ int main()
 {
     int N;
     cin >> N;
-    for (int i = 1; i <= n; i++) { if (n % i="=" 0) cout << endl; } return 0; < blockcode>
-    </=></blockcode></pre>
+    for (int i = 1; i <= N; i++)
+    {
+        if (N % i == 0) cout << i << endl;
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
 </details>
 
 
 
 
-<h2 id="四、乘法表（简单–）"><a href="#四、乘法表（简单–）" class="headerlink" title="四、乘法表（简单–）"></a>四、乘法表<font color="green">（简单–）</font></h2><p>输入一个整数 N，输出 N 的乘法表，如下：</p>
+<h2 id="四、乘法表（简单–）"><a href="#四、乘法表（简单–）" class="headerlink" title="四、乘法表（简单–）"></a>四、乘法表<font color='green'>（简单–）</font></h2><p>输入一个整数 N，输出 N 的乘法表，如下：</p>
 <figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs excel"><span class="hljs-number">1</span> x <span class="hljs-built_in">N</span> = <span class="hljs-built_in">N</span>      <br><span class="hljs-number">2</span> x <span class="hljs-built_in">N</span> = <span class="hljs-number">2</span><span class="hljs-built_in">N</span>        <br>...       <br><span class="hljs-number">10</span> x <span class="hljs-built_in">N</span> = <span class="hljs-number">10</span><span class="hljs-built_in">N</span> <br></code></pre></td></tr></table></figure>
 
 <h4 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a>输入格式</h4><p>一个整数 N。</p>
@@ -470,14 +476,17 @@ int main()
 {
     int n;
     cin >> n;
-    for (int i = 1; i <= 10; i++) printf("%d x %d="%d\n",i,n,i*n);" return 0; } < blockcode>
-    </=></blockcode></pre>
+    for (int i = 1; i <= 10; i++) printf("%d x %d = %d\n",i,n,i*n);
+    return 0;
+}
+        </blockcode>
+    </pre>
 </details>
 
 
 
 
-<h2 id="五、完全数（简单-）"><a href="#五、完全数（简单-）" class="headerlink" title="五、完全数（简单+）"></a>五、完全数<font color="green">（简单+）</font></h2><p>一个整数，除了本身以外的其他所有约数的和如果等于该数，那么我们就称这个整数为完全数。</p>
+<h2 id="五、完全数（简单-）"><a href="#五、完全数（简单-）" class="headerlink" title="五、完全数（简单+）"></a>五、完全数<font color='green'>（简单+）</font></h2><p>一个整数，除了本身以外的其他所有约数的和如果等于该数，那么我们就称这个整数为完全数。</p>
 <p>例如，6 就是一个完全数，因为它的除了本身以外的其他约数的和为 1+2+3&#x3D;6。</p>
 <p>现在，给定你 N 个整数，请你依次判断这些数是否是完全数。</p>
 <h4 id="输入格式-4"><a href="#输入格式-4" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 N，表示共有 N 个测试用例。</p>
@@ -525,7 +534,7 @@ int main()
 
 
 
-<h2 id="六、平方矩阵-II（简单–）"><a href="#六、平方矩阵-II（简单–）" class="headerlink" title="六、平方矩阵 II（简单–）"></a>六、平方矩阵 II<font color="green">（简单–）</font></h2><p>输入整数 N，输出一个 N 阶的二维数组。</p>
+<h2 id="六、平方矩阵-II（简单–）"><a href="#六、平方矩阵-II（简单–）" class="headerlink" title="六、平方矩阵 II（简单–）"></a>六、平方矩阵 II<font color='green'>（简单–）</font></h2><p>输入整数 N，输出一个 N 阶的二维数组。</p>
 <p>数组的形式参照样例。</p>
 <h4 id="输入格式-5"><a href="#输入格式-5" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含多行，每行包含一个整数 N。</p>
 <p>当输入行为 N&#x3D;0 时，表示输入结束，且该行无需作任何处理。</p>
@@ -548,14 +557,24 @@ using namespace std;
 int main () {
     int n;
     while (cin >> n,n) {
-        for (int i = 1; i <= 1 n; i++) { for (int j="1;" <="n;" j++) cout << abs(i - j) + ' '; } '\n'; return 0; blockcode>
-    </=></blockcode></pre>
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                cout << abs(i - j) + 1 << ' ';
+            }
+            cout << '\n';
+        }
+        cout << '\n';
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
 </details>
 
 
 
 
-<h2 id="七、平方矩阵（简单-）"><a href="#七、平方矩阵（简单-）" class="headerlink" title="七、平方矩阵（简单+）"></a>七、平方矩阵<font color="green">（简单+）</font></h2><p>输入整数 N，输出一个 N 阶的二维数组 M。</p>
+<h2 id="七、平方矩阵（简单-）"><a href="#七、平方矩阵（简单-）" class="headerlink" title="七、平方矩阵（简单+）"></a>七、平方矩阵<font color='green'>（简单+）</font></h2><p>输入整数 N，输出一个 N 阶的二维数组 M。</p>
 <p>这个 N 阶二维数组满足 M[i] [j]&#x3D;2^i+j^</p>
 <p>具体形式可参考样例。</p>
 <h4 id="输入格式-6"><a href="#输入格式-6" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含多行，每行包含一个整数 N。</p>
@@ -590,12 +609,12 @@ int main()
     
 <pre><code class="hljs">return 0;
 </code></pre>
-<p>}<br>        </p></blockcode><br>    </pre><p></p>
+<p>}<br>        </blockcode><br>    </pre></p>
 </details>
 
 
 
-<h2 id="八、-蛇形矩阵（中等–）"><a href="#八、-蛇形矩阵（中等–）" class="headerlink" title="八、 蛇形矩阵（中等–）"></a>八、 蛇形矩阵<font color="orange">（中等–）</font></h2><p>输入两个整数 n和 m，输出一个 n行 m列的矩阵，将数字 1 到 n×m 按照回字蛇形填充至矩阵中。</p>
+<h2 id="八、-蛇形矩阵（中等–）"><a href="#八、-蛇形矩阵（中等–）" class="headerlink" title="八、 蛇形矩阵（中等–）"></a>八、 蛇形矩阵<font color='orange'>（中等–）</font></h2><p>输入两个整数 n和 m，输出一个 n行 m列的矩阵，将数字 1 到 n×m 按照回字蛇形填充至矩阵中。</p>
 <p>具体矩阵形式可参考样例。</p>
 <h4 id="输入格式-7"><a href="#输入格式-7" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入共一行，包含两个整数 n和 m。</p>
 <h4 id="输出格式-7"><a href="#输出格式-7" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出满足要求的矩阵。</p>
@@ -607,7 +626,7 @@ int main()
 
 
 
-<h2 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h2><p>​	<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402091516985.gif" srcset="/img/loading.gif" lazyload alt="动画3" style="zoom:50%;"></p>
+<h2 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h2><p>​	<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402091516985.gif" srcset="/img/loading.gif" lazyload alt="动画3" style="zoom:50%;" /></p>
 <h2 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
@@ -624,7 +643,11 @@ int main()
     // +1表示向右走一格，-1表示向左走一格，0表示左右方向上不动
     int d2[4] = {1,0,-1,0}; 
     // +1表示向下走一格，-1表示向上走一格，0表示上下方向上不动
-    for(int i = 0, j = 0, d = 0,k = 1; k <= 0 n * m; k ++) { res[i][j]="k;" int a="i" + d1[d],b="j" d2[d]; if (a < ||>= n || b < 0 || b >= m || res[a][b]) 
+    for(int i = 0, j = 0, d = 0,k = 1; k <= n * m; k ++)
+    {
+        res[i][j] = k;
+        int a = i + d1[d],b = j + d2[d];
+        if (a < 0 || a >= n || b < 0 || b >= m || res[a][b]) 
         // 当下一个格子查出界限 || 下个格子已经填充过数字：我们就更改方向
         {
             d = (d + 1) % 4;
@@ -641,7 +664,7 @@ int main()
     }
     return 0;
 }
-    </=></blockcode>
+    </blockcode>
 </pre>
 </details>
 
@@ -649,7 +672,7 @@ int main()
 
 
 
-<h2 id="九、忽略大小写比较字符串大小（简单-）"><a href="#九、忽略大小写比较字符串大小（简单-）" class="headerlink" title="九、忽略大小写比较字符串大小（简单+）"></a>九、忽略大小写比较字符串大小<font color="green">（简单+）</font></h2><p>一般我们用 strcmp 可比较两个字符串的大小，比较方法为对两个字符串从前往后逐个字符相比较（按 ASCII 码值大小比较），直到出现不同的字符或遇到 <code>\0</code> 为止。</p>
+<h2 id="九、忽略大小写比较字符串大小（简单-）"><a href="#九、忽略大小写比较字符串大小（简单-）" class="headerlink" title="九、忽略大小写比较字符串大小（简单+）"></a>九、忽略大小写比较字符串大小<font color='green'>（简单+）</font></h2><p>一般我们用 strcmp 可比较两个字符串的大小，比较方法为对两个字符串从前往后逐个字符相比较（按 ASCII 码值大小比较），直到出现不同的字符或遇到 <code>\0</code> 为止。</p>
 <p>如果全部字符都相同，则认为相同；如果出现不相同的字符，则以第一个不相同的字符的比较结果为准；如果两字符串长度不同，但所有相同位置的字符均相同，则认为较长字符串更大。</p>
 <p>在有些时候，我们比较字符串的大小时，希望忽略字母的大小，例如 <code>Hello</code> 和 <code>hello</code> 在忽略字母大小写时是相等的。</p>
 <p>请写一个程序，实现对两个字符串进行忽略字母大小写的大小比较。</p>
@@ -688,15 +711,24 @@ int main()
     if (b[strlen(b) - 1] == '\n') b[strlen(b) - 1] = 0;
     for (int i = 0; a[i]; i++)
     {
-        if (a[i] >= 'A' && a[i] <= 'z') a[i] +="32;" } for (int i="0;" b[i]; i++) { if (b[i]>= 'A' && b[i] <= 'z') b[i] +="32;" } if (strcmp(a,b)="=" 0) cout << "=";
+        if (a[i] >= 'A' && a[i] <= 'Z') a[i] += 32;
+    }
+    for (int i = 0; b[i]; i++)
+    {
+        if (b[i] >= 'A' && b[i] <= 'Z') b[i] += 32;
+    }
+    if (strcmp(a,b) == 0) cout << "=";
     else if (strcmp(a,b) > 0) cout << ">";
-    else cout << "<"; return 0; } < blockcode>
-</";></=></=></blockcode></pre>
+    else cout << "<";
+    return 0;
+}
+    </blockcode>
+</pre>
 </details>
 
 
 
-<h2 id="十、最长单词（简单）"><a href="#十、最长单词（简单）" class="headerlink" title="十、最长单词（简单）"></a>十、最长单词<font color="green">（简单）</font></h2><p>一个以 <code>.</code> 结尾的简单英文句子，单词之间用<strong>单个空格</strong>分隔，没有缩写形式和其它特殊形式，求句子中的最长单词。</p>
+<h2 id="十、最长单词（简单）"><a href="#十、最长单词（简单）" class="headerlink" title="十、最长单词（简单）"></a>十、最长单词<font color='green'>（简单）</font></h2><p>一个以 <code>.</code> 结尾的简单英文句子，单词之间用<strong>单个空格</strong>分隔，没有缩写形式和其它特殊形式，求句子中的最长单词。</p>
 <h4 id="输入格式-9"><a href="#输入格式-9" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一行字符串，表示这个简单英文句子，长度不超过 500500。</p>
 <h4 id="输出格式-9"><a href="#输出格式-9" class="headerlink" title="输出格式"></a>输出格式</h4><p>该句子中最长的单词。如果多于一个，则输出第一个。</p>
 <h4 id="输入样例：-8"><a href="#输入样例：-8" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">I</span> am <span class="hljs-selector-tag">a</span> student of Peking University.<br></code></pre></td></tr></table></figure>
@@ -730,7 +762,7 @@ int main()
 
 
 
-<h2 id="十一、字符串中最长的连续出现的字符（简单）"><a href="#十一、字符串中最长的连续出现的字符（简单）" class="headerlink" title="十一、字符串中最长的连续出现的字符（简单）"></a>十一、字符串中最长的连续出现的字符<font color="green">（简单）</font></h2><p>求一个字符串中最长的连续出现的字符，输出该字符及其出现次数，字符串中无空白字符（空格、回车和 tab），如果这样的字符不止一个，则输出第一个。</p>
+<h2 id="十一、字符串中最长的连续出现的字符（简单）"><a href="#十一、字符串中最长的连续出现的字符（简单）" class="headerlink" title="十一、字符串中最长的连续出现的字符（简单）"></a>十一、字符串中最长的连续出现的字符<font color='green'>（简单）</font></h2><p>求一个字符串中最长的连续出现的字符，输出该字符及其出现次数，字符串中无空白字符（空格、回车和 tab），如果这样的字符不止一个，则输出第一个。</p>
 <h4 id="输入格式-10"><a href="#输入格式-10" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行输入整数 N，表示测试数据的组数。</p>
 <p>每组数据占一行，包含一个不含空白字符的字符串，字符串长度不超过 200200。</p>
 <h4 id="输出格式-10"><a href="#输出格式-10" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，输出最长的连续出现的字符及其出现次数，中间用空格隔开。</p>
@@ -778,7 +810,7 @@ int main()
 
 
 
-<h2 id="十二、倒排单词（简单）"><a href="#十二、倒排单词（简单）" class="headerlink" title="十二、倒排单词（简单）"></a>十二、倒排单词<font color="green">（简单）</font></h2><p>编写程序，读入一行英文(只包含字母和空格，单词间以单个空格分隔)，将所有单词的顺序倒排并输出，依然以单个空格分隔。</p>
+<h2 id="十二、倒排单词（简单）"><a href="#十二、倒排单词（简单）" class="headerlink" title="十二、倒排单词（简单）"></a>十二、倒排单词<font color='green'>（简单）</font></h2><p>编写程序，读入一行英文(只包含字母和空格，单词间以单个空格分隔)，将所有单词的顺序倒排并输出，依然以单个空格分隔。</p>
 <h4 id="输入格式-11"><a href="#输入格式-11" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入为一个字符串（字符串长度至多为 100）。</p>
 <h4 id="输出格式-11"><a href="#输出格式-11" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出为按要求排序后的字符串。</p>
 <h4 id="输入样例：-10"><a href="#输入样例：-10" class="headerlink" title="输入样例："></a>输入样例：</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">I</span> am <span class="hljs-selector-tag">a</span> student<br></code></pre></td></tr></table></figure>
@@ -817,7 +849,7 @@ int main() {
 
 
 
-<h2 id="十三、最长公共字符串后缀（简单-）"><a href="#十三、最长公共字符串后缀（简单-）" class="headerlink" title="十三、最长公共字符串后缀（简单+）"></a>十三、最长公共字符串后缀<font color="green">（简单+）</font></h2><p>给出若干个字符串，输出这些字符串的最长公共后缀。</p>
+<h2 id="十三、最长公共字符串后缀（简单-）"><a href="#十三、最长公共字符串后缀（简单-）" class="headerlink" title="十三、最长公共字符串后缀（简单+）"></a>十三、最长公共字符串后缀<font color='green'>（简单+）</font></h2><p>给出若干个字符串，输出这些字符串的最长公共后缀。</p>
 <h4 id="输入格式-12"><a href="#输入格式-12" class="headerlink" title="输入格式"></a>输入格式</h4><p>由不超过 5 组输入组成。</p>
 <p>每组输入的第一行是一个整数 N。</p>
 <p>N 为 0 时表示输入结束，否则后面会继续有 N 行输入，每行是一个字符串（字符串内不含空白符）。</p>
@@ -855,11 +887,32 @@ int main()
             for (int i = 1; i < n; i++)
             {
                 bool same = true;
-                for (int j = 1; j <= len; j++) { if (s[0][s[0].size() - j] !="s[i][s[i].size()" j]) same="false;" break; } (!same) success="false;" (success) len --; cout << s[0].substr(s[0].size() len) endl; return 0; < blockcode>
-    </=></blockcode></pre>
+                for (int j = 1; j <= len; j++)
+                {
+                    if (s[0][s[0].size() - j] != s[i][s[i].size() - j])
+                    {
+                        same = false;
+                        break;
+                    }
+                }
+                if (!same) 
+                {
+                    success = false;
+                    break;
+                }
+            }
+            if (success) break;
+            len --;
+        }
+        cout << s[0].substr(s[0].size() - len) << endl;
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
 </details>
 
-<h2 id="十四、最大公约数（简单）"><a href="#十四、最大公约数（简单）" class="headerlink" title="十四、最大公约数（简单）"></a>十四、最大公约数<font color="green">（简单）</font></h2><p>输入两个整数 a 和 b，请你编写一个函数，<code>int gcd(int a, int b)</code>, 计算并输出 a 和 b 的最大公约数。</p>
+<h2 id="十四、最大公约数（简单）"><a href="#十四、最大公约数（简单）" class="headerlink" title="十四、最大公约数（简单）"></a>十四、最大公约数<font color='green'>（简单）</font></h2><p>输入两个整数 a 和 b，请你编写一个函数，<code>int gcd(int a, int b)</code>, 计算并输出 a 和 b 的最大公约数。</p>
 <h4 id="输入格式-13"><a href="#输入格式-13" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含两个整数 a 和 b。</p>
 <h4 id="输出格式-13"><a href="#输出格式-13" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数，表示 a 和 b 的最大公约数。</p>
 <h4 id="数据范围-10"><a href="#数据范围-10" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤a,b≤1000<br>$$</p>
@@ -900,7 +953,7 @@ int main()
 
 
 
-<h2 id="十五、递归求阶乘（简单）"><a href="#十五、递归求阶乘（简单）" class="headerlink" title="十五、递归求阶乘（简单）"></a>十五、递归求阶乘<font color="green">（简单）</font></h2><p>请使用递归的方式求 n 的阶乘。</p>
+<h2 id="十五、递归求阶乘（简单）"><a href="#十五、递归求阶乘（简单）" class="headerlink" title="十五、递归求阶乘（简单）"></a>十五、递归求阶乘<font color='green'>（简单）</font></h2><p>请使用递归的方式求 n 的阶乘。</p>
 <h4 id="输入格式-14"><a href="#输入格式-14" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含一个整数 n。</p>
 <h4 id="输出格式-14"><a href="#输出格式-14" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数，表示 n 的阶乘的值。</p>
 <h4 id="数据范围-11"><a href="#数据范围-11" class="headerlink" title="数据范围"></a>数据范围</h4><p>$$<br>1≤n≤10<br>$$</p>
@@ -936,7 +989,7 @@ int main()
 
 
 
-<h2 id="十五、递归求斐波那契数列（简单）"><a href="#十五、递归求斐波那契数列（简单）" class="headerlink" title="十五、递归求斐波那契数列（简单）"></a>十五、递归求斐波那契数列<font color="green">（简单）</font></h2><p>请使用递归的方式求斐波那契数列的第 n 项，下标从1开始。</p>
+<h2 id="十五、递归求斐波那契数列（简单）"><a href="#十五、递归求斐波那契数列（简单）" class="headerlink" title="十五、递归求斐波那契数列（简单）"></a>十五、递归求斐波那契数列<font color='green'>（简单）</font></h2><p>请使用递归的方式求斐波那契数列的第 n 项，下标从1开始。</p>
 <p>斐波那契数列：1,1,2,3,5… 这个数列从第 3 项开始，每一项都等于前两项之和</p>
 <h4 id="输入格式-15"><a href="#输入格式-15" class="headerlink" title="输入格式"></a>输入格式</h4><p>共一行，包含整数 n。</p>
 <h4 id="输出格式-15"><a href="#输出格式-15" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含一个整数，表示斐波那契数列的第 n 项。</p>
@@ -983,7 +1036,7 @@ int main()
 
 
 
-<h2 id="十六、数组去重（简单-）"><a href="#十六、数组去重（简单-）" class="headerlink" title="十六、数组去重（简单-）"></a>十六、数组去重<font color="green">（简单-）</font></h2><p>给定一个长度为 n 的数组 a，请你编写一个函数：</p>
+<h2 id="十六、数组去重（简单-）"><a href="#十六、数组去重（简单-）" class="headerlink" title="十六、数组去重（简单-）"></a>十六、数组去重<font color='green'>（简单-）</font></h2><p>给定一个长度为 n 的数组 a，请你编写一个函数：</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">get_unique_count</span><span class="hljs-params">(<span class="hljs-type">int</span> a[], <span class="hljs-type">int</span> n)</span></span>;  <span class="hljs-comment">// 返回数组前n个数中的不同数的个数</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="输入格式-16"><a href="#输入格式-16" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含一个整数 n。</p>
@@ -1027,7 +1080,7 @@ int main()
 
 
 
-<h2 id="十七、三元组排序（简单-）"><a href="#十七、三元组排序（简单-）" class="headerlink" title="十七、三元组排序（简单+）"></a>十七、三元组排序<font color="green">（简单+）</font></h2><p>给定 N 个三元组 (x,y,z)，其中 x 是整数，y 是浮点数，z 是字符串。</p>
+<h2 id="十七、三元组排序（简单-）"><a href="#十七、三元组排序（简单-）" class="headerlink" title="十七、三元组排序（简单+）"></a>十七、三元组排序<font color='green'>（简单+）</font></h2><p>给定 N 个三元组 (x,y,z)，其中 x 是整数，y 是浮点数，z 是字符串。</p>
 <p>请你按照 x 从小到大的顺序将这些三元组打印出来。</p>
 <p>数据保证不同三元组的 x 值互不相同。</p>
 <h4 id="输入格式-17"><a href="#输入格式-17" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 N。</p>
@@ -1078,7 +1131,7 @@ int main()
 
 
 
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

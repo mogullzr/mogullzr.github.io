@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          249 字
+          204 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          3 分钟
+          2 分钟
         
       </span>
     
@@ -332,7 +332,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、归并排序（简单-）"><a href="#一、归并排序（简单-）" class="headerlink" title="一、归并排序（简单+）"></a>一、归并排序<font color="green">（简单+）</font></h2><p>给定你一个长度为 n 的整数数列。</p>
+                <h2 id="一、归并排序（简单-）"><a href="#一、归并排序（简单-）" class="headerlink" title="一、归并排序（简单+）"></a>一、归并排序<font color='green'>（简单+）</font></h2><p>给定你一个长度为 n 的整数数列。</p>
 <p>请你使用归并排序对这个数列按照从小到大进行排序。</p>
 <p>并将排好序的数列按顺序输出。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入共两行，第一行包含整数 n。</p>
@@ -362,10 +362,18 @@ void merge_sort(int l,int r) {
     merge_sort(l,mid);
     merge_sort(mid + 1, r);
     int i = l, j = mid + 1, k = 0;
-    while (i <= mid && j <="r)" { if (a[i]> a[j]) q[k++] = a[j++];
+    while (i <= mid && j <= r) {
+        if (a[i] > a[j]) q[k++] = a[j++];
         else q[k++] = a[i++];
     }
-    while (i <= mid) q[k++]="a[i++];" while (j <="mid)" for (int i="0,j" = l; k; j++,i++) a[j]="q[i];" } int main() { ios::sync_with_stdio(false),cin.tie(0),cout.tie(0); cin>> n;
+    while (i <= mid) q[k++] = a[i++];
+    while (j <= mid) q[k++] = a[j++];
+    for (int i = 0,j = l; i < k; j++,i++) a[j] = q[i]; 
+}
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >> n;
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
@@ -374,7 +382,7 @@ void merge_sort(int l,int r) {
         cout << a[i] << " ";
 }
 return 0;
-        </=></=></blockcode>
+        </blockcode>
     </pre>
 </details>
 
@@ -382,7 +390,7 @@ return 0;
 
 
 
-<h2 id="二、堆排序（简单-）"><a href="#二、堆排序（简单-）" class="headerlink" title="二、堆排序（简单++）"></a>二、堆排序<font color="green">（简单++）</font></h2><p>输入一个长度为 n 的整数数列，从小到大输出前 m 小的数。</p>
+<h2 id="二、堆排序（简单-）"><a href="#二、堆排序（简单-）" class="headerlink" title="二、堆排序（简单++）"></a>二、堆排序<font color='green'>（简单++）</font></h2><p>输入一个长度为 n 的整数数列，从小到大输出前 m 小的数。</p>
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n 和 m。</p>
 <p>第二行包含 n 个整数，表示整数数列。</p>
 <h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>共一行，包含 m 个整数，表示整数数列中前 m 小的数。</p>
@@ -405,8 +413,19 @@ int h[N];
 void down(int x)
 {
     int t = x;
-    if (2 * t <= 1 sz && h[2 * t] <="h[x])" x="2" t; if (2 t + 1] 1; (t !="x)" { swap(h[t],h[x]); down(x); } int main() ios::sync_with_stdio(false),cin.tie(0),cout.tie(0); cin>>n >> k;
-    for (int i = 1; i <= n; i++) cin>> h[i];    
+    if (2 * t <= sz && h[2 * t] <= h[x]) x = 2 * t;
+    if (2 * t + 1 <= sz && h[2 * t + 1] <= h[x]) x = 2 * t + 1;
+    if (t != x)
+    {
+        swap(h[t],h[x]);
+        down(x);
+    }
+}
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >>n >> k;
+    for (int i = 1; i <= n; i++) cin >> h[i];    
     sz = n;    
     for (int i = n / 2; i ; i--) down(i);    
     while (k--)
@@ -418,7 +437,7 @@ void down(int x)
     }    
     return 0;
 }
-        </=></=></blockcode>
+        </blockcode>
     </pre>
 </details>
 
@@ -427,7 +446,7 @@ void down(int x)
 
 
 
-<h2 id="三、模拟堆（中等–）"><a href="#三、模拟堆（中等–）" class="headerlink" title="三、模拟堆（中等–）"></a>三、模拟堆<font color="orange">（中等–）</font></h2><p>维护一个集合，初始时集合为空，支持如下几种操作：</p>
+<h2 id="三、模拟堆（中等–）"><a href="#三、模拟堆（中等–）" class="headerlink" title="三、模拟堆（中等–）"></a>三、模拟堆<font color='orange'>（中等–）</font></h2><p>维护一个集合，初始时集合为空，支持如下几种操作：</p>
 <ol>
 <li><code>I x</code>，插入一个数 x；</li>
 <li><code>PM</code>，输出当前集合中的最小值；</li>
@@ -446,7 +465,7 @@ void down(int x)
 <h4 id="输出样例：-2"><a href="#输出样例：-2" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-10</span><br>6<br><br>DIFF<br></code></pre></td></tr></table></figure>
 
 <h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>​	录屏<strong>（录播）</strong> + 代码解释</p>
-<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-comment">//h是堆数组</span><br><span class="hljs-comment">//ph[N]数组下标为i的元素为j，表示第i个插入的数在堆数组中下标为j</span><br><span class="hljs-comment">//hp[N]数组下标为i的元素为j，表示堆数组中下标为i的元素是第j个插入的</span><br><span class="hljs-comment">//cnt是用来存储当前堆中有多少元素的（也就是堆数组用到了哪个下标）</span><br><span class="hljs-comment">//m是用来存储现在是第几个插入的数</span><br><span class="hljs-comment">//所以cnt可以怎加也可以减少，但m只会增加不会减少</span><br><br><span class="hljs-comment">//h ph hp三者存在对应关系，交换h中两个元素则ph和hp都要交换</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> n, k, sz;<br><span class="hljs-type">int</span> h[N],ph[N],hp[N];<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">heap_swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span> </span>&#123;<br>    <span class="hljs-built_in">swap</span>(hp[ph[a]], hp[ph[b]]);<br>    <span class="hljs-built_in">swap</span>(ph[a],ph[b]);<br>    <span class="hljs-built_in">swap</span>(h[a], h[b]);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">down</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> t = x;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> * t &lt;= sz &amp;&amp; h[<span class="hljs-number">2</span> * t] &lt; h[x]) x = <span class="hljs-number">2</span> * t;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> * t + <span class="hljs-number">1</span> &lt;= sz &amp;&amp; h[<span class="hljs-number">2</span> * t + <span class="hljs-number">1</span>] &lt; h[x]) x = <span class="hljs-number">2</span> * t + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span> (t != x)<br>    &#123;<br>        <span class="hljs-built_in">heap_swap</span>(t,x);<br>        <span class="hljs-built_in">down</span>(x);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">up</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (x / <span class="hljs-number">2</span> &amp;&amp; h[x / <span class="hljs-number">2</span>] &gt; h[x]) &#123;<br>        <span class="hljs-built_in">heap_swap</span>(x / <span class="hljs-number">2</span>, x);<br>        x /= <span class="hljs-number">2</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    <span class="hljs-type">char</span> op[<span class="hljs-number">3</span>];<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--)<br>    &#123;<br>        cin &gt;&gt; op;<br>        <br>        <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;I&#x27;</span>)&#123; <span class="hljs-comment">//向堆中插入元素</span><br>            <span class="hljs-type">int</span> x;<br>            cin &gt;&gt; x;<br>            ++k;<br>            ++sz;<br>            h[sz] = x;<br>            hp[k] = sz;<br>            ph[sz] = k;<br>            <span class="hljs-built_in">up</span>(sz);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;P&#x27;</span>) &#123; <span class="hljs-comment">//输出堆中的最小值</span><br>            cout &lt;&lt; h[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>; <br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;C&#x27;</span>) &#123; <span class="hljs-comment">//将第k个插入堆中的数换为x</span><br>            <span class="hljs-type">int</span> kk, x;<br>            cin &gt;&gt; kk &gt;&gt; x;<br>            kk = hp[kk];<br>            h[kk] = x;<br>            <span class="hljs-built_in">up</span>(kk);<br>            <span class="hljs-built_in">down</span>(kk);<br>            <br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (op[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;M&#x27;</span>) &#123; <span class="hljs-comment">//删除堆中的最小值</span><br>            <span class="hljs-built_in">heap_swap</span>(<span class="hljs-number">1</span>, sz);<br>            --sz;<br>            <span class="hljs-built_in">down</span>(<span class="hljs-number">1</span>);<br>        &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 刪除第kk个插入数</span><br>            <span class="hljs-type">int</span> kk;<br>            cin &gt;&gt; kk;<br>            kk = hp[kk];<br>            <span class="hljs-built_in">heap_swap</span>(kk, sz);<br>            --sz;<br>            <span class="hljs-built_in">up</span>(kk);<br>            <span class="hljs-built_in">down</span>(kk);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-comment">//h是堆数组</span><br><span class="hljs-comment">//ph[N]数组下标为i的元素为j，表示第i个插入的数在堆数组中下标为j</span><br><span class="hljs-comment">//hp[N]数组下标为i的元素为j，表示堆数组中下标为i的元素是第j个插入的</span><br><span class="hljs-comment">//cnt是用来存储当前堆中有多少元素的（也就是堆数组用到了哪个下标）</span><br><span class="hljs-comment">//m是用来存储现在是第几个插入的数</span><br><span class="hljs-comment">//所以cnt可以怎加也可以减少，但m只会增加不会减少</span><br><br><span class="hljs-comment">//h ph hp三者存在对应关系，交换h中两个元素则ph和hp都要交换</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> n, k, sz;<br><span class="hljs-type">int</span> h[N],ph[N],hp[N];<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">heap_swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span> </span>&#123;<br>    <span class="hljs-built_in">swap</span>(hp[ph[a]], hp[ph[b]]);<br>    <span class="hljs-built_in">swap</span>(ph[a],ph[b]);<br>    <span class="hljs-built_in">swap</span>(h[a], h[b]);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">down</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> t = x;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> * t &lt;= sz &amp;&amp; h[<span class="hljs-number">2</span> * t] &lt; h[x]) x = <span class="hljs-number">2</span> * t;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> * t + <span class="hljs-number">1</span> &lt;= sz &amp;&amp; h[<span class="hljs-number">2</span> * t + <span class="hljs-number">1</span>] &lt; h[x]) x = <span class="hljs-number">2</span> * t + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span> (t != x)<br>    &#123;<br>        <span class="hljs-built_in">heap_swap</span>(t,x);<br>        <span class="hljs-built_in">down</span>(x);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">up</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (x / <span class="hljs-number">2</span> &amp;&amp; h[x / <span class="hljs-number">2</span>] &gt; h[x]) &#123;<br>        <span class="hljs-built_in">heap_swap</span>(x / <span class="hljs-number">2</span>, x);<br>        x /= <span class="hljs-number">2</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    <span class="hljs-type">char</span> op[<span class="hljs-number">3</span>];<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--)<br>    &#123;<br>        cin &gt;&gt; op;<br>        <br>        <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;I&#x27;</span>)&#123; <span class="hljs-comment">//向堆中插入元素</span><br>            <span class="hljs-type">int</span> x;<br>            cin &gt;&gt; x;<br>            ++k;<br>            ++sz;<br>            h[sz] = x;<br>            hp[k] = sz;<br>            ph[sz] = k;<br>            <span class="hljs-built_in">up</span>(sz);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;P&#x27;</span>) &#123; <span class="hljs-comment">//输出堆中的最小值</span><br>            cout &lt;&lt; h[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>; <br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;C&#x27;</span>) &#123; <span class="hljs-comment">//将第k个插入堆中的数换为x</span><br>            <span class="hljs-type">int</span> kk, x;<br>            cin &gt;&gt; kk &gt;&gt; x;<br>            kk = hp[kk];<br>            h[kk] = x;<br>            <span class="hljs-built_in">up</span>(kk);<br>            <span class="hljs-built_in">down</span>(kk);<br>            <br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (op[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;M&#x27;</span>) &#123; <span class="hljs-comment">//删除堆中的最小值</span><br>            <span class="hljs-built_in">heap_swap</span>(<span class="hljs-number">1</span>, sz);<br>            --sz;<br>            <span class="hljs-built_in">down</span>(<span class="hljs-number">1</span>);<br>        &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 刪除第kk个插入数</span><br>            <span class="hljs-type">int</span> kk;<br>            cin &gt;&gt; kk;<br>            kk = hp[kk];<br>            <span class="hljs-built_in">heap_swap</span>(kk, sz);<br>            --sz;<br>            <span class="hljs-built_in">up</span>(kk);<br>            <span class="hljs-built_in">down</span>(kk);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

@@ -334,13 +334,13 @@
               <div class="markdown-body">
                 
                 <h2 id="一、Git基本流程（一张图搞定）"><a href="#一、Git基本流程（一张图搞定）" class="headerlink" title="一、Git基本流程（一张图搞定）"></a>一、Git基本流程（一张图搞定）</h2><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301629340.webp" srcset="/img/loading.gif" lazyload alt="Git图片2.1"></p>
-<h3 id="亲自体验一下（下面的命令下面的章节我还会细说）"><a href="#亲自体验一下（下面的命令下面的章节我还会细说）" class="headerlink" title="亲自体验一下（下面的命令下面的章节我还会细说）"></a>亲自体验一下（下面的命令下面的章节我还会细说）</h3><h4 id="第一步：在我们的github创建一个仓库"><a href="#第一步：在我们的github创建一个仓库" class="headerlink" title="第一步：在我们的github创建一个仓库"></a>第一步：在我们的github创建一个仓库</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301634960.png" srcset="/img/loading.gif" lazyload alt="image-20240130163436876" style="zoom: 33%;">
+<h3 id="亲自体验一下（下面的命令下面的章节我还会细说）"><a href="#亲自体验一下（下面的命令下面的章节我还会细说）" class="headerlink" title="亲自体验一下（下面的命令下面的章节我还会细说）"></a>亲自体验一下（下面的命令下面的章节我还会细说）</h3><h4 id="第一步：在我们的github创建一个仓库"><a href="#第一步：在我们的github创建一个仓库" class="headerlink" title="第一步：在我们的github创建一个仓库"></a>第一步：在我们的github创建一个仓库</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301634960.png" srcset="/img/loading.gif" lazyload alt="image-20240130163436876" style="zoom: 33%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301635301.png" srcset="/img/loading.gif" lazyload alt="image-20240130163514237" style="zoom:33%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301635301.png" srcset="/img/loading.gif" lazyload alt="image-20240130163514237" style="zoom:33%;" />
 
 
 
-<img src="/.com//Users/89856/Desktop/扩展/2024年1月30日/assets/image-20240130163755666.png" srcset="/img/loading.gif" lazyload alt="image-20240130163755666" style="zoom:33%;">
+<img src="./C:/Users/89856/Desktop/扩展/2024年1月30日/assets/image-20240130163755666.png" srcset="/img/loading.gif" lazyload alt="image-20240130163755666" style="zoom:33%;" />
 
 <h4 id="第二步：仓库建好之后里面大概就是这个样子的"><a href="#第二步：仓库建好之后里面大概就是这个样子的" class="headerlink" title="第二步：仓库建好之后里面大概就是这个样子的"></a>第二步：仓库建好之后里面大概就是这个样子的</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301638907.png" srcset="/img/loading.gif" lazyload alt="image-20240130163852561"></p>
 <h4 id="第三步：在本地随意找一个工作区（文件夹），进行以下操作"><a href="#第三步：在本地随意找一个工作区（文件夹），进行以下操作" class="headerlink" title="第三步：在本地随意找一个工作区（文件夹），进行以下操作"></a>第三步：在本地随意找一个工作区（文件夹），进行以下操作</h4><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301651235.png" srcset="/img/loading.gif" lazyload alt="image-20240130164603771"></p>
@@ -354,7 +354,7 @@
 <h4 id="第五步：将本地commit的存储版本提交一下（注意：这里你需要关闭代理（clash）再执行指令）"><a href="#第五步：将本地commit的存储版本提交一下（注意：这里你需要关闭代理（clash）再执行指令）" class="headerlink" title="第五步：将本地commit的存储版本提交一下（注意：这里你需要关闭代理（clash）再执行指令）"></a>第五步：将本地<code>commit</code>的存储版本提交一下（注意：这里你需要关闭代理（clash）再执行指令）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git branch -m master main <span class="hljs-comment"># 这一步的意思是将本地仓库的分支名称设置为main，因为我们的仓库在2020年之后默认路径是main，如果你之后想在其他分支添加信息也需要将分支名称和仓库的分支名称设置相同</span><br>$ git push origin main <span class="hljs-comment"># 向main分支传输commit的内容</span><br>or<br>$ git push -u origin main <span class="hljs-comment"># 如果该仓库分支内容为空或，就使用这个</span><br>or<br>$ git push origin main --force <span class="hljs-comment"># 你想要覆盖该分支所有内容，就用这个</span><br>or<br>$ git push <span class="hljs-comment"># 一般就用这个将版本库里的信息提交上去</span><br></code></pre></td></tr></table></figure>
 
 <h5 id="加上-u之后效果"><a href="#加上-u之后效果" class="headerlink" title="加上-u之后效果"></a>加上-u之后效果</h5><p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401301901923.png" srcset="/img/loading.gif" lazyload alt="image-20240130190102952"></p>
-<h4 id="这样以来基本的上传流程就有了一个比较清晰的认识了吧，有问题可以在下面提哦"><a href="#这样以来基本的上传流程就有了一个比较清晰的认识了吧，有问题可以在下面提哦" class="headerlink" title="这样以来基本的上传流程就有了一个比较清晰的认识了吧，有问题可以在下面提哦"></a>这样以来基本的上传流程就有了一个比较清晰的认识了吧，有问题可以在下面提哦</h4>
+<h4 id="这样以来基本的上传流程就有了一个比较清晰的认识了吧，有问题可以在下面提哦"><a href="#这样以来基本的上传流程就有了一个比较清晰的认识了吧，有问题可以在下面提哦" class="headerlink" title="这样以来基本的上传流程就有了一个比较清晰的认识了吧，有问题可以在下面提哦"></a>这样以来基本的上传流程就有了一个比较清晰的认识了吧，有问题可以在下面提哦</h4><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

@@ -338,7 +338,7 @@
 
 <h4 id="初始化所有结点均为空"><a href="#初始化所有结点均为空" class="headerlink" title="初始化所有结点均为空"></a>初始化所有结点均为空</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 注意，我们之后正式存储数据的时候习惯从t[1]开始存储，这样的好处是可以将下标和数据的编号一一对应上，如下图</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; MaxSize; i++) &#123;<br>    t[i].isEmpty = <span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051645953.png" srcset="/img/loading.gif" lazyload alt="image-20240305164504577" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051645953.png" srcset="/img/loading.gif" lazyload alt="image-20240305164504577" style="zoom:50%;" />
 
 <h4 id="完全二叉树中有n个结点，则"><a href="#完全二叉树中有n个结点，则" class="headerlink" title="完全二叉树中有n个结点，则"></a>完全二叉树中有n个结点，则</h4><ul>
 <li><p>判断 i 是否有左孩子？ <strong>2i &lt;&#x3D; n</strong></p>
@@ -348,10 +348,10 @@
 <li><p>判断 i 是否是叶子结点 &#x2F; 分支结点？<br>$$<br>i &gt; \lfloor \frac{n}{2}\rfloor<br>$$</p>
 </li>
 </ul>
-<h4 id="如果此时的二叉树是非完全二叉树，那么顺序存储就失效了（如图）"><a href="#如果此时的二叉树是非完全二叉树，那么顺序存储就失效了（如图）" class="headerlink" title="如果此时的二叉树是非完全二叉树，那么顺序存储就失效了（如图）"></a>如果此时的二叉树是非完全二叉树，那么顺序存储就失效了（如图）</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051657818.png" srcset="/img/loading.gif" lazyload alt="image-20240305165724571" style="zoom: 67%;">
+<h4 id="如果此时的二叉树是非完全二叉树，那么顺序存储就失效了（如图）"><a href="#如果此时的二叉树是非完全二叉树，那么顺序存储就失效了（如图）" class="headerlink" title="如果此时的二叉树是非完全二叉树，那么顺序存储就失效了（如图）"></a>如果此时的二叉树是非完全二叉树，那么顺序存储就失效了（如图）</h4><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051657818.png" srcset="/img/loading.gif" lazyload alt="image-20240305165724571" style="zoom: 67%;" />
 
 <p>​	因此我们这里顺序存储的方式需要稍微变一下，变为下图这种形式：</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051659445.png" srcset="/img/loading.gif" lazyload alt="image-20240305165921550" style="zoom:67%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051659445.png" srcset="/img/loading.gif" lazyload alt="image-20240305165921550" style="zoom:67%;" />
 
 <p>​	这时候我们如果还希望查找某个结点是否有左孩子、右孩子等，就必须通过结构体中的 <strong>isEmpty</strong> 来判断了。比如说你想查6结点是否有左孩子结点，此时你就可以通过判断<strong>t[2*i].isEmpty</strong> 来判断左孩子结点是否为空。</p>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>​	当然，虽然顺序存储查找元素的速度是很快，这里顺序存储的缺点也是非常明显的！比如说：他的空间利用率特别低！所以我们如果想使用顺序存储方式存树，一般只建议存完全二叉树。	</p>
@@ -361,7 +361,7 @@
 
 <h3 id="提问"><a href="#提问" class="headerlink" title="提问"></a>提问</h3><ul>
 <li><p>对于n个&#x3D;&#x3D;二叉链表&#x3D;&#x3D;共有多少个&#x3D;&#x3D;空链域&#x3D;&#x3D;？<strong>除了根节点外，其他n-1个结点的头上都会连接1个结点，对不对？我们又知道一共是有2*n个指针域的，那么空指针域不就等于2n - (n - 1) &#x3D; n + 1个了吗？答案就是n + 1。（可结合下图进行理解）</strong></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051732632.png" srcset="/img/loading.gif" lazyload alt="image-20240305173202168" style="zoom:67%;"></li>
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051732632.png" srcset="/img/loading.gif" lazyload alt="image-20240305173202168" style="zoom:67%;" /></li>
 </ul>
 <h4 id="定义一棵空树"><a href="#定义一棵空树" class="headerlink" title="定义一棵空树"></a>定义一棵空树</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs C++">BitTree root = <span class="hljs-literal">NULL</span>;<br></code></pre></td></tr></table></figure>
 
@@ -373,10 +373,10 @@
 
 <h4 id="插入新节点"><a href="#插入新节点" class="headerlink" title="插入新节点"></a>插入新节点</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs C++">BitTree * p = (BitTree *)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span> (BitTree));<br>p -&gt; data = &#123;<span class="hljs-number">2</span>&#125;;<br>p -&gt; lchild = <span class="hljs-literal">NULL</span>;<br>p -&gt; rchild = <span class="hljs-literal">NULL</span>;<br>root -&gt; lchild = p; <span class="hljs-comment">// 作为根节点的左孩子</span><br><span class="hljs-comment">// 请看下图进行理解</span><br></code></pre></td></tr></table></figure>
 
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051729979.png" srcset="/img/loading.gif" lazyload alt="image-20240305172945350" style="zoom: 80%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051729979.png" srcset="/img/loading.gif" lazyload alt="image-20240305172945350" style="zoom: 80%;" />
 
 <h4 id="下面介绍一下问题：如何查询1个结点是否有孩子结点（编号是从1开始的），这个问题就需要等到下一节的遍历的时候来讲了"><a href="#下面介绍一下问题：如何查询1个结点是否有孩子结点（编号是从1开始的），这个问题就需要等到下一节的遍历的时候来讲了" class="headerlink" title="下面介绍一下问题：如何查询1个结点是否有孩子结点（编号是从1开始的），这个问题就需要等到下一节的遍历的时候来讲了"></a>下面介绍一下问题：如何查询1个结点是否有孩子结点（编号是从1开始的），这个问题就需要等到下一节的遍历的时候来讲了</h4><h4 id="下一节内容是24、二叉树——前中后序遍历……"><a href="#下一节内容是24、二叉树——前中后序遍历……" class="headerlink" title="下一节内容是24、二叉树——前中后序遍历……."></a>下一节内容是24、二叉树——前中后序遍历…….</h4><p>​	</p>
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

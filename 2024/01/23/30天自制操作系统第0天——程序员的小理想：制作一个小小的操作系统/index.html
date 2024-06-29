@@ -345,11 +345,11 @@
 <li><h4 id="本书的操作系统制作是完完全全从0开始制作的，不会借助任何现有的原始系统什么的，在原有基础上进行修改、扩充"><a href="#本书的操作系统制作是完完全全从0开始制作的，不会借助任何现有的原始系统什么的，在原有基础上进行修改、扩充" class="headerlink" title="本书的操作系统制作是完完全全从0开始制作的，不会借助任何现有的原始系统什么的，在原有基础上进行修改、扩充"></a>本书的操作系统制作是完完全全从0开始制作的，不会借助任何现有的原始系统什么的，在原有基础上进行修改、扩充</h4></li>
 <li><h4 id="着手前不要被一大堆专用术语给迷惑住了（比如内核、外核、单片怎么实现，怎么做……）"><a href="#着手前不要被一大堆专用术语给迷惑住了（比如内核、外核、单片怎么实现，怎么做……）" class="headerlink" title="着手前不要被一大堆专用术语给迷惑住了（比如内核、外核、单片怎么实现，怎么做……）"></a>着手前不要被一大堆专用术语给迷惑住了（比如内核、外核、单片怎么实现，怎么做……）</h4></li>
 </ul>
-<h2 id="二、如何开发操作系统？"><a href="#二、如何开发操作系统？" class="headerlink" title="二、如何开发操作系统？"></a>二、如何开发操作系统？</h2><p>​	**<font color="red">	操作系统一般打开电源开关就可以自动执行。这是怎么实现的呢？？？</font>**一般在Windows上开发的可执行文件双击一下就可以执行了。</p>
+<h2 id="二、如何开发操作系统？"><a href="#二、如何开发操作系统？" class="headerlink" title="二、如何开发操作系统？"></a>二、如何开发操作系统？</h2><p>​	**<font color='red'>	操作系统一般打开电源开关就可以自动执行。这是怎么实现的呢？？？</font>**一般在Windows上开发的可执行文件双击一下就可以执行了。</p>
 <p>​		这次要做的是能将含有操作系统好的软盘 or CD-ROM插入电脑，或者将操作系统装入硬盘，只要打开电源开关就可以自动运行。或者将操作系统装入硬盘后只要打开电源开关就可以自动运行。</p>
 <p>​		<strong>下面就是本书的基本预测步骤：</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202401232302278.png" srcset="/img/loading.gif" lazyload alt="image-20240123222833839"></p>
-<p>​		**<font color="red">在这里我们就会产生一个疑问：既然我们需要在操作系统下进行编写源码，那在没有操作系统的情况下，第一个操作系统是怎么开发出来的呢？</font>**这个时候可以说是开发难度的巅峰了，直接对着CPU的命令代码表，自己将0和1排列起来然后将这些数据写入磁盘或者其他存储设备。</p>
+<p>​		**<font color='red'>在这里我们就会产生一个疑问：既然我们需要在操作系统下进行编写源码，那在没有操作系统的情况下，第一个操作系统是怎么开发出来的呢？</font>**这个时候可以说是开发难度的巅峰了，直接对着CPU的命令代码表，自己将0和1排列起来然后将这些数据写入磁盘或者其他存储设备。</p>
 <p><strong>映像文件：</strong>软盘的备份文件。</p>
 <h2 id="三、操作系统开发的困难"><a href="#三、操作系统开发的困难" class="headerlink" title="三、操作系统开发的困难"></a>三、操作系统开发的困难</h2><h4 id="本书使用的C编辑器是完全基于Windows的gcc修改的想方设法编写一个操作系统，困难有很多："><a href="#本书使用的C编辑器是完全基于Windows的gcc修改的想方设法编写一个操作系统，困难有很多：" class="headerlink" title="本书使用的C编辑器是完全基于Windows的gcc修改的想方设法编写一个操作系统，困难有很多："></a><strong>本书使用的C编辑器是完全基于Windows的gcc修改的想方设法编写一个操作系统，困难有很多：</strong></h4><ul>
 <li><h4 id="比如说printf-“Hello，mogullzr”-这种语句都是不允许的，因为这个函数是以操作系统提供的功能为前提编写的，而本书需要实现的就是操作系统功能全无的基础下开发的。如果我们强行执行该函数CPU就会异常，罢工。"><a href="#比如说printf-“Hello，mogullzr”-这种语句都是不允许的，因为这个函数是以操作系统提供的功能为前提编写的，而本书需要实现的就是操作系统功能全无的基础下开发的。如果我们强行执行该函数CPU就会异常，罢工。" class="headerlink" title="比如说printf(“Hello，mogullzr”);这种语句都是不允许的，因为这个函数是以操作系统提供的功能为前提编写的，而本书需要实现的就是操作系统功能全无的基础下开发的。如果我们强行执行该函数CPU就会异常，罢工。"></a>比如说printf(“Hello，mogullzr”);这种语句都是不允许的，因为这个函数是以操作系统提供的功能为前提编写的，而本书需要实现的就是操作系统功能全无的基础下开发的。如果我们强行执行该函数CPU就会异常，罢工。</h4></li>
@@ -361,26 +361,26 @@
 <li>首先考虑如何写一个“通电就可以运行的程序”，<strong>主要使用汇编语言</strong></li>
 <li>下一步写一个从磁盘读取操作系统的程序。这时候打开电源不会将操作系统全部读入，只会读512字节，我们需要编写剩余部分载入程序。<strong>主要汇编语言</strong></li>
 <li>之后就是使用C语言的战场了，开发显示画面的程序</li>
-<li>实现移动鼠标功能。<font color="red"><strong>开发语言汇编语言+C语言，这个部分有点小难！！！</strong></font></li>
+<li>实现移动鼠标功能。<font color='red'><strong>开发语言汇编语言+C语言，这个部分有点小难！！！</strong></font></li>
 </ul>
 <h4 id="第二周"><a href="#第二周" class="headerlink" title="第二周"></a>第二周</h4><ul>
-<li>第一周之后你的编程基础就可以达到该书的基本要求了，第一周会<font color="red"><strong>比较！！！！</strong></font>痛苦</li>
-<li>这一周主战场就是能够很好地使用算法，这一周可能也会<font color="red"><strong>比较较！！！！！！</strong></font>痛苦</li>
+<li>第一周之后你的编程基础就可以达到该书的基本要求了，第一周会<font color='red'><strong>比较！！！！</strong></font>痛苦</li>
+<li>这一周主战场就是能够很好地使用算法，这一周可能也会<font color='red'><strong>比较较！！！！！！</strong></font>痛苦</li>
 </ul>
 <h4 id="第三周"><a href="#第三周" class="headerlink" title="第三周"></a>第三周</h4><ul>
 <li>现在就可以随意开发自己的操作系统了。</li>
 <li>首先功能一：支持多任务</li>
 <li>然后功能二：开发命令行</li>
 <li>之后功能三：开发应用程序</li>
-<li><strong><font color="red">这周之后就可以说拿得出一个称之为操作系统的系统了！！！</font></strong></li>
+<li><strong><font color='red'>这周之后就可以说拿得出一个称之为操作系统的系统了！！！</font></strong></li>
 </ul>
 <h4 id="第四周"><a href="#第四周" class="headerlink" title="第四周"></a>第四周</h4><ul>
-<li>随意添加各种各样的功能，开发大量像样的应用程序，这个阶段应该可以算作阅读这本书读者的心情高峰期，<font color="red"><strong>马上就可以拿着这个东西在老师同学面前装杯了！！！！！！！</strong></font></li>
+<li>随意添加各种各样的功能，开发大量像样的应用程序，这个阶段应该可以算作阅读这本书读者的心情高峰期，<font color='red'><strong>马上就可以拿着这个东西在老师同学面前装杯了！！！！！！！</strong></font></li>
 </ul>
 <h4 id="最后两天"><a href="#最后两天" class="headerlink" title="最后两天"></a>最后两天</h4><ul>
 <li>补充前面内容</li>
 </ul>
-<h4 id="下面你准备好和我一起来挑战一下制作操作系统的旅途了吗？Rush！Rush！Rush！"><a href="#下面你准备好和我一起来挑战一下制作操作系统的旅途了吗？Rush！Rush！Rush！" class="headerlink" title="下面你准备好和我一起来挑战一下制作操作系统的旅途了吗？Rush！Rush！Rush！"></a>下面你准备好和我一起来挑战一下制作操作系统的旅途了吗？Rush！Rush！Rush！</h4><h4 id="Welcome-to-my-own-Blog，Thanks-to-your-surfing🥳🥳🥳🥳🥳🥳🥳"><a href="#Welcome-to-my-own-Blog，Thanks-to-your-surfing🥳🥳🥳🥳🥳🥳🥳" class="headerlink" title="Welcome to my own Blog，Thanks to your surfing🥳🥳🥳🥳🥳🥳🥳"></a>Welcome to my own Blog，Thanks to your surfing🥳🥳🥳🥳🥳🥳🥳</h4>
+<h4 id="下面你准备好和我一起来挑战一下制作操作系统的旅途了吗？Rush！Rush！Rush！"><a href="#下面你准备好和我一起来挑战一下制作操作系统的旅途了吗？Rush！Rush！Rush！" class="headerlink" title="下面你准备好和我一起来挑战一下制作操作系统的旅途了吗？Rush！Rush！Rush！"></a>下面你准备好和我一起来挑战一下制作操作系统的旅途了吗？Rush！Rush！Rush！</h4><h4 id="Welcome-to-my-own-Blog，Thanks-to-your-surfing🥳🥳🥳🥳🥳🥳🥳"><a href="#Welcome-to-my-own-Blog，Thanks-to-your-surfing🥳🥳🥳🥳🥳🥳🥳" class="headerlink" title="Welcome to my own Blog，Thanks to your surfing🥳🥳🥳🥳🥳🥳🥳"></a>Welcome to my own Blog，Thanks to your surfing🥳🥳🥳🥳🥳🥳🥳</h4><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

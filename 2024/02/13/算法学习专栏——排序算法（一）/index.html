@@ -338,7 +338,7 @@
 <h2 id="一、桶排序介绍"><a href="#一、桶排序介绍" class="headerlink" title="一、桶排序介绍"></a>一、桶排序介绍</h2><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>​	桶排序使用的主要就是<strong>分治思想</strong>，这个思想对我们之后解题可以拓展思路。</p>
 <p>​	这里所谓的<strong>分治思想</strong>就可以举个例子：现在有30个小球，每个小球上有一个数<strong>（这个数在1和990之间）</strong>，需要你从小到大排序，对这个数一起排序，你应该会非常头疼。这时候你就可以选择找来30个桶<strong>（桶的数量一般要远小于球的个数，这里我只是为了大家好观察才取了30个桶）</strong>，我们就可以规定从第一个桶开始，每个桶放的数每30 个一隔，比如第1个桶放1~30这些数，第2个桶放30 ~ 60这些数，以此类推……</p>
 <p>​	然后我们取到一个数来判断这个数应该在哪个桶里，接着再在这个桶里对这个数进行排序，这是不是就轻松了很多。最后所有的数放好之后，就只需要按照从第1个桶到第30个桶的顺序依次将小球拿出来就可以将这30个小球排序完毕了，大家可以看看下面的动画进行理解一下。</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131513540.gif" srcset="/img/loading.gif" lazyload alt="动画4" style="zoom:45%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131513540.gif" srcset="/img/loading.gif" lazyload alt="动画4" style="zoom:45%;" />
 
 
 
@@ -371,21 +371,28 @@ void BucketSort(vector < int> &a){
 }
 void show(vector< int> &v){
     for(auto &x : v)
-    cout<<x<<" "; cout<<endl; } main(){ vector< int> a;
+    cout<<x<<" ";
+    cout<<endl;
+}
+main(){
+    vector< int> a;
     srand((int)time(0)); // 随机数种子，不了解也可以，重点看上面的BucketSort()函数
     int n = 50;
     while(n--)
     a.push_back(rand() % 100);   //数据范围[0, 99]
     show(a);
     BucketSort(a);
-    cout<<endl; show(a); } < blockcode>
-    </endl;></x<<"></vector></vector></blockcode></pre>
+    cout<<endl;
+    show(a);
+}
+        </blockcode>
+    </pre>
 </details>
 
 
 
 <h2 id="二、计数排序"><a href="#二、计数排序" class="headerlink" title="二、计数排序"></a>二、计数排序</h2><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>​	2月12日晚上讲解到过的一种思想。先给出一个数组cnt[N]。现在输入一些数，假设输入3，则cnt[3]++；输入5，则cnt[5]++。这个cnt就是用来统计各个数出现次数的，cnt[x]表示的就是x出现的次数，看下图也可以很清楚知道。</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131551136.gif" srcset="/img/loading.gif" lazyload alt="动画5" style="zoom:33%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131551136.gif" srcset="/img/loading.gif" lazyload alt="动画5" style="zoom:33%;" />
 
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><details>
     <summary>答案（请自己先思考一下再参考）</summary>
@@ -404,15 +411,22 @@ int main()
         cin >> x;
         cnt[x]++;
     }
-    for (int i = 0; i <= 10000; i++) { 假设这些数的范围为0~10000 while (cnt[i]--) cout << i " "; } return 0; < blockcode>
-    </=></blockcode></pre>
+    for (int i = 0; i <= 10000; i++) { // 假设这些数的范围为0~10000
+        while (cnt[i]--) {
+            cout << i << " ";
+        }
+    }
+    return 0;
+}
+        </blockcode>
+    </pre>
 </details>
 
 
 
 
 
-<h2 id="三、快速排序（简单-）"><a href="#三、快速排序（简单-）" class="headerlink" title="三、快速排序（简单+）"></a>三、快速排序<font color="green">（简单+）</font></h2><p>给定你一个长度为 n 的整数数列。</p>
+<h2 id="三、快速排序（简单-）"><a href="#三、快速排序（简单-）" class="headerlink" title="三、快速排序（简单+）"></a>三、快速排序<font color='green'>（简单+）</font></h2><p>给定你一个长度为 n 的整数数列。</p>
 <p>请你使用快速排序对这个数列按照从小到大进行排序。</p>
 <p>并将排好序的数列按顺序输出。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入共两行，第一行包含整数 n。</p>
@@ -467,7 +481,7 @@ int main()
 
 
 
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

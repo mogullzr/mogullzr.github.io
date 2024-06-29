@@ -367,11 +367,14 @@ int s1[N], s2[N]; // 各个塔的能力值，一个从左往右看，一个从�
 int main()
 {
     cin >> n;
-    for (int i = 1; i <= n; i++){ int h, v; cin>> h >> v;
+    for (int i = 1; i <= n; i++){
+        int h, v;
+        cin >> h >> v;
         q[i] = {h, v};
     }    
     int tt = 0;
-    for (int i = 1; i <= n; i++) { while (tt && q[i].first> q[qq[tt]].first) s1[i] += q[qq[tt--]].second;
+    for (int i = 1; i <= n; i++) {
+        while (tt && q[i].first > q[qq[tt]].first) s1[i] += q[qq[tt--]].second;
         if (tt) s1[qq[tt]] += q[i].second;
         qq[++tt] = i;
     }
@@ -382,8 +385,12 @@ int main()
         qq[++tt] = i;
     }
     int mmax = 0;
-    for(int i = 1;i <= n;i ++) mmax="max(mmax,max(s1[i],s2[i]));" cout << mmax; return 0; } < blockcode>
-    </=></=></=></blockcode></pre>
+    for(int i = 1;i <= n;i ++) mmax = max(mmax,max(s1[i],s2[i]));
+    cout << mmax;
+    return 0;
+}
+        </blockcode>
+    </pre>
 </details>
 
 <details>
@@ -403,20 +410,27 @@ int main()
 {
     ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
     cin >> n;
-    for (int i = 1; i <= n; i++){ int h, v; cin>> h >> v;
+    for (int i = 1; i <= n; i++){
+        int h, v;
+        cin >> h >> v;
         q[i] = {h, v};
     }   
     int tt = 0;
-    for (int i = 1; i <= n; i++) { while (tt && q[i].first> q[qq[tt]].first) s[i] += q[qq[tt--]].second;
+    for (int i = 1; i <= n; i++) {
+        while (tt && q[i].first > q[qq[tt]].first) s[i] += q[qq[tt--]].second;
         if (tt) s[qq[tt]] += q[i].second;
         qq[++tt] = i;
     }
     int mmax = 0;
-    for(int i = 1;i <= n;i ++) mmax="max(mmax,s[i]);" cout << mmax; return 0; } < blockcode>
-    </=></=></=></blockcode></pre>
+    for(int i = 1;i <= n;i ++) mmax = max(mmax,s[i]);
+    cout << mmax;
+    return 0;
+}
+        </blockcode>
+    </pre>
 </details>
 
-<h2 id="二、合并果子（简单-）"><a href="#二、合并果子（简单-）" class="headerlink" title="二、合并果子（简单+）"></a>二、合并果子<font color="green">（简单+）</font></h2><p>在一个果园里，达达已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。</p>
+<h2 id="二、合并果子（简单-）"><a href="#二、合并果子（简单-）" class="headerlink" title="二、合并果子（简单+）"></a>二、合并果子<font color='green'>（简单+）</font></h2><p>在一个果园里，达达已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。</p>
 <p>达达决定把所有的果子合成一堆。</p>
 <p>每一次合并，达达可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。</p>
 <p>可以看出，所有的果子经过 n−1 次合并之后，就只剩下一堆了。</p>
@@ -479,7 +493,7 @@ int main()
 
 
 
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

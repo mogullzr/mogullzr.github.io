@@ -333,7 +333,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402221107226.png" srcset="/img/loading.gif" lazyload alt="image-20240213174116877" style="zoom:50%;">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402221107226.png" srcset="/img/loading.gif" lazyload alt="image-20240213174116877" style="zoom:50%;" />
 
 <p><strong>已知：</strong>左右端点L、R，要求找到上图中空心点的位置</p>
 <p><strong>思路：</strong>通过不断缩小 [L,R] 的范围，无限逼近空心点</p>
@@ -349,7 +349,7 @@
 
 
 
-<h2 id="一、三分（凸函数）（简单-）"><a href="#一、三分（凸函数）（简单-）" class="headerlink" title="一、三分（凸函数）（简单+）"></a>一、三分（凸函数）<font color="green">（简单+）</font></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如题，给出一个 $N$ 次函数，保证在范围 $[l, r]$ 内存在一点 $x$，使得 $[l, x]$ 上单调增，$[x, r]$ 上单调减。试求出 $x$ 的值。</p>
+<h2 id="一、三分（凸函数）（简单-）"><a href="#一、三分（凸函数）（简单-）" class="headerlink" title="一、三分（凸函数）（简单+）"></a>一、三分（凸函数）<font color='green'>（简单+）</font></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如题，给出一个 $N$ 次函数，保证在范围 $[l, r]$ 内存在一点 $x$，使得 $[l, x]$ 上单调增，$[x, r]$ 上单调减。试求出 $x$ 的值。</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行一次包含一个正整数 $N$ 和两个实数 $l, r$，含义如题目描述所示。</p>
 <p>第二行包含 $N + 1$ 个实数，从高到低依次表示该 $N$ 次函数各项的系数。</p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出为一行，包含一个实数，即为 $x$ 的值。若你的答案满足以下二者之一，则算正确：</p>
@@ -363,12 +363,12 @@
 
 <h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>对于 $100%$ 的数据，$6 \le N \le 13$，函数系数均在 $[-100,100]$ 内且至多 $15$ 位小数，$|l|,|r|\leq 10$ 且至多 $15$ 位小数。$l\leq r$。</p>
 <p><strong>【样例解释】</strong></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131717306.png" srcset="/img/loading.gif" lazyload alt="2297" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131717306.png" srcset="/img/loading.gif" lazyload alt="2297" style="zoom:50%;" />
 
 <p>如图所示，红色段即为该函数 $f(x) &#x3D; x^3 - 3 x^2 - 3x + 1$ 在区间 $[-0.9981, 0.5]$ 上的图像。</p>
 <p>当 $x &#x3D; -0.41421$ 时图像位于最高点，故此时函数在 $[l, x]$ 上单调增，$[x, r]$ 上单调减，故 $x &#x3D; -0.41421$，输出 $-0.41421$​。</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>​	二分查找适用于单调函数中逼近求解某点的值。如果遇到凸性或凹形函数时，可以用三分查找求此凸点或凹点。</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131724138.jpg" srcset="/img/loading.gif" lazyload alt="13726_8bf63ee605-360截图20191113165558620" style="zoom: 80%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402131724138.jpg" srcset="/img/loading.gif" lazyload alt="13726_8bf63ee605-360截图20191113165558620" style="zoom: 80%;" />
 
 
 
@@ -397,7 +397,7 @@ double check(double x)
 int main()
 {
     cin >> n >> l >> r;
-    for(int i = 1;i <= n + 1;i ++ ) cin>> a[i];
+    for(int i = 1;i <= n + 1;i ++ ) cin >> a[i];
     while(r - l > eps)
     {
         double mid = (l + r) / 2;
@@ -408,7 +408,7 @@ int main()
     printf("%.5lf",l);
     return 0;
 }
-        </=></blockcode>
+        </blockcode>
     </pre>
 </details>
 
@@ -417,7 +417,7 @@ int main()
 
 
 
-<h2 id="二、货仓选址（凹函数）（简单-）"><a href="#二、货仓选址（凹函数）（简单-）" class="headerlink" title="二、货仓选址（凹函数）（简单+）"></a>二、货仓选址（凹函数）<font color="green">（简单+）</font></h2><p>在一条数轴上有 N 家商店，它们的坐标分别为 A<del>1</del>∼A<del>N</del>。</p>
+<h2 id="二、货仓选址（凹函数）（简单-）"><a href="#二、货仓选址（凹函数）（简单-）" class="headerlink" title="二、货仓选址（凹函数）（简单+）"></a>二、货仓选址（凹函数）<font color='green'>（简单+）</font></h2><p>在一条数轴上有 N 家商店，它们的坐标分别为 A<del>1</del>∼A<del>N</del>。</p>
 <p>现在需要在数轴上建立一家货仓，每天清晨，从货仓到每家商店都要运送一车商品。</p>
 <p>为了提高效率，求把货仓建在何处，可以使得货仓到每家商店的距离之和最小。</p>
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行输入整数 N。</p>
@@ -497,11 +497,16 @@ int n, a[N], b[N], c[N];
 double check(double x)
 {
     double res = -1e9;
-    for (int i = 1; i <= n; i++) res="max(res," a[i] * x + b[i] c[i]); return res; } int main() { t; cin>> t;
+    for (int i = 1; i <= n; i++) res = max(res, a[i] * x * x + b[i] * x + c[i]);
+    return res;
+}
+int main()
+{
+    int t;  cin >> t;
     while (t--)
     {
         cin >> n;
-        for (int i = 1; i <= n; i++) cin>> a[i] >> b[i] >> c[i];
+        for (int i = 1; i <= n; i++)    cin >> a[i] >> b[i] >> c[i];
         double l = 0, r = 1000;
         while (r - l >= eps)
         {
@@ -514,11 +519,11 @@ double check(double x)
     }
     return 0;
 }
-        </=></=></blockcode>
+        </blockcode>
     </pre>
 </details>
 
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

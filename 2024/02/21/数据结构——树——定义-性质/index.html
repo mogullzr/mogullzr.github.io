@@ -336,7 +336,7 @@
                 
                 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>​	树是n个结点的有限集合，n&#x3D;0，为空树，这是一种特殊情况。</p>
 <p>​	树就由一个一个结点和连线组成的，具体性质术语见下。</p>
-<h2 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051921204.png" srcset="/img/loading.gif" lazyload alt="image-20240303115730620" style="zoom: 50%;">
+<h2 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h2><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403051921204.png" srcset="/img/loading.gif" lazyload alt="image-20240303115730620" style="zoom: 50%;" />
 
 <p><strong>空树：</strong> 结点数为0的树</p>
 <p><strong>叶子结点：</strong>没有后继的结点的结点</p>
@@ -344,11 +344,11 @@
 <p><strong>非空树</strong></p>
 <ul>
 <li>有且仅有1个根节点</li>
-<li>除了根节点外，任何一个结点<font color="red"><strong>有且仅有一个前驱</strong></font></li>
+<li>除了根节点外，任何一个结点<font color='red'><strong>有且仅有一个前驱</strong></font></li>
 <li>每个结点可以有0个或者多个后继结点</li>
 </ul>
 <p><strong>子树(看例子理解)</strong></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031218122.png" srcset="/img/loading.gif" lazyload alt="image-20240303121848280" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031218122.png" srcset="/img/loading.gif" lazyload alt="image-20240303121848280" style="zoom:50%;" />
 
 <p>树是一种递归定义的数据结构</p>
 <p><strong>祖先结点：</strong> 爷爷是所有结点的祖先结点。</p>
@@ -363,9 +363,9 @@
 <p><strong>数的高度（深度）：</strong>  总共多少层，下面树的高度为4</p>
 <p><strong>结点的度：</strong> 有多少个孩子结点<strong>（分支）</strong> ，叶子结点的度为0</p>
 <p><strong>树的度：</strong> 各结点的度的最大值，下面树的度为3</p>
-<p><strong>常见考点一：求结点数</strong> <font color="red"><strong>结点数 &#x3D; 总度数 + 1</strong></font>，这个可以设想一下，你将所有结点的度数加在一起就是每个结点的孩子结点，那么是不是我们只需要将这些孩子结点的数量加在一起之后再加上不包含在孩子结点里面的结点个数就可以算出所有的结点数量了，因此很明显下面的途中不包含在孩子结点中的就是爷爷结点，其他任意一个结点都是另一个结点的孩子结点。</p>
+<p><strong>常见考点一：求结点数</strong> <font color='red'><strong>结点数 &#x3D; 总度数 + 1</strong></font>，这个可以设想一下，你将所有结点的度数加在一起就是每个结点的孩子结点，那么是不是我们只需要将这些孩子结点的数量加在一起之后再加上不包含在孩子结点里面的结点个数就可以算出所有的结点数量了，因此很明显下面的途中不包含在孩子结点中的就是爷爷结点，其他任意一个结点都是另一个结点的孩子结点。</p>
 <p><strong>常见考点二：度为m的树和、m叉数的区别</strong></p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031243957.png" srcset="/img/loading.gif" lazyload alt="image-20240303124204401" style="zoom:33%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031243957.png" srcset="/img/loading.gif" lazyload alt="image-20240303124204401" style="zoom:33%;" />
 
 <p><strong>常见考点三：高度为h的m叉树最多有m^h^ -  1 &#x2F; m - 1 个结点</strong></p>
 <p><strong>注意：</strong></p>
@@ -382,15 +382,15 @@
 <li>高度为h的m叉树,你每层最少一个结点，因此h高度最少h层，最少也有h个节点</li>
 <li>高度为h、度为m的树至少有一个结点的度为m，因此h - 1层的结点数为1，1层是m即可，最后结点数&#x3D;h + m - 1</li>
 </ul>
-<p><strong>常见考点五：具有n个结点的m叉树的最小高度为</strong><br>$$<br>\lceil log_m(n(m-1)+1)\rceil \<br>高度最小的情况–所有结点都有m个孩子\<br>证明：\<br>\frac{m^{h-1}-1}{m-1}\le n\le\frac{m^{h}-1}{m-1}\<br>m^{h-1}&lt;n(m-1)+1\le mh\<br>h-1&lt;log_{m}(n(m-1)+1)\le h\<br>h_{min}&#x3D;\lceil log_{m}(n(m-1)+1)\rceil<br>$$<br><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031220487.png" srcset="/img/loading.gif" lazyload alt="image-20240303121952895" style="zoom:50%;"></p>
+<p><strong>常见考点五：具有n个结点的m叉树的最小高度为</strong><br>$$<br>\lceil log_m(n(m-1)+1)\rceil \<br>高度最小的情况–所有结点都有m个孩子\<br>证明：\<br>\frac{m^{h-1}-1}{m-1}\le n\le\frac{m^{h}-1}{m-1}\<br>m^{h-1}&lt;n(m-1)+1\le mh\<br>h-1&lt;log_{m}(n(m-1)+1)\le h\<br>h_{min}&#x3D;\lceil log_{m}(n(m-1)+1)\rceil<br>$$<br><img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031220487.png" srcset="/img/loading.gif" lazyload alt="image-20240303121952895" style="zoom:50%;" /></p>
 <p><strong>简单说一下什么是森林？</strong></p>
 <p>​	森林是m(m&gt;0)棵互不相交的树的集合。</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031237087.png" srcset="/img/loading.gif" lazyload alt="image-20240303123729802" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031237087.png" srcset="/img/loading.gif" lazyload alt="image-20240303123729802" style="zoom:50%;" />
 
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>​	像下面这些类型的图就不属于树</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031218071.png" srcset="/img/loading.gif" lazyload alt="image-20240303121437285" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202403031218071.png" srcset="/img/loading.gif" lazyload alt="image-20240303121437285" style="zoom:50%;" />
 
-<h4 id="下一节内容是：21、二叉树——定义-性质！！！"><a href="#下一节内容是：21、二叉树——定义-性质！！！" class="headerlink" title="下一节内容是：21、二叉树——定义+性质！！！"></a>下一节内容是：21、二叉树——定义+性质！！！</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o…….."></a><font color="red">一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o……..</font></h4>
+<h4 id="下一节内容是：21、二叉树——定义-性质！！！"><a href="#下一节内容是：21、二叉树——定义-性质！！！" class="headerlink" title="下一节内容是：21、二叉树——定义+性质！！！"></a>下一节内容是：21、二叉树——定义+性质！！！</h4><h4 id="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……"><a href="#一定要把本节内容看懂再往下看，不然会非常痛苦的哦o-╥﹏╥-oo-╥﹏╥-oo-╥﹏╥-o……" class="headerlink" title="一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o…….."></a><font color='red'>一定要把本节内容看懂再往下看，不然会非常痛苦的哦o(╥﹏╥)oo(╥﹏╥)oo(╥﹏╥)o……..</font></h4><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

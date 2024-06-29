@@ -335,11 +335,11 @@
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	大家大概率是还没有接触到图的概念的，所以我这里先简单简单介绍一下图的基本概念。</p>
 <p>​	图是什么？图实际上就是多个地点之间连线和地点的集合。</p>
 <p>​	没看懂，再说清楚点，看下图：</p>
-<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402132000243.png" srcset="/img/loading.gif" lazyload alt="image-20240213200024465" style="zoom:50%;">
+<img src="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202402132000243.png" srcset="/img/loading.gif" lazyload alt="image-20240213200024465" style="zoom:50%;" />
 
 <p>​	像这样一张图，可以看做一个标准的<strong>图</strong>。有箭头的图<strong>（两个点直接有方向性，就以上图为例，1可以到2,但是2不可以到1）</strong>，就是<strong>有向图。</strong> 反之没有箭头<strong>（这样两个地方就是互通的，可以双向走）。</strong></p>
 <p>​	上面的一点点内容弄懂了就可以往下看了。</p>
-<h1 id="一、走迷宫（BFS）（简单-）"><a href="#一、走迷宫（BFS）（简单-）" class="headerlink" title="一、走迷宫（BFS）（简单+）"></a>一、走迷宫（BFS）<font color="green">（简单+）</font></h1><p>给定一个 n×m 的二维整数数组，用来表示一个迷宫，数组中只包含 0或 1，其中 0 表示可以走的路，1 表示不可通过的墙壁。</p>
+<h1 id="一、走迷宫（BFS）（简单-）"><a href="#一、走迷宫（BFS）（简单-）" class="headerlink" title="一、走迷宫（BFS）（简单+）"></a>一、走迷宫（BFS）<font color='green'>（简单+）</font></h1><p>给定一个 n×m 的二维整数数组，用来表示一个迷宫，数组中只包含 0或 1，其中 0 表示可以走的路，1 表示不可通过的墙壁。</p>
 <p>最初，有一个人位于左上角 (1,1) 处，已知该人每次可以向上、下、左、右任意一个方向移动一个位置。</p>
 <p>请问，该人从左上角移动至右下角 (n,m) 处，至少需要移动多少次。</p>
 <p>数据保证 (1,1) 处和 (n,m) 处的数字为 0，且一定至少存在一条通路。</p>
@@ -374,18 +374,38 @@ int bfs()
     vis[1][1] = 0;
     q[0] = {1, 1};
     int dx[4] = {1,0,-1,0},dy[4] = {0,1,0,-1};   
-    while (hh <= tt) { auto t="q[hh++];" for (int i="0;" < 4; i++) int x="t.first" + dx[i],y="t.second" dy[i]; if (x>= 1 && x <= n && y>= 1 && y <= m && vis[x][y]="=" -1 a[x][y]="=" 0) { + 1; q[++tt]="{x," y}; } return vis[n][m]; int main() ios::sync_with_stdio(false),cin.tie(0),cout.tie(0); cin>> n >> m;
-    for (int i = 1; i <= n; i++) for (int j="1;" <="m;" j++) cin>> a[i][j];  
+    while (hh <= tt)
+    {
+        auto t = q[hh++];
+        for (int i = 0; i < 4; i++)
+        {
+            int x = t.first + dx[i],y = t.second + dy[i];
+            if (x >= 1 && x <= n && y >= 1 && y <= m && vis[x][y] == -1 && a[x][y] == 0)
+            {
+                vis[x][y] = vis[t.first][t.second] + 1;
+                q[++tt] = {x, y};                
+            }
+        }
+    }
+    return vis[n][m];
+}
+int main()
+{
+    ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++)
+            cin >> a[i][j];  
     cout << bfs();    
     return 0;
 }
-        </=></=></=></=></blockcode>
+        </blockcode>
     </pre>
 </details>
 
 
 
-<h2 id="三、树的重心（深度优先遍历）（中等-）"><a href="#三、树的重心（深度优先遍历）（中等-）" class="headerlink" title="三、树的重心（深度优先遍历）（中等-）"></a>三、树的重心（深度优先遍历）<font color="orange">（中等-）</font></h2><p>给定一颗树，树中包含 n 个结点（编号 1∼n）和 n−1 条无向边。</p>
+<h2 id="三、树的重心（深度优先遍历）（中等-）"><a href="#三、树的重心（深度优先遍历）（中等-）" class="headerlink" title="三、树的重心（深度优先遍历）（中等-）"></a>三、树的重心（深度优先遍历）<font color='orange'>（中等-）</font></h2><p>给定一颗树，树中包含 n 个结点（编号 1∼n）和 n−1 条无向边。</p>
 <p>请你找到树的重心，并输出将重心删除后，剩余各个连通块中点数的最大值。</p>
 <p>重心定义：重心是指树中的一个结点，如果将这个点删除后，剩余各个连通块中点数的最大值最小，那么这个节点被称为树的重心。</p>
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含整数 n，表示树的结点数。</p>
@@ -398,7 +418,7 @@ int bfs()
 
 
 
-<h2 id="思路（！！！）"><a href="#思路（！！！）" class="headerlink" title="思路（！！！）"></a>思路<font color="red">（！！！）</font></h2><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
+<h2 id="思路（！！！）"><a href="#思路（！！！）" class="headerlink" title="思路（！！！）"></a>思路<font color='red'>（！！！）</font></h2><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
         <blockcode>
@@ -450,7 +470,7 @@ int main()
 }
         </blockcode>
     </pre>
-</details>
+</details><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

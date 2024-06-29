@@ -332,7 +332,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="一、合并集合（简单-）"><a href="#一、合并集合（简单-）" class="headerlink" title="一、合并集合（简单+）"></a>一、合并集合<font color="green">（简单+）</font></h2><p>一共有 n 个数，编号是 1∼n，最开始每个数各自在一个集合中。</p>
+                <h2 id="一、合并集合（简单-）"><a href="#一、合并集合（简单-）" class="headerlink" title="一、合并集合（简单+）"></a>一、合并集合<font color='green'>（简单+）</font></h2><p>一共有 n 个数，编号是 1∼n，最开始每个数各自在一个集合中。</p>
 <p>现在要进行 m 个操作，操作共有两种：</p>
 <ol>
 <li><code>M a b</code>，将编号为 a 和 b 的两个数所在的集合合并，如果两个数已经在同一个集合中，则忽略这个操作；</li>
@@ -368,7 +368,11 @@ int main()
 {
     ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
     cin >> n >> m;
-    for (int i = 1; i <= n; i++) p[i]="i;" for (int i="0;" < m; { char op[2]; int x, y; cin>> op >> x >> y;
+    for (int i = 1; i <= n; i++) p[i] = i;
+    for (int i = 0; i < m; i++) {
+        char op[2];
+        int x, y;
+        cin >> op >> x >> y;
         if (op[0] == 'M') {
             p[find(x)] = find(y);            
         } else {
@@ -378,14 +382,14 @@ int main()
     }  
     return 0;
 }
-        </=></blockcode>
+        </blockcode>
     </pre>
 </details>
 
 
 
 
-<h2 id="二、连通块中点的数量（简单-）"><a href="#二、连通块中点的数量（简单-）" class="headerlink" title="二、连通块中点的数量（简单++）"></a>二、连通块中点的数量<font color="green">（简单++）</font></h2><p>给定一个包含 n 个点（编号为 1∼n）的无向图，初始时图中没有边。</p>
+<h2 id="二、连通块中点的数量（简单-）"><a href="#二、连通块中点的数量（简单-）" class="headerlink" title="二、连通块中点的数量（简单++）"></a>二、连通块中点的数量<font color='green'>（简单++）</font></h2><p>给定一个包含 n 个点（编号为 1∼n）的无向图，初始时图中没有边。</p>
 <p>现在要进行 m 个操作，操作共有三种：</p>
 <ol>
 <li><code>C a b</code>，在点 a 和点 b 之间连一条边，a 和 b 可能相等；</li>
@@ -424,7 +428,13 @@ int main()
     ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
     char op[3];
     cin >> n >> m;
-    for(int i = 1; i <= n; i++) { p[i]="i;" s[i]="1;" } for (int i="0;" < m; cin>> op;
+    for(int i = 1; i <= n; i++) 
+    {
+        p[i] = i;
+        s[i] = 1;
+    }
+    for (int i = 0; i < m; i++) {
+        cin >> op;
         if (op[0] == 'C') {
             int x, y;
             cin >> x >> y;
@@ -444,14 +454,14 @@ int main()
     }  
     return 0;
 }
-        </=></blockcode>
+        </blockcode>
     </pre>
 </details>
 
 
 
 
-<h2 id="三、食物链（中等-）"><a href="#三、食物链（中等-）" class="headerlink" title="三、食物链（中等+）"></a>三、食物链<font color="orange">（中等+）</font></h2><p>动物王国中有三类动物 A,B,C 这三类动物的食物链构成了有趣的环形。</p>
+<h2 id="三、食物链（中等-）"><a href="#三、食物链（中等-）" class="headerlink" title="三、食物链（中等+）"></a>三、食物链<font color='orange'>（中等+）</font></h2><p>动物王国中有三类动物 A,B,C 这三类动物的食物链构成了有趣的环形。</p>
 <p>A 吃 B，B 吃 C，C 吃 A。</p>
 <p>现有 N 个动物，以 1∼N编号。</p>
 <p>每个动物都是 A,B,C 中的一种，但是我们并不知道它到底是哪一种。</p>
@@ -479,7 +489,7 @@ int main()
 
 
 <h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>​	直播<strong>（录屏）</strong></p>
-<p>​	<font color="red"><strong>有疑点抓紧时间问本人。</strong></font></p>
+<p>​	<font color='red'><strong>有疑点抓紧时间问本人。</strong></font></p>
 <h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><details>
     <summary>答案（请自己先思考一下再参考）</summary>
     <pre>
@@ -502,7 +512,10 @@ int main()
 {
     ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
     cin >> n >> k;   
-    for (int i = 1; i <= n;i++) p[i]="i;" for (int i="0;" < k; i++) { int a,b,c; cin>> a >> b >> c;
+    for (int i = 1; i <= n;i++) p[i] = i;    
+    for (int i = 0; i < k; i++) {
+        int a,b,c;
+        cin >> a >> b >> c;
         if (b > n || c > n) ans++;
         else {
             int pb = find(b),pc = find(c); 
@@ -524,13 +537,13 @@ int main()
     cout << ans;    
     return 0;
 }
-        </=></blockcode>
+        </blockcode>
     </pre>
 </details>
 
 
 
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             

@@ -437,7 +437,7 @@
 
 
 
-<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="一、模拟散列表（简单-）"><a href="#一、模拟散列表（简单-）" class="headerlink" title="一、模拟散列表（简单+）"></a>一、模拟散列表<font color="green">（简单+）</font></h2><p>维护一个集合，支持如下几种操作：</p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="一、模拟散列表（简单-）"><a href="#一、模拟散列表（简单-）" class="headerlink" title="一、模拟散列表（简单+）"></a>一、模拟散列表<font color='green'>（简单+）</font></h2><p>维护一个集合，支持如下几种操作：</p>
 <ol>
 <li><code>I x</code>，插入一个整数 x；</li>
 <li><code>Q x</code>，询问整数 x 是否在集合中出现过；</li>
@@ -489,7 +489,7 @@ int main()
     }  
     return 0;
 }
-        </int,></blockcode>
+        </blockcode>
     </pre>
 </details>
 
@@ -627,15 +627,22 @@ int main()
     ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
     cin >> n >> m >> str + 1;
     p[0] = 1;
-    for (int i = 1; i <= n; i++) { p[i]="p[i" - 1] * p; h[i] +="h[i" p str[i]; } while (m--) int l1, r1, l2, r2; cin>> l1 >> r1 >> l2 >> r2;
+    for (int i = 1; i <= n; i++) {
+        p[i] = p[i - 1] * P;
+        h[i] += h[i - 1] * P + str[i];
+    }    
+    while (m--)
+    {
+        int l1, r1, l2, r2;
+        cin >> l1 >> r1 >> l2 >> r2;
         if (get(l1, r1) == get(l2, r2)) puts("Yes");
         else puts("No");
     }    
     return 0;
 }
-        </=></blockcode>
+        </blockcode>
     </pre>
-</details>
+</details><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
             
