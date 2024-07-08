@@ -16,27 +16,24 @@
   <meta name="author" content="Mogullzr">
   <meta name="keywords" content="">
   
-    <meta name="description" content="板子1.012345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;#includ">
+    <meta name="description" content="背景​	市面的监考系统要不就是要收钱，要不就是有很多功能没有实现，导致在具体使用的时候给本人带来了许多不便之处。 ​	为此，本人打算自己设计一个既可以写选择、填空、简答题，也可以实现代码在线编程同时进行在线测试功能的一个监考系统，同时同学们还可以实时观察自己是否出分，是不是很方便呢。 ​	同时对于该网站本人还打算扩展一些题库刷题功能，题库搜索功能等等等。 需求分析最基本的页面功能 基本的登录，注册">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日常板子——板子1.0">
-<meta property="og:url" content="http://example.com/2030/05/16/%E6%97%A5%E5%B8%B8%E6%9D%BF%E5%AD%90%E2%80%94%E2%80%94%E6%9D%BF%E5%AD%901-0/index.html">
+<meta property="og:title" content="监考系统PLUS——需求分析">
+<meta property="og:url" content="http://example.com/2024/07/08/%E7%9B%91%E8%80%83%E7%B3%BB%E7%BB%9FPLUS%E2%80%94%E2%80%94%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="程序书架">
-<meta property="og:description" content="板子1.012345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;#includ">
+<meta property="og:description" content="背景​	市面的监考系统要不就是要收钱，要不就是有很多功能没有实现，导致在具体使用的时候给本人带来了许多不便之处。 ​	为此，本人打算自己设计一个既可以写选择、填空、简答题，也可以实现代码在线编程同时进行在线测试功能的一个监考系统，同时同学们还可以实时观察自己是否出分，是不是很方便呢。 ​	同时对于该网站本人还打算扩展一些题库刷题功能，题库搜索功能等等等。 需求分析最基本的页面功能 基本的登录，注册">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405161322684.jpeg">
-<meta property="article:published_time" content="2030-05-16T05:16:36.000Z">
-<meta property="article:modified_time" content="2024-05-22T04:10:42.265Z">
+<meta property="og:image" content="http://example.com/assets/image-20240708220324582.png">
+<meta property="article:published_time" content="2024-07-08T14:04:16.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:05:20.023Z">
 <meta property="article:author" content="Mogullzr">
-<meta property="article:tag" content="练习">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="比赛">
-<meta property="article:tag" content="ACM">
+<meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202405161322684.jpeg">
+<meta name="twitter:image" content="http://example.com/assets/image-20240708220324582.png">
   
   
   
-  <title>日常板子——板子1.0 - 程序书架</title>
+  <title>监考系统PLUS——需求分析 - 程序书架</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -244,13 +241,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/mogullzr/Typora_img@main/202404171651712.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="日常板子——板子1.0"></span>
+            <span id="subtitle" data-typed-text="监考系统PLUS——需求分析"></span>
           
         </div>
 
@@ -261,8 +258,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2030-05-16 13:16" pubdate>
-          2030年5月16日 下午
+        <time datetime="2024-07-08 22:04" pubdate>
+          2024年7月8日 晚上
         </time>
       </span>
     
@@ -273,7 +270,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          214 字
+          1.1k 字
         
       </span>
     
@@ -284,7 +281,7 @@
         
         
         
-          2 分钟
+          10 分钟
         
       </span>
     
@@ -329,13 +326,93 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">日常板子——板子1.0</h1>
+            <h1 id="seo-header">监考系统PLUS——需求分析</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="板子1-0"><a href="#板子1-0" class="headerlink" title="板子1.0"></a>板子1.0</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unordered_map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;set&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stack&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;deque&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bitset&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iomanip&gt;</span></span><br><br><span class="hljs-comment">// #define int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ull unsigned long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ed <span class="hljs-string">&#x27;\n&#x27;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fi first</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> se second</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fore(i, l, r) for(int i = (int)(l); i &lt;=(int)r; i++)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> debug(x) cout &lt;&lt; <span class="hljs-string">&quot;#x = &quot;</span> &lt;&lt; x &lt;&lt; ed;</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PI acos(-1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> E exp(1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> IOS ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> me0(st) memset(st, 0, sizeof st)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> me3f(st) memset(st, 0x3f, sizeof st)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pdf(x) printf(<span class="hljs-string">&quot;%lf&quot;</span>, double(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pif(x) printf(<span class="hljs-string">&quot;%d &quot;</span>,  int(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> scf(x) printf(<span class="hljs-string">&quot;%d&quot;</span>,  int(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> re return 0</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> max(a, b) ((a) &gt; (b) ? (a) : (b))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> min(a, b) ((a) &lt; (b) ? (a) : (b))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> out(x, k) cout &lt;&lt; fixed &lt;&lt; setprecision(k) &lt;&lt; x &lt;&lt; ed</span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; PII;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">double</span> db;<br><br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> INF = <span class="hljs-number">1e9</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    IOS;<br>    <span class="hljs-type">int</span> _ = <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// cin &gt;&gt; _;</span><br>    <br>    <span class="hljs-keyword">while</span>(_--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br>    <br>    re;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+                <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>​	市面的监考系统要不就是要收钱，要不就是有很多功能没有实现，导致在具体使用的时候给本人带来了许多不便之处。</p>
+<p>​	为此，本人打算自己设计一个既可以写选择、填空、简答题，也可以实现代码在线编程同时进行在线测试功能的一个监考系统，同时同学们还可以实时观察自己是否出分，是不是很方便呢。</p>
+<p>​	同时对于该网站本人还打算扩展一些题库刷题功能，题库搜索功能等等等。</p>
+<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><h4 id="最基本的页面功能"><a href="#最基本的页面功能" class="headerlink" title="最基本的页面功能"></a>最基本的页面功能</h4><ul>
+<li><p>基本的登录，注册功能了<strong>（尽可能使用redis的session登录）</strong></p>
+</li>
+<li><p>导航栏信息<strong>（需要实现以下各类功能）</strong></p>
+<ul>
+<li><p>首页目录下展示信息为各种算法还有各种学习笔记等学习方面的帖子</p>
+</li>
+<li><p>题库目录下展示的为</p>
+<ul>
+<li><strong>算法类型题库：</strong>从比如说leetcode，acwing，luogu还有啥codeforces等爬来的题库<strong>（这里最好可以调用一个王道的翻译接口来实现英文翻译功能）</strong>，当然还有基本的分页功能，还有就是各个题目的状态栏信息，此处还会提供题目通过总数以及各个难度类型题目数量统计的接口，<strong>VIP功能尚不考虑。</strong></li>
+<li><strong>考研408题库：</strong> 这一部分的题目就得自己随后慢慢找，主要以选择填空为主。</li>
+<li><strong>高数I和II题库：</strong> 这一部分准备在考验完之后对其进行大幅度扩展工作。</li>
+<li><strong>题库集成专题训练：</strong> 这一部分在后期尝试实现。</li>
+</ul>
+</li>
+<li><p>竞赛<strong>（名字暂定）</strong>：</p>
+<ul>
+<li>此部分需要严格区分<strong>管理员和普通用户身份</strong>，用户等待界面可参考牛客还有codeforces的等待时间界面来实现。</li>
+<li>管理员权限：<ul>
+<li>可以指定<strong>正式比赛和报名比赛</strong>的时间<strong>（包含起始时间和结束时间）</strong></li>
+<li>可以备注<strong>比赛</strong></li>
+<li>可以设置<strong>比赛密码</strong></li>
+<li>对于代码题而言具体<strong>仅仅以ACM赛制模式（扩展再说）</strong></li>
+<li>基本信息设置完成之后</li>
+<li>可以选择多种方式设置题目<strong>（注意：这些题目在正式比赛之后会自动实现逻辑删除功能，比赛结束会自动解除）</strong><ul>
+<li>选择题设置<strong>（可分单多选）</strong></li>
+<li>填空题设置</li>
+<li>简答题设置</li>
+<li>编程大题设置<strong>（在线测试功能看情况）</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>普通用户权限：<ul>
+<li>仅仅可以参加比赛以及等待比赛开始</li>
+<li>不可修改比赛任何信息</li>
+<li>只有输入正确密码才可以参加比赛</li>
+</ul>
+</li>
+<li><strong>此处有个关键的作弊检测功能的基于深度学习的检测功能，尝试实现…..!!!!!!!!!!!!!!!!!</strong></li>
+<li>对于该竞赛系统，对于选择题可以实现提交即可直接出分的功能，后续的填空、简答题需要手动修改，对于编程题这个题目之后再详细考虑……</li>
+</ul>
+</li>
+<li><p>讨论<strong>（实际上就是之前的大型聊天室学习websocket实现）</strong></p>
+<ul>
+<li>可以拉人私人聊天</li>
+<li>可以大群中聊天</li>
+<li>其他功能另行拓展</li>
+<li>管理员可以禁止某人聊天功能</li>
+</ul>
+</li>
+<li><p>记录</p>
+<ul>
+<li><p>所有提交过验证过对错的题目都会有像洛谷里的这种样子显示出来，但是这里的记录仅仅是本人自己的提交记录</p>
+<p><img src="/./assets/image-20240708220324582.png" srcset="/img/loading.gif" lazyload alt="image-20240708220324582"></p>
+</li>
+<li><p>对于每道题目而言，都应该显示所有人的像luogu这样的提交记录，至于代码是<strong>否允许展示</strong>，这个后期考虑</p>
+</li>
+</ul>
+</li>
+<li><p>写文章</p>
+<ul>
+<li>普通用户仅有发帖、删除、修改自己帖子的功能</li>
+<li>管理员拥有删除任何帖子功能，但是无法修改帖子，可以发出总公报</li>
+<li>对于帖子的排列顺序暂定按照发布时间顺序来定，<strong>不考虑大数据分析算法</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>个人中心</p>
+<ul>
+<li>刚开始为默认名称：菜鸟n号<strong>（这里的n表示注册序列号）</strong></li>
+<li>可以直接在此处修改<strong>个人密码，用户名，喜好，所在地，性别，手机号，邮件，生日，简述，个人网站，学校</strong>这些信息。</li>
+<li>题单收藏</li>
+<li>自己做题分析<strong>（Echarts直接分析）</strong></li>
+<li>………</li>
+</ul>
+</li>
+</ul>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
                 
               </div>
@@ -348,12 +425,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2030/05/16/%E6%97%A5%E5%B8%B8%E6%9D%BF%E5%AD%90%E2%80%94%E2%80%94%E6%9D%BF%E5%AD%901-0/" title="日常板子——板子1.0">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">日常板子——板子1.0</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/08/%E7%9B%91%E8%80%83%E7%B3%BB%E7%BB%9FPLUS%E2%80%94%E2%80%94%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/" title="监考系统PLUS——需求分析">
-                        <span class="hidden-mobile">监考系统PLUS——需求分析</span>
+                      <a href="/2024/07/08/2024%E5%B9%B47%E6%9C%888%E6%97%A5/" title="2024年7月8日">
+                        <span class="hidden-mobile">2024年7月8日</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
